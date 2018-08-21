@@ -3,30 +3,47 @@
 > 我们要求全部都安装，**不然无法完整开发与调试**。
 
 ## 基础环境
+
 Mac: 
+
 * Node.js (>=9.x), npm version 4+ 
 
 Windows: 
+
 * Git bash (并确定已经设置为`.sh脚本的默认执行程序`)
 
-```
+#### 安装工具
+
+```bash
 $ npm i weiui-cli -g
 ```
+
 如果你在中国地区，我们还是推荐您使用 [cnpm](https://npm.taobao.org/) 安装或者直接修改为`淘宝源`。
-```
+
+```bash
 $ cnpm i weiui-cli -g 
 ```
 
+#### 更新工具
+
+```bash
+npm update weiui-cli -g
+```
+
 ## 开发 iOS
+
 开发平台: `Mac`
 > CocoaPods 使用过程中遇到问题及时 Google。
 
 #### 版本要求
+
 - ruby: `2.5.0` 以上
 - cocoapods: `1.5.0` 以上
 
 其他版本会有环境问题
+
 #### 安装
+
 * Xcode (appStore 下载)
 * CocoaPods(建议使用pod 1.5.3版本)
     * 升级 rubygem 环境：`$ sudo gem update --system`
@@ -37,9 +54,11 @@ $ cnpm i weiui-cli -g
     * 最后执行：`$ pod setup 过程比较漫长，请耐心等待执行完成`
 
 ## 开发 Android
+
 开发平台: `Mac/Windows/Linux`
 
 #### 版本要求
+
 - AndroidStudio: 推荐`3.x`
 
 #### 安装
@@ -52,6 +71,7 @@ JDK 是 JAVA 开发包，AndroidStudio 是 Android开发IDE，这两项不再做
 > 如果您使用虚拟机进行跨平台开发，也需要配置好对应平台的所需环境。
 
 ## 模拟器或真机安装
+
 * ios 开发中 xcode 已经自带了模拟器
 * android 开发者可以使用 android studio 再带模拟器，为了更好的效果，推荐下载 `Genymotion`模拟器
 
