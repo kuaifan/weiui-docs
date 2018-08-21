@@ -15,13 +15,13 @@ Windows:
 #### 安装工具
 
 ```bash
-$ npm i weiui-cli -g
+npm i weiui-cli -g
 ```
 
 如果你在中国地区，我们还是推荐您使用 [cnpm](https://npm.taobao.org/) 安装或者直接修改为`淘宝源`。
 
 ```bash
-$ cnpm i weiui-cli -g 
+cnpm i weiui-cli -g 
 ```
 
 #### 更新工具

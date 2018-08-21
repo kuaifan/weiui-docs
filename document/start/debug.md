@@ -7,8 +7,8 @@ weiui 支持实时同步预览，即修改完代码可以立即查看效果
 
 只需要在项目根目录中起开发服务：
 
-```
-$ npm run serve
+```bash
+npm run serve
 ```
 
 脚手架会在项目根目录下生成 dist 文件，存放 JS Bundle。
