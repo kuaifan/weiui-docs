@@ -38,7 +38,7 @@ let variable = weiui.getNavigationBarHeight()
 let variable = weiui.getNavigationBarHeightPx()
 ```
 
-## 获取weiui版本号 <font color="red">[新]</font>
+## 获取weiui版本号
 ```js
 /**
  * @return int
@@ -46,7 +46,7 @@ let variable = weiui.getNavigationBarHeightPx()
 let variable = weiui.getVersion()
 ```
 
-## 获取weiui版本号名称 <font color="red">[新]</font>
+## 获取weiui版本号名称
 ```js
 /**
  * @return String
@@ -81,7 +81,7 @@ let variable = weiui.getLocalVersionName()
 let variable = weiui.compareVersion(version1, version2)
 ```
 
-## 获取手机的IMEI <font color="red">[新]</font>
+## 获取手机的IMEI
 > 注：Android返回IMEI，iOS返回UDID
 
 ```js
@@ -91,7 +91,7 @@ let variable = weiui.compareVersion(version1, version2)
 let variable = weiui.getImei()
 ```
 
-## 获取手机的IFA <font color="red">[新]</font>
+## 获取手机的IFA
 > 注：Android返回空，iOS返回IFA
 
 ```js

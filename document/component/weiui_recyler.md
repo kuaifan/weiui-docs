@@ -190,7 +190,7 @@
 @scrollStateChanged = function(data) { ... }
 ```
 
-## 调用方法 `methods` <font color="red">[新]</font>
+## 调用方法 `methods`
 
 ```js
 /**
