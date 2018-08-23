@@ -4,6 +4,8 @@
 .sidebar ul li a>span{float:right;padding-right:10px;color:#999;font-size:12px}
 .sidebar ul li a>code{padding-left:5px;color:#999;font-size:12px}
 
-#background_video_box{display: none}
-#background_video,#background_video_bg{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);object-fit:fill;height:100%; width:100%}
-#background_video_bg{background-color:rgba(78, 78, 78, 0.48)}
+#background_video_box{display:none}
+#background_video,#background_video_bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);object-fit:fill;height:100%;width:100%}
+#background_video_bg{background-color:rgba(78,78,78,.48)}
+#background_video_link{position:absolute;bottom:10px;right:10px;color:#fff;text-decoration:none;font-size:13px}
+#background_video_link span{padding:0 3px;color:#3eb4ff;text-decoration:underline}

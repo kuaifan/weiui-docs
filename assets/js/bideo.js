@@ -194,7 +194,9 @@
 
 //视频播放部分
 setTimeout(function () {
+    let videoSrc = 'https://weiui.oss-cn-beijing.aliyuncs.com/%E6%88%90%E5%93%81.mp4';
     document.querySelector('#background_video_box').style.display = 'block';
+    document.querySelector('#background_video_link').href = videoSrc;
     (function () {
         let bv = new Bideo();
         bv.init({
@@ -205,7 +207,7 @@ setTimeout(function () {
             playButton: document.querySelector('#play'),
             pauseButton: document.querySelector('#pause'),
             src: [{
-                src: 'https://weiui.oss-cn-beijing.aliyuncs.com/%E6%88%90%E5%93%81.mp4',
+                src: videoSrc,
                 type: 'video/mp4'
             }, {
                 src: 'night.webm',
