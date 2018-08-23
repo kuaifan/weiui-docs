@@ -194,9 +194,7 @@
 
 //视频播放部分
 setTimeout(function () {
-    let videoSrc = 'https://weiui.oss-cn-beijing.aliyuncs.com/%E6%88%90%E5%93%81.mp4';
-    document.querySelector('#background_video_box').style.display = 'block';
-    document.querySelector('#background_video_link').href = videoSrc;
+    let videoSrc = 'https://weiui.oss-cn-beijing.aliyuncs.com/weiui_preview.mp4';
     (function () {
         let bv = new Bideo();
         bv.init({
@@ -214,6 +212,8 @@ setTimeout(function () {
                 type: 'video/webm;codecs="vp8, vorbis"'
             }],
             onLoad: function () {
+                document.querySelector('#background_video_box').style.display = 'block';
+                document.querySelector('#background_video_link').href = videoSrc;
                 document.querySelector(".cover-main #weiui strong").style.color = '#ffffff';
                 document.querySelector(".cover-main blockquote p").style.color = '#ffffff';
             }
