@@ -13,16 +13,31 @@
     homePage: "",   //主页的JS地址
 
     rongim: {       //融云模块配置
-        enabled: false,
-        appKey: "",
-        appSecret: "",
+        andorid: {
+            enabled: false,
+            appKey: "",
+            appSecret: "",
+        },
+        ios: {
+            enabled: false,
+            appKey: "",
+            appSecret: "",
+        }
     },
 
     umeng: {        //友盟模块配置
-        enabled: false,
-        appKey: "",
-        appSecret: "",
-        channel: "",
+        android: {
+            enabled: false,
+            appKey: "",
+            appSecret: "",
+            channel: "",
+        },
+        ios: {
+            enabled: false,
+            appKey: "",
+            appSecret: "",
+            channel: "",
+        }
     },
 }
 ```
