@@ -11,7 +11,7 @@
 ```javascript
 {
     homePage: "",   //主页的JS地址（可选）
-    appKey: "",     //用于云平台管理（可选，含：热更新、设置启动图等）
+    appKey: "",     //用于云平台管理（可选）
 
     rongim: {       //融云模块配置（可选）
         andorid: {
