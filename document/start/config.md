@@ -10,10 +10,10 @@
 
 ```javascript
 {
-    homePage: "",   //主页的JS地址
+    homePage: "",   //主页的JS地址（可选）
     appKey: "",     //用于云平台管理（可选，含：热更新、设置启动图等）
 
-    rongim: {       //融云模块配置
+    rongim: {       //融云模块配置（可选）
         andorid: {
             enabled: false,
             appKey: "",
@@ -26,7 +26,7 @@
         }
     },
 
-    umeng: {        //友盟模块配置
+    umeng: {        //友盟模块配置（可选）
         android: {
             enabled: false,
             appKey: "",
@@ -45,8 +45,12 @@
 ## 配置说明
 
 ###### **`homePage`**: 主页的JS地址
-- 一般情况下自动生成。
+- 一般情况下留空。
 - 只有当项目把JS资源放到服务器上时需要把JS路径填写此项目。
+
+###### **`appKey`**: 用于云平台管理
+- 建议填写16-32位随机字符串。
+- 主要用于[WEIUI云平台](https://app.weiui.cc)热更新、动态设置启动图等。
 
 ###### **`rongim`**: 融云相关配置（即时通讯模块）
 - enabled: 是否启用融云服务。
