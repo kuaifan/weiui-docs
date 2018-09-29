@@ -63,6 +63,7 @@
         - [<span>umeng</span>友盟推送模块](module/third/umeng)
     
 - [ 社区及推荐博文 ]	
+	- [云中心](https://app.weiui.cc/) 
 	- [推荐阅读](recommend)    
     
 
