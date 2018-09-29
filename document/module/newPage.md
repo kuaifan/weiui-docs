@@ -28,7 +28,7 @@ weiui.openPage({params}, callback(result))
 | params |`Object`  | - | 页面传递参数，通过`weex.config.params`获取         | -       |
 | cache | `Number` | - | 页面缓存时间，仅`weex`类型有效，<br/>设置`0`不缓存（单位：毫秒） | 0 |
 | loading | `Boolean` | - | 是否显示等待效果：`true`、`false` | true |
-| swipeBack | `Boolean` | - | 是否支持滑动返回：`true`、`false` | false |
+| swipeBack | `Boolean` | - | 是否支持滑动返回：`true`、`false` | Android:false<br/>iOS:true |
 | statusBarType | `String` | - | 状态栏样式：<br/>`normal` 正常<br/>`fullscreen` 全屏<br/>`immersion` 沉浸式<br/>_非默认下`statusBarType`、`statusBarAlpha`无效_ | normal |
 | statusBarColor | `String` | - | 状态栏颜色值 | #3EB4FF |
 | statusBarAlpha | `Number` | - | 状态栏透明度， 0-255 | 0 |
