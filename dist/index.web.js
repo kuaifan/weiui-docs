@@ -20400,7 +20400,7 @@ var weiui = weex.requireModule('weiui'); //
 //
 //
 
-var jshome = '';
+var jshome = 'http://weiui.cc/dist/';
 
 exports.default = {
     data: function data() {
@@ -20609,7 +20609,8 @@ exports.default = {
         },
         openUrl: function openUrl(url) {
             weiui.openPage({
-                url: url
+                url: url,
+                pageType: 'weex'
             });
         },
         openWeb: function openWeb(url) {
