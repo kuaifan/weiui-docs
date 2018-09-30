@@ -1,4 +1,4 @@
-// { "framework": "Vue"} 
+// { "framework": "Vue"}
 
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -79,7 +79,7 @@ var weiui = weex.requireModule('weiui');
 var app = {
     openViewCode: function openViewCode(str) {
         weiui.openPage({
-            url: "http://kuaifan.vip/weiui/#/" + str,
+            url: "http://weiui.cc/#/" + str,
             pageType: 'web'
         });
     },

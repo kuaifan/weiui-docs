@@ -1,4 +1,4 @@
-// { "framework": "Vue"} 
+// { "framework": "Vue"}
 
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -299,7 +299,7 @@ var weiui = weex.requireModule('weiui');
 var app = {
     openViewCode: function openViewCode(str) {
         weiui.openPage({
-            url: "http://kuaifan.vip/weiui/#/" + str,
+            url: "http://weiui.cc/#/" + str,
             pageType: 'web'
         });
     },
@@ -11863,7 +11863,7 @@ if (lib$1.version) {
  * under the License.
  */
 
-// 
+//
 
 var toString$2 = Object.prototype.toString;
 
@@ -11902,7 +11902,7 @@ function isArray(arr) {
  * specific language governing permissions and limitations
  * under the License.
  */
-// 
+//
 /**
  * Mix properties into target object.
  * the rightest object's value has the highest priority.
@@ -12189,7 +12189,7 @@ function toCSSText(object) {
  * specific language governing permissions and limitations
  * under the License.
  */
-// 
+//
 
 /**
  * viewport priority:
@@ -12791,7 +12791,7 @@ function detectAppear(context, visibleData, dir, appearOffset) {
  * under the License.
  */
 
-// 
+//
 
 function preLoadImg(src, loadCallback, errorCallback) {
   var img = new Image();
@@ -13601,7 +13601,7 @@ var addPrefix = unwrapExports(index$1);
  * under the License.
  */
 
-// 
+//
 
 var noUnitsNumberKeys = ['flex', 'opacity', 'zIndex', 'fontWeight', 'lines'];
 
@@ -14322,7 +14322,7 @@ Object.defineProperty(weex$4.document.body, 'children', {
  * under the License.
  */
 
-// 
+//
 /**
  * @fileOverview: perf data recorder.
  */
@@ -15083,7 +15083,7 @@ var style = {
  * under the License.
  */
 
-// 
+//
 
 // input and textare has some common api and event
 var findEnterKeyType = function findEnterKeyType(key) {
