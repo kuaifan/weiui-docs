@@ -1,4 +1,4 @@
-// { "framework": "Vue"} 
+// { "framework": "Vue"}
 
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -17855,16 +17855,16 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
    * under the License.
    */
   /**
-  
+
   AUCTION:
   taskQueue
   Clipboard.setString()  NOW not works, facing to user-act lose of taskQueue.
-  
+
   works in Chrome Firefox Opera. but not in Safari.
   @see https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand#Browser_compatibility
-  
+
   Clipboard.getString() unimplemented. There is no easy way to do paste from clipboard to js variable.
-  
+
   So look out your app behavior, when downgrade to html5 render.
   Any idea is welcome.
   **/
@@ -20194,7 +20194,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n.app {\n    width: 10rem;\n    flex: 1;\n}\n.navbar {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.title {\n    font-size: 0.37333rem;\n    color: #ffffff\n}\n.iconr {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.grid {\n    width: 10rem;\n    margin-top: 0.13333rem;\n    height: 7.6rem;\n}\n.grid-item {\n    width: 3.33333rem;\n    height: 2.4rem;\n    align-items: center;\n}\n.item-image {\n    margin-top: 0.13333rem;\n    width: 1.6rem;\n    height: 1.6rem;\n    border-radius: 1.2rem;\n}\n.item-title {\n    width: 3.33333rem;\n    height: 0.66667rem;\n    line-height: 0.66667rem;\n    text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.app {\n    width: 10rem;\n    flex: 1;\n}\n.navbar {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.title {\n    font-size: 0.37333rem;\n    color: #ffffff\n}\n.iconr {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.grid {\n    width: 10rem;\n    margin-top: 0.13333rem;\n    height: 7.6rem;\n}\n.grid-item {\n    width: 3.33333rem;\n    height: 2.4rem;\n    align-items: center;\n}\n.item-image {\n    margin-top: 0.13333rem;\n    width: 1.6rem;\n    height: 1.6rem;\n    border-radius: 1.2rem;\n}\n.item-title {\n    width: 3.33333rem;\n    height: 0.66667rem;\n    line-height: 0.66667rem;\n    font-size: 0.32rem;\n    text-align: center;\n}\n", ""]);
 
 // exports
 

@@ -1,4 +1,4 @@
-// { "framework": "Vue"} 
+// { "framework": "Vue"}
 
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -626,6 +626,7 @@ module.exports = {
   "item-title": {
     "width": "250",
     "height": "50",
+    "fontSize": "24",
     "lineHeight": "50",
     "textAlign": "center"
   }
