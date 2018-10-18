@@ -444,6 +444,36 @@ weiui.closePage({
 weiui.closePage('pageName_1');
 ```
 
+## weiui.closePageTo
+
+* 关闭至某个`Weex Js页面` 或 `Web页面`
+* 场景示例：目前顺序打开a、b、c、d、e五个页面，e为当前页面，想要直接回到a页面时可以使用此方法。
+
+```js
+/**
+ * @param params    详细参数
+ */
+weiui.closePageTo({params})
+```
+
+> params 参数说明
+
+| 属性名 | 类型 | 必须 | 描述 | 默认值 |
+| --- | --- | :-: | --- | --- |
+| pageName | `String` | - | 页面名称，留空关闭当前页面（不建议） | - |
+
+> 简单示例
+
+```js
+//示例①
+weiui.closePageTo({
+    pageName: 'pageName_1',
+});
+
+//示例②
+weiui.closePageTo('pageName_1');
+```
+
 ## weiui.openWeb
 
 * 调用系统浏览器打开页面

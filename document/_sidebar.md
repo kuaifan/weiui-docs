@@ -31,7 +31,7 @@
         - [<span>caches</span>缓存管理](module/caches)
         - [<span>captcha</span>验证弹窗](module/captcha)
         - [<span>loading</span>等待弹窗](module/loading)
-        - [<span>newPage</span>页面功能](module/newPage)
+        - [<span>newPage</span>页面功能 (路由)](module/newPage)
         - [<span>openOtherApp</span>打开其他APP](module/openOtherApp)
         - [<span>plate</span>复制粘贴](module/plate)
         - [<span>saveImage</span>保存图片至本地](module/saveImage)

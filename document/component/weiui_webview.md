@@ -45,6 +45,8 @@
 | ------------- | ------ | -------------------------- | ------- |
 | url |`String`  | 网页地址           | -       |
 | content |`String`  | 网页内容           | -       |
+| progressbarVisibility |`Boolean`  | 是否显示进度条           | true       |
+| scrollEnabled |`Boolean`  | 是否可以滚动           | true       |
 
 > 例如：
 
@@ -127,6 +129,19 @@ this.$refs.reflectName.canGoForward(callback(result));
 * 回调 result: true|false
  */
 this.$refs.reflectName.goForward(callback(result));
+
+/**
+ * 设置是否显示进度条
+ * 参数一：true|false
+ */
+this.$refs.reflectName.setProgressbarVisibility(true);
+
+/**
+ * 设置是否可以滚动
+ * 参数一：true|false
+ */
+this.$refs.reflectName.setScrollEnabled(true);
+
 ```
 
 
