@@ -8595,7 +8595,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
+console.log('START WEEX VUE RENDER: 1.0.31, Build 2018-09-17 14:43.');
 
 (function (global, factory) {
   ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? module.exports = factory() :  true ? !(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
@@ -11724,7 +11724,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
     scrollableTypes: ['scroller', 'list', 'waterfall'],
     gestureEvents: ['panstart', 'panmove', 'panend', 'swipe', 'longpress', 'tap'],
     // these components should not bind events with .native.
-    weexBuiltInComponents: ['div', 'container', 'text', 'image', 'img', 'cell', 'a'],
+    weexBuiltInComponents: ['div', 'container', 'text', 'image', 'gif', 'img', 'cell', 'a'],
     bindingStyleNamesForPx2Rem: allStyles
   };
 
@@ -12571,7 +12571,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
     var osVersion = envInfo.os.version.val;
     var env = {
       platform: 'Web',
-      weexVersion: '1.0.28',
+      weexVersion: '1.0.31',
       userAgent: navigator.userAgent,
       appName: browserName,
       appVersion: browserVersion,
@@ -12688,7 +12688,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
         method = method && method.replace(/^\./, '');
         switch (type) {
           case 'component':
-            return typeof this._components[mod] !== 'undefined';
+            return typeof this._components[mod] !== 'undefined' || config.weexBuiltInComponents.indexOf(mod) >= 0;
           case 'module':
             var module = weexModules[mod];
             return module && method ? !!module[method] : !!module;
@@ -12697,6 +12697,19 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
         console.warn("[vue-render] invalid argument for weex.support: " + feature);
         return null;
       }
+    },
+
+    supports: function supports() {
+      return this.support.apply(this, arguments);
+    },
+
+    isRegisteredModule: function isRegisteredModule(moduleName, methodName) {
+      var feature = methodName ? moduleName + "." + methodName : moduleName;
+      return this.support('@module/' + feature);
+    },
+
+    isRegisteredComponent: function isRegisteredComponent(componentName) {
+      return this.support('@component/' + componentName);
     },
 
     /**
@@ -12930,7 +12943,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
 
   // should share with precompiler.
   var metaMap = {
-    figure: ['img', 'image', 'figure'],
+    figure: ['img', 'image', 'gif', 'figure'],
     p: ['text', 'p'],
     div: ['container', 'div'],
     section: ['cell']
@@ -13176,7 +13189,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
       attrs = data.attrs = {};
     }
     attrs['weex-type'] = tag;
-    if (tag === 'image') {
+    if (tag === 'image' || tag === 'gif') {
       var src = attrs.src;
       var resize = attrs.resize;
       if (src) {
@@ -15205,7 +15218,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
             return children;
           }
           return children.filter(function (vnode) {
-            return vnode.componentOptions && vnode.componentOptions.tag !== 'loading-indicator';
+            return !(vnode.componentOptions && vnode.componentOptions.tag === 'loading-indicator');
           });
         }
       },
@@ -15324,7 +15337,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
             return children;
           }
           return children.filter(function (vnode) {
-            return vnode.componentOptions && vnode.componentOptions.tag !== 'loading-indicator';
+            return !(vnode.componentOptions && vnode.componentOptions.tag === 'loading-indicator');
           });
         }
       },
@@ -19640,19 +19653,27 @@ module.exports = function normalizeComponent (
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
 
 var global = {
-    isFunction: function isFunction(value) {
-        return typeof value === "function";
+    isNullOrUndefined: function isNullOrUndefined(obj) {
+        return typeof obj === "undefined" || obj === null;
+    },
+    isFunction: function isFunction(obj) {
+        return global.isNullOrUndefined(obj) ? false : typeof obj === "function";
     },
     isObject: function isObject(obj) {
-        return obj === null ? false : (typeof obj === "undefined" ? "undefined" : _typeof(obj)) === "object";
+        return global.isNullOrUndefined(obj) ? false : (typeof obj === "undefined" ? "undefined" : _typeof(obj)) === "object";
     },
     likeArray: function likeArray(obj) {
-        return typeof obj.length === 'number';
+        return global.isNullOrUndefined(obj) ? false : typeof obj.length === 'number';
+    },
+    isJson: function isJson(obj) {
+        return global.isObject(obj) && !global.likeArray(obj);
     },
     getObject: function getObject(obj, keys) {
         var object = obj;
@@ -20048,6 +20069,72 @@ var global = {
         } catch (e) {
             return defaultVal ? defaultVal : "";
         }
+    },
+
+
+    /**
+     * 去除数组中的非数字项
+     * @param value
+     * @returns {Array}
+     */
+    removerNumberNaN: function removerNumberNaN() {
+        var array = [];
+
+        for (var _len = arguments.length, value = Array(_len), _key = 0; _key < _len; _key++) {
+            value[_key] = arguments[_key];
+        }
+
+        value.forEach(function (ele) {
+            if (!isNaN(Number(ele))) {
+                array.push(ele);
+            }
+        });
+        return array;
+    },
+
+
+    /**
+     * Math.max 过滤NaN
+     * @param value
+     * @returns {number}
+     */
+    runMax: function runMax() {
+        return Math.max.apply(Math, _toConsumableArray(global.removerNumberNaN.apply(global, arguments)));
+    },
+
+
+    /**
+     * Math.min 过滤NaN
+     * @param value
+     * @returns {number}
+     */
+    runMin: function runMin() {
+        return Math.min.apply(Math, _toConsumableArray(global.removerNumberNaN.apply(global, arguments)));
+    },
+
+
+    /**
+     * 链接字符串
+     * @param value 第一个参数为连接符
+     * @returns {string}
+     */
+    stringConnect: function stringConnect() {
+        var s = null;
+        var text = "";
+
+        for (var _len2 = arguments.length, value = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+            value[_key2] = arguments[_key2];
+        }
+
+        value.forEach(function (val) {
+            if (s === null) {
+                s = val;
+            } else if (val) {
+                if (val && text) text += s;
+                text += val;
+            }
+        });
+        return text;
     }
 };
 
@@ -20421,16 +20508,14 @@ exports.default = {
     },
 
     computed: {
-        demoStyle: function demoStyle() {
+        weiuiStyle: function weiuiStyle() {
             var backgroundColor = this.backgroundColor,
                 borderColor = this.borderColor,
                 borderRadius = this.borderRadius,
                 text = this.text,
                 color = this.color,
                 loading = this.loading,
-                disabled = this.disabled,
-                width = this.width,
-                height = this.height;
+                disabled = this.disabled;
 
             var customStyle = {};
             if (backgroundColor) {
@@ -20451,6 +20536,13 @@ exports.default = {
             }
             customStyle.loading = loading;
             customStyle.disabled = disabled;
+            return customStyle;
+        },
+        demoStyle: function demoStyle() {
+            var width = this.width,
+                height = this.height;
+
+            var customStyle = {};
             customStyle.width = width;
             customStyle.height = height;
             return customStyle;
@@ -20654,7 +20746,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("按钮文字")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("按钮文字：")]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -20689,7 +20781,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("是否加载中")]), _vm._v(" "), _c('switch', {
+  }, [_vm._v("是否加载中：")]), _vm._v(" "), _c('switch', {
     staticClass: "switch",
     attrs: {
       "checked": _vm.loading,
@@ -20716,7 +20808,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("是否禁用")]), _vm._v(" "), _c('switch', {
+  }, [_vm._v("是否禁用：")]), _vm._v(" "), _c('switch', {
     staticClass: "switch",
     attrs: {
       "checked": _vm.disabled,
@@ -20738,7 +20830,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("按钮宽度")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("按钮宽度：")]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -20768,7 +20860,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("按钮高度")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("按钮高度：")]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -20798,7 +20890,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("背景颜色")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("背景颜色：")]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -20828,7 +20920,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("边框颜色")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("边框颜色：")]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -20858,7 +20950,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("边框圆角")]), _vm._v(" "), _c('input', {
+  }, [_vm._v("边框圆角：")]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -20886,7 +20978,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('weiui_button', {
     staticClass: "demoButton",
     style: (_vm._px2rem(_vm.demoStyle, 75)),
-    attrs: {}
+    attrs: {
+      "weiui": _vm.weiuiStyle
+    }
   })], 1)])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true

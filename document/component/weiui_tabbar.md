@@ -126,6 +126,7 @@
 | tabBackgroundColor |`String`  |   设置tab的背景颜色         |  -     |
 | tabSpaceEqual |`Boolean`  |  设置tab大小等分<br/>_tabType:slidingTop时无效_          |  true     |
 | tabWidth |`Number`  |   设置tab固定大小         |  -     |
+| tabPageAnimated |`Boolean`  |   开关页面切换动画         |  true     |
 | indicatorStyle |`Number`  | 设置tab显示器样式，<br/>常规:`0`<br/>三角形:`1`<br/>背景色块:`2`           | 0      |
 | indicatorGravity |`Number`  |  设置tab显示器位置，<br/>上方:`1`<br/>下方:`0`          | 0      |
 | indicatorColor |`String`  |   设置tab显示器颜色         |  #ffffff，背景色块:#4B6A87    |
@@ -383,6 +384,12 @@ this.$refs.reflectName.setTabIconWidth(50);
  * 参数一：高度
  */
 this.$refs.reflectName.setTabIconHeight(50);
+
+/**
+ * 开关页面切换动画
+ * 参数一：true|false
+ */
+this.$refs.reflectName.setTabPageAnimated(false);
 ```
 
 

@@ -16,8 +16,8 @@
 <template>
     <div class="app">
     
-        <weiui_list class="list" :weiui="{pullTips: false}">
-
+        <scroller class="list">
+        
             <text class="list-title">预设样式</text>
 
             <div class="list-item">
@@ -53,58 +53,51 @@
             <text class="list-title">自定义样式</text>
 
             <div class="list-input-item">
-                <text class="cell">按钮文字</text>
-                <input class="input" placeholder="文字"
-                       :value="text" @input="text=$event.value"/>
+                <text class="cell">按钮文字：</text>
+                <input class="input" placeholder="文字" v-model="text"/>
             </div>
 
             <div class="list-input-item">
-                <text class="cell" style="flex:1">是否加载中</text>
-                <switch class="switch" :checked="loading2" @change="loading2 = !loading2"></switch>
+                <text class="cell" style="flex:1">是否加载中：</text>
+                <switch class="switch" :checked="loading" @change="loading = !loading"></switch>
             </div>
 
             <div class="list-input-item">
-                <text class="cell" style="flex:1">是否禁用</text>
+                <text class="cell" style="flex:1">是否禁用：</text>
                 <switch class="switch" :checked="disabled" @change="disabled = !disabled"></switch>
             </div>
 
             <div class="list-input-item">
-                <text class="cell">按钮宽度</text>
+                <text class="cell">按钮宽度：</text>
                 <input class="input" placeholder="自定义样式实现, 默认全屏"
-                       :value="width" @input="width=$event.value"/>
+                       v-model="width"/>
             </div>
 
             <div class="list-input-item">
-                <text class="cell">按钮高度</text>
-                <input class="input" placeholder="自定义样式实现, 默认高度80px"
-                       :value="height" @input="height=$event.value"/>
+                <text class="cell">按钮高度：</text>
+                <input class="input" placeholder="自定义样式实现, 默认高度80px" v-model="height"/>
             </div>
 
             <div class="list-input-item">
-                <text class="cell">背景颜色</text>
-                <input class="input" placeholder="自定义样式实现"
-                       :value="backgroundColor" @input="backgroundColor=$event.value"/>
+                <text class="cell">背景颜色：</text>
+                <input class="input" placeholder="自定义样式实现" v-model="backgroundColor"/>
             </div>
 
             <div class="list-input-item">
-                <text class="cell">边框颜色</text>
-                <input class="input" placeholder="自定义样式实现"
-                       :value="borderColor" @input="borderColor=$event.value"/>
+                <text class="cell">边框颜色：</text>
+                <input class="input" placeholder="自定义样式实现" v-model="borderColor"/>
             </div>
 
             <div class="list-input-item">
-                <text class="cell">边框圆角</text>
-                <input class="input" placeholder="自定义样式实现,默认8px"
-                       :value="borderRadius" @input="borderRadius=$event.value"/>
+                <text class="cell">边框圆角：</text>
+                <input class="input" placeholder="自定义样式实现,默认8px" v-model="borderRadius"/>
             </div>
 
             <div class="demo-item">
-                <weiui_button class="demoButton"
-                              :style="{width, height}"
-                              :weiui="demoStyle"></weiui_button>
+                <weiui_button class="demoButton" :weiui="weiuiStyle" :style="demoStyle"></weiui_button>
             </div>
 
-        </weiui_list>
+        </scroller>
 
 
     </div>
@@ -139,12 +132,12 @@
     }
 
     .button {
+        font-size: 24px;
         margin-left: 37.5px;
         margin-right: 37.5px;
         margin-bottom: 20px;
         width: 300px;
         height: 80px;
-        background-color: #00B4FF;
     }
 
     .list-input-item {
@@ -164,7 +157,7 @@
     }
 
     .switch {
-        padding-right: 35px;
+        margin-right: 40px;
     }
 
     .input {
@@ -190,28 +183,26 @@
     export default {
         data() {
             return {
-                loading: false,
-
-                text: '按钮文字',
+                text: '按钮',
                 width: '702px',
                 height: '80px',
-                loading2: false,
+                loading: false,
                 disabled: false,
                 backgroundColor: '#FF5000',
                 borderColor: '#FF5000',
                 borderRadius: '8px',
-                fontSize: '36px',
+                fontSize: '28px',
                 color: '#FFFFFF'
             }
         },
         mounted() {
-            setTimeout(() => {
-                this.loading = true;
-            }, 3000);
+            this.$nextTick(() => {
+                this.text = '按钮文字';
+            });
         },
         computed: {
-            demoStyle() {
-                const { backgroundColor, borderColor, borderRadius, text, color, loading2, disabled } = this;
+            weiuiStyle() {
+                const { backgroundColor, borderColor, borderRadius, text, color, loading, disabled } = this;
                 const customStyle = {};
                 if (backgroundColor) {
                     customStyle.backgroundColor = backgroundColor;
@@ -229,12 +220,19 @@
                 if (color) {
                     customStyle.color = color;
                 }
-                customStyle.loading = loading2;
+                customStyle.loading = loading;
                 customStyle.disabled = disabled;
+                return customStyle;
+            },
+
+            demoStyle() {
+                const { width, height } = this;
+                const customStyle = {};
+                customStyle.width = width;
+                customStyle.height = height;
                 return customStyle;
             }
         },
-        methods: {}
     };
 </script>
 ```

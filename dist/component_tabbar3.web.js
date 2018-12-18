@@ -8601,7 +8601,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
+console.log('START WEEX VUE RENDER: 1.0.31, Build 2018-09-17 14:43.');
 
 (function (global, factory) {
   ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? module.exports = factory() :  true ? !(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
@@ -11730,7 +11730,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
     scrollableTypes: ['scroller', 'list', 'waterfall'],
     gestureEvents: ['panstart', 'panmove', 'panend', 'swipe', 'longpress', 'tap'],
     // these components should not bind events with .native.
-    weexBuiltInComponents: ['div', 'container', 'text', 'image', 'img', 'cell', 'a'],
+    weexBuiltInComponents: ['div', 'container', 'text', 'image', 'gif', 'img', 'cell', 'a'],
     bindingStyleNamesForPx2Rem: allStyles
   };
 
@@ -12577,7 +12577,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
     var osVersion = envInfo.os.version.val;
     var env = {
       platform: 'Web',
-      weexVersion: '1.0.28',
+      weexVersion: '1.0.31',
       userAgent: navigator.userAgent,
       appName: browserName,
       appVersion: browserVersion,
@@ -12694,7 +12694,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
         method = method && method.replace(/^\./, '');
         switch (type) {
           case 'component':
-            return typeof this._components[mod] !== 'undefined';
+            return typeof this._components[mod] !== 'undefined' || config.weexBuiltInComponents.indexOf(mod) >= 0;
           case 'module':
             var module = weexModules[mod];
             return module && method ? !!module[method] : !!module;
@@ -12703,6 +12703,19 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
         console.warn("[vue-render] invalid argument for weex.support: " + feature);
         return null;
       }
+    },
+
+    supports: function supports() {
+      return this.support.apply(this, arguments);
+    },
+
+    isRegisteredModule: function isRegisteredModule(moduleName, methodName) {
+      var feature = methodName ? moduleName + "." + methodName : moduleName;
+      return this.support('@module/' + feature);
+    },
+
+    isRegisteredComponent: function isRegisteredComponent(componentName) {
+      return this.support('@component/' + componentName);
     },
 
     /**
@@ -12936,7 +12949,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
 
   // should share with precompiler.
   var metaMap = {
-    figure: ['img', 'image', 'figure'],
+    figure: ['img', 'image', 'gif', 'figure'],
     p: ['text', 'p'],
     div: ['container', 'div'],
     section: ['cell']
@@ -13182,7 +13195,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
       attrs = data.attrs = {};
     }
     attrs['weex-type'] = tag;
-    if (tag === 'image') {
+    if (tag === 'image' || tag === 'gif') {
       var src = attrs.src;
       var resize = attrs.resize;
       if (src) {
@@ -15211,7 +15224,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
             return children;
           }
           return children.filter(function (vnode) {
-            return vnode.componentOptions && vnode.componentOptions.tag !== 'loading-indicator';
+            return !(vnode.componentOptions && vnode.componentOptions.tag === 'loading-indicator');
           });
         }
       },
@@ -15330,7 +15343,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
             return children;
           }
           return children.filter(function (vnode) {
-            return vnode.componentOptions && vnode.componentOptions.tag !== 'loading-indicator';
+            return !(vnode.componentOptions && vnode.componentOptions.tag === 'loading-indicator');
           });
         }
       },

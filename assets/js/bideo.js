@@ -212,10 +212,10 @@ setTimeout(function () {
                 type: 'video/webm;codecs="vp8, vorbis"'
             }],
             onLoad: function () {
-                document.querySelector('#background_video_box').style.display = 'block';
-                document.querySelector('#background_video_link').href = videoSrc;
-                document.querySelector(".cover-main #weiui strong").style.color = '#ffffff';
-                document.querySelector(".cover-main blockquote p").style.color = '#ffffff';
+                document.querySelector('#background_video_box') && (document.querySelector('#background_video_box').style.display = 'block');
+                document.querySelector('#background_video_link') && (document.querySelector('#background_video_link').href = videoSrc);
+                document.querySelector(".cover-main #weiui strong") && (document.querySelector(".cover-main #weiui strong").style.color = '#ffffff');
+                document.querySelector(".cover-main blockquote p") && (document.querySelector(".cover-main blockquote p").style.color = '#ffffff');
             }
         });
     }());

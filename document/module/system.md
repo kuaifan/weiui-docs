@@ -82,7 +82,7 @@ let variable = weiui.compareVersion(version1, version2)
 ```
 
 ## 获取手机的IMEI
-> 注：Android返回IMEI，iOS返回UDID
+> 注：Android返回IMEI，iOS返回IFA
 
 ```js
 /**
@@ -92,7 +92,7 @@ let variable = weiui.getImei()
 ```
 
 ## 获取手机的IFA
-> 注：Android返回空，iOS返回IFA
+> 注：Android返回IMEI，iOS返回IFA
 
 ```js
 /**
@@ -104,8 +104,6 @@ let variable = weiui.getIfa()
 ## 获取设备系统版本号
 ```js
 /**
-* @参数一      固定值
-* 
 * @返回 Number
  */
 let variable = weiui.getSDKVersionCode()
@@ -114,11 +112,20 @@ let variable = weiui.getSDKVersionCode()
 ## 获取设备系统版本名称
 ```js
 /**
-* @参数一      固定值
-* 
 * @返回 String
  */
 let variable = weiui.getSDKVersionName()
+```
+
+## 是否iPhone X系列
+
+> 含：X(max)、XS(max)、XR(max)
+
+```js
+/**
+* @返回 Boolean
+ */
+let variable = weiui.isIPhoneXType()
 ```
 
 

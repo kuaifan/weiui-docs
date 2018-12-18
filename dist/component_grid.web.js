@@ -1,4 +1,4 @@
-// { "framework": "Vue"}
+// { "framework": "Vue"} 
 
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -8595,7 +8595,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
+console.log('START WEEX VUE RENDER: 1.0.31, Build 2018-09-17 14:43.');
 
 (function (global, factory) {
   ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? module.exports = factory() :  true ? !(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
@@ -11724,7 +11724,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
     scrollableTypes: ['scroller', 'list', 'waterfall'],
     gestureEvents: ['panstart', 'panmove', 'panend', 'swipe', 'longpress', 'tap'],
     // these components should not bind events with .native.
-    weexBuiltInComponents: ['div', 'container', 'text', 'image', 'img', 'cell', 'a'],
+    weexBuiltInComponents: ['div', 'container', 'text', 'image', 'gif', 'img', 'cell', 'a'],
     bindingStyleNamesForPx2Rem: allStyles
   };
 
@@ -12571,7 +12571,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
     var osVersion = envInfo.os.version.val;
     var env = {
       platform: 'Web',
-      weexVersion: '1.0.28',
+      weexVersion: '1.0.31',
       userAgent: navigator.userAgent,
       appName: browserName,
       appVersion: browserVersion,
@@ -12688,7 +12688,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
         method = method && method.replace(/^\./, '');
         switch (type) {
           case 'component':
-            return typeof this._components[mod] !== 'undefined';
+            return typeof this._components[mod] !== 'undefined' || config.weexBuiltInComponents.indexOf(mod) >= 0;
           case 'module':
             var module = weexModules[mod];
             return module && method ? !!module[method] : !!module;
@@ -12697,6 +12697,19 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
         console.warn("[vue-render] invalid argument for weex.support: " + feature);
         return null;
       }
+    },
+
+    supports: function supports() {
+      return this.support.apply(this, arguments);
+    },
+
+    isRegisteredModule: function isRegisteredModule(moduleName, methodName) {
+      var feature = methodName ? moduleName + "." + methodName : moduleName;
+      return this.support('@module/' + feature);
+    },
+
+    isRegisteredComponent: function isRegisteredComponent(componentName) {
+      return this.support('@component/' + componentName);
     },
 
     /**
@@ -12930,7 +12943,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
 
   // should share with precompiler.
   var metaMap = {
-    figure: ['img', 'image', 'figure'],
+    figure: ['img', 'image', 'gif', 'figure'],
     p: ['text', 'p'],
     div: ['container', 'div'],
     section: ['cell']
@@ -13176,7 +13189,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
       attrs = data.attrs = {};
     }
     attrs['weex-type'] = tag;
-    if (tag === 'image') {
+    if (tag === 'image' || tag === 'gif') {
       var src = attrs.src;
       var resize = attrs.resize;
       if (src) {
@@ -15205,7 +15218,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
             return children;
           }
           return children.filter(function (vnode) {
-            return vnode.componentOptions && vnode.componentOptions.tag !== 'loading-indicator';
+            return !(vnode.componentOptions && vnode.componentOptions.tag === 'loading-indicator');
           });
         }
       },
@@ -15324,7 +15337,7 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
             return children;
           }
           return children.filter(function (vnode) {
-            return vnode.componentOptions && vnode.componentOptions.tag !== 'loading-indicator';
+            return !(vnode.componentOptions && vnode.componentOptions.tag === 'loading-indicator');
           });
         }
       },
@@ -17855,16 +17868,16 @@ console.log('START WEEX VUE RENDER: 1.0.28, Build 2018-07-31 17:46.');
    * under the License.
    */
   /**
-
+  
   AUCTION:
   taskQueue
   Clipboard.setString()  NOW not works, facing to user-act lose of taskQueue.
-
+  
   works in Chrome Firefox Opera. but not in Safari.
   @see https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand#Browser_compatibility
-
+  
   Clipboard.getString() unimplemented. There is no easy way to do paste from clipboard to js variable.
-
+  
   So look out your app behavior, when downgrade to html5 render.
   Any idea is welcome.
   **/
@@ -19640,19 +19653,27 @@ module.exports = function normalizeComponent (
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
 
 var global = {
-    isFunction: function isFunction(value) {
-        return typeof value === "function";
+    isNullOrUndefined: function isNullOrUndefined(obj) {
+        return typeof obj === "undefined" || obj === null;
+    },
+    isFunction: function isFunction(obj) {
+        return global.isNullOrUndefined(obj) ? false : typeof obj === "function";
     },
     isObject: function isObject(obj) {
-        return obj === null ? false : (typeof obj === "undefined" ? "undefined" : _typeof(obj)) === "object";
+        return global.isNullOrUndefined(obj) ? false : (typeof obj === "undefined" ? "undefined" : _typeof(obj)) === "object";
     },
     likeArray: function likeArray(obj) {
-        return typeof obj.length === 'number';
+        return global.isNullOrUndefined(obj) ? false : typeof obj.length === 'number';
+    },
+    isJson: function isJson(obj) {
+        return global.isObject(obj) && !global.likeArray(obj);
     },
     getObject: function getObject(obj, keys) {
         var object = obj;
@@ -20048,6 +20069,72 @@ var global = {
         } catch (e) {
             return defaultVal ? defaultVal : "";
         }
+    },
+
+
+    /**
+     * 去除数组中的非数字项
+     * @param value
+     * @returns {Array}
+     */
+    removerNumberNaN: function removerNumberNaN() {
+        var array = [];
+
+        for (var _len = arguments.length, value = Array(_len), _key = 0; _key < _len; _key++) {
+            value[_key] = arguments[_key];
+        }
+
+        value.forEach(function (ele) {
+            if (!isNaN(Number(ele))) {
+                array.push(ele);
+            }
+        });
+        return array;
+    },
+
+
+    /**
+     * Math.max 过滤NaN
+     * @param value
+     * @returns {number}
+     */
+    runMax: function runMax() {
+        return Math.max.apply(Math, _toConsumableArray(global.removerNumberNaN.apply(global, arguments)));
+    },
+
+
+    /**
+     * Math.min 过滤NaN
+     * @param value
+     * @returns {number}
+     */
+    runMin: function runMin() {
+        return Math.min.apply(Math, _toConsumableArray(global.removerNumberNaN.apply(global, arguments)));
+    },
+
+
+    /**
+     * 链接字符串
+     * @param value 第一个参数为连接符
+     * @returns {string}
+     */
+    stringConnect: function stringConnect() {
+        var s = null;
+        var text = "";
+
+        for (var _len2 = arguments.length, value = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+            value[_key2] = arguments[_key2];
+        }
+
+        value.forEach(function (val) {
+            if (s === null) {
+                s = val;
+            } else if (val) {
+                if (val && text) text += s;
+                text += val;
+            }
+        });
+        return text;
     }
 };
 
@@ -20194,7 +20281,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "\n.app {\n    width: 10rem;\n    flex: 1;\n}\n.navbar {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.title {\n    font-size: 0.37333rem;\n    color: #ffffff\n}\n.iconr {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.grid {\n    width: 10rem;\n    margin-top: 0.13333rem;\n    height: 7.6rem;\n}\n.grid-item {\n    width: 3.33333rem;\n    height: 2.4rem;\n    align-items: center;\n}\n.item-image {\n    margin-top: 0.13333rem;\n    width: 1.6rem;\n    height: 1.6rem;\n    border-radius: 1.2rem;\n}\n.item-title {\n    width: 3.33333rem;\n    height: 0.66667rem;\n    line-height: 0.66667rem;\n    font-size: 0.32rem;\n    text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.app {\n    width: 10rem;\n    flex: 1;\n}\n.navbar {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.title {\n    font-size: 0.37333rem;\n    color: #ffffff\n}\n.iconr {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.grid {\n    width: 10rem;\n    margin-top: 0.13333rem;\n    height: 7.6rem;\n}\n.grid-item {\n    width: 3.33333rem;\n    height: 2.4rem;\n    align-items: center;\n}\n.item-image {\n    margin-top: 0.13333rem;\n    width: 1.6rem;\n    height: 1.6rem;\n    border-radius: 1.2rem;\n}\n.item-title {\n    width: 3.33333rem;\n    height: 0.66667rem;\n    font-size: 0.32rem;\n    line-height: 0.66667rem;\n    text-align: center;\n}\n", ""]);
 
 // exports
 
@@ -20213,6 +20300,7 @@ Object.defineProperty(exports, "__esModule", {
 var _app = __webpack_require__(11);
 
 var weiui = weex.requireModule('weiui'); //
+//
 //
 //
 //

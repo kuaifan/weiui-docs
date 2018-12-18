@@ -1,4 +1,4 @@
-// { "framework": "Vue"}
+// { "framework": "Vue"} 
 
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -74,19 +74,27 @@
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
 
 var global = {
-    isFunction: function isFunction(value) {
-        return typeof value === "function";
+    isNullOrUndefined: function isNullOrUndefined(obj) {
+        return typeof obj === "undefined" || obj === null;
+    },
+    isFunction: function isFunction(obj) {
+        return global.isNullOrUndefined(obj) ? false : typeof obj === "function";
     },
     isObject: function isObject(obj) {
-        return obj === null ? false : (typeof obj === "undefined" ? "undefined" : _typeof(obj)) === "object";
+        return global.isNullOrUndefined(obj) ? false : (typeof obj === "undefined" ? "undefined" : _typeof(obj)) === "object";
     },
     likeArray: function likeArray(obj) {
-        return typeof obj.length === 'number';
+        return global.isNullOrUndefined(obj) ? false : typeof obj.length === 'number';
+    },
+    isJson: function isJson(obj) {
+        return global.isObject(obj) && !global.likeArray(obj);
     },
     getObject: function getObject(obj, keys) {
         var object = obj;
@@ -482,6 +490,72 @@ var global = {
         } catch (e) {
             return defaultVal ? defaultVal : "";
         }
+    },
+
+
+    /**
+     * 去除数组中的非数字项
+     * @param value
+     * @returns {Array}
+     */
+    removerNumberNaN: function removerNumberNaN() {
+        var array = [];
+
+        for (var _len = arguments.length, value = Array(_len), _key = 0; _key < _len; _key++) {
+            value[_key] = arguments[_key];
+        }
+
+        value.forEach(function (ele) {
+            if (!isNaN(Number(ele))) {
+                array.push(ele);
+            }
+        });
+        return array;
+    },
+
+
+    /**
+     * Math.max 过滤NaN
+     * @param value
+     * @returns {number}
+     */
+    runMax: function runMax() {
+        return Math.max.apply(Math, _toConsumableArray(global.removerNumberNaN.apply(global, arguments)));
+    },
+
+
+    /**
+     * Math.min 过滤NaN
+     * @param value
+     * @returns {number}
+     */
+    runMin: function runMin() {
+        return Math.min.apply(Math, _toConsumableArray(global.removerNumberNaN.apply(global, arguments)));
+    },
+
+
+    /**
+     * 链接字符串
+     * @param value 第一个参数为连接符
+     * @returns {string}
+     */
+    stringConnect: function stringConnect() {
+        var s = null;
+        var text = "";
+
+        for (var _len2 = arguments.length, value = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+            value[_key2] = arguments[_key2];
+        }
+
+        value.forEach(function (val) {
+            if (s === null) {
+                s = val;
+            } else if (val) {
+                if (val && text) text += s;
+                text += val;
+            }
+        });
+        return text;
     }
 };
 
@@ -646,6 +720,7 @@ Object.defineProperty(exports, "__esModule", {
 var _app = __webpack_require__(1);
 
 var weiui = weex.requireModule('weiui'); //
+//
 //
 //
 //
