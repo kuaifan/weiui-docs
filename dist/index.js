@@ -575,12 +575,15 @@ var _global = __webpack_require__(0);
 var weiui = weex.requireModule('weiui');
 
 var app = {
+
+    jshome: 'http://weiui.cc/dist/',
+
     openViewCode: function openViewCode(str) {
         app.openViewUrl("http://weiui.cc/#/" + str);
     },
     openViewUrl: function openViewUrl(url) {
         weiui.openPage({
-            url: 'index_browser.js',
+            url: app.jshome + 'index_browser.js',
             pageType: 'weex',
             statusBarColor: "#3EB4FF",
             params: {
@@ -995,8 +998,6 @@ var _app = __webpack_require__(1);
 
 var weiui = weex.requireModule('weiui');
 
-var jshome = '';
-
 exports.default = {
     data: function data() {
         return {
@@ -1004,129 +1005,129 @@ exports.default = {
                 title: '轮播控件',
                 title_en: 'weiui_banner',
                 icon: 'easel',
-                url: jshome + 'component_banner.js'
+                url: _app.jshome + 'component_banner.js'
             }, {
                 title: '常用按钮',
                 title_en: 'weiui_button',
                 icon: 'android-checkbox-blank',
-                url: jshome + 'component_button.js'
+                url: _app.jshome + 'component_button.js'
             }, {
                 title: '网格容器',
                 title_en: 'weiui_grid',
                 icon: 'grid',
-                url: jshome + 'component_grid.js'
+                url: _app.jshome + 'component_grid.js'
             }, {
                 title: '字体图标',
                 title_en: 'weiui_icon',
                 icon: 'ionic',
-                url: jshome + 'component_icon.js'
+                url: _app.jshome + 'component_icon.js'
             }, {
                 title: '跑马文字',
                 title_en: 'weiui_marquee',
                 icon: 'code-working',
-                url: jshome + 'component_marquee.js'
+                url: _app.jshome + 'component_marquee.js'
             }, {
                 title: '导航栏',
                 title_en: 'weiui_navbar',
                 icon: 'navicon',
-                url: jshome + 'component_navbar.js'
+                url: _app.jshome + 'component_navbar.js'
             }, {
                 title: '列表容器',
                 title_en: 'weiui_list',
                 icon: 'ios-list 90%',
-                url: jshome + 'component_list.js'
+                url: _app.jshome + 'component_list.js'
             }, {
                 title: '滚动文字',
                 title_en: 'weiui_scroll_text',
                 icon: 'more',
-                url: jshome + 'component_scroll_text.js'
+                url: _app.jshome + 'component_scroll_text.js'
             }, {
                 title: '侧边栏',
                 title_en: 'weiui_side_panel',
                 icon: 'ios-box',
-                url: jshome + 'component_side_panel.js'
+                url: _app.jshome + 'component_side_panel.js'
             }, {
                 title: '标签页面',
                 title_en: 'weiui_tabbar',
                 icon: 'filing',
-                url: jshome + 'component_tabbar.js'
+                url: _app.jshome + 'component_tabbar.js'
             }],
 
             module: [{
                 title: '页面功能',
                 title_en: 'newPage',
                 icon: 'ios-book-outline 96%',
-                url: jshome + 'module_page.js'
+                url: _app.jshome + 'module_page.js'
             }, {
                 title: '系统信息',
                 title_en: 'system',
                 icon: 'gear-a',
-                url: jshome + 'module_system.js'
+                url: _app.jshome + 'module_system.js'
             }, {
                 title: '数据缓存',
                 title_en: 'caches',
                 icon: 'soup-can-outline',
-                url: jshome + 'module_caches.js'
+                url: _app.jshome + 'module_caches.js'
             }, {
                 title: '单位转换',
                 title_en: 'weex px',
                 icon: 'ios-calculator',
-                url: jshome + 'module_weexpx.js'
+                url: _app.jshome + 'module_weexpx.js'
             }, {
                 title: '确认对话框',
                 title_en: 'alert',
                 icon: 'android-alert 90%',
-                url: jshome + 'module_alert.js'
+                url: _app.jshome + 'module_alert.js'
             }, {
                 title: '等待弹窗',
                 title_en: 'loading',
                 icon: 'load-d',
-                url: jshome + 'module_loading.js'
+                url: _app.jshome + 'module_loading.js'
             }, {
                 title: '验证弹窗',
                 title_en: 'captcha',
                 icon: 'ios-checkmark-outline',
-                url: jshome + 'module_captcha.js'
+                url: _app.jshome + 'module_captcha.js'
             }, {
                 title: '二维码扫描',
                 title_en: 'scaner',
                 icon: 'tb-scan',
-                url: jshome + 'module_scaner.js'
+                url: _app.jshome + 'module_scaner.js'
             }, {
                 title: '跨域异步请求',
                 title_en: 'ajax',
                 icon: 'pull-request',
-                url: jshome + 'module_ajax.js'
+                url: _app.jshome + 'module_ajax.js'
             }, {
                 title: '剪切板',
                 title_en: 'clipboard',
                 icon: 'ios-copy-outline',
-                url: jshome + 'module_plate.js'
+                url: _app.jshome + 'module_plate.js'
             }, {
                 title: '提示消息',
                 title_en: 'toast',
                 icon: 'ios-barcode-outline',
-                url: jshome + 'module_toast.js'
+                url: _app.jshome + 'module_toast.js'
             }, {
                 title: '广告弹窗',
                 title_en: 'adDialog',
                 icon: 'social-buffer-outline',
-                url: jshome + 'module_ad_dialog.js'
+                url: _app.jshome + 'module_ad_dialog.js'
             }, {
                 title: '城市选择器',
                 title_en: 'citypicker',
                 icon: 'android-pin',
-                url: jshome + 'third_citypicker.js'
+                url: _app.jshome + 'third_citypicker.js'
             }, {
                 title: '图片选择器',
                 title_en: 'pictureSelector',
                 icon: 'ios-camera-outline',
-                url: jshome + 'third_picture.js'
+                url: _app.jshome + 'third_picture.js'
             }, {
                 title: '更多拓展模块',
                 title_en: 'expandModule',
                 icon: 'more',
-                url: jshome + 'index_expand.js'
+                url: _app.jshome + 'index_expand.js'
             }],
 
             third_module: [{

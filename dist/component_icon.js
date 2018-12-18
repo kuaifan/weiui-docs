@@ -575,12 +575,15 @@ var _global = __webpack_require__(0);
 var weiui = weex.requireModule('weiui');
 
 var app = {
+
+    jshome: 'http://weiui.cc/dist/',
+
     openViewCode: function openViewCode(str) {
         app.openViewUrl("http://weiui.cc/#/" + str);
     },
     openViewUrl: function openViewUrl(url) {
         weiui.openPage({
-            url: 'index_browser.js',
+            url: app.jshome + 'index_browser.js',
             pageType: 'weex',
             statusBarColor: "#3EB4FF",
             params: {
