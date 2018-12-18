@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 97);
+/******/ 	return __webpack_require__(__webpack_require__.s = 107);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -576,9 +576,17 @@ var weiui = weex.requireModule('weiui');
 
 var app = {
     openViewCode: function openViewCode(str) {
+        app.openViewUrl("http://weiui.cc/#/" + str);
+    },
+    openViewUrl: function openViewUrl(url) {
         weiui.openPage({
-            url: "http://weiui.cc/#/" + str,
-            pageType: 'web'
+            url: 'index_browser.js',
+            pageType: 'weex',
+            statusBarColor: "#3EB4FF",
+            params: {
+                title: "WEIUI",
+                url: url
+            }
         });
     },
     checkVersion: function checkVersion(compareVersion) {
@@ -593,7 +601,119 @@ module.exports = app;
 
 /***/ }),
 
-/***/ 100:
+/***/ 107:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _module_loading = __webpack_require__(108);
+
+var _module_loading2 = _interopRequireDefault(_module_loading);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_module_loading2.default.el = '#root';
+new Vue(_module_loading2.default);
+
+/***/ }),
+
+/***/ 108:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(109)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(110)
+
+/* template */
+var __vue_template__ = __webpack_require__(111)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/module_loading.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-7f65ea02"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 109:
+/***/ (function(module, exports) {
+
+module.exports = {
+  "app": {
+    "width": "750",
+    "flex": 1
+  },
+  "navbar": {
+    "width": "750",
+    "height": "100"
+  },
+  "title": {
+    "fontSize": "28",
+    "color": "#ffffff"
+  },
+  "iconr": {
+    "width": "100",
+    "height": "100",
+    "color": "#ffffff"
+  },
+  "content": {
+    "width": "750",
+    "flex": 1,
+    "paddingTop": "20"
+  },
+  "list": {
+    "width": "750",
+    "flexDirection": "row"
+  },
+  "item": {
+    "width": "375",
+    "alignItems": "center"
+  },
+  "button": {
+    "width": "320",
+    "fontSize": "24",
+    "textAlign": "center",
+    "marginTop": "30",
+    "paddingTop": "26",
+    "paddingBottom": "26",
+    "paddingLeft": "30",
+    "paddingRight": "30",
+    "color": "#ffffff",
+    "backgroundColor": "#00B4FF"
+  }
+}
+
+/***/ }),
+
+/***/ 110:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -605,7 +725,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _app = __webpack_require__(1);
 
-var weiui = weex.requireModule('weiui'); //
+var _global = __webpack_require__(0);
+
 //
 //
 //
@@ -674,6 +795,16 @@ var weiui = weex.requireModule('weiui'); //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+
+var weiui = weex.requireModule('weiui');
 
 exports.default = {
     data: function data() {
@@ -686,6 +817,13 @@ exports.default = {
         viewCode: function viewCode(str) {
             (0, _app.openViewCode)(str);
         },
+        sliceLists: function sliceLists(data, slice) {
+            var lists = [];
+            for (var i = 0, len = data.length; i < len; i += slice) {
+                lists.push(data.slice(i, i + slice));
+            }
+            return lists;
+        },
         loading: function loading(style) {
             weiui.loading({
                 style: style
@@ -696,7 +834,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 101:
+/***/ 111:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -732,133 +870,28 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["content"],
     attrs: {
       "weiui": {
-        row: 2,
         pullTips: false
       }
     }
-  }, _vm._l((_vm.lists), function(item, index) {
+  }, _vm._l((_vm.sliceLists(_vm.lists, 2)), function(list) {
     return _c('div', {
-      key: index,
-      staticClass: ["item"]
-    }, [_c('text', {
-      staticClass: ["button"],
-      on: {
-        "click": function($event) {
-          _vm.loading(item)
+      staticClass: ["list"]
+    }, _vm._l((list), function(item, index) {
+      return _c('div', {
+        key: index,
+        staticClass: ["item"]
+      }, [_c('text', {
+        staticClass: ["button"],
+        on: {
+          "click": function($event) {
+            _vm.loading(item)
+          }
         }
-      }
-    }, [_vm._v("样式:" + _vm._s(item))])])
+      }, [_vm._v("样式:" + _vm._s(item))])])
+    }))
   }))], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
-
-/***/ }),
-
-/***/ 97:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _module_loading = __webpack_require__(98);
-
-var _module_loading2 = _interopRequireDefault(_module_loading);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_module_loading2.default.el = '#root';
-new Vue(_module_loading2.default);
-
-/***/ }),
-
-/***/ 98:
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* styles */
-__vue_styles__.push(__webpack_require__(99)
-)
-
-/* script */
-__vue_exports__ = __webpack_require__(100)
-
-/* template */
-var __vue_template__ = __webpack_require__(101)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-__vue_options__.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/module_loading.vue"
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-7f65ea02"
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-
-/***/ 99:
-/***/ (function(module, exports) {
-
-module.exports = {
-  "app": {
-    "width": "750",
-    "flex": 1
-  },
-  "navbar": {
-    "width": "750",
-    "height": "100"
-  },
-  "title": {
-    "fontSize": "28",
-    "color": "#ffffff"
-  },
-  "iconr": {
-    "width": "100",
-    "height": "100",
-    "color": "#ffffff"
-  },
-  "content": {
-    "width": "750",
-    "flex": 1,
-    "paddingTop": "20"
-  },
-  "item": {
-    "width": "375",
-    "alignItems": "center"
-  },
-  "button": {
-    "width": "320",
-    "fontSize": "24",
-    "textAlign": "center",
-    "marginTop": "20",
-    "paddingTop": "26",
-    "paddingBottom": "26",
-    "paddingLeft": "30",
-    "paddingRight": "30",
-    "color": "#ffffff",
-    "backgroundColor": "#00B4FF"
-  }
-}
 
 /***/ })
 

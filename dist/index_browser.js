@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 147);
+/******/ 	return __webpack_require__(__webpack_require__.s = 67);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -564,75 +564,21 @@ module.exports = global;
 
 /***/ }),
 
-/***/ 1:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _global = __webpack_require__(0);
-
-var weiui = weex.requireModule('weiui');
-
-var app = {
-    openViewCode: function openViewCode(str) {
-        app.openViewUrl("http://weiui.cc/#/" + str);
-    },
-    openViewUrl: function openViewUrl(url) {
-        weiui.openPage({
-            url: 'index_browser.js',
-            pageType: 'weex',
-            statusBarColor: "#3EB4FF",
-            params: {
-                title: "WEIUI",
-                url: url
-            }
-        });
-    },
-    checkVersion: function checkVersion(compareVersion) {
-        if (typeof weiui.getVersion !== "function") {
-            return false;
-        }
-        return (0, _global.runNum)(weiui.getVersion()) >= (0, _global.runNum)(compareVersion);
-    }
-};
-
-module.exports = app;
-
-/***/ }),
-
-/***/ 147:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _third_picture = __webpack_require__(148);
-
-var _third_picture2 = _interopRequireDefault(_third_picture);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_third_picture2.default.el = '#root';
-new Vue(_third_picture2.default);
-
-/***/ }),
-
-/***/ 148:
+/***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(149)
+__vue_styles__.push(__webpack_require__(3)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(150)
+__vue_exports__ = __webpack_require__(4)
 
 /* template */
-var __vue_template__ = __webpack_require__(151)
+var __vue_template__ = __webpack_require__(5)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -644,10 +590,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/third_picture.vue"
+__vue_options__.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/components/headNav.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-5cdfc7c6"
+__vue_options__._scopeId = "data-v-c6e7507a"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -663,73 +609,282 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 149:
+/***/ 3:
 /***/ (function(module, exports) {
 
 module.exports = {
-  "app": {
+  "nav": {
+    "flexDirection": "row",
+    "alignItems": "center",
     "width": "750",
-    "flex": 1
+    "height": "96"
   },
-  "navbar": {
-    "width": "750",
-    "height": "100"
+  "back": {
+    "position": "absolute",
+    "left": 0,
+    "top": 0,
+    "width": "96",
+    "height": "96",
+    "lineHeight": "96",
+    "textAlign": "center",
+    "fontSize": "38",
+    "color": "#ffffff"
   },
   "title": {
-    "fontSize": "28",
-    "color": "#ffffff"
-  },
-  "iconr": {
-    "width": "100",
-    "height": "100",
-    "color": "#ffffff"
-  },
-  "content": {
     "flex": 1,
+    "flexDirection": "row",
     "justifyContent": "center",
     "alignItems": "center"
   },
-  "list": {
-    "width": "750",
-    "flexDirection": "row",
-    "justifyContent": "center"
+  "title-text": {
+    "fontSize": "32",
+    "fontWeight": "300",
+    "maxWidth": "520",
+    "textOverflow": "ellipsis",
+    "lines": 1
   },
-  "imgbox": {
-    "width": "150",
-    "height": "150"
+  "title-load": {
+    "width": "42",
+    "height": "42",
+    "fontSize": "32",
+    "content": "'load-d spin'"
   },
-  "image": {
-    "width": "130",
-    "height": "130",
-    "marginTop": "10",
-    "marginBottom": "10",
-    "marginRight": "10",
-    "marginLeft": "10"
-  },
-  "button": {
-    "fontSize": "24",
+  "title-right": {
+    "position": "absolute",
+    "right": 0,
+    "top": 0,
+    "height": "96",
+    "lineHeight": "96",
     "textAlign": "center",
-    "marginTop": "20",
-    "paddingTop": "20",
-    "paddingBottom": "20",
-    "paddingLeft": "48",
-    "paddingRight": "48",
+    "fontSize": "26",
     "color": "#ffffff",
-    "backgroundColor": "#00B4FF"
-  },
-  "button2": {
-    "marginTop": "24",
-    "color": "#00B4FF",
-    "fontSize": "24",
-    "borderBottomWidth": "1",
-    "borderBottomStyle": "solid",
-    "borderBottomColor": "#00B4FF"
+    "paddingTop": 0,
+    "paddingRight": "26",
+    "paddingBottom": 0,
+    "paddingLeft": "26"
   }
 }
 
 /***/ }),
 
-/***/ 150:
+/***/ 4:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var weiui = weex.requireModule('weiui');
+
+exports.default = {
+    name: 'head-nav',
+
+    props: {
+        title: {
+            type: String,
+            default: ''
+        },
+
+        loading: {
+            type: Boolean,
+            default: false
+        },
+
+        back: {
+            type: Boolean,
+            default: true
+        },
+
+        backIcon: {
+            type: String,
+            default: 'tb-back'
+        },
+
+        rightTitle: {
+            type: String,
+            default: ''
+        },
+
+        color: {
+            type: String,
+            default: '#FFFFFF'
+        },
+
+        backgroundColor: {
+            type: String,
+            default: '#3EB4FF'
+        }
+    },
+
+    methods: {
+        goBack: function goBack() {
+            weiui.closePage();
+        },
+        rightClick: function rightClick() {
+            this.$emit('rightClick');
+        }
+    }
+};
+
+/***/ }),
+
+/***/ 5:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["nav"],
+    style: {
+      backgroundColor: _vm.backgroundColor
+    }
+  }, [_c('div', {
+    staticClass: ["title"]
+  }, [_c('text', {
+    staticClass: ["title-text"],
+    style: {
+      color: _vm.color
+    }
+  }, [_vm._v(_vm._s(_vm.title))]), (_vm.loading) ? _c('weiui_icon', {
+    staticClass: ["title-load"],
+    style: {
+      color: _vm.color
+    }
+  }) : _vm._e()], 1), (_vm.rightTitle !== '') ? _c('text', {
+    staticClass: ["title-right"],
+    on: {
+      "click": _vm.rightClick
+    }
+  }, [_vm._v(_vm._s(_vm.rightTitle))]) : _vm._e(), (_vm.back) ? _c('weiui_icon', {
+    staticClass: ["back"],
+    attrs: {
+      "content": _vm.backIcon
+    },
+    on: {
+      "click": _vm.goBack
+    }
+  }) : _vm._e()], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+
+/***/ 67:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _index_browser = __webpack_require__(68);
+
+var _index_browser2 = _interopRequireDefault(_index_browser);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_index_browser2.default.el = '#root';
+new Vue(_index_browser2.default);
+
+/***/ }),
+
+/***/ 68:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* styles */
+__vue_styles__.push(__webpack_require__(69)
+)
+
+/* script */
+__vue_exports__ = __webpack_require__(70)
+
+/* template */
+var __vue_template__ = __webpack_require__(71)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/index_browser.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-2a06a032"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 69:
+/***/ (function(module, exports) {
+
+module.exports = {
+  "app": {
+    "flex": 1
+  },
+  "bottom": {
+    "flexDirection": "row",
+    "justifyContent": "center",
+    "alignItems": "center",
+    "width": "750",
+    "height": "98",
+    "backgroundColor": "#ffffff",
+    "borderTopWidth": "1",
+    "borderTopStyle": "solid",
+    "borderTopColor": "#EAEAEA"
+  },
+  "bottom-icon": {
+    "width": "180",
+    "height": "98",
+    "fontSize": "50",
+    "marginLeft": "20",
+    "marginRight": "20",
+    "color": "#242424"
+  },
+  "bottom-icon-gray": {
+    "width": "180",
+    "height": "98",
+    "fontSize": "50",
+    "marginLeft": "20",
+    "marginRight": "20",
+    "color": "#e4e4e4"
+  }
+}
+
+/***/ }),
+
+/***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -739,65 +894,14 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _app = __webpack_require__(1);
-
 var _global = __webpack_require__(0);
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+var _headNav = __webpack_require__(2);
+
+var _headNav2 = _interopRequireDefault(_headNav);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -847,134 +951,133 @@ var _global = __webpack_require__(0);
 //
 //
 
-var weiui_picture = weex.requireModule('weiui_picture');
+var weiui = weex.requireModule('weiui');
 
 exports.default = {
+    components: { HeadNav: _headNav2.default },
     data: function data() {
         return {
-            lists: []
+            loadIng: 1,
+
+            title: '',
+            url: '',
+            fixedTitle: false,
+            hideBottomNav: false,
+
+            canGoBack: false,
+            canGoForward: false
         };
     },
+    mounted: function mounted() {},
+
 
     methods: {
-        viewCode: function viewCode(str) {
-            (0, _app.openViewCode)(str);
-        },
-        sliceLists: function sliceLists(data, slice) {
-            var lists = [];
-            var j = 0;
-
-            var _loop = function _loop(i, len) {
-                var temp = [];
-                (0, _global.each)(data.slice(i, i + slice), function (index, item) {
-                    item.position = j;
-                    temp.push(item);
-                    j++;
-                });
-                lists.push(temp);
-            };
-
-            for (var i = 0, len = data.length; i < len; i += slice) {
-                _loop(i, len);
-            }
-            return lists;
-        },
-        openPicture: function openPicture() {
+        lifecycle: function lifecycle(res) {},
+        apiReady: function apiReady() {
             var _this = this;
 
-            weiui_picture.create({
-                gallery: 1,
-                selected: this.lists
-            }, function (result) {
-                if (result.status === "success") {
-                    _this.lists = result.lists;
-                }
+            this.title = (0, _global.getObject)(weex.config.params, 'title');
+            this.url = (0, _global.getObject)(weex.config.params, 'url');
+            this.fixedTitle = (0, _global.getObject)(weex.config.params, 'fixedTitle') === true;
+            this.hideBottomNav = (0, _global.getObject)(weex.config.params, 'hideBottomNav') === true;
+            this.$refs.myWebview.setProgressbarVisibility((0, _global.getObject)(weex.config.params, 'progressbarVisibility') !== false);
+            this.$refs.myWebview.setUrl(this.url);
+            setTimeout(function () {
+                _this.loadIng--;
+            }, 100);
+        },
+        stateChanged: function stateChanged(res) {
+            switch (res.status) {
+                case 'start':
+                    this.loadIng++;
+                    break;
+
+                case 'success':
+                case 'error':
+                    this.loadIng--;
+                    this.canGo();
+                    break;
+
+                case 'title':
+                    if (this.fixedTitle === false) {
+                        this.title = res.title;
+                    }
+                    break;
+            }
+        },
+        goBack: function goBack() {
+            weiui.closePage();
+        },
+        webLeft: function webLeft() {
+            var _this2 = this;
+
+            this.$refs.myWebview.goBack(function (res) {
+                _this2.canGo();
             });
         },
-        pictureView: function pictureView(position) {
-            weiui_picture.picturePreview(position, this.lists);
+        webRight: function webRight() {
+            var _this3 = this;
+
+            this.$refs.myWebview.goForward(function (res) {
+                _this3.canGo();
+            });
+        },
+        canGo: function canGo() {
+            var _this4 = this;
+
+            this.$refs.myWebview.canGoBack(function (result) {
+                _this4.canGoBack = result;
+            });
+            this.$refs.myWebview.canGoForward(function (result) {
+                _this4.canGoForward = result;
+            });
         }
     }
 };
 
 /***/ }),
 
-/***/ 151:
+/***/ 71:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: ["app"]
-  }, [_c('weiui_navbar', {
-    staticClass: ["navbar"]
-  }, [_c('weiui_navbar_item', {
-    attrs: {
-      "type": "back"
-    }
-  }), _c('weiui_navbar_item', {
-    attrs: {
-      "type": "title"
-    }
-  }, [_c('text', {
-    staticClass: ["title"]
-  }, [_vm._v("图片选择器")])]), _c('weiui_navbar_item', {
-    attrs: {
-      "type": "right"
-    },
+    staticClass: ["app"],
     on: {
-      "click": function($event) {
-        _vm.viewCode('module/third/pictureSelector')
-      }
+      "lifecycle": _vm.lifecycle
     }
+  }, [_c('head-nav', {
+    attrs: {
+      "title": _vm.title,
+      "loading": _vm.loadIng > 0,
+      "backIcon": "tb-close"
+    }
+  }), _c('weiui_webview', {
+    ref: "myWebview",
+    staticClass: ["app"],
+    on: {
+      "ready": _vm.apiReady,
+      "stateChanged": _vm.stateChanged
+    }
+  }), (!_vm.hideBottomNav && (_vm.canGoBack || _vm.canGoForward)) ? _c('div', {
+    staticClass: ["bottom"]
   }, [_c('weiui_icon', {
-    staticClass: ["iconr"],
+    class: [_vm.canGoBack ? 'bottom-icon' : 'bottom-icon-gray'],
     attrs: {
-      "content": "code-working"
-    }
-  })], 1)], 1), _c('div', {
-    staticClass: ["content"]
-  }, [(_vm.lists.length > 0) ? _c('weiui_list', {
-    style: {
-      width: '750px',
-      height: (Math.ceil(_vm.lists.length / 5) * 150) + 'px'
+      "content": "ios-arrow-left"
     },
+    on: {
+      "click": _vm.webLeft
+    }
+  }), _c('weiui_icon', {
+    class: [_vm.canGoForward ? 'bottom-icon' : 'bottom-icon-gray'],
     attrs: {
-      "weiui": {
-        pullTips: false
-      }
-    }
-  }, _vm._l((_vm.sliceLists(_vm.lists, 5)), function(list) {
-    return _c('div', {
-      staticClass: ["list"]
-    }, _vm._l((list), function(item) {
-      return _c('div', {
-        staticClass: ["imgbox"],
-        on: {
-          "click": function($event) {
-            _vm.pictureView(item.position)
-          }
-        }
-      }, [_c('image', {
-        staticClass: ["image"],
-        attrs: {
-          "src": 'file://' + item.path,
-          "resize": "cover"
-        }
-      })])
-    }))
-  })) : _vm._e(), _c('text', {
-    staticClass: ["button"],
+      "content": "ios-arrow-right"
+    },
     on: {
-      "click": _vm.openPicture
+      "click": _vm.webRight
     }
-  }, [_vm._v("选择照片")]), (_vm.lists.length > 0) ? _c('text', {
-    staticClass: ["button2"],
-    on: {
-      "click": function($event) {
-        _vm.lists = []
-      }
-    }
-  }, [_vm._v("清空选择")]) : _vm._e()], 1)], 1)
+  })], 1) : _vm._e()], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

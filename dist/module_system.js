@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 117);
+/******/ 	return __webpack_require__(__webpack_require__.s = 127);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -576,9 +576,17 @@ var weiui = weex.requireModule('weiui');
 
 var app = {
     openViewCode: function openViewCode(str) {
+        app.openViewUrl("http://weiui.cc/#/" + str);
+    },
+    openViewUrl: function openViewUrl(url) {
         weiui.openPage({
-            url: "http://weiui.cc/#/" + str,
-            pageType: 'web'
+            url: 'index_browser.js',
+            pageType: 'weex',
+            statusBarColor: "#3EB4FF",
+            params: {
+                title: "WEIUI",
+                url: url
+            }
         });
     },
     checkVersion: function checkVersion(compareVersion) {
@@ -593,13 +601,13 @@ module.exports = app;
 
 /***/ }),
 
-/***/ 117:
+/***/ 127:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _module_system = __webpack_require__(118);
+var _module_system = __webpack_require__(128);
 
 var _module_system2 = _interopRequireDefault(_module_system);
 
@@ -610,21 +618,21 @@ new Vue(_module_system2.default);
 
 /***/ }),
 
-/***/ 118:
+/***/ 128:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(119)
+__vue_styles__.push(__webpack_require__(129)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(120)
+__vue_exports__ = __webpack_require__(130)
 
 /* template */
-var __vue_template__ = __webpack_require__(121)
+var __vue_template__ = __webpack_require__(131)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -655,7 +663,7 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 119:
+/***/ 129:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -690,7 +698,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 120:
+/***/ 130:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -786,7 +794,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 121:
+/***/ 131:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

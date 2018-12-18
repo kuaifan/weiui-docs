@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 90);
+/******/ 	return __webpack_require__(__webpack_require__.s = 102);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -783,7 +783,1404 @@ module.exports = global;
 
 /***/ }),
 
+/***/ 102:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _vue = __webpack_require__(5);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _weexVueRender = __webpack_require__(8);
+
+var _weexVueRender2 = _interopRequireDefault(_weexVueRender);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_weexVueRender2.default.init(_vue2.default);
+
+var App = __webpack_require__(103);
+new _vue2.default(_vue2.default.util.extend({ el: '#root' }, App));
+
+/***/ }),
+
+/***/ 103:
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(104)
+}
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(106),
+  /* template */
+  __webpack_require__(107),
+  /* styles */
+  injectStyle,
+  /* scopeId */
+  "data-v-dad4f304",
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/index.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-dad4f304", Component.options)
+  } else {
+    hotAPI.reload("data-v-dad4f304", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ 104:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(105);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("30b5e236", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dad4f304\",\"scoped\":true,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
+     var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dad4f304\",\"scoped\":true,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 105:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.app[data-v-dad4f304] {\n    flex: 1;\n}\n.navbar[data-v-dad4f304] {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.navbar-title[data-v-dad4f304] {\n    font-size: 0.42667rem;\n    color: #ffffff;\n}\n.navbar-icon[data-v-dad4f304] {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.list[data-v-dad4f304] {\n    width: 10rem;\n    flex: 1;\n}\n.list-title-box[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n}\n.list-title[data-v-dad4f304] {\n    padding-top: 0.48rem;\n    padding-right: 0.32rem;\n    padding-bottom: 0.32rem;\n    padding-left: 0.32rem;\n    font-size: 0.37333rem;\n    color: #757575;\n}\n.list-subtitle[data-v-dad4f304] {\n    position: absolute;\n    right: 0.32rem;\n    bottom: 0.32rem;\n    font-size: 0.32rem;\n}\n.list-item[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    height: 1.33333rem;\n    width: 10rem;\n    padding-left: 0.26667rem;\n    padding-right: 0.26667rem;\n    border-top-width: 1px;\n    border-top-color: #e8e8e8;\n    border-top-style: solid;\n}\n.list-item-left[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n    justify-content: flex-start;\n    height: 1.33333rem;\n    flex: 1;\n}\n.list-left-icon[data-v-dad4f304] {\n    width: 0.8rem;\n    height: 0.8rem;\n    color: #3EB4FF;\n}\n.list-left-title[data-v-dad4f304] {\n    color: #242424;\n    padding-left: 0.16rem;\n    width: 5.06667rem;\n    font-size: 0.34667rem;\n    text-overflow: ellipsis;\n    lines: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    -webkit-line-clamp: 1;\n}\n.list-left-title-history[data-v-dad4f304] {\n    color: #242424;\n    padding-left: 0.16rem;\n    width: 8rem;\n    font-size: 0.34667rem;\n    text-overflow: ellipsis;\n    lines: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    -webkit-line-clamp: 1;\n}\n.list-right-title[data-v-dad4f304] {\n    color: #a2a2a2;\n    padding-right: 0.04rem;\n    font-size: 0.29333rem;\n    text-overflow: ellipsis;\n    lines: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    -webkit-line-clamp: 1;\n}\n.list-right-icon[data-v-dad4f304] {\n    width: 0.53333rem;\n    height: 0.53333rem;\n    color: #C9C9CE;\n}\n.list-item-right[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n    justify-content: flex-end;\n    height: 1.33333rem;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 106:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _global = __webpack_require__(10);
+
+var _app = __webpack_require__(11);
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var weiui = weex.requireModule('weiui');
+
+var jshome = '';
+
+exports.default = {
+    data: function data() {
+        return {
+            components: [{
+                title: '轮播控件',
+                title_en: 'weiui_banner',
+                icon: 'easel',
+                url: jshome + 'component_banner.js'
+            }, {
+                title: '常用按钮',
+                title_en: 'weiui_button',
+                icon: 'android-checkbox-blank',
+                url: jshome + 'component_button.js'
+            }, {
+                title: '网格容器',
+                title_en: 'weiui_grid',
+                icon: 'grid',
+                url: jshome + 'component_grid.js'
+            }, {
+                title: '字体图标',
+                title_en: 'weiui_icon',
+                icon: 'ionic',
+                url: jshome + 'component_icon.js'
+            }, {
+                title: '跑马文字',
+                title_en: 'weiui_marquee',
+                icon: 'code-working',
+                url: jshome + 'component_marquee.js'
+            }, {
+                title: '导航栏',
+                title_en: 'weiui_navbar',
+                icon: 'navicon',
+                url: jshome + 'component_navbar.js'
+            }, {
+                title: '列表容器',
+                title_en: 'weiui_list',
+                icon: 'ios-list 90%',
+                url: jshome + 'component_list.js'
+            }, {
+                title: '滚动文字',
+                title_en: 'weiui_scroll_text',
+                icon: 'more',
+                url: jshome + 'component_scroll_text.js'
+            }, {
+                title: '侧边栏',
+                title_en: 'weiui_side_panel',
+                icon: 'ios-box',
+                url: jshome + 'component_side_panel.js'
+            }, {
+                title: '标签页面',
+                title_en: 'weiui_tabbar',
+                icon: 'filing',
+                url: jshome + 'component_tabbar.js'
+            }],
+
+            module: [{
+                title: '页面功能',
+                title_en: 'newPage',
+                icon: 'ios-book-outline 96%',
+                url: jshome + 'module_page.js'
+            }, {
+                title: '系统信息',
+                title_en: 'system',
+                icon: 'gear-a',
+                url: jshome + 'module_system.js'
+            }, {
+                title: '数据缓存',
+                title_en: 'caches',
+                icon: 'soup-can-outline',
+                url: jshome + 'module_caches.js'
+            }, {
+                title: '单位转换',
+                title_en: 'weex px',
+                icon: 'ios-calculator',
+                url: jshome + 'module_weexpx.js'
+            }, {
+                title: '确认对话框',
+                title_en: 'alert',
+                icon: 'android-alert 90%',
+                url: jshome + 'module_alert.js'
+            }, {
+                title: '等待弹窗',
+                title_en: 'loading',
+                icon: 'load-d',
+                url: jshome + 'module_loading.js'
+            }, {
+                title: '验证弹窗',
+                title_en: 'captcha',
+                icon: 'ios-checkmark-outline',
+                url: jshome + 'module_captcha.js'
+            }, {
+                title: '二维码扫描',
+                title_en: 'scaner',
+                icon: 'tb-scan',
+                url: jshome + 'module_scaner.js'
+            }, {
+                title: '跨域异步请求',
+                title_en: 'ajax',
+                icon: 'pull-request',
+                url: jshome + 'module_ajax.js'
+            }, {
+                title: '剪切板',
+                title_en: 'clipboard',
+                icon: 'ios-copy-outline',
+                url: jshome + 'module_plate.js'
+            }, {
+                title: '提示消息',
+                title_en: 'toast',
+                icon: 'ios-barcode-outline',
+                url: jshome + 'module_toast.js'
+            }, {
+                title: '广告弹窗',
+                title_en: 'adDialog',
+                icon: 'social-buffer-outline',
+                url: jshome + 'module_ad_dialog.js'
+            }, {
+                title: '城市选择器',
+                title_en: 'citypicker',
+                icon: 'android-pin',
+                url: jshome + 'third_citypicker.js'
+            }, {
+                title: '图片选择器',
+                title_en: 'pictureSelector',
+                icon: 'ios-camera-outline',
+                url: jshome + 'third_picture.js'
+            }, {
+                title: '更多拓展模块',
+                title_en: 'expandModule',
+                icon: 'more',
+                url: jshome + 'index_expand.js'
+            }],
+
+            third_module: [{
+                title: '融云通信模块',
+                title_en: 'rongcloud',
+                icon: 'tb-community',
+                url: 'rongcloud'
+            }, {
+                title: '友盟推送模块',
+                title_en: 'umeng',
+                icon: 'android-send',
+                url: 'umeng'
+            }, {
+                title: '第三方支付',
+                title_en: 'pay',
+                icon: 'tb-sponsor',
+                url: 'pay'
+            }],
+
+            about_lists: [{
+                title: '开发文档',
+                title_en: 'document',
+                icon: 'code-working',
+                url: 'http://weiui.cc'
+            }, {
+                title: '托管平台',
+                title_en: 'github',
+                icon: 'social-github-outline',
+                url: 'https://github.com/kuaifan/weiui'
+            }, {
+                title: '个人博客',
+                title_en: 'http://kuaifan.vip',
+                icon: 'social-rss-outline',
+                url: 'http://kuaifan.vip'
+            }, {
+                title: 'WEIUI版本',
+                title_en: weiui.getVersionName(),
+                icon: 'ios-information-outline',
+                url: 'http://weiui.cc'
+            }],
+
+            history: []
+        };
+    },
+    mounted: function mounted() {
+        this.history = (0, _global.jsonParse)(weiui.getCachesString("scaner", []), []);
+        //
+        weiui.setPageBackPressed(null, function () {
+            weiui.confirm({
+                title: "温馨提示",
+                message: "你确定要退出WEIUI吗？",
+                buttons: ["取消", "确定"]
+            }, function (result) {
+                if (result.status === "click" && result.title === "确定") {
+                    weiui.closePage(null);
+                }
+            });
+        });
+    },
+
+
+    methods: {
+        scaner: function scaner() {
+            var _this = this;
+
+            weiui.openScaner(null, function (res) {
+                if (res.status === "success") {
+                    _this.history.unshift(res.text);
+                    weiui.setCachesString("scaner", (0, _global.jsonStringify)(_this.history), 0);
+                    _this.openAuto(res.text);
+                }
+            });
+        },
+        refresh: function refresh() {
+            weiui.reloadPage();
+        },
+        clearHistory: function clearHistory() {
+            var _this2 = this;
+
+            weiui.confirm({
+                title: "删除提示",
+                message: "你确定要删除扫码记录吗？",
+                buttons: ["取消", "确定"]
+            }, function (result) {
+                if (result.status === "click" && result.title === "确定") {
+                    _this2.history = [];
+                    weiui.setCachesString("scaner", (0, _global.jsonStringify)(_this2.history), 0);
+                }
+            });
+        },
+        openUrl: function openUrl(url) {
+            weiui.openPage({
+                url: url,
+                pageType: 'weex'
+            });
+        },
+        openWeb: function openWeb(url) {
+            (0, _app.openViewUrl)(url);
+        },
+        openThird: function openThird(url) {
+            (0, _app.openViewCode)("module/third/" + url);
+        },
+        openAuto: function openAuto(url) {
+            weiui.openPage({
+                url: url,
+                pageType: 'auto'
+            });
+        }
+    }
+};
+
+/***/ }),
+
+/***/ 107:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "app weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('weiui_navbar', {
+    staticClass: "navbar",
+    attrs: {}
+  }, [_c('weiui_navbar_item', {
+    attrs: {
+      "type": "left",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.scaner($event)
+      }
+    }
+  }, [_c('weiui_icon', {
+    staticClass: "navbar-icon",
+    attrs: {
+      "weiui": {
+        content: 'tb-scan'
+      }
+    }
+  })], 1), _vm._v(" "), _c('weiui_navbar_item', {
+    attrs: {
+      "type": "title"
+    }
+  }, [_c('p', {
+    staticClass: "navbar-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("WEIUI")])]), _vm._v(" "), _c('weiui_navbar_item', {
+    attrs: {
+      "type": "right",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.refresh($event)
+      }
+    }
+  }, [_c('weiui_icon', {
+    staticClass: "navbar-icon",
+    attrs: {
+      "weiui": {
+        content: 'refresh'
+      }
+    }
+  })], 1)], 1), _vm._v(" "), _c('scroller', {
+    staticClass: "list",
+    attrs: {}
+  }, [_c('p', {
+    staticClass: "list-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("Components")]), _vm._v(" "), _vm._l((_vm.components), function(item, index) {
+    return _c('div', {
+      key: index,
+      staticClass: "list-item weex-ct weex-div",
+      attrs: {
+        "weex-type": "div",
+        "data-evt-click": ""
+      },
+      on: {
+        "click": _vm.$stopOuterA,
+        "weex$tap": function($event) {
+          $event.stopPropagation();
+          _vm.openUrl(item.url)
+        }
+      }
+    }, [_c('div', {
+      staticClass: "list-item-left weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('weiui_icon', {
+      staticClass: "list-left-icon",
+      attrs: {
+        "weiui": {
+          content: item.icon
+        }
+      }
+    }), _vm._v(" "), _c('p', {
+      staticClass: "list-left-title weex-el weex-text",
+      attrs: {
+        "weex-type": "text"
+      }
+    }, [_vm._v(_vm._s(item.title))])], 1), _vm._v(" "), _c('div', {
+      staticClass: "list-item-right weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('p', {
+      staticClass: "list-right-title weex-el weex-text",
+      attrs: {
+        "weex-type": "text"
+      }
+    }, [_vm._v("<" + _vm._s(item.title_en) + ">")]), _vm._v(" "), _c('weiui_icon', {
+      staticClass: "list-right-icon",
+      attrs: {
+        "weiui": {
+          content: 'ios-arrow-right 70%'
+        }
+      }
+    })], 1)])
+  }), _vm._v(" "), _c('p', {
+    staticClass: "list-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("Module")]), _vm._v(" "), _vm._l((_vm.module), function(item, index) {
+    return _c('div', {
+      key: index,
+      staticClass: "list-item weex-ct weex-div",
+      attrs: {
+        "weex-type": "div",
+        "data-evt-click": ""
+      },
+      on: {
+        "click": _vm.$stopOuterA,
+        "weex$tap": function($event) {
+          $event.stopPropagation();
+          _vm.openUrl(item.url)
+        }
+      }
+    }, [_c('div', {
+      staticClass: "list-item-left weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('weiui_icon', {
+      staticClass: "list-left-icon",
+      attrs: {
+        "weiui": {
+          content: item.icon
+        }
+      }
+    }), _vm._v(" "), _c('p', {
+      staticClass: "list-left-title weex-el weex-text",
+      attrs: {
+        "weex-type": "text"
+      }
+    }, [_vm._v(_vm._s(item.title))])], 1), _vm._v(" "), _c('div', {
+      staticClass: "list-item-right weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('p', {
+      staticClass: "list-right-title weex-el weex-text",
+      attrs: {
+        "weex-type": "text"
+      }
+    }, [_vm._v(_vm._s(item.title_en))]), _vm._v(" "), _c('weiui_icon', {
+      staticClass: "list-right-icon",
+      attrs: {
+        "weiui": {
+          content: 'ios-arrow-right 70%'
+        }
+      }
+    })], 1)])
+  }), _vm._v(" "), _c('p', {
+    staticClass: "list-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("Third Module")]), _vm._v(" "), _vm._l((_vm.third_module), function(item, index) {
+    return _c('div', {
+      key: index,
+      staticClass: "list-item weex-ct weex-div",
+      attrs: {
+        "weex-type": "div",
+        "data-evt-click": ""
+      },
+      on: {
+        "click": _vm.$stopOuterA,
+        "weex$tap": function($event) {
+          $event.stopPropagation();
+          _vm.openThird(item.url)
+        }
+      }
+    }, [_c('div', {
+      staticClass: "list-item-left weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('weiui_icon', {
+      staticClass: "list-left-icon",
+      attrs: {
+        "weiui": {
+          content: item.icon
+        }
+      }
+    }), _vm._v(" "), _c('p', {
+      staticClass: "list-left-title weex-el weex-text",
+      attrs: {
+        "weex-type": "text"
+      }
+    }, [_vm._v(_vm._s(item.title))])], 1), _vm._v(" "), _c('div', {
+      staticClass: "list-item-right weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('p', {
+      staticClass: "list-right-title weex-el weex-text",
+      attrs: {
+        "weex-type": "text"
+      }
+    }, [_vm._v(_vm._s(item.title_en))]), _vm._v(" "), _c('weiui_icon', {
+      staticClass: "list-right-icon",
+      attrs: {
+        "weiui": {
+          content: 'ios-arrow-right 70%'
+        }
+      }
+    })], 1)])
+  }), _vm._v(" "), _c('p', {
+    staticClass: "list-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("About Weiui")]), _vm._v(" "), _vm._l((_vm.about_lists), function(item, index) {
+    return _c('div', {
+      key: index,
+      staticClass: "list-item weex-ct weex-div",
+      attrs: {
+        "weex-type": "div",
+        "data-evt-click": ""
+      },
+      on: {
+        "click": _vm.$stopOuterA,
+        "weex$tap": function($event) {
+          $event.stopPropagation();
+          _vm.openWeb(item.url)
+        }
+      }
+    }, [_c('div', {
+      staticClass: "list-item-left weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('weiui_icon', {
+      staticClass: "list-left-icon",
+      attrs: {
+        "weiui": {
+          content: item.icon
+        }
+      }
+    }), _vm._v(" "), _c('p', {
+      staticClass: "list-left-title weex-el weex-text",
+      attrs: {
+        "weex-type": "text"
+      }
+    }, [_vm._v(_vm._s(item.title))])], 1), _vm._v(" "), _c('div', {
+      staticClass: "list-item-right weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('p', {
+      staticClass: "list-right-title weex-el weex-text",
+      attrs: {
+        "weex-type": "text"
+      }
+    }, [_vm._v(_vm._s(item.title_en))]), _vm._v(" "), _c('weiui_icon', {
+      staticClass: "list-right-icon",
+      attrs: {
+        "weiui": {
+          content: 'ios-arrow-right 70%'
+        }
+      }
+    })], 1)])
+  }), _vm._v(" "), (_vm.history.length > 0) ? _c('div', {
+    staticClass: "list-title-box weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, [_c('p', {
+    staticClass: "list-title weex-el weex-text",
+    attrs: {
+      "weex-type": "text"
+    }
+  }, [_vm._v("扫码历史")]), _vm._v(" "), _c('p', {
+    staticClass: "list-subtitle weex-el weex-text",
+    attrs: {
+      "weex-type": "text",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        _vm.clearHistory()
+      }
+    }
+  }, [_vm._v("清空历史")])]) : _vm._e(), _vm._v(" "), (_vm.history.length > 0) ? _c('div', {
+    staticClass: " weex-ct weex-div",
+    attrs: {
+      "weex-type": "div"
+    }
+  }, _vm._l((_vm.history), function(text, index) {
+    return _c('div', {
+      key: index,
+      staticClass: "list-item weex-ct weex-div",
+      attrs: {
+        "weex-type": "div",
+        "data-evt-click": ""
+      },
+      on: {
+        "click": _vm.$stopOuterA,
+        "weex$tap": function($event) {
+          $event.stopPropagation();
+          _vm.openAuto(text)
+        }
+      }
+    }, [_c('div', {
+      staticClass: "list-item-left weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('weiui_icon', {
+      staticClass: "list-left-icon",
+      attrs: {
+        "weiui": {
+          content: 'ionic'
+        }
+      }
+    }), _vm._v(" "), _c('p', {
+      staticClass: "list-left-title-history weex-el weex-text",
+      attrs: {
+        "weex-type": "text"
+      }
+    }, [_vm._v(_vm._s(text))])], 1), _vm._v(" "), _c('div', {
+      staticClass: "list-item-right weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('weiui_icon', {
+      staticClass: "list-right-icon",
+      attrs: {
+        "weiui": {
+          content: 'ios-arrow-right 70%'
+        }
+      }
+    })], 1)])
+  })) : _vm._e()], 2)], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-dad4f304", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ 11:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _global = __webpack_require__(10);
+
+var weiui = weex.requireModule('weiui');
+
+var app = {
+    openViewCode: function openViewCode(str) {
+        app.openViewUrl("http://weiui.cc/#/" + str);
+    },
+    openViewUrl: function openViewUrl(url) {
+        weiui.openPage({
+            url: 'index_browser.js',
+            pageType: 'weex',
+            statusBarColor: "#3EB4FF",
+            params: {
+                title: "WEIUI",
+                url: url
+            }
+        });
+    },
+    checkVersion: function checkVersion(compareVersion) {
+        if (typeof weiui.getVersion !== "function") {
+            return false;
+        }
+        return (0, _global.runNum)(weiui.getVersion()) >= (0, _global.runNum)(compareVersion);
+    }
+};
+
+module.exports = app;
+
+/***/ }),
+
 /***/ 2:
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
+/***/ 3:
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+  Modified by Evan You @yyx990803
+*/
+
+var hasDocument = typeof document !== 'undefined'
+
+if (typeof DEBUG !== 'undefined' && DEBUG) {
+  if (!hasDocument) {
+    throw new Error(
+    'vue-style-loader cannot be used in a non-browser environment. ' +
+    "Use { target: 'node' } in your Webpack config to indicate a server-rendering environment."
+  ) }
+}
+
+var listToStyles = __webpack_require__(9)
+
+/*
+type StyleObject = {
+  id: number;
+  parts: Array<StyleObjectPart>
+}
+
+type StyleObjectPart = {
+  css: string;
+  media: string;
+  sourceMap: ?string
+}
+*/
+
+var stylesInDom = {/*
+  [id: number]: {
+    id: number,
+    refs: number,
+    parts: Array<(obj?: StyleObjectPart) => void>
+  }
+*/}
+
+var head = hasDocument && (document.head || document.getElementsByTagName('head')[0])
+var singletonElement = null
+var singletonCounter = 0
+var isProduction = false
+var noop = function () {}
+var options = null
+var ssrIdKey = 'data-vue-ssr-id'
+
+// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+// tags it will allow on a page
+var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
+
+module.exports = function (parentId, list, _isProduction, _options) {
+  isProduction = _isProduction
+
+  options = _options || {}
+
+  var styles = listToStyles(parentId, list)
+  addStylesToDom(styles)
+
+  return function update (newList) {
+    var mayRemove = []
+    for (var i = 0; i < styles.length; i++) {
+      var item = styles[i]
+      var domStyle = stylesInDom[item.id]
+      domStyle.refs--
+      mayRemove.push(domStyle)
+    }
+    if (newList) {
+      styles = listToStyles(parentId, newList)
+      addStylesToDom(styles)
+    } else {
+      styles = []
+    }
+    for (var i = 0; i < mayRemove.length; i++) {
+      var domStyle = mayRemove[i]
+      if (domStyle.refs === 0) {
+        for (var j = 0; j < domStyle.parts.length; j++) {
+          domStyle.parts[j]()
+        }
+        delete stylesInDom[domStyle.id]
+      }
+    }
+  }
+}
+
+function addStylesToDom (styles /* Array<StyleObject> */) {
+  for (var i = 0; i < styles.length; i++) {
+    var item = styles[i]
+    var domStyle = stylesInDom[item.id]
+    if (domStyle) {
+      domStyle.refs++
+      for (var j = 0; j < domStyle.parts.length; j++) {
+        domStyle.parts[j](item.parts[j])
+      }
+      for (; j < item.parts.length; j++) {
+        domStyle.parts.push(addStyle(item.parts[j]))
+      }
+      if (domStyle.parts.length > item.parts.length) {
+        domStyle.parts.length = item.parts.length
+      }
+    } else {
+      var parts = []
+      for (var j = 0; j < item.parts.length; j++) {
+        parts.push(addStyle(item.parts[j]))
+      }
+      stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts }
+    }
+  }
+}
+
+function createStyleElement () {
+  var styleElement = document.createElement('style')
+  styleElement.type = 'text/css'
+  head.appendChild(styleElement)
+  return styleElement
+}
+
+function addStyle (obj /* StyleObjectPart */) {
+  var update, remove
+  var styleElement = document.querySelector('style[' + ssrIdKey + '~="' + obj.id + '"]')
+
+  if (styleElement) {
+    if (isProduction) {
+      // has SSR styles and in production mode.
+      // simply do nothing.
+      return noop
+    } else {
+      // has SSR styles but in dev mode.
+      // for some reason Chrome can't handle source map in server-rendered
+      // style tags - source maps in <style> only works if the style tag is
+      // created and inserted dynamically. So we remove the server rendered
+      // styles and inject new ones.
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  if (isOldIE) {
+    // use singleton mode for IE9.
+    var styleIndex = singletonCounter++
+    styleElement = singletonElement || (singletonElement = createStyleElement())
+    update = applyToSingletonTag.bind(null, styleElement, styleIndex, false)
+    remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true)
+  } else {
+    // use multi-style-tag mode in all other cases
+    styleElement = createStyleElement()
+    update = applyToTag.bind(null, styleElement)
+    remove = function () {
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  update(obj)
+
+  return function updateStyle (newObj /* StyleObjectPart */) {
+    if (newObj) {
+      if (newObj.css === obj.css &&
+          newObj.media === obj.media &&
+          newObj.sourceMap === obj.sourceMap) {
+        return
+      }
+      update(obj = newObj)
+    } else {
+      remove()
+    }
+  }
+}
+
+var replaceText = (function () {
+  var textStore = []
+
+  return function (index, replacement) {
+    textStore[index] = replacement
+    return textStore.filter(Boolean).join('\n')
+  }
+})()
+
+function applyToSingletonTag (styleElement, index, remove, obj) {
+  var css = remove ? '' : obj.css
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = replaceText(index, css)
+  } else {
+    var cssNode = document.createTextNode(css)
+    var childNodes = styleElement.childNodes
+    if (childNodes[index]) styleElement.removeChild(childNodes[index])
+    if (childNodes.length) {
+      styleElement.insertBefore(cssNode, childNodes[index])
+    } else {
+      styleElement.appendChild(cssNode)
+    }
+  }
+}
+
+function applyToTag (styleElement, obj) {
+  var css = obj.css
+  var media = obj.media
+  var sourceMap = obj.sourceMap
+
+  if (media) {
+    styleElement.setAttribute('media', media)
+  }
+  if (options.ssrId) {
+    styleElement.setAttribute(ssrIdKey, obj.id)
+  }
+
+  if (sourceMap) {
+    // https://developer.chrome.com/devtools/docs/javascript-debugging
+    // this makes source maps inside style tags work properly in Chrome
+    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
+    // http://stackoverflow.com/a/26603875
+    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
+  }
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild)
+    }
+    styleElement.appendChild(document.createTextNode(css))
+  }
+}
+
+
+/***/ }),
+
+/***/ 4:
+/***/ (function(module, exports) {
+
+/* globals __VUE_SSR_CONTEXT__ */
+
+// this module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle
+
+module.exports = function normalizeComponent (
+  rawScriptExports,
+  compiledTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier /* server only */
+) {
+  var esModule
+  var scriptExports = rawScriptExports = rawScriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof rawScriptExports.default
+  if (type === 'object' || type === 'function') {
+    esModule = rawScriptExports
+    scriptExports = rawScriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (compiledTemplate) {
+    options.render = compiledTemplate.render
+    options.staticRenderFns = compiledTemplate.staticRenderFns
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = injectStyles
+  }
+
+  if (hook) {
+    var functional = options.functional
+    var existing = functional
+      ? options.render
+      : options.beforeCreate
+    if (!functional) {
+      // inject component registration as beforeCreate hook
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    } else {
+      // register for functioal component in vue file
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return existing(h, context)
+      }
+    }
+  }
+
+  return {
+    esModule: esModule,
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+
+/***/ 5:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8821,11 +10218,11 @@ if (inBrowser) {
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1), __webpack_require__(0), __webpack_require__(3).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1), __webpack_require__(0), __webpack_require__(6).setImmediate))
 
 /***/ }),
 
-/***/ 3:
+/***/ 6:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -8881,7 +10278,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(4);
+__webpack_require__(7);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -8896,7 +10293,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ 4:
+/***/ 7:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -9090,7 +10487,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ 5:
+/***/ 8:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19709,319 +21106,7 @@ console.log('START WEEX VUE RENDER: 1.0.31, Build 2018-09-17 14:43.');
 
 /***/ }),
 
-/***/ 6:
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-
-/***/ 7:
-/***/ (function(module, exports, __webpack_require__) {
-
-/*
-  MIT License http://www.opensource.org/licenses/mit-license.php
-  Author Tobias Koppers @sokra
-  Modified by Evan You @yyx990803
-*/
-
-var hasDocument = typeof document !== 'undefined'
-
-if (typeof DEBUG !== 'undefined' && DEBUG) {
-  if (!hasDocument) {
-    throw new Error(
-    'vue-style-loader cannot be used in a non-browser environment. ' +
-    "Use { target: 'node' } in your Webpack config to indicate a server-rendering environment."
-  ) }
-}
-
-var listToStyles = __webpack_require__(8)
-
-/*
-type StyleObject = {
-  id: number;
-  parts: Array<StyleObjectPart>
-}
-
-type StyleObjectPart = {
-  css: string;
-  media: string;
-  sourceMap: ?string
-}
-*/
-
-var stylesInDom = {/*
-  [id: number]: {
-    id: number,
-    refs: number,
-    parts: Array<(obj?: StyleObjectPart) => void>
-  }
-*/}
-
-var head = hasDocument && (document.head || document.getElementsByTagName('head')[0])
-var singletonElement = null
-var singletonCounter = 0
-var isProduction = false
-var noop = function () {}
-var options = null
-var ssrIdKey = 'data-vue-ssr-id'
-
-// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-// tags it will allow on a page
-var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
-
-module.exports = function (parentId, list, _isProduction, _options) {
-  isProduction = _isProduction
-
-  options = _options || {}
-
-  var styles = listToStyles(parentId, list)
-  addStylesToDom(styles)
-
-  return function update (newList) {
-    var mayRemove = []
-    for (var i = 0; i < styles.length; i++) {
-      var item = styles[i]
-      var domStyle = stylesInDom[item.id]
-      domStyle.refs--
-      mayRemove.push(domStyle)
-    }
-    if (newList) {
-      styles = listToStyles(parentId, newList)
-      addStylesToDom(styles)
-    } else {
-      styles = []
-    }
-    for (var i = 0; i < mayRemove.length; i++) {
-      var domStyle = mayRemove[i]
-      if (domStyle.refs === 0) {
-        for (var j = 0; j < domStyle.parts.length; j++) {
-          domStyle.parts[j]()
-        }
-        delete stylesInDom[domStyle.id]
-      }
-    }
-  }
-}
-
-function addStylesToDom (styles /* Array<StyleObject> */) {
-  for (var i = 0; i < styles.length; i++) {
-    var item = styles[i]
-    var domStyle = stylesInDom[item.id]
-    if (domStyle) {
-      domStyle.refs++
-      for (var j = 0; j < domStyle.parts.length; j++) {
-        domStyle.parts[j](item.parts[j])
-      }
-      for (; j < item.parts.length; j++) {
-        domStyle.parts.push(addStyle(item.parts[j]))
-      }
-      if (domStyle.parts.length > item.parts.length) {
-        domStyle.parts.length = item.parts.length
-      }
-    } else {
-      var parts = []
-      for (var j = 0; j < item.parts.length; j++) {
-        parts.push(addStyle(item.parts[j]))
-      }
-      stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts }
-    }
-  }
-}
-
-function createStyleElement () {
-  var styleElement = document.createElement('style')
-  styleElement.type = 'text/css'
-  head.appendChild(styleElement)
-  return styleElement
-}
-
-function addStyle (obj /* StyleObjectPart */) {
-  var update, remove
-  var styleElement = document.querySelector('style[' + ssrIdKey + '~="' + obj.id + '"]')
-
-  if (styleElement) {
-    if (isProduction) {
-      // has SSR styles and in production mode.
-      // simply do nothing.
-      return noop
-    } else {
-      // has SSR styles but in dev mode.
-      // for some reason Chrome can't handle source map in server-rendered
-      // style tags - source maps in <style> only works if the style tag is
-      // created and inserted dynamically. So we remove the server rendered
-      // styles and inject new ones.
-      styleElement.parentNode.removeChild(styleElement)
-    }
-  }
-
-  if (isOldIE) {
-    // use singleton mode for IE9.
-    var styleIndex = singletonCounter++
-    styleElement = singletonElement || (singletonElement = createStyleElement())
-    update = applyToSingletonTag.bind(null, styleElement, styleIndex, false)
-    remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true)
-  } else {
-    // use multi-style-tag mode in all other cases
-    styleElement = createStyleElement()
-    update = applyToTag.bind(null, styleElement)
-    remove = function () {
-      styleElement.parentNode.removeChild(styleElement)
-    }
-  }
-
-  update(obj)
-
-  return function updateStyle (newObj /* StyleObjectPart */) {
-    if (newObj) {
-      if (newObj.css === obj.css &&
-          newObj.media === obj.media &&
-          newObj.sourceMap === obj.sourceMap) {
-        return
-      }
-      update(obj = newObj)
-    } else {
-      remove()
-    }
-  }
-}
-
-var replaceText = (function () {
-  var textStore = []
-
-  return function (index, replacement) {
-    textStore[index] = replacement
-    return textStore.filter(Boolean).join('\n')
-  }
-})()
-
-function applyToSingletonTag (styleElement, index, remove, obj) {
-  var css = remove ? '' : obj.css
-
-  if (styleElement.styleSheet) {
-    styleElement.styleSheet.cssText = replaceText(index, css)
-  } else {
-    var cssNode = document.createTextNode(css)
-    var childNodes = styleElement.childNodes
-    if (childNodes[index]) styleElement.removeChild(childNodes[index])
-    if (childNodes.length) {
-      styleElement.insertBefore(cssNode, childNodes[index])
-    } else {
-      styleElement.appendChild(cssNode)
-    }
-  }
-}
-
-function applyToTag (styleElement, obj) {
-  var css = obj.css
-  var media = obj.media
-  var sourceMap = obj.sourceMap
-
-  if (media) {
-    styleElement.setAttribute('media', media)
-  }
-  if (options.ssrId) {
-    styleElement.setAttribute(ssrIdKey, obj.id)
-  }
-
-  if (sourceMap) {
-    // https://developer.chrome.com/devtools/docs/javascript-debugging
-    // this makes source maps inside style tags work properly in Chrome
-    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
-    // http://stackoverflow.com/a/26603875
-    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
-  }
-
-  if (styleElement.styleSheet) {
-    styleElement.styleSheet.cssText = css
-  } else {
-    while (styleElement.firstChild) {
-      styleElement.removeChild(styleElement.firstChild)
-    }
-    styleElement.appendChild(document.createTextNode(css))
-  }
-}
-
-
-/***/ }),
-
-/***/ 8:
+/***/ 9:
 /***/ (function(module, exports) {
 
 /**
@@ -20052,1035 +21137,6 @@ module.exports = function listToStyles (parentId, list) {
   return styles
 }
 
-
-/***/ }),
-
-/***/ 9:
-/***/ (function(module, exports) {
-
-/* globals __VUE_SSR_CONTEXT__ */
-
-// this module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle
-
-module.exports = function normalizeComponent (
-  rawScriptExports,
-  compiledTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier /* server only */
-) {
-  var esModule
-  var scriptExports = rawScriptExports = rawScriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof rawScriptExports.default
-  if (type === 'object' || type === 'function') {
-    esModule = rawScriptExports
-    scriptExports = rawScriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (compiledTemplate) {
-    options.render = compiledTemplate.render
-    options.staticRenderFns = compiledTemplate.staticRenderFns
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = injectStyles
-  }
-
-  if (hook) {
-    var functional = options.functional
-    var existing = functional
-      ? options.render
-      : options.beforeCreate
-    if (!functional) {
-      // inject component registration as beforeCreate hook
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    } else {
-      // register for functioal component in vue file
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return existing(h, context)
-      }
-    }
-  }
-
-  return {
-    esModule: esModule,
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-
-/***/ 90:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _vue = __webpack_require__(2);
-
-var _vue2 = _interopRequireDefault(_vue);
-
-var _weexVueRender = __webpack_require__(5);
-
-var _weexVueRender2 = _interopRequireDefault(_weexVueRender);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_weexVueRender2.default.init(_vue2.default);
-
-var App = __webpack_require__(91);
-new _vue2.default(_vue2.default.util.extend({ el: '#root' }, App));
-
-/***/ }),
-
-/***/ 91:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(92)
-}
-var Component = __webpack_require__(9)(
-  /* script */
-  __webpack_require__(94),
-  /* template */
-  __webpack_require__(95),
-  /* styles */
-  injectStyle,
-  /* scopeId */
-  "data-v-dad4f304",
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/index.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-dad4f304", Component.options)
-  } else {
-    hotAPI.reload("data-v-dad4f304", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 92:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(93);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(7)("30b5e236", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dad4f304\",\"scoped\":true,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
-     var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dad4f304\",\"scoped\":true,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 93:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(6)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.app[data-v-dad4f304] {\n    flex: 1;\n}\n.navbar[data-v-dad4f304] {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.navbar-title[data-v-dad4f304] {\n    font-size: 0.42667rem;\n    color: #ffffff;\n}\n.navbar-icon[data-v-dad4f304] {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.list[data-v-dad4f304] {\n    width: 10rem;\n    flex: 1;\n}\n.list-title-box[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n}\n.list-title[data-v-dad4f304] {\n    padding-top: 0.48rem;\n    padding-right: 0.32rem;\n    padding-bottom: 0.32rem;\n    padding-left: 0.32rem;\n    font-size: 0.37333rem;\n    color: #757575;\n}\n.list-subtitle[data-v-dad4f304] {\n    position: absolute;\n    right: 0.32rem;\n    bottom: 0.32rem;\n    font-size: 0.32rem;\n}\n.list-item[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    height: 1.33333rem;\n    width: 10rem;\n    padding-left: 0.26667rem;\n    padding-right: 0.26667rem;\n    border-top-width: 1px;\n    border-top-color: #e8e8e8;\n    border-top-style: solid;\n}\n.list-item-left[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n    justify-content: flex-start;\n    height: 1.33333rem;\n    flex: 1;\n}\n.list-left-icon[data-v-dad4f304] {\n    width: 0.8rem;\n    height: 0.8rem;\n    color: #3EB4FF;\n}\n.list-left-title[data-v-dad4f304] {\n    color: #242424;\n    padding-left: 0.16rem;\n    width: 5.06667rem;\n    font-size: 0.34667rem;\n    text-overflow: ellipsis;\n    lines: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    -webkit-line-clamp: 1;\n}\n.list-left-title-history[data-v-dad4f304] {\n    color: #242424;\n    padding-left: 0.16rem;\n    width: 8rem;\n    font-size: 0.34667rem;\n    text-overflow: ellipsis;\n    lines: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    -webkit-line-clamp: 1;\n}\n.list-right-title[data-v-dad4f304] {\n    color: #a2a2a2;\n    padding-right: 0.04rem;\n    font-size: 0.29333rem;\n    text-overflow: ellipsis;\n    lines: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    -webkit-line-clamp: 1;\n}\n.list-right-icon[data-v-dad4f304] {\n    width: 0.53333rem;\n    height: 0.53333rem;\n    color: #C9C9CE;\n}\n.list-item-right[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n    justify-content: flex-end;\n    height: 1.33333rem;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 94:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _global = __webpack_require__(10);
-
-var weiui = weex.requireModule('weiui'); //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-var jshome = '';
-
-exports.default = {
-    data: function data() {
-        return {
-            components: [{
-                title: '轮播控件',
-                title_en: 'weiui_banner',
-                icon: 'easel',
-                url: jshome + 'component_banner.js'
-            }, {
-                title: '常用按钮',
-                title_en: 'weiui_button',
-                icon: 'android-checkbox-blank',
-                url: jshome + 'component_button.js'
-            }, {
-                title: '网格容器',
-                title_en: 'weiui_grid',
-                icon: 'grid',
-                url: jshome + 'component_grid.js'
-            }, {
-                title: '字体图标',
-                title_en: 'weiui_icon',
-                icon: 'ionic',
-                url: jshome + 'component_icon.js'
-            }, {
-                title: '跑马文字',
-                title_en: 'weiui_marquee',
-                icon: 'code-working',
-                url: jshome + 'component_marquee.js'
-            }, {
-                title: '导航栏',
-                title_en: 'weiui_navbar',
-                icon: 'navicon',
-                url: jshome + 'component_navbar.js'
-            }, {
-                title: '列表容器',
-                title_en: 'weiui_recyler',
-                icon: 'ios-list 90%',
-                url: jshome + 'component_recyler.js'
-            }, {
-                title: '滚动文字',
-                title_en: 'weiui_scroll_text',
-                icon: 'more',
-                url: jshome + 'component_scroll_text.js'
-            }, {
-                title: '侧边栏',
-                title_en: 'weiui_side_panel',
-                icon: 'ios-box',
-                url: jshome + 'component_side_panel.js'
-            }, {
-                title: '标签页面',
-                title_en: 'weiui_tabbar',
-                icon: 'filing',
-                url: jshome + 'component_tabbar.js'
-            }],
-
-            module: [{
-                title: '页面功能',
-                title_en: 'newPage',
-                icon: 'ios-book-outline 96%',
-                url: jshome + 'module_page.js'
-            }, {
-                title: '系统信息',
-                title_en: 'system',
-                icon: 'gear-a',
-                url: jshome + 'module_system.js'
-            }, {
-                title: '数据缓存',
-                title_en: 'caches',
-                icon: 'soup-can-outline',
-                url: jshome + 'module_caches.js'
-            }, {
-                title: '单位转换',
-                title_en: 'weex px',
-                icon: 'ios-calculator',
-                url: jshome + 'module_weexpx.js'
-            }, {
-                title: '确认对话框',
-                title_en: 'alert',
-                icon: 'android-alert 90%',
-                url: jshome + 'module_alert.js'
-            }, {
-                title: '等待弹窗',
-                title_en: 'loading',
-                icon: 'load-d',
-                url: jshome + 'module_loading.js'
-            }, {
-                title: '验证弹窗',
-                title_en: 'captcha',
-                icon: 'ios-checkmark-outline',
-                url: jshome + 'module_captcha.js'
-            }, {
-                title: '二维码扫描',
-                title_en: 'scaner',
-                icon: 'tb-scan',
-                url: jshome + 'module_scaner.js'
-            }, {
-                title: '跨域异步请求',
-                title_en: 'ajax',
-                icon: 'pull-request',
-                url: jshome + 'module_ajax.js'
-            }, {
-                title: '剪切板',
-                title_en: 'clipboard',
-                icon: 'ios-copy-outline',
-                url: jshome + 'module_plate.js'
-            }, {
-                title: '提示消息',
-                title_en: 'toast',
-                icon: 'ios-barcode-outline',
-                url: jshome + 'module_toast.js'
-            }, {
-                title: '广告弹窗',
-                title_en: 'adDialog',
-                icon: 'social-buffer-outline',
-                url: jshome + 'module_ad_dialog.js'
-            }, {
-                title: '更多拓展模块',
-                title_en: 'expandModule',
-                icon: 'more',
-                url: jshome + 'index_expand.js'
-            }],
-
-            third_module: [{
-                title: '城市选择器',
-                title_en: 'citypicker',
-                icon: 'android-pin',
-                url: jshome + 'third_citypicker.js'
-            }, {
-                title: '图片选择器',
-                title_en: 'pictureSelector',
-                icon: 'ios-camera-outline',
-                url: jshome + 'third_picture.js'
-            }],
-
-            about_lists: [{
-                title: '开发文档',
-                title_en: 'document',
-                icon: 'code-working',
-                url: 'http://weiui.cc'
-            }, {
-                title: '托管平台',
-                title_en: 'github',
-                icon: 'social-github-outline',
-                url: 'https://github.com/kuaifan/weiui'
-            }, {
-                title: '个人博客',
-                title_en: 'http://kuaifan.vip',
-                icon: 'social-rss-outline',
-                url: 'http://kuaifan.vip'
-            }, {
-                title: 'WEIUI版本',
-                title_en: weiui.getVersionName(),
-                icon: 'ios-information-outline',
-                url: 'http://weiui.cc'
-            }],
-
-            history: []
-        };
-    },
-    mounted: function mounted() {
-        this.history = (0, _global.jsonParse)(weiui.getCachesString("scaner", []), []);
-        //
-        weiui.setPageBackPressed(null, function () {
-            weiui.confirm({
-                title: "温馨提示",
-                message: "你确定要退出WEIUI吗？",
-                buttons: ["取消", "确定"]
-            }, function (result) {
-                if (result.status === "click" && result.title === "确定") {
-                    weiui.closePage(null);
-                }
-            });
-        });
-    },
-
-
-    methods: {
-        scaner: function scaner() {
-            var _this = this;
-
-            weiui.openScaner(null, function (res) {
-                if (res.status === "success") {
-                    _this.history.unshift(res.text);
-                    weiui.setCachesString("scaner", (0, _global.jsonStringify)(_this.history), 0);
-                    _this.openAuto(res.text);
-                }
-            });
-        },
-        refresh: function refresh() {
-            weiui.reloadPage();
-        },
-        clearHistory: function clearHistory() {
-            var _this2 = this;
-
-            weiui.confirm({
-                title: "删除提示",
-                message: "你确定要删除扫码记录吗？",
-                buttons: ["取消", "确定"]
-            }, function (result) {
-                if (result.status === "click" && result.title === "确定") {
-                    _this2.history = [];
-                    weiui.setCachesString("scaner", (0, _global.jsonStringify)(_this2.history), 0);
-                }
-            });
-        },
-        openUrl: function openUrl(url) {
-            weiui.openPage({
-                url: url,
-                pageType: 'weex'
-            });
-        },
-        openWeb: function openWeb(url) {
-            weiui.openPage({
-                url: url,
-                pageType: 'web'
-            });
-        },
-        openAuto: function openAuto(url) {
-            weiui.openPage({
-                url: url,
-                pageType: 'auto'
-            });
-        }
-    }
-};
-
-/***/ }),
-
-/***/ 95:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "app weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('weiui_navbar', {
-    staticClass: "navbar",
-    attrs: {}
-  }, [_c('weiui_navbar_item', {
-    attrs: {
-      "type": "left",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        return _vm.scaner($event)
-      }
-    }
-  }, [_c('weiui_icon', {
-    staticClass: "navbar-icon",
-    attrs: {
-      "weiui": {
-        content: 'tb-scan'
-      }
-    }
-  })], 1), _vm._v(" "), _c('weiui_navbar_item', {
-    attrs: {
-      "type": "title"
-    }
-  }, [_c('p', {
-    staticClass: "navbar-title weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("WEIUI")])]), _vm._v(" "), _c('weiui_navbar_item', {
-    attrs: {
-      "type": "right",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        return _vm.refresh($event)
-      }
-    }
-  }, [_c('weiui_icon', {
-    staticClass: "navbar-icon",
-    attrs: {
-      "weiui": {
-        content: 'refresh'
-      }
-    }
-  })], 1)], 1), _vm._v(" "), _c('scroller', {
-    staticClass: "list",
-    attrs: {}
-  }, [_c('p', {
-    staticClass: "list-title weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("Components")]), _vm._v(" "), _vm._l((_vm.components), function(item, index) {
-    return _c('div', {
-      key: index,
-      staticClass: "list-item weex-ct weex-div",
-      attrs: {
-        "weex-type": "div",
-        "data-evt-click": ""
-      },
-      on: {
-        "click": _vm.$stopOuterA,
-        "weex$tap": function($event) {
-          $event.stopPropagation();
-          _vm.openUrl(item.url)
-        }
-      }
-    }, [_c('div', {
-      staticClass: "list-item-left weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('weiui_icon', {
-      staticClass: "list-left-icon",
-      attrs: {
-        "weiui": {
-          content: item.icon
-        }
-      }
-    }), _vm._v(" "), _c('p', {
-      staticClass: "list-left-title weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(item.title))])], 1), _vm._v(" "), _c('div', {
-      staticClass: "list-item-right weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('p', {
-      staticClass: "list-right-title weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(item.title_en))]), _vm._v(" "), _c('weiui_icon', {
-      staticClass: "list-right-icon",
-      attrs: {
-        "weiui": {
-          content: 'ios-arrow-right 70%'
-        }
-      }
-    })], 1)])
-  }), _vm._v(" "), _c('p', {
-    staticClass: "list-title weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("Module")]), _vm._v(" "), _vm._l((_vm.module), function(item, index) {
-    return _c('div', {
-      key: index,
-      staticClass: "list-item weex-ct weex-div",
-      attrs: {
-        "weex-type": "div",
-        "data-evt-click": ""
-      },
-      on: {
-        "click": _vm.$stopOuterA,
-        "weex$tap": function($event) {
-          $event.stopPropagation();
-          _vm.openUrl(item.url)
-        }
-      }
-    }, [_c('div', {
-      staticClass: "list-item-left weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('weiui_icon', {
-      staticClass: "list-left-icon",
-      attrs: {
-        "weiui": {
-          content: item.icon
-        }
-      }
-    }), _vm._v(" "), _c('p', {
-      staticClass: "list-left-title weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(item.title))])], 1), _vm._v(" "), _c('div', {
-      staticClass: "list-item-right weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('p', {
-      staticClass: "list-right-title weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(item.title_en))]), _vm._v(" "), _c('weiui_icon', {
-      staticClass: "list-right-icon",
-      attrs: {
-        "weiui": {
-          content: 'ios-arrow-right 70%'
-        }
-      }
-    })], 1)])
-  }), _vm._v(" "), _c('p', {
-    staticClass: "list-title weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("Third Module")]), _vm._v(" "), _vm._l((_vm.third_module), function(item, index) {
-    return _c('div', {
-      key: index,
-      staticClass: "list-item weex-ct weex-div",
-      attrs: {
-        "weex-type": "div",
-        "data-evt-click": ""
-      },
-      on: {
-        "click": _vm.$stopOuterA,
-        "weex$tap": function($event) {
-          $event.stopPropagation();
-          _vm.openUrl(item.url)
-        }
-      }
-    }, [_c('div', {
-      staticClass: "list-item-left weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('weiui_icon', {
-      staticClass: "list-left-icon",
-      attrs: {
-        "weiui": {
-          content: item.icon
-        }
-      }
-    }), _vm._v(" "), _c('p', {
-      staticClass: "list-left-title weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(item.title))])], 1), _vm._v(" "), _c('div', {
-      staticClass: "list-item-right weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('p', {
-      staticClass: "list-right-title weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(item.title_en))]), _vm._v(" "), _c('weiui_icon', {
-      staticClass: "list-right-icon",
-      attrs: {
-        "weiui": {
-          content: 'ios-arrow-right 70%'
-        }
-      }
-    })], 1)])
-  }), _vm._v(" "), _c('p', {
-    staticClass: "list-title weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("About Weiui")]), _vm._v(" "), _vm._l((_vm.about_lists), function(item, index) {
-    return _c('div', {
-      key: index,
-      staticClass: "list-item weex-ct weex-div",
-      attrs: {
-        "weex-type": "div",
-        "data-evt-click": ""
-      },
-      on: {
-        "click": _vm.$stopOuterA,
-        "weex$tap": function($event) {
-          $event.stopPropagation();
-          _vm.openWeb(item.url)
-        }
-      }
-    }, [_c('div', {
-      staticClass: "list-item-left weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('weiui_icon', {
-      staticClass: "list-left-icon",
-      attrs: {
-        "weiui": {
-          content: item.icon
-        }
-      }
-    }), _vm._v(" "), _c('p', {
-      staticClass: "list-left-title weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(item.title))])], 1), _vm._v(" "), _c('div', {
-      staticClass: "list-item-right weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('p', {
-      staticClass: "list-right-title weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(item.title_en))]), _vm._v(" "), _c('weiui_icon', {
-      staticClass: "list-right-icon",
-      attrs: {
-        "weiui": {
-          content: 'ios-arrow-right 70%'
-        }
-      }
-    })], 1)])
-  }), _vm._v(" "), (_vm.history.length > 0) ? _c('div', {
-    staticClass: "list-title-box weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('p', {
-    staticClass: "list-title weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("扫码历史")]), _vm._v(" "), _c('p', {
-    staticClass: "list-subtitle weex-el weex-text",
-    attrs: {
-      "weex-type": "text",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        _vm.clearHistory()
-      }
-    }
-  }, [_vm._v("清空历史")])]) : _vm._e(), _vm._v(" "), (_vm.history.length > 0) ? _c('div', {
-    staticClass: " weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, _vm._l((_vm.history), function(text, index) {
-    return _c('div', {
-      key: index,
-      staticClass: "list-item weex-ct weex-div",
-      attrs: {
-        "weex-type": "div",
-        "data-evt-click": ""
-      },
-      on: {
-        "click": _vm.$stopOuterA,
-        "weex$tap": function($event) {
-          $event.stopPropagation();
-          _vm.openAuto(text)
-        }
-      }
-    }, [_c('div', {
-      staticClass: "list-item-left weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('weiui_icon', {
-      staticClass: "list-left-icon",
-      attrs: {
-        "weiui": {
-          content: 'ionic'
-        }
-      }
-    }), _vm._v(" "), _c('p', {
-      staticClass: "list-left-title-history weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(text))])], 1), _vm._v(" "), _c('div', {
-      staticClass: "list-item-right weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('weiui_icon', {
-      staticClass: "list-right-icon",
-      attrs: {
-        "weiui": {
-          content: 'ios-arrow-right 70%'
-        }
-      }
-    })], 1)])
-  })) : _vm._e()], 2)], 1)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-dad4f304", module.exports)
-  }
-}
 
 /***/ })
 

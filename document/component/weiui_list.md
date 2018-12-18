@@ -1,6 +1,6 @@
-# weiui_recyler
+# weiui_list
 
-> `<weiui_recyler>`（同等`<weiui_list>`）是一个列表容器，具有回收和复用的能力，可以大幅优化内存占用和渲染性能。
+> `<weiui_list>`（同等`<weiui_recyler>`）是一个列表容器，具有回收和复用的能力，可以大幅优化内存占用和渲染性能。
 
 ## 子组件
 
@@ -17,11 +17,10 @@
 <template>
     <div class="box">
 
-        <weiui_recyler
+        <weiui_list
                 ref="reflectName"
-                class="recyler"
+                class="list"
                 :weiui="{
-                        row: 1,
                         pullTips: true,
                     }"
                 @itemClick="itemClick"
@@ -32,7 +31,7 @@
                     <text class="panel-text">{{num}}</text>
                 </div>
             </div>
-        </weiui_recyler>
+        </weiui_list>
 
     </div>
 </template>
@@ -42,7 +41,7 @@
         width: 750px;
         flex: 1
     }
-    .recyler {
+    .list {
         width: 750px;
         flex: 1
     }
@@ -127,7 +126,6 @@
 | 属性名           | 类型     | 描述                          | 默认值     |
 | ------------- | ------ | -------------------------- | ------- |
 | refreshAuto |`Boolean`  | 初始化自动加载下拉刷新           | false       |
-| row |`Number`  | 每行显示列数           | 1       |
 | pullTips |`Boolean`  | 是否显示上拉加载更多的提示           | true       |
 | pullTipsDefault |`String`  | 上拉加载默认的提示语           | 正在加载数据...       |
 | pullTipsLoad |`String`  | 上拉加载正在加载的提示语           | 正在加载更多...       |
@@ -137,12 +135,11 @@
 > 例如：
 
 ```vue
-<weiui_recyler
+<weiui_list
     ref="reflectName"
     :weiui="{
-        row: 1,
         pullTips: true,
-    }"></weiui_navbar>
+    }"></weiui_list>
 ```
 
 ## 事件回调 `callback`

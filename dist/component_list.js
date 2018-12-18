@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 147);
+/******/ 	return __webpack_require__(__webpack_require__.s = 26);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -601,38 +601,38 @@ module.exports = app;
 
 /***/ }),
 
-/***/ 147:
+/***/ 26:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _third_picture = __webpack_require__(148);
+var _component_list = __webpack_require__(27);
 
-var _third_picture2 = _interopRequireDefault(_third_picture);
+var _component_list2 = _interopRequireDefault(_component_list);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_third_picture2.default.el = '#root';
-new Vue(_third_picture2.default);
+_component_list2.default.el = '#root';
+new Vue(_component_list2.default);
 
 /***/ }),
 
-/***/ 148:
+/***/ 27:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(149)
+__vue_styles__.push(__webpack_require__(28)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(150)
+__vue_exports__ = __webpack_require__(29)
 
 /* template */
-var __vue_template__ = __webpack_require__(151)
+var __vue_template__ = __webpack_require__(30)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -644,10 +644,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/third_picture.vue"
+__vue_options__.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/component_list.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-5cdfc7c6"
+__vue_options__._scopeId = "data-v-43e1d6b9"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -663,7 +663,7 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 149:
+/***/ 28:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -684,52 +684,32 @@ module.exports = {
     "height": "100",
     "color": "#ffffff"
   },
-  "content": {
-    "flex": 1,
-    "justifyContent": "center",
-    "alignItems": "center"
-  },
   "list": {
     "width": "750",
-    "flexDirection": "row",
+    "flex": 1
+  },
+  "panel": {
+    "width": "750",
+    "borderBottomColor": "#e4e4e4",
+    "borderBottomStyle": "solid",
+    "borderBottomWidth": "1"
+  },
+  "panel-item": {
+    "width": "750",
+    "paddingTop": "22",
+    "paddingBottom": "22",
+    "flexDirection": "column",
     "justifyContent": "center"
   },
-  "imgbox": {
-    "width": "150",
-    "height": "150"
-  },
-  "image": {
-    "width": "130",
-    "height": "130",
-    "marginTop": "10",
-    "marginBottom": "10",
-    "marginRight": "10",
-    "marginLeft": "10"
-  },
-  "button": {
-    "fontSize": "24",
-    "textAlign": "center",
-    "marginTop": "20",
-    "paddingTop": "20",
-    "paddingBottom": "20",
-    "paddingLeft": "48",
-    "paddingRight": "48",
-    "color": "#ffffff",
-    "backgroundColor": "#00B4FF"
-  },
-  "button2": {
-    "marginTop": "24",
-    "color": "#00B4FF",
-    "fontSize": "24",
-    "borderBottomWidth": "1",
-    "borderBottomStyle": "solid",
-    "borderBottomColor": "#00B4FF"
+  "panel-text": {
+    "fontSize": "50",
+    "textAlign": "center"
   }
 }
 
 /***/ }),
 
-/***/ 150:
+/***/ 29:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -741,8 +721,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _app = __webpack_require__(1);
 
-var _global = __webpack_require__(0);
-
+var weiui = weex.requireModule('weiui'); //
 //
 //
 //
@@ -822,32 +801,6 @@ var _global = __webpack_require__(0);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-var weiui_picture = weex.requireModule('weiui_picture');
 
 exports.default = {
     data: function data() {
@@ -855,51 +808,63 @@ exports.default = {
             lists: []
         };
     },
+    mounted: function mounted() {
+        var _this = this;
+
+        for (var i = 1; i <= 20; i++) {
+            this.lists.push(i);
+        }
+        this.$refs.reflectName.setHasMore(true);
+        //
+        setTimeout(function () {
+            _this.lists.splice(2, 1, "改变第三项文字");
+            // splice 详细用法http://www.w3school.com.cn/jsref/jsref_splice.asp
+        }, 1000);
+    },
 
     methods: {
         viewCode: function viewCode(str) {
             (0, _app.openViewCode)(str);
         },
-        sliceLists: function sliceLists(data, slice) {
-            var lists = [];
-            var j = 0;
+        itemClick: function itemClick(params) {
+            weiui.toast("点击了" + (params.position + 1) + "项");
+        },
+        pullLoadListener: function pullLoadListener() {
+            var _this2 = this;
 
-            var _loop = function _loop(i, len) {
-                var temp = [];
-                (0, _global.each)(data.slice(i, i + slice), function (index, item) {
-                    item.position = j;
-                    temp.push(item);
-                    j++;
-                });
-                lists.push(temp);
-            };
-
-            for (var i = 0, len = data.length; i < len; i += slice) {
-                _loop(i, len);
+            var count = this.lists.length;
+            if (count >= 100) {
+                this.$refs.reflectName.setHasMore(false);
+                return;
             }
-            return lists;
-        },
-        openPicture: function openPicture() {
-            var _this = this;
-
-            weiui_picture.create({
-                gallery: 1,
-                selected: this.lists
-            }, function (result) {
-                if (result.status === "success") {
-                    _this.lists = result.lists;
+            setTimeout(function () {
+                for (var i = 1; i <= 20; i++) {
+                    _this2.lists.push(count + i);
                 }
-            });
+                _this2.$refs.reflectName.pullloaded();
+                weiui.toast("加载" + (count + 1) + "~" + _this2.lists.length + "数据成功");
+            }, 1000);
         },
-        pictureView: function pictureView(position) {
-            weiui_picture.picturePreview(position, this.lists);
+        refreshListener: function refreshListener() {
+            var _this3 = this;
+
+            var newList = [];
+            for (var i = 1; i <= 20; i++) {
+                newList.push(i);
+            }
+            setTimeout(function () {
+                _this3.lists = newList;
+                _this3.$refs.reflectName.setHasMore(true);
+                _this3.$refs.reflectName.refreshed();
+                weiui.toast("刷新数据成功");
+            }, 1000);
         }
     }
 };
 
 /***/ }),
 
-/***/ 151:
+/***/ 30:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -917,13 +882,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('text', {
     staticClass: ["title"]
-  }, [_vm._v("图片选择器")])]), _c('weiui_navbar_item', {
+  }, [_vm._v("列表容器")])]), _c('weiui_navbar_item', {
     attrs: {
       "type": "right"
     },
     on: {
       "click": function($event) {
-        _vm.viewCode('module/third/pictureSelector')
+        _vm.viewCode('component/weiui_list')
       }
     }
   }, [_c('weiui_icon', {
@@ -931,50 +896,28 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "content": "code-working"
     }
-  })], 1)], 1), _c('div', {
-    staticClass: ["content"]
-  }, [(_vm.lists.length > 0) ? _c('weiui_list', {
-    style: {
-      width: '750px',
-      height: (Math.ceil(_vm.lists.length / 5) * 150) + 'px'
-    },
+  })], 1)], 1), _c('weiui_list', {
+    ref: "reflectName",
+    staticClass: ["list"],
     attrs: {
       "weiui": {
-        pullTips: false
+        pullTips: true,
       }
+    },
+    on: {
+      "itemClick": _vm.itemClick,
+      "pullLoadListener": _vm.pullLoadListener,
+      "refreshListener": _vm.refreshListener
     }
-  }, _vm._l((_vm.sliceLists(_vm.lists, 5)), function(list) {
+  }, _vm._l((_vm.lists), function(num) {
     return _c('div', {
-      staticClass: ["list"]
-    }, _vm._l((list), function(item) {
-      return _c('div', {
-        staticClass: ["imgbox"],
-        on: {
-          "click": function($event) {
-            _vm.pictureView(item.position)
-          }
-        }
-      }, [_c('image', {
-        staticClass: ["image"],
-        attrs: {
-          "src": 'file://' + item.path,
-          "resize": "cover"
-        }
-      })])
-    }))
-  })) : _vm._e(), _c('text', {
-    staticClass: ["button"],
-    on: {
-      "click": _vm.openPicture
-    }
-  }, [_vm._v("选择照片")]), (_vm.lists.length > 0) ? _c('text', {
-    staticClass: ["button2"],
-    on: {
-      "click": function($event) {
-        _vm.lists = []
-      }
-    }
-  }, [_vm._v("清空选择")]) : _vm._e()], 1)], 1)
+      staticClass: ["panel"]
+    }, [_c('div', {
+      staticClass: ["panel-item"]
+    }, [_c('text', {
+      staticClass: ["panel-text"]
+    }, [_vm._v(_vm._s(num))])])])
+  }))], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

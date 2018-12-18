@@ -16,7 +16,7 @@
         - [<span>&lt;weiui_marquee&gt;</span>跑马文字](component/weiui_marquee)
         - [<span>&lt;weiui_navbar&gt;</span>导航栏](component/weiui_navbar)
         - [<span>&lt;weiui_navbar_item&gt;</span>导航栏子组件](component/weiui_navbar_item)
-        - [<span>&lt;weiui_recyler&gt;</span>列表容器](component/weiui_recyler)
+        - [<span>&lt;weiui_list&gt;</span>列表容器](component/weiui_list)
         - [<span>&lt;weiui_ripple&gt;</span>涟漪效果容器](component/weiui_ripple)
         - [<span>&lt;weiui_scroll_text&gt;</span>滚动文字](component/weiui_scroll_text)
         - [<span>&lt;weiui_side_panel&gt;</span>侧边栏抽屉](component/weiui_side_panel)

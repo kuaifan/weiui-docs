@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 67);
+/******/ 	return __webpack_require__(__webpack_require__.s = 77);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -564,13 +564,50 @@ module.exports = global;
 
 /***/ }),
 
-/***/ 67:
+/***/ 1:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _index = __webpack_require__(68);
+var _global = __webpack_require__(0);
+
+var weiui = weex.requireModule('weiui');
+
+var app = {
+    openViewCode: function openViewCode(str) {
+        app.openViewUrl("http://weiui.cc/#/" + str);
+    },
+    openViewUrl: function openViewUrl(url) {
+        weiui.openPage({
+            url: 'index_browser.js',
+            pageType: 'weex',
+            statusBarColor: "#3EB4FF",
+            params: {
+                title: "WEIUI",
+                url: url
+            }
+        });
+    },
+    checkVersion: function checkVersion(compareVersion) {
+        if (typeof weiui.getVersion !== "function") {
+            return false;
+        }
+        return (0, _global.runNum)(weiui.getVersion()) >= (0, _global.runNum)(compareVersion);
+    }
+};
+
+module.exports = app;
+
+/***/ }),
+
+/***/ 77:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _index = __webpack_require__(78);
 
 var _index2 = _interopRequireDefault(_index);
 
@@ -581,21 +618,21 @@ new Vue(_index2.default);
 
 /***/ }),
 
-/***/ 68:
+/***/ 78:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(69)
+__vue_styles__.push(__webpack_require__(79)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(70)
+__vue_exports__ = __webpack_require__(80)
 
 /* template */
-var __vue_template__ = __webpack_require__(71)
+var __vue_template__ = __webpack_require__(81)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -626,7 +663,7 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 69:
+/***/ 79:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -730,7 +767,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 70:
+/***/ 80:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -742,7 +779,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _global = __webpack_require__(0);
 
-var weiui = weex.requireModule('weiui'); //
+var _app = __webpack_require__(1);
+
 //
 //
 //
@@ -953,6 +991,9 @@ var weiui = weex.requireModule('weiui'); //
 //
 //
 //
+//
+
+var weiui = weex.requireModule('weiui');
 
 var jshome = '';
 
@@ -991,9 +1032,9 @@ exports.default = {
                 url: jshome + 'component_navbar.js'
             }, {
                 title: '列表容器',
-                title_en: 'weiui_recyler',
+                title_en: 'weiui_list',
                 icon: 'ios-list 90%',
-                url: jshome + 'component_recyler.js'
+                url: jshome + 'component_list.js'
             }, {
                 title: '滚动文字',
                 title_en: 'weiui_scroll_text',
@@ -1072,13 +1113,6 @@ exports.default = {
                 icon: 'social-buffer-outline',
                 url: jshome + 'module_ad_dialog.js'
             }, {
-                title: '更多拓展模块',
-                title_en: 'expandModule',
-                icon: 'more',
-                url: jshome + 'index_expand.js'
-            }],
-
-            third_module: [{
                 title: '城市选择器',
                 title_en: 'citypicker',
                 icon: 'android-pin',
@@ -1088,6 +1122,28 @@ exports.default = {
                 title_en: 'pictureSelector',
                 icon: 'ios-camera-outline',
                 url: jshome + 'third_picture.js'
+            }, {
+                title: '更多拓展模块',
+                title_en: 'expandModule',
+                icon: 'more',
+                url: jshome + 'index_expand.js'
+            }],
+
+            third_module: [{
+                title: '融云通信模块',
+                title_en: 'rongcloud',
+                icon: 'tb-community',
+                url: 'rongcloud'
+            }, {
+                title: '友盟推送模块',
+                title_en: 'umeng',
+                icon: 'android-send',
+                url: 'umeng'
+            }, {
+                title: '第三方支付',
+                title_en: 'pay',
+                icon: 'tb-sponsor',
+                url: 'pay'
             }],
 
             about_lists: [{
@@ -1168,10 +1224,10 @@ exports.default = {
             });
         },
         openWeb: function openWeb(url) {
-            weiui.openPage({
-                url: url,
-                pageType: 'web'
-            });
+            (0, _app.openViewUrl)(url);
+        },
+        openThird: function openThird(url) {
+            (0, _app.openViewCode)("module/third/" + url);
         },
         openAuto: function openAuto(url) {
             weiui.openPage({
@@ -1184,7 +1240,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 71:
+/***/ 81:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1254,7 +1310,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: ["list-item-right"]
     }, [_c('text', {
       staticClass: ["list-right-title"]
-    }, [_vm._v(_vm._s(item.title_en))]), _c('weiui_icon', {
+    }, [_vm._v("<" + _vm._s(item.title_en) + ">")]), _c('weiui_icon', {
       staticClass: ["list-right-icon"],
       attrs: {
         "weiui": {
@@ -1304,7 +1360,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: ["list-item"],
       on: {
         "click": function($event) {
-          _vm.openUrl(item.url)
+          _vm.openThird(item.url)
         }
       }
     }, [_c('div', {

@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 77);
+/******/ 	return __webpack_require__(__webpack_require__.s = 87);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -576,9 +576,17 @@ var weiui = weex.requireModule('weiui');
 
 var app = {
     openViewCode: function openViewCode(str) {
+        app.openViewUrl("http://weiui.cc/#/" + str);
+    },
+    openViewUrl: function openViewUrl(url) {
         weiui.openPage({
-            url: "http://weiui.cc/#/" + str,
-            pageType: 'web'
+            url: 'index_browser.js',
+            pageType: 'weex',
+            statusBarColor: "#3EB4FF",
+            params: {
+                title: "WEIUI",
+                url: url
+            }
         });
     },
     checkVersion: function checkVersion(compareVersion) {
@@ -593,13 +601,13 @@ module.exports = app;
 
 /***/ }),
 
-/***/ 77:
+/***/ 87:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _module_ajax = __webpack_require__(78);
+var _module_ajax = __webpack_require__(88);
 
 var _module_ajax2 = _interopRequireDefault(_module_ajax);
 
@@ -610,21 +618,21 @@ new Vue(_module_ajax2.default);
 
 /***/ }),
 
-/***/ 78:
+/***/ 88:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(79)
+__vue_styles__.push(__webpack_require__(89)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(80)
+__vue_exports__ = __webpack_require__(90)
 
 /* template */
-var __vue_template__ = __webpack_require__(81)
+var __vue_template__ = __webpack_require__(91)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -655,7 +663,7 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 79:
+/***/ 89:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -716,7 +724,7 @@ module.exports = {
   "textarea": {
     "fontSize": "20",
     "width": "650",
-    "height": "500",
+    "height": "480",
     "marginTop": "20",
     "paddingTop": "5",
     "paddingBottom": "5",
@@ -731,7 +739,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 80:
+/***/ 90:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -883,7 +891,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 81:
+/***/ 91:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -937,6 +945,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("状态：" + _vm._s(_vm.status))]), _c('textarea', {
     staticClass: ["textarea"],
     attrs: {
+      "rows": "20",
       "value": (_vm.content)
     },
     on: {
