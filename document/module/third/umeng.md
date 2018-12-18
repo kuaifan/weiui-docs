@@ -8,6 +8,10 @@
 const weiui_umeng = weex.requireModule('weiui_umeng');
 ```
 
+## 参数配置
+
+请查阅[配置相关](/start/config)
+
 ## 获取token 
 
 > `weiui_umeng.getToken` 获取友盟token

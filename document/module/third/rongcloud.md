@@ -6,6 +6,10 @@
 const weiui_rongim = weex.requireModule('weiui_rongim');
 ```
 
+## 参数配置
+
+请查阅[配置相关](/start/config)
+
 ## 连接登录
 
 > `weiui_rongim.login` 连接登录
