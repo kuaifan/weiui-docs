@@ -8,20 +8,24 @@
 const weiui_pay = weex.requireModule('weiui_pay');
 ```
 
-## 微信支付
+## 参数配置
 
+请查阅[配置相关](/start/config)
+
+
+## 微信支付
 
 #### 支付配置
 
 > `Android`配置
     
-Android在创建项目的时候默认已经配置好路径了，但是如果开发中修改过包名则需要确保以下路径名称与包名一致，否则用户付款完成后无法重新唤起APP。
+在创建项目的时候**`默认已经配置好`**路径了，但是如果开发中修改过包名则需要确保以下路径名称与包名一致，否则用户付款完成后无法重新唤起APP。
 
 ![](media/wxpay_android.png)
 
 > `iOS`配置
 
-iOS需要手动设置`Info`>`URL Types`，否则用户付款完成后无法重新唤起APP。
+如果已经按上面[参数配置](/start/config)配置好的话，在编译`npm run [serve|dev|build]`项目的时候**`系统已经自动生成`**理论上无需手动设置，但是真正打包项目的时候需要确认设置`Info`>`URL Types`，否则用户付款完成后无法重新唤起APP。
 
 ![](media/wxpay_ios.png)
 

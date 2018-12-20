@@ -14,6 +14,10 @@
     homePageParams: { },    //主页其他参数（可选）
      
     appKey: "",             //用于云平台管理（可选）
+    
+	wxpay: {
+		appid: "xxx..."     //微信支付appid（可选）
+	},
 
     rongim: {               //融云模块配置（可选）
         andorid: {
@@ -57,6 +61,9 @@
 ###### **`appKey`**: 用于云平台管理
 - 建议填写16-32位随机字符串。
 - 主要用于 [WEIUI云平台](https://app.weiui.cc) 热更新、动态设置启动图等。
+
+###### **`wxpay`**: 微信支付相关配置
+- appid: 微信支付商户appid。
 
 ###### **`rongim`**: 融云相关配置（即时通讯模块）
 - enabled: 是否启用融云服务。

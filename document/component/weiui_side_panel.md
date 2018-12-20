@@ -99,7 +99,8 @@
         color: #ffffff;
     }
     .content-body {
-        flex: 1;
+        width: 750px;
+        margin-top: 200px;
         justify-content: center;
         align-items: center;
     }
