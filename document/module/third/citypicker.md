@@ -42,9 +42,10 @@ const weiui_citypicker = weex.requireModule('weiui_citypicker');
     export default {
         data() {
             return {
-                province: '浙江省',
-                city: '杭州',
-                area: '市辖区'
+                province: '浙江省',    //省份
+                city: '杭州',          //城市
+                area: '市辖区',        //区县
+                areaOther: false,     //是否加上其它区（可选参数）
             }
         },
         methods: {
