@@ -135,6 +135,17 @@
         .tool-tip[data-tooltip-position="top"]:hover::before, .tool-tip[data-tooltip-position="bottom"]:hover::before, .tool-tip[data-tooltip-position="top"]:hover::after, .tool-tip[data-tooltip-position="bottom"]:hover::after {
             transform: translate3d(-50%, 0, 0)
         }
+
+        .markdown-section iframe.icon-frame {
+            border: 0;
+            width: 100%;
+            min-height: 500px;
+        }
+        .icon-link {
+            float: right;
+            font-size: 14px;
+            padding-top: 12px;
+        }
     </style>
 </head>
 <body>
@@ -242,6 +253,27 @@
             window.location.replace(url)
         }else{
             window.location.href = url;
+        }
+    }
+    function setIframeHeight(iframe) {
+        if (iframe) {
+            let iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+            if (iframeWin.document.body) {
+                iframe.height = iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+            }
+            if (typeof iframe._setInterval !== 'undefined') {
+                clearInterval(iframe._setInterval);
+            }
+            iframe._setInterval = setInterval(function() { reinitIframe(iframe) }, 200);
+        }
+    }
+    function reinitIframe(iframe){
+        if (iframe) {
+            try{
+                let bHeight = iframe.contentWindow.document.body.scrollHeight;
+                let dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+                iframe.height = Math.min(bHeight, dHeight);
+            }catch (ex){ }
         }
     }
 </script>
