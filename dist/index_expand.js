@@ -337,6 +337,18 @@ var global = {
 
 
     /**
+     * 是否日期格式
+     * @returns {boolean}
+     */
+    isDate: function isDate(string) {
+        var reg = /^(\d{4})-(\d{2})-(\d{2})$/;
+        var str = string + "";
+        if (str == "") return false;
+        return !(!reg.test(str) && RegExp.$2 <= 12 && RegExp.$3 <= 31);
+    },
+
+
+    /**
      * 检测手机号码格式
      * @param str
      * @returns {boolean}
@@ -557,6 +569,23 @@ var global = {
             }
         });
         return text;
+    },
+
+
+    /**
+     * 字节转换
+     * @param bytes
+     * @returns {string}
+     */
+    bytesToSize: function bytesToSize(bytes) {
+        if (bytes === 0) return '0 B';
+        var k = 1024;
+        var sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+        var i = Math.floor(Math.log(bytes) / Math.log(k));
+        if (typeof sizes[i] === "undefined") {
+            return '0 B';
+        }
+        return global.runNum(bytes / Math.pow(k, i), 2) + ' ' + sizes[i];
     }
 };
 
@@ -576,7 +605,7 @@ var weiui = weex.requireModule('weiui');
 
 var app = {
 
-    jshome: 'http://weiui.cc/dist/',
+    jshome: '',
 
     openViewCode: function openViewCode(str) {
         app.openViewUrl("http://weiui.cc/#/" + str);
@@ -743,6 +772,8 @@ module.exports = {
   },
   "list-right-icon": {
     "width": "40",
+    "height": "40",
+    "fontSize": "22",
     "color": "#C9C9CE"
   },
   "list-item-right": {
@@ -900,6 +931,8 @@ var weiui = weex.requireModule('weiui'); //
 //
 //
 //
+//
+//
 
 exports.default = {
     data: function data() {
@@ -907,57 +940,57 @@ exports.default = {
             expand_module: [{
                 title: 'APP相关',
                 title_en: 'appUtils',
-                icon: 'ionic',
+                icon: 'logo-ionic',
                 url: 'appUtils'
             }, {
                 title: '设备相关',
                 title_en: 'deviceUtils',
-                icon: 'ionic',
+                icon: 'logo-ionic',
                 url: 'deviceUtils'
             }, {
                 title: '网络相关',
                 title_en: 'networkUtils',
-                icon: 'ionic',
+                icon: 'logo-ionic',
                 url: 'networkUtils'
             }, {
                 title: '权限相关',
                 title_en: 'permissionUtils',
-                icon: 'ionic',
+                icon: 'logo-ionic',
                 url: 'permissionUtils'
             }, {
                 title: '手机相关',
                 title_en: 'phoneUtils',
-                icon: 'ionic',
+                icon: 'logo-ionic',
                 url: 'phoneUtils'
             }, {
                 title: '进程相关',
                 title_en: 'processUtils',
-                icon: 'ionic',
+                icon: 'logo-ionic',
                 url: 'processUtils'
             }, {
                 title: '屏幕相关',
                 title_en: 'screenUtils',
-                icon: 'ionic',
+                icon: 'logo-ionic',
                 url: 'screenUtils'
             }, {
                 title: '时间相关',
                 title_en: 'timeUtils',
-                icon: 'ionic',
+                icon: 'logo-ionic',
                 url: 'timeUtils'
             }, {
                 title: '摄像相关',
                 title_en: 'cameraTool',
-                icon: 'ionic',
+                icon: 'logo-ionic',
                 url: 'cameraTool'
             }, {
                 title: '定位相关',
                 title_en: 'locationTool',
-                icon: 'ionic',
+                icon: 'logo-ionic',
                 url: 'locationTool'
             }, {
                 title: '震动相关',
                 title_en: 'vibrateTool',
-                icon: 'ionic',
+                icon: 'logo-ionic',
                 url: 'vibrateTool'
             }]
         };
@@ -1021,7 +1054,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: ["list-right-icon"],
       attrs: {
         "weiui": {
-          content: 'ios-arrow-right 70%'
+          content: 'tb-right'
         }
       }
     })], 1)])

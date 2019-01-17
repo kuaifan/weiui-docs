@@ -337,6 +337,18 @@ var global = {
 
 
     /**
+     * 是否日期格式
+     * @returns {boolean}
+     */
+    isDate: function isDate(string) {
+        var reg = /^(\d{4})-(\d{2})-(\d{2})$/;
+        var str = string + "";
+        if (str == "") return false;
+        return !(!reg.test(str) && RegExp.$2 <= 12 && RegExp.$3 <= 31);
+    },
+
+
+    /**
      * 检测手机号码格式
      * @param str
      * @returns {boolean}
@@ -557,6 +569,23 @@ var global = {
             }
         });
         return text;
+    },
+
+
+    /**
+     * 字节转换
+     * @param bytes
+     * @returns {string}
+     */
+    bytesToSize: function bytesToSize(bytes) {
+        if (bytes === 0) return '0 B';
+        var k = 1024;
+        var sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+        var i = Math.floor(Math.log(bytes) / Math.log(k));
+        if (typeof sizes[i] === "undefined") {
+            return '0 B';
+        }
+        return global.runNum(bytes / Math.pow(k, i), 2) + ' ' + sizes[i];
     }
 };
 
@@ -576,7 +605,7 @@ var weiui = weex.requireModule('weiui');
 
 var app = {
 
-    jshome: 'http://weiui.cc/dist/',
+    jshome: '',
 
     openViewCode: function openViewCode(str) {
         app.openViewUrl("http://weiui.cc/#/" + str);
@@ -861,7 +890,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('weiui_icon', {
     staticClass: ["iconr"],
     attrs: {
-      "content": "code-working"
+      "content": "md-code-working"
     }
   })], 1)], 1), _c('div', {
     staticClass: ["content"]

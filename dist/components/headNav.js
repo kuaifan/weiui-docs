@@ -150,7 +150,8 @@ module.exports = {
     "width": "42",
     "height": "42",
     "fontSize": "32",
-    "content": "'load-d spin'"
+    "marginLeft": "6",
+    "content": "'tb-loading-d spin'"
   },
   "title-right": {
     "position": "absolute",

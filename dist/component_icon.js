@@ -337,6 +337,18 @@ var global = {
 
 
     /**
+     * 是否日期格式
+     * @returns {boolean}
+     */
+    isDate: function isDate(string) {
+        var reg = /^(\d{4})-(\d{2})-(\d{2})$/;
+        var str = string + "";
+        if (str == "") return false;
+        return !(!reg.test(str) && RegExp.$2 <= 12 && RegExp.$3 <= 31);
+    },
+
+
+    /**
      * 检测手机号码格式
      * @param str
      * @returns {boolean}
@@ -557,6 +569,23 @@ var global = {
             }
         });
         return text;
+    },
+
+
+    /**
+     * 字节转换
+     * @param bytes
+     * @returns {string}
+     */
+    bytesToSize: function bytesToSize(bytes) {
+        if (bytes === 0) return '0 B';
+        var k = 1024;
+        var sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+        var i = Math.floor(Math.log(bytes) / Math.log(k));
+        if (typeof sizes[i] === "undefined") {
+            return '0 B';
+        }
+        return global.runNum(bytes / Math.pow(k, i), 2) + ' ' + sizes[i];
     }
 };
 
@@ -576,7 +605,7 @@ var weiui = weex.requireModule('weiui');
 
 var app = {
 
-    jshome: 'http://weiui.cc/dist/',
+    jshome: '',
 
     openViewCode: function openViewCode(str) {
         app.openViewUrl("http://weiui.cc/#/" + str);
@@ -864,31 +893,103 @@ var weiui = weex.requireModule('weiui'); //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     data: function data() {
         return {
-            active: 'ionicons',
-            ionicons: [],
+            active: '',
+
+            ionicons_md: [],
+            ionicons_ios: [],
+            ionicons_logo: [],
             taobao: []
         };
     },
     mounted: function mounted() {
-        var data = void 0,
-            i = void 0,
-            len = void 0;
-        data = ['ionic', 'arrow-up-a', 'arrow-right-a', 'arrow-down-a', 'arrow-left-a', 'arrow-up-b', 'arrow-right-b', 'arrow-down-b', 'arrow-left-b', 'arrow-up-c', 'arrow-right-c', 'arrow-down-c', 'arrow-left-c', 'arrow-return-right', 'arrow-return-left', 'arrow-swap', 'arrow-shrink', 'arrow-expand', 'arrow-move', 'arrow-resize', 'chevron-up', 'chevron-right', 'chevron-down', 'chevron-left', 'navicon-round', 'navicon', 'drag', 'log-in', 'log-out', 'checkmark-round', 'checkmark', 'checkmark-circled', 'close-round', 'close', 'close-circled', 'plus-round', 'plus', 'plus-circled', 'minus-round', 'minus', 'minus-circled', 'information', 'information-circled', 'help', 'help-circled', 'backspace-outline', 'backspace', 'help-buoy', 'asterisk', 'alert', 'alert-circled', 'refresh', 'loop', 'shuffle', 'home', 'search', 'flag', 'star', 'heart', 'heart-broken', 'gear-a', 'gear-b', 'toggle-filled', 'toggle', 'settings', 'wrench', 'hammer', 'edit', 'trash-a', 'trash-b', 'document', 'document-text', 'clipboard', 'scissors', 'funnel', 'bookmark', 'email', 'email-unread', 'folder', 'filing', 'archive', 'reply', 'reply-all', 'forward', 'share', 'paper-airplane', 'link', 'paperclip', 'compose', 'briefcase', 'medkit', 'at', 'pound', 'quote', 'cloud', 'upload', 'more', 'grid', 'calendar', 'clock', 'compass', 'pinpoint', 'pin', 'navigate', 'location', 'map', 'lock-combination', 'locked', 'unlocked', 'key', 'arrow-graph-up-right', 'arrow-graph-down-right', 'arrow-graph-up-left', 'arrow-graph-down-left', 'stats-bars', 'connection-bars', 'pie-graph', 'chatbubble', 'chatbubble-working', 'chatbubbles', 'chatbox', 'chatbox-working', 'chatboxes', 'person', 'person-add', 'person-stalker', 'woman', 'man', 'female', 'male', 'transgender', 'fork', 'knife', 'spoon', 'soup-can-outline', 'soup-can', 'beer', 'wineglass', 'coffee', 'icecream', 'pizza', 'power', 'mouse', 'battery-full', 'battery-half', 'battery-low', 'battery-empty', 'battery-charging', 'wifi', 'bluetooth', 'calculator', 'camera', 'eye', 'eye-disabled', 'flash', 'flash-off', 'qr-scanner', 'image', 'images', 'wand', 'contrast', 'aperture', 'crop', 'easel', 'paintbrush', 'paintbucket', 'monitor', 'laptop', 'ipad', 'iphone', 'ipod', 'printer', 'usb', 'outlet', 'bug', 'code', 'code-working', 'code-download', 'fork-repo', 'network', 'pull-request', 'merge', 'xbox', 'playstation', 'steam', 'closed-captioning', 'videocamera', 'film-marker', 'disc', 'headphone', 'music-note', 'radio-waves', 'speakerphone', 'mic-a', 'mic-b', 'mic-c', 'volume-high', 'volume-medium', 'volume-low', 'volume-mute', 'levels', 'play', 'pause', 'stop', 'record', 'skip-forward', 'skip-backward', 'eject', 'bag', 'card', 'cash', 'pricetag', 'pricetags', 'thumbsup', 'thumbsdown', 'happy-outline', 'happy', 'sad-outline', 'sad', 'bowtie', 'tshirt-outline', 'tshirt', 'trophy', 'podium', 'ribbon-a', 'ribbon-b', 'university', 'magnet', 'beaker', 'erlenmeyer-flask', 'egg', 'earth', 'planet', 'lightbulb', 'cube', 'leaf', 'waterdrop', 'flame', 'fireball', 'bonfire', 'umbrella', 'nuclear', 'no-smoking', 'thermometer', 'speedometer', 'model-s', 'plane', 'jet', 'load-a', 'load-b', 'load-c', 'load-d', 'ios-ionic-outline', 'ios-arrow-back', 'ios-arrow-forward', 'ios-arrow-up', 'ios-arrow-right', 'ios-arrow-down', 'ios-arrow-left', 'ios-arrow-thin-up', 'ios-arrow-thin-right', 'ios-arrow-thin-down', 'ios-arrow-thin-left', 'ios-circle-filled', 'ios-circle-outline', 'ios-checkmark-empty', 'ios-checkmark-outline', 'ios-checkmark', 'ios-plus-empty', 'ios-plus-outline', 'ios-plus', 'ios-close-empty', 'ios-close-outline', 'ios-close', 'ios-minus-empty', 'ios-minus-outline', 'ios-minus', 'ios-information-empty', 'ios-information-outline', 'ios-information', 'ios-help-empty', 'ios-help-outline', 'ios-help', 'ios-search', 'ios-search-strong', 'ios-star', 'ios-star-half', 'ios-star-outline', 'ios-heart', 'ios-heart-outline', 'ios-more', 'ios-more-outline', 'ios-home', 'ios-home-outline', 'ios-cloud', 'ios-cloud-outline', 'ios-cloud-upload', 'ios-cloud-upload-outline', 'ios-cloud-download', 'ios-cloud-download-outline', 'ios-upload', 'ios-upload-outline', 'ios-download', 'ios-download-outline', 'ios-refresh', 'ios-refresh-outline', 'ios-refresh-empty', 'ios-reload', 'ios-loop-strong', 'ios-loop', 'ios-bookmarks', 'ios-bookmarks-outline', 'ios-book', 'ios-book-outline', 'ios-flag', 'ios-flag-outline', 'ios-glasses', 'ios-glasses-outline', 'ios-browsers', 'ios-browsers-outline', 'ios-at', 'ios-at-outline', 'ios-pricetag', 'ios-pricetag-outline', 'ios-pricetags', 'ios-pricetags-outline', 'ios-cart', 'ios-cart-outline', 'ios-chatboxes', 'ios-chatboxes-outline', 'ios-chatbubble', 'ios-chatbubble-outline', 'ios-cog', 'ios-cog-outline', 'ios-gear', 'ios-gear-outline', 'ios-settings', 'ios-settings-strong', 'ios-toggle', 'ios-toggle-outline', 'ios-analytics', 'ios-analytics-outline', 'ios-pie', 'ios-pie-outline', 'ios-pulse', 'ios-pulse-strong', 'ios-filing', 'ios-filing-outline', 'ios-box', 'ios-box-outline', 'ios-compose', 'ios-compose-outline', 'ios-trash', 'ios-trash-outline', 'ios-copy', 'ios-copy-outline', 'ios-email', 'ios-email-outline', 'ios-undo', 'ios-undo-outline', 'ios-redo', 'ios-redo-outline', 'ios-paperplane', 'ios-paperplane-outline', 'ios-folder', 'ios-folder-outline', 'ios-paper', 'ios-paper-outline', 'ios-list', 'ios-list-outline', 'ios-world', 'ios-world-outline', 'ios-alarm', 'ios-alarm-outline', 'ios-speedometer', 'ios-speedometer-outline', 'ios-stopwatch', 'ios-stopwatch-outline', 'ios-timer', 'ios-timer-outline', 'ios-clock', 'ios-clock-outline', 'ios-time', 'ios-time-outline', 'ios-calendar', 'ios-calendar-outline', 'ios-photos', 'ios-photos-outline', 'ios-albums', 'ios-albums-outline', 'ios-camera', 'ios-camera-outline', 'ios-reverse-camera', 'ios-reverse-camera-outline', 'ios-eye', 'ios-eye-outline', 'ios-bolt', 'ios-bolt-outline', 'ios-color-wand', 'ios-color-wand-outline', 'ios-color-filter', 'ios-color-filter-outline', 'ios-grid-view', 'ios-grid-view-outline', 'ios-crop-strong', 'ios-crop', 'ios-barcode', 'ios-barcode-outline', 'ios-briefcase', 'ios-briefcase-outline', 'ios-medkit', 'ios-medkit-outline', 'ios-medical', 'ios-medical-outline', 'ios-infinite', 'ios-infinite-outline', 'ios-calculator', 'ios-calculator-outline', 'ios-keypad', 'ios-keypad-outline', 'ios-telephone', 'ios-telephone-outline', 'ios-drag', 'ios-location', 'ios-location-outline', 'ios-navigate', 'ios-navigate-outline', 'ios-locked', 'ios-locked-outline', 'ios-unlocked', 'ios-unlocked-outline', 'ios-monitor', 'ios-monitor-outline', 'ios-printer', 'ios-printer-outline', 'ios-game-controller-a', 'ios-game-controller-a-outline', 'ios-game-controller-b', 'ios-game-controller-b-outline', 'ios-americanfootball', 'ios-americanfootball-outline', 'ios-baseball', 'ios-baseball-outline', 'ios-basketball', 'ios-basketball-outline', 'ios-tennisball', 'ios-tennisball-outline', 'ios-football', 'ios-football-outline', 'ios-body', 'ios-body-outline', 'ios-person', 'ios-person-outline', 'ios-personadd', 'ios-personadd-outline', 'ios-people', 'ios-people-outline', 'ios-musical-notes', 'ios-musical-note', 'ios-bell', 'ios-bell-outline', 'ios-mic', 'ios-mic-outline', 'ios-mic-off', 'ios-volume-high', 'ios-volume-low', 'ios-play', 'ios-play-outline', 'ios-pause', 'ios-pause-outline', 'ios-recording', 'ios-recording-outline', 'ios-fastforward', 'ios-fastforward-outline', 'ios-rewind', 'ios-rewind-outline', 'ios-skipbackward', 'ios-skipbackward-outline', 'ios-skipforward', 'ios-skipforward-outline', 'ios-shuffle-strong', 'ios-shuffle', 'ios-videocam', 'ios-videocam-outline', 'ios-film', 'ios-film-outline', 'ios-flask', 'ios-flask-outline', 'ios-lightbulb', 'ios-lightbulb-outline', 'ios-wineglass', 'ios-wineglass-outline', 'ios-pint', 'ios-pint-outline', 'ios-nutrition', 'ios-nutrition-outline', 'ios-flower', 'ios-flower-outline', 'ios-rose', 'ios-rose-outline', 'ios-paw', 'ios-paw-outline', 'ios-flame', 'ios-flame-outline', 'ios-sunny', 'ios-sunny-outline', 'ios-partlysunny', 'ios-partlysunny-outline', 'ios-cloudy', 'ios-cloudy-outline', 'ios-rainy', 'ios-rainy-outline', 'ios-thunderstorm', 'ios-thunderstorm-outline', 'ios-snowy', 'ios-moon', 'ios-moon-outline', 'ios-cloudy-night', 'ios-cloudy-night-outline', 'android-arrow-up', 'android-arrow-forward', 'android-arrow-down', 'android-arrow-back', 'android-arrow-dropup', 'android-arrow-dropup-circle', 'android-arrow-dropright', 'android-arrow-dropright-circle', 'android-arrow-dropdown', 'android-arrow-dropdown-circle', 'android-arrow-dropleft', 'android-arrow-dropleft-circle', 'android-add', 'android-add-circle', 'android-remove', 'android-remove-circle', 'android-close', 'android-cancel', 'android-radio-button-off', 'android-radio-button-on', 'android-checkmark-circle', 'android-checkbox-outline-blank', 'android-checkbox-outline', 'android-checkbox-blank', 'android-checkbox', 'android-done', 'android-done-all', 'android-menu', 'android-more-horizontal', 'android-more-vertical', 'android-refresh', 'android-sync', 'android-wifi', 'android-call', 'android-apps', 'android-settings', 'android-options', 'android-funnel', 'android-search', 'android-home', 'android-cloud-outline', 'android-cloud', 'android-download', 'android-upload', 'android-cloud-done', 'android-cloud-circle', 'android-favorite-outline', 'android-favorite', 'android-star-outline', 'android-star-half', 'android-star', 'android-calendar', 'android-alarm-clock', 'android-time', 'android-stopwatch', 'android-watch', 'android-locate', 'android-navigate', 'android-pin', 'android-compass', 'android-map', 'android-walk', 'android-bicycle', 'android-car', 'android-bus', 'android-subway', 'android-train', 'android-boat', 'android-plane', 'android-restaurant', 'android-bar', 'android-cart', 'android-camera', 'android-image', 'android-film', 'android-color-palette', 'android-create', 'android-mail', 'android-drafts', 'android-send', 'android-archive', 'android-delete', 'android-attach', 'android-share', 'android-share-alt', 'android-bookmark', 'android-document', 'android-clipboard', 'android-list', 'android-folder-open', 'android-folder', 'android-print', 'android-open', 'android-exit', 'android-contract', 'android-expand', 'android-globe', 'android-chat', 'android-textsms', 'android-hangout', 'android-happy', 'android-sad', 'android-person', 'android-people', 'android-person-add', 'android-contact', 'android-contacts', 'android-playstore', 'android-lock', 'android-unlock', 'android-microphone', 'android-microphone-off', 'android-notifications-none', 'android-notifications', 'android-notifications-off', 'android-volume-mute', 'android-volume-down', 'android-volume-up', 'android-volume-off', 'android-hand', 'android-desktop', 'android-laptop', 'android-phone-portrait', 'android-phone-landscape', 'android-bulb', 'android-sunny', 'android-alert', 'android-warning', 'social-twitter', 'social-twitter-outline', 'social-facebook', 'social-facebook-outline', 'social-googleplus', 'social-googleplus-outline', 'social-google', 'social-google-outline', 'social-dribbble', 'social-dribbble-outline', 'social-octocat', 'social-github', 'social-github-outline', 'social-instagram', 'social-instagram-outline', 'social-whatsapp', 'social-whatsapp-outline', 'social-snapchat', 'social-snapchat-outline', 'social-foursquare', 'social-foursquare-outline', 'social-pinterest', 'social-pinterest-outline', 'social-rss', 'social-rss-outline', 'social-tumblr', 'social-tumblr-outline', 'social-wordpress', 'social-wordpress-outline', 'social-reddit', 'social-reddit-outline', 'social-hackernews', 'social-hackernews-outline', 'social-designernews', 'social-designernews-outline', 'social-yahoo', 'social-yahoo-outline', 'social-buffer', 'social-buffer-outline', 'social-skype', 'social-skype-outline', 'social-linkedin', 'social-linkedin-outline', 'social-vimeo', 'social-vimeo-outline', 'social-twitch', 'social-twitch-outline', 'social-youtube', 'social-youtube-outline', 'social-dropbox', 'social-dropbox-outline', 'social-apple', 'social-apple-outline', 'social-android', 'social-android-outline', 'social-windows', 'social-windows-outline', 'social-html5', 'social-html5-outline', 'social-css3', 'social-css3-outline', 'social-javascript', 'social-javascript-outline', 'social-angular', 'social-angular-outline', 'social-nodejs', 'social-sass', 'social-python', 'social-chrome', 'social-chrome-outline', 'social-codepen', 'social-codepen-outline', 'social-markdown', 'social-tux', 'social-freebsd-devil', 'social-usd', 'social-usd-outline', 'social-bitcoin', 'social-bitcoin-outline', 'social-yen', 'social-yen-outline', 'social-euro', 'social-euro-outline'];
-        this.ionicons = [];
-        for (i = 0, len = data.length; i < len; i += 5) {
-            this.ionicons.push(data.slice(i, i + 5));
-        }
-        data = ['tb-appreciate', 'tb-check', 'tb-close', 'tb-edit', 'tb-emoji', 'tb-favor-fill', 'tb-favor', 'tb-loading', 'tb-location-fill', 'tb-location', 'tb-phone', 'tb-round-check-fill', 'tb-round-check', 'tb-round-close-fill', 'tb-round-close', 'tb-round-right-fill', 'tb-round-right', 'tb-search', 'tb-taxi', 'tb-time-fill', 'tb-time', 'tb-unfold', 'tb-warn-fill', 'tb-warn', 'tb-camera-fill', 'tb-camera', 'tb-comment-fill', 'tb-comment', 'tb-like-fill', 'tb-like', 'tb-notification-fill', 'tb-notification', 'tb-order', 'tb-same-fill', 'tb-same', 'tb-deliver', 'tb-evaluate', 'tb-pay', 'tb-send', 'tb-shop', 'tb-ticket', 'tb-wang', 'tb-back', 'tb-cascades', 'tb-discover', 'tb-list', 'tb-more', 'tb-scan', 'tb-settings', 'tb-question-fill', 'tb-question', 'tb-shop-fill', 'tb-form', 'tb-wang-fill', 'tb-pic', 'tb-filter', 'tb-footprint', 'tb-top', 'tb-pull-down', 'tb-pull-up', 'tb-right', 'tb-refresh', 'tb-more-android', 'tb-delete-fill', 'tb-refund', 'tb-cart', 'tb-qr-code', 'tb-remind', 'tb-delete', 'tb-profile', 'tb-home', 'tb-cart-fill', 'tb-discover-fill', 'tb-home-fill', 'tb-message', 'tb-address-book', 'tb-link', 'tb-lock', 'tb-unlock', 'tb-vip', 'tb-weibo', 'tb-activity', 'tb-big', 'tb-friend-add-fill', 'tb-friend-add', 'tb-friend-famous', 'tb-friend', 'tb-goods', 'tb-selection', 'tb-tmall', 'tb-explore', 'tb-present', 'tb-square-check-fill', 'tb-square', 'tb-square-check', 'tb-round', 'tb-round-add-fill', 'tb-round-add', 'tb-add', 'tb-notification-forbid-fill', 'tb-explore-fill', 'tb-fold', 'tb-game', 'tb-redpacket', 'tb-selection-fill', 'tb-similar', 'tb-appreciate-fill', 'tb-info-fill', 'tb-info', 'tb-tao', 'tb-mobile-tao', 'tb-forward-fill', 'tb-forward', 'tb-recharge-fill', 'tb-recharge', 'tb-vipcard', 'tb-voice', 'tb-voice-fill', 'tb-friend-favor', 'tb-wifi', 'tb-share', 'tb-we-fill', 'tb-we', 'tb-light-auto', 'tb-light-forbid', 'tb-light-fill', 'tb-camera-rotate', 'tb-light', 'tb-bar-code', 'tb-flashlight-close', 'tb-flashlight-open', 'tb-search-list', 'tb-service', 'tb-sort', 'tb-1212', 'tb-down', 'tb-mobile', 'tb-mobile-fill', 'tb-copy', 'tb-countdown-fill', 'tb-countdown', 'tb-notice-fill', 'tb-notice', 'tb-qiang', 'tb-upstage-fill', 'tb-upstage', 'tb-baby-fill', 'tb-baby', 'tb-brand-fill', 'tb-brand', 'tb-choiceness-fill', 'tb-choiceness', 'tb-clothes-fill', 'tb-clothes', 'tb-creative-fill', 'tb-creative', 'tb-female', 'tb-keyboard', 'tb-male', 'tb-new-fill', 'tb-new', 'tb-pull-left', 'tb-pull-right', 'tb-rank-fill', 'tb-rank', 'tb-bad', 'tb-camera-add', 'tb-focus', 'tb-friend-fill', 'tb-camera-add-fill', 'tb-apps', 'tb-paint-fill', 'tb-paint', 'tb-pic-fill', 'tb-refresh-arrow', 'tb-mark-fill', 'tb-mark', 'tb-present-fill', 'tb-repeal', 'tb-album', 'tb-people-fill', 'tb-people', 'tb-service-fill', 'tb-repair', 'tb-file', 'tb-repair-fill', 'tb-taoxiaopu', 'tb-attention-fill', 'tb-attention', 'tb-command-fill', 'tb-command', 'tb-community-fill', 'tb-community', 'tb-read', 'tb-suan', 'tb-hua', 'tb-ju', 'tb-tian', 'tb-calendar', 'tb-cut', 'tb-magic', 'tb-backward-fill', 'tb-play-fill', 'tb-stop', 'tb-tag-fill', 'tb-tag', 'tb-group', 'tb-all', 'tb-back-delete', 'tb-hot-fill', 'tb-hot', 'tb-post', 'tb-radio-box', 'tb-round-down', 'tb-upload', 'tb-write-fill', 'tb-write', 'tb-radio-box-fill', 'tb-punch', 'tb-shake', 'tb-add2', 'tb-move', 'tb-safe', 'tb-haodian', 'tb-mao', 'tb-qi', 'tb-ye', 'tb-juhuasuan', 'tb-taoqianggou', 'tb-tianmao', 'tb-activity-fill', 'tb-crown-fill', 'tb-crown', 'tb-goods-fill', 'tb-message-fill', 'tb-profile-fill', 'tb-sound', 'tb-sponsor-fill', 'tb-sponsor', 'tb-up-block', 'tb-we-block', 'tb-we-unblock', 'tb-1111', 'tb-my', 'tb-my-fill', 'tb-emoji-fill', 'tb-emoji-flash-fill', 'tb-flashbuy-fill', 'tb-text', 'tb-goods-favor', 'tb-music-fill', 'tb-music-forbid-fill', 'tb-xiami-forbid', 'tb-xiami', 'tb-round-left-fill', 'tb-triangle-down-fill', 'tb-triangle-up-fill', 'tb-round-left-fill2', 'tb-pull-down2', 'tb-emoji-light', 'tb-keyboard-light', 'tb-record-fill', 'tb-record-light', 'tb-record', 'tb-round-add-light', 'tb-sound-light', 'tb-cardboard-fill', 'tb-cardboard', 'tb-form-fill', 'tb-coin', 'tb-sort-light', 'tb-cardboard-forbid', 'tb-circle-fill', 'tb-circle', 'tb-attention-forbid', 'tb-attention-forbid-fill', 'tb-attention-favor-fill', 'tb-attention-favor', 'tb-pic-light', 'tb-shop-light', 'tb-voice-light', 'tb-attention-favor-fill2', 'tb-full', 'tb-mail', 'tb-people-list', 'tb-goods-new-fill', 'tb-goods-new', 'tb-medal-fill', 'tb-medal', 'tb-news-fill', 'tb-news-hot-fill', 'tb-news-hot', 'tb-news', 'tb-video-fill', 'tb-video', 'tb-ask-fill', 'tb-ask', 'tb-exit', 'tb-skin-fill', 'tb-skin', 'tb-money-bag-fill', 'tb-usefull-fill', 'tb-usefull', 'tb-money-bag', 'tb-redpacket-fill', 'tb-subscription', 'tb-home-light', 'tb-my-light', 'tb-community-light', 'tb-cart-light', 'tb-we-light', 'tb-home-fill-light', 'tb-cart-fill-light', 'tb-community-fill-light', 'tb-my-fill-light', 'tb-we-fill-light', 'tb-skin-light', 'tb-search-light', 'tb-scan-light', 'tb-people-list-light', 'tb-message-light', 'tb-close-light', 'tb-add-light', 'tb-profile-light', 'tb-service-light', 'tb-friend-add-light', 'tb-edit-light', 'tb-camera-light', 'tb-hot-light', 'tb-refresh-light', 'tb-back-light', 'tb-share-light', 'tb-comment-light', 'tb-appreciate-light', 'tb-favor-light', 'tb-appreciate-fill-light', 'tb-comment-fill-light', 'tb-wang-light', 'tb-more-android-light', 'tb-friend-light', 'tb-more-light', 'tb-goods-favor-light', 'tb-goods-new-fill-light', 'tb-goods-new-light', 'tb-goods-light', 'tb-medal-fill-light', 'tb-medal-light', 'tb-news-fill-light', 'tb-news-hot-fill-light', 'tb-news-hot-light', 'tb-news-light', 'tb-video-fill-light', 'tb-message-fill-light', 'tb-form-light', 'tb-video-light', 'tb-search-list-light', 'tb-form-fill-light', 'tb-global-light', 'tb-global', 'tb-favor-fill-light', 'tb-delete-light', 'tb-back-android', 'tb-back-android-light', 'tb-down-light', 'tb-round-close-light', 'tb-round-close-fill-light', 'tb-expressman', 'tb-punch-light', 'tb-evaluate-fill', 'tb-furniture', 'tb-dress', 'tb-coffee', 'tb-sports', 'tb-group-light', 'tb-location-light', 'tb-attention-light', 'tb-group-fill-light', 'tb-group-fill', 'tb-play-forward-fill', 'tb-subscription-light', 'tb-deliver-fill', 'tb-notice-forbid-fill', 'tb-qr-code-light', 'tb-settings-light', 'tb-pick', 'tb-form-favor-light', 'tb-round-comment-light', 'tb-phone-light', 'tb-round-down-light', 'tb-friend-settings-light', 'tb-change-light', 'tb-round-list-light', 'tb-ticket-fill', 'tb-round-friend-fill', 'tb-round-crown-fill', 'tb-round-link-fill', 'tb-round-light-fill', 'tb-round-favor-fill', 'tb-round-menu-fill', 'tb-round-location-fill', 'tb-round-pay-fill', 'tb-round-like-fill', 'tb-round-people-fill', 'tb-round-pay', 'tb-round-rank-fill', 'tb-round-redpacket-fill', 'tb-round-skin-fill', 'tb-round-record-fill', 'tb-round-ticket-fill', 'tb-round-redpacket', 'tb-round-text-fill', 'tb-round-ticket', 'tb-round-transfer-fill', 'tb-subtitle-block-light', 'tb-warn-light', 'tb-round-transfer', 'tb-vip-code-light', 'tb-subtitle-unblock-light', 'tb-round-shop-fill', 'tb-oppose-fill-light', 'tb-oppose-light'];
-        this.taobao = [];
-        for (i = 0, len = data.length; i < len; i += 5) {
-            this.taobao.push(data.slice(i, i + 5));
-        }
+        this.active = "ionicons_md";
     },
 
+
+    watch: {
+        active: function active(val) {
+            switch (val) {
+                case "ionicons_md":
+                    {
+                        if (this.ionicons_md.length === 0) {
+                            var data = void 0,
+                                i = void 0,
+                                len = void 0;
+                            data = ["md-add-circle-outline", "md-add-circle", "md-add", "md-airplane", "md-alarm", "md-albums", "md-alert", "md-american-football", "md-analytics", "md-aperture", "md-apps", "md-appstore", "md-archive", "md-arrow-back", "md-arrow-down", "md-arrow-dropdown-circle", "md-arrow-dropdown", "md-arrow-dropleft-circle", "md-arrow-dropleft", "md-arrow-dropright-circle", "md-arrow-dropright", "md-arrow-dropup-circle", "md-arrow-dropup", "md-arrow-forward", "md-arrow-round-back", "md-arrow-round-down", "md-arrow-round-forward", "md-arrow-round-up", "md-arrow-up", "md-at", "md-attach", "md-backspace", "md-barcode", "md-baseball", "md-basket", "md-basketball", "md-battery-charging", "md-battery-dead", "md-battery-full", "md-beaker", "md-bed", "md-beer", "md-bicycle", "md-bluetooth", "md-boat", "md-body", "md-bonfire", "md-book", "md-bookmark", "md-bookmarks", "md-bowtie", "md-briefcase", "md-browsers", "md-brush", "md-bug", "md-build", "md-bulb", "md-bus", "md-business", "md-cafe", "md-calculator", "md-calendar", "md-call", "md-camera", "md-car", "md-card", "md-cart", "md-cash", "md-cellular", "md-chatboxes", "md-chatbubbles", "md-checkbox-outline", "md-checkbox", "md-checkmark-circle-outline", "md-checkmark-circle", "md-checkmark", "md-clipboard", "md-clock", "md-close-circle-outline", "md-close-circle", "md-close", "md-cloud-circle", "md-cloud-done", "md-cloud-download", "md-cloud-outline", "md-cloud-upload", "md-cloud", "md-cloudy-night", "md-cloudy", "md-code-download", "md-code-working", "md-code", "md-cog", "md-color-fill", "md-color-filter", "md-color-palette", "md-color-wand", "md-compass", "md-construct", "md-contact", "md-contacts", "md-contract", "md-contrast", "md-copy", "md-create", "md-crop", "md-cube", "md-cut", "md-desktop", "md-disc", "md-document", "md-done-all", "md-download", "md-easel", "md-egg", "md-exit", "md-expand", "md-eye-off", "md-eye", "md-fastforward", "md-female", "md-filing", "md-film", "md-finger-print", "md-fitness", "md-flag", "md-flame", "md-flash-off", "md-flash", "md-flashlight", "md-flask", "md-flower", "md-folder-open", "md-folder", "md-football", "md-funnel", "md-gift", "md-git-branch", "md-git-commit", "md-git-compare", "md-git-merge", "md-git-network", "md-git-pull-request", "md-glasses", "md-globe", "md-grid", "md-hammer", "md-hand", "md-happy", "md-headset", "md-heart-dislike", "md-heart-empty", "md-heart-half", "md-heart", "md-help-buoy", "md-help-circle-outline", "md-help-circle", "md-help", "md-home", "md-hourglass", "md-ice-cream", "md-image", "md-images", "md-infinite", "md-information-circle-outline", "md-information-circle", "md-information", "md-jet", "md-journal", "md-key", "md-keypad", "md-laptop", "md-leaf", "md-link", "md-list-box", "md-list", "md-locate", "md-lock", "md-log-in", "md-log-out", "md-magnet", "md-mail-open", "md-mail-unread", "md-mail", "md-male", "md-man", "md-map", "md-medal", "md-medical", "md-medkit", "md-megaphone", "md-menu", "md-mic-off", "md-mic", "md-microphone", "md-moon", "md-more", "md-move", "md-musical-note", "md-musical-notes", "md-navigate", "md-notifications-off", "md-notifications-outline", "md-notifications", "md-nuclear", "md-nutrition", "md-open", "md-options", "md-outlet", "md-paper-plane", "md-paper", "md-partly-sunny", "md-pause", "md-paw", "md-people", "md-person-add", "md-person", "md-phone-landscape", "md-phone-portrait", "md-photos", "md-pie", "md-pin", "md-pint", "md-pizza", "md-planet", "md-play-circle", "md-play", "md-podium", "md-power", "md-pricetag", "md-pricetags", "md-print", "md-pulse", "md-qr-scanner", "md-quote", "md-radio-button-off", "md-radio-button-on", "md-radio", "md-rainy", "md-recording", "md-redo", "md-refresh-circle", "md-refresh", "md-remove-circle-outline", "md-remove-circle", "md-remove", "md-reorder", "md-repeat", "md-resize", "md-restaurant", "md-return-left", "md-return-right", "md-reverse-camera", "md-rewind", "md-ribbon", "md-rocket", "md-rose", "md-sad", "md-save", "md-school", "md-search", "md-send", "md-settings", "md-share-alt", "md-share", "md-shirt", "md-shuffle", "md-skip-backward", "md-skip-forward", "md-snow", "md-speedometer", "md-square-outline", "md-square", "md-star-half", "md-star-outline", "md-star", "md-stats", "md-stopwatch", "md-subway", "md-sunny", "md-swap", "md-switch", "md-sync", "md-tablet-landscape", "md-tablet-portrait", "md-tennisball", "md-text", "md-thermometer", "md-thumbs-down", "md-thumbs-up", "md-thunderstorm", "md-time", "md-timer", "md-today", "md-train", "md-transgender", "md-trash", "md-trending-down", "md-trending-up", "md-trophy", "md-tv", "md-umbrella", "md-undo", "md-unlock", "md-videocam", "md-volume-high", "md-volume-low", "md-volume-mute", "md-volume-off", "md-walk", "md-wallet", "md-warning", "md-watch", "md-water", "md-wifi", "md-wine", "md-woman"];
+                            this.ionicons_md = [];
+                            for (i = 0, len = data.length; i < len; i += 5) {
+                                this.ionicons_md.push(data.slice(i, i + 5));
+                            }
+                        }
+                        break;
+                    }
+                case "ionicons_ios":
+                    {
+                        if (this.ionicons_ios.length === 0) {
+                            var _data = void 0,
+                                _i = void 0,
+                                _len = void 0;
+                            _data = ["ios-add-circle-outline", "ios-add-circle", "ios-add", "ios-airplane", "ios-alarm", "ios-albums", "ios-alert", "ios-american-football", "ios-analytics", "ios-aperture", "ios-apps", "ios-appstore", "ios-archive", "ios-arrow-back", "ios-arrow-down", "ios-arrow-dropdown-circle", "ios-arrow-dropdown", "ios-arrow-dropleft-circle", "ios-arrow-dropleft", "ios-arrow-dropright-circle", "ios-arrow-dropright", "ios-arrow-dropup-circle", "ios-arrow-dropup", "ios-arrow-forward", "ios-arrow-round-back", "ios-arrow-round-down", "ios-arrow-round-forward", "ios-arrow-round-up", "ios-arrow-up", "ios-at", "ios-attach", "ios-backspace", "ios-barcode", "ios-baseball", "ios-basket", "ios-basketball", "ios-battery-charging", "ios-battery-dead", "ios-battery-full", "ios-beaker", "ios-bed", "ios-beer", "ios-bicycle", "ios-bluetooth", "ios-boat", "ios-body", "ios-bonfire", "ios-book", "ios-bookmark", "ios-bookmarks", "ios-bowtie", "ios-briefcase", "ios-browsers", "ios-brush", "ios-bug", "ios-build", "ios-bulb", "ios-bus", "ios-business", "ios-cafe", "ios-calculator", "ios-calendar", "ios-call", "ios-camera", "ios-car", "ios-card", "ios-cart", "ios-cash", "ios-cellular", "ios-chatboxes", "ios-chatbubbles", "ios-checkbox-outline", "ios-checkbox", "ios-checkmark-circle-outline", "ios-checkmark-circle", "ios-checkmark", "ios-clipboard", "ios-clock", "ios-close-circle-outline", "ios-close-circle", "ios-close", "ios-cloud-circle", "ios-cloud-done", "ios-cloud-download", "ios-cloud-outline", "ios-cloud-upload", "ios-cloud", "ios-cloudy-night", "ios-cloudy", "ios-code-download", "ios-code-working", "ios-code", "ios-cog", "ios-color-fill", "ios-color-filter", "ios-color-palette", "ios-color-wand", "ios-compass", "ios-construct", "ios-contact", "ios-contacts", "ios-contract", "ios-contrast", "ios-copy", "ios-create", "ios-crop", "ios-cube", "ios-cut", "ios-desktop", "ios-disc", "ios-document", "ios-done-all", "ios-download", "ios-easel", "ios-egg", "ios-exit", "ios-expand", "ios-eye-off", "ios-eye", "ios-fastforward", "ios-female", "ios-filing", "ios-film", "ios-finger-print", "ios-fitness", "ios-flag", "ios-flame", "ios-flash-off", "ios-flash", "ios-flashlight", "ios-flask", "ios-flower", "ios-folder-open", "ios-folder", "ios-football", "ios-funnel", "ios-gift", "ios-git-branch", "ios-git-commit", "ios-git-compare", "ios-git-merge", "ios-git-network", "ios-git-pull-request", "ios-glasses", "ios-globe", "ios-grid", "ios-hammer", "ios-hand", "ios-happy", "ios-headset", "ios-heart-dislike", "ios-heart-empty", "ios-heart-half", "ios-heart", "ios-help-buoy", "ios-help-circle-outline", "ios-help-circle", "ios-help", "ios-home", "ios-hourglass", "ios-ice-cream", "ios-image", "ios-images", "ios-infinite", "ios-information-circle-outline", "ios-information-circle", "ios-information", "ios-jet", "ios-journal", "ios-key", "ios-keypad", "ios-laptop", "ios-leaf", "ios-link", "ios-list-box", "ios-list", "ios-locate", "ios-lock", "ios-log-in", "ios-log-out", "ios-magnet", "ios-mail-open", "ios-mail-unread", "ios-mail", "ios-male", "ios-man", "ios-map", "ios-medal", "ios-medical", "ios-medkit", "ios-megaphone", "ios-menu", "ios-mic-off", "ios-mic", "ios-microphone", "ios-moon", "ios-more", "ios-move", "ios-musical-note", "ios-musical-notes", "ios-navigate", "ios-notifications-off", "ios-notifications-outline", "ios-notifications", "ios-nuclear", "ios-nutrition", "ios-open", "ios-options", "ios-outlet", "ios-paper-plane", "ios-paper", "ios-partly-sunny", "ios-pause", "ios-paw", "ios-people", "ios-person-add", "ios-person", "ios-phone-landscape", "ios-phone-portrait", "ios-photos", "ios-pie", "ios-pin", "ios-pint", "ios-pizza", "ios-planet", "ios-play-circle", "ios-play", "ios-podium", "ios-power", "ios-pricetag", "ios-pricetags", "ios-print", "ios-pulse", "ios-qr-scanner", "ios-quote", "ios-radio-button-off", "ios-radio-button-on", "ios-radio", "ios-rainy", "ios-recording", "ios-redo", "ios-refresh-circle", "ios-refresh", "ios-remove-circle-outline", "ios-remove-circle", "ios-remove", "ios-reorder", "ios-repeat", "ios-resize", "ios-restaurant", "ios-return-left", "ios-return-right", "ios-reverse-camera", "ios-rewind", "ios-ribbon", "ios-rocket", "ios-rose", "ios-sad", "ios-save", "ios-school", "ios-search", "ios-send", "ios-settings", "ios-share-alt", "ios-share", "ios-shirt", "ios-shuffle", "ios-skip-backward", "ios-skip-forward", "ios-snow", "ios-speedometer", "ios-square-outline", "ios-square", "ios-star-half", "ios-star-outline", "ios-star", "ios-stats", "ios-stopwatch", "ios-subway", "ios-sunny", "ios-swap", "ios-switch", "ios-sync", "ios-tablet-landscape", "ios-tablet-portrait", "ios-tennisball", "ios-text", "ios-thermometer", "ios-thumbs-down", "ios-thumbs-up", "ios-thunderstorm", "ios-time", "ios-timer", "ios-today", "ios-train", "ios-transgender", "ios-trash", "ios-trending-down", "ios-trending-up", "ios-trophy", "ios-tv", "ios-umbrella", "ios-undo", "ios-unlock", "ios-videocam", "ios-volume-high", "ios-volume-low", "ios-volume-mute", "ios-volume-off", "ios-walk", "ios-wallet", "ios-warning", "ios-watch", "ios-water", "ios-wifi", "ios-wine", "ios-woman"];
+                            this.ionicons_ios = [];
+                            for (_i = 0, _len = _data.length; _i < _len; _i += 5) {
+                                this.ionicons_ios.push(_data.slice(_i, _i + 5));
+                            }
+                        }
+                        break;
+                    }
+                case "ionicons_logo":
+                    {
+                        if (this.ionicons_logo.length === 0) {
+                            var _data2 = void 0,
+                                _i2 = void 0,
+                                _len2 = void 0;
+                            _data2 = ["logo-android", "logo-angular", "logo-apple", "logo-bitbucket", "logo-bitcoin", "logo-buffer", "logo-chrome", "logo-closed-captioning", "logo-codepen", "logo-css3", "logo-designernews", "logo-dribbble", "logo-dropbox", "logo-euro", "logo-facebook", "logo-flickr", "logo-foursquare", "logo-freebsd-devil", "logo-game-controller-a", "logo-game-controller-b", "logo-github", "logo-google", "logo-googleplus", "logo-hackernews", "logo-html5", "logo-instagram", "logo-ionic", "logo-ionitron", "logo-javascript", "logo-linkedin", "logo-markdown", "logo-model-s", "logo-no-smoking", "logo-nodejs", "logo-npm", "logo-octocat", "logo-pinterest", "logo-playstation", "logo-polymer", "logo-python", "logo-reddit", "logo-rss", "logo-sass", "logo-skype", "logo-slack", "logo-snapchat", "logo-steam", "logo-tumblr", "logo-tux", "logo-twitch", "logo-twitter", "logo-usd", "logo-vimeo", "logo-vk", "logo-whatsapp", "logo-windows", "logo-wordpress", "logo-xbox", "logo-xing", "logo-yahoo", "logo-yen", "logo-youtube"];
+                            this.ionicons_logo = [];
+                            for (_i2 = 0, _len2 = _data2.length; _i2 < _len2; _i2 += 5) {
+                                this.ionicons_logo.push(_data2.slice(_i2, _i2 + 5));
+                            }
+                        }
+                        break;
+                    }
+                case "taobao":
+                    {
+                        if (this.taobao.length === 0) {
+                            var _data3 = void 0,
+                                _i3 = void 0,
+                                _len3 = void 0;
+                            _data3 = ["tb-1111", "tb-1212", "tb-activity", "tb-activityfill", "tb-add", "tb-add-light", "tb-add1", "tb-addressbook", "tb-album", "tb-all", "tb-appreciate", "tb-appreciate-fill-light", "tb-appreciate-light", "tb-appreciatefill", "tb-apps", "tb-arrow-left-fill", "tb-arrow-up-fill", "tb-ask", "tb-askfill", "tb-attention", "tb-attention-light", "tb-attentionfavor", "tb-attentionfavorfill", "tb-attentionfavorfill-copy", "tb-attentionfill", "tb-attentionforbid", "tb-attentionforbidfill", "tb-auction", "tb-baby", "tb-babyfill", "tb-back", "tb-back-android", "tb-back-android-light", "tb-back-light", "tb-backdelete", "tb-backwardfill", "tb-bad", "tb-barcode", "tb-big", "tb-brand", "tb-brandfill", "tb-calendar", "tb-camera", "tb-camera-light", "tb-cameraadd", "tb-cameraaddfill", "tb-camerafill", "tb-camerarotate", "tb-cardboard", "tb-cardboardfill", "tb-cardboardforbid", "tb-cart", "tb-cart-fill-light", "tb-cart-light", "tb-cartfill", "tb-cascades", "tb-change", "tb-check", "tb-choiceness", "tb-choicenessfill", "tb-circle", "tb-circlefill", "tb-close", "tb-close-light", "tb-clothes", "tb-clothesfill", "tb-coffee", "tb-coin", "tb-command", "tb-commandfill", "tb-comment", "tb-comment-fill-light", "tb-comment-light", "tb-commentfill", "tb-community", "tb-community-fill-light", "tb-community-light", "tb-communityfill", "tb-copy", "tb-countdown", "tb-countdownfill", "tb-creative", "tb-creativefill", "tb-crown", "tb-crownfill", "tb-cut", "tb-delete", "tb-delete-light", "tb-deletefill", "tb-deliver", "tb-deliver-fill", "tb-discover", "tb-discoverfill", "tb-down", "tb-down-light", "tb-dress", "tb-edit", "tb-edit-light", "tb-emoji", "tb-emojifill", "tb-emojiflashfill", "tb-emojilight", "tb-evaluate", "tb-evaluate-fill", "tb-exit", "tb-explore", "tb-explorefill", "tb-expressman", "tb-favor", "tb-favor-fill-light", "tb-favor-light", "tb-favorfill", "tb-female", "tb-file", "tb-filter", "tb-flashbuyfill-copy", "tb-flashlightclose", "tb-flashlightopen", "tb-focus", "tb-fold", "tb-footprint", "tb-form", "tb-form-favor-light", "tb-form-fill-light", "tb-form-light", "tb-formfill", "tb-forward", "tb-forwardfill", "tb-friend", "tb-friend-add-light", "tb-friend-light", "tb-friend-settings-light", "tb-friendadd", "tb-friendaddfill", "tb-friendfamous", "tb-friendfavor", "tb-friendfill", "tb-full", "tb-furniture", "tb-game", "tb-global", "tb-global-light", "tb-goods", "tb-goods-favor-light", "tb-goods-hot-fill", "tb-goods-light", "tb-goods-new-fill-light", "tb-goods-new-light", "tb-goodsfavor", "tb-goodsfill", "tb-goodsnew", "tb-goodsnewfill", "tb-group", "tb-group-fill", "tb-group-fill-light", "tb-group-light", "tb-haodian", "tb-home", "tb-home-fill-light", "tb-home-light", "tb-homefill", "tb-hot", "tb-hot-light", "tb-hotfill", "tb-hua", "tb-info", "tb-infofill", "tb-ju", "tb-juhuasuan", "tb-keyboard", "tb-keyboardlight", "tb-light", "tb-lightauto", "tb-lightfill", "tb-lightforbid", "tb-like", "tb-likefill", "tb-link", "tb-list", "tb-living", "tb-loading-a", "tb-loading-b", "tb-loading-c", "tb-loading-d", "tb-loading", "tb-location", "tb-location-light", "tb-locationfill", "tb-lock", "tb-magic", "tb-mail", "tb-male", "tb-mao", "tb-mark", "tb-markfill", "tb-medal", "tb-medal-fill-light", "tb-medal-light", "tb-medalfill", "tb-message", "tb-message-fill-light", "tb-message-light", "tb-messagefill", "tb-mobile", "tb-mobilefill", "tb-mobiletao", "tb-moneybag", "tb-moneybagfill", "tb-more", "tb-more-android-light", "tb-more-light", "tb-moreandroid", "tb-move", "tb-musicfill", "tb-musicforbidfill", "tb-my", "tb-my-fill-light", "tb-my-light", "tb-myfill", "tb-new", "tb-newfill", "tb-news", "tb-news-fill-light", "tb-news-hot-fill-light", "tb-news-hot-light", "tb-news-light", "tb-newsfill", "tb-newshot", "tb-newshotfill", "tb-notice", "tb-notice-forbid-fill", "tb-noticefill", "tb-notification", "tb-notificationfill", "tb-notificationforbidfill", "tb-oppose-fill-light", "tb-oppose-light", "tb-order", "tb-paint", "tb-paintfill", "tb-pay", "tb-people", "tb-people-list-light", "tb-peoplefill", "tb-peoplelist", "tb-phone", "tb-phone-light", "tb-pic", "tb-picfill", "tb-pick", "tb-piclight", "tb-play-forward-fill", "tb-playfill", "tb-post", "tb-present", "tb-presentfill", "tb-profile", "tb-profile-light", "tb-profilefill", "tb-pulldown", "tb-pulldown1", "tb-pullleft", "tb-pullright", "tb-pullup", "tb-punch", "tb-punch-light", "tb-qi", "tb-qiang", "tb-qr-code-light", "tb-qrcode", "tb-question", "tb-questionfill", "tb-radiobox", "tb-radioboxfill", "tb-rank", "tb-rankfill", "tb-read", "tb-recharge", "tb-rechargefill", "tb-record", "tb-recordfill", "tb-recordlight", "tb-redpacket", "tb-redpacket-fill", "tb-refresh", "tb-refresh-light", "tb-refresharrow", "tb-refund", "tb-remind", "tb-repair", "tb-repairfill", "tb-repeal", "tb-right", "tb-round", "tb-round-close-fill-light", "tb-round-close-light", "tb-round-comment-light", "tb-round-crown-fill", "tb-round-down-light", "tb-round-favor-fill", "tb-round-friend-fill", "tb-round-light-fill", "tb-round-like-fill", "tb-round-link-fill", "tb-round-list-light", "tb-round-location-fill", "tb-round-menu-fill", "tb-round-pay", "tb-round-pay-fill", "tb-round-people-fill", "tb-round-rank-fill", "tb-round-record-fill", "tb-round-redpacket", "tb-round-redpacket-fill", "tb-round-shop-fill", "tb-round-skin-fill", "tb-round-text-fill", "tb-round-ticket", "tb-round-ticket-fill", "tb-round-transfer", "tb-round-transfer-fill", "tb-roundadd", "tb-roundaddfill", "tb-roundaddlight", "tb-roundcheck", "tb-roundcheckfill", "tb-roundclose", "tb-roundclosefill", "tb-rounddown", "tb-roundleftfill", "tb-roundleftfill-copy", "tb-roundright", "tb-roundrightfill", "tb-safe", "tb-same", "tb-samefill", "tb-scan", "tb-scan-light", "tb-search", "tb-search-light", "tb-search-list-light", "tb-searchlist", "tb-selection", "tb-selectionfill", "tb-send", "tb-service", "tb-service-light", "tb-servicefill", "tb-settings", "tb-settings-light", "tb-shake", "tb-share", "tb-share-light", "tb-shop", "tb-shopfill", "tb-shoplight", "tb-similar", "tb-skin", "tb-skin-light", "tb-skinfill", "tb-sort", "tb-sortlight", "tb-sound", "tb-soundlight", "tb-sponsor", "tb-sponsorfill", "tb-sports", "tb-square", "tb-squarecheck", "tb-squarecheckfill", "tb-stop", "tb-suan", "tb-subscription", "tb-subscription-light", "tb-subtitle-block-light", "tb-subtitle-unblock-light", "tb-tag", "tb-tagfill", "tb-tao", "tb-taoqianggou", "tb-taoxiaopu", "tb-taxi", "tb-text", "tb-tian", "tb-tianmao", "tb-ticket", "tb-ticket-fill", "tb-ticket-money-fill", "tb-time", "tb-timefill", "tb-tmall", "tb-top", "tb-triangledownfill", "tb-triangleupfill", "tb-unfold", "tb-unlock", "tb-upblock", "tb-upload", "tb-upstage", "tb-upstagefill", "tb-usefull", "tb-usefullfill", "tb-video", "tb-video-fill-light", "tb-video-light", "tb-videofill", "tb-vip", "tb-vip-code-light", "tb-vipcard", "tb-voice", "tb-voicefill", "tb-voicelight", "tb-wang", "tb-wang-light", "tb-wangfill", "tb-warn", "tb-warn-light", "tb-warnfill", "tb-we", "tb-we-fill-light", "tb-we-light", "tb-weblock", "tb-wefill", "tb-weibo", "tb-weunblock", "tb-wifi", "tb-write", "tb-writefill", "tb-xiami", "tb-xiamiforbid", "tb-xiaoheiqun", "tb-ye"];
+                            this.taobao = [];
+                            for (_i3 = 0, _len3 = _data3.length; _i3 < _len3; _i3 += 5) {
+                                this.taobao.push(_data3.slice(_i3, _i3 + 5));
+                            }
+                        }
+                        break;
+                    }
+            }
+        }
+    },
 
     methods: {
         viewCode: function viewCode(str) {
@@ -933,32 +1034,41 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('weiui_icon', {
     staticClass: ["iconr"],
     attrs: {
-      "content": "code-working"
+      "content": "md-code-working"
     }
   })], 1)], 1), _c('div', {
     staticClass: ["tabs"]
   }, [_c('text', {
-    class: [_vm.active === 'ionicons' ? 'tab-item-active' : 'tab-item'],
+    class: [_vm.active === 'ionicons_md' ? 'tab-item-active' : 'tab-item'],
     on: {
       "click": function($event) {
-        _vm.active = 'ionicons'
+        _vm.active = 'ionicons_md'
       }
     }
-  }, [_vm._v("ionicons")]), _c('text', {
+  }, [_vm._v("md")]), _c('text', {
+    class: [_vm.active === 'ionicons_ios' ? 'tab-item-active' : 'tab-item'],
+    on: {
+      "click": function($event) {
+        _vm.active = 'ionicons_ios'
+      }
+    }
+  }, [_vm._v("ios")]), _c('text', {
+    class: [_vm.active === 'ionicons_logo' ? 'tab-item-active' : 'tab-item'],
+    on: {
+      "click": function($event) {
+        _vm.active = 'ionicons_logo'
+      }
+    }
+  }, [_vm._v("logo")]), _c('text', {
     class: [_vm.active === 'taobao' ? 'tab-item-active' : 'tab-item'],
     on: {
       "click": function($event) {
         _vm.active = 'taobao'
       }
     }
-  }, [_vm._v("taobao")])]), (_vm.active === 'ionicons') ? _c('weiui_list', {
-    staticClass: ["lists"],
-    attrs: {
-      "weiui": {
-        pullTips: false
-      }
-    }
-  }, _vm._l((_vm.ionicons), function(list) {
+  }, [_vm._v("tb")])]), (_vm.active === 'ionicons_md') ? _c('scroller', {
+    staticClass: ["lists"]
+  }, _vm._l((_vm.ionicons_md), function(list) {
     return _c('div', {
       staticClass: ["list"]
     }, _vm._l((list), function(item) {
@@ -980,13 +1090,56 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         staticClass: ["text"]
       }, [_vm._v(_vm._s(item))])], 1)
     }))
-  })) : (_vm.active === 'taobao') ? _c('weiui_list', {
-    staticClass: ["lists"],
-    attrs: {
-      "weiui": {
-        pullTips: false
-      }
-    }
+  })) : (_vm.active === 'ionicons_ios') ? _c('scroller', {
+    staticClass: ["lists"]
+  }, _vm._l((_vm.ionicons_ios), function(list) {
+    return _c('div', {
+      staticClass: ["list"]
+    }, _vm._l((list), function(item) {
+      return _c('div', {
+        staticClass: ["item"],
+        on: {
+          "click": function($event) {
+            _vm.copyIcon(item)
+          }
+        }
+      }, [_c('weiui_icon', {
+        staticClass: ["icon"],
+        attrs: {
+          "weiui": {
+            content: item
+          }
+        }
+      }), _c('text', {
+        staticClass: ["text"]
+      }, [_vm._v(_vm._s(item))])], 1)
+    }))
+  })) : (_vm.active === 'ionicons_logo') ? _c('scroller', {
+    staticClass: ["lists"]
+  }, _vm._l((_vm.ionicons_logo), function(list) {
+    return _c('div', {
+      staticClass: ["list"]
+    }, _vm._l((list), function(item) {
+      return _c('div', {
+        staticClass: ["item"],
+        on: {
+          "click": function($event) {
+            _vm.copyIcon(item)
+          }
+        }
+      }, [_c('weiui_icon', {
+        staticClass: ["icon"],
+        attrs: {
+          "weiui": {
+            content: item
+          }
+        }
+      }), _c('text', {
+        staticClass: ["text"]
+      }, [_vm._v(_vm._s(item))])], 1)
+    }))
+  })) : (_vm.active === 'taobao') ? _c('scroller', {
+    staticClass: ["lists"]
   }, _vm._l((_vm.taobao), function(list) {
     return _c('div', {
       staticClass: ["list"]
