@@ -130,7 +130,7 @@ this.$refs.reflectName.setIconColor('#ff0000');
 this.$refs.reflectName.setIconClickColor('#00ff00');
 ```
 
-## 所有图标 <a href="./assets/icon/index.html" class="icon-link" target="_blank">新窗口打开</a>
+## 所有图标 <a href="./assets/icon/index.html" class="info-link icon-link" target="_blank">新窗口打开</a>
 
 <iframe src="./assets/icon/index.html" frameborder="0" class="icon-frame" scrolling="no" onload="setIframeHeight(this)"></iframe>
 
