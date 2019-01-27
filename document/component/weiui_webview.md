@@ -63,12 +63,50 @@
 
 > 注①：
 
-支持的模块如下：
+JS支持调用的原生模块如下：
 - `weiui`：综合模块，如：[weiui.adDialog](/module/adDialog)
 - `weiui_citypicker`：[城市选择器](/module/third/citypicker)
 - `weiui_picture`：[图片选择模块](/module/third/pictureSelector)
 - `weiui_pay`：[支付模块](/module/third/pay)
 - `weiui_webview`：[浏览器调用方法](/component/weiui_webview?id=调用方法-methods)
+
+#### JS调用原生API示例
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style type="text/css">
+        .scan {
+            font-size: 14px;
+            margin: 32px;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        function openScan() {
+            weiui.openScaner(null, function(res) {
+                switch (res.status) {
+                    case "success":
+                        weiui.toast("识别成功：" + res.text);
+                        break;
+
+                    case "failed":
+                        weiui.toast("识别失败");
+                        break;
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="scan" onclick="openScan()">打开扫一扫</div>
+</body>
+</html>
+```
 
 ## 事件回调 `callback`
 
