@@ -47,6 +47,21 @@ websocket.connect(url, callback(result))
 - `failure`连接失败
 - `error`连接错误
 
+##### 简单示例
+
+```js
+//启动相册并拍照  
+let websocket = weex.requireModule('websocket');
+websocket.connect("ws://echo.websocket.org", function(result) {
+    if (result.status == 'open') {
+        //连接已经准备好接受和发送数据
+    }else if (result.status == 'message') {
+        //接收到新消息：result.msg
+    }else if (result.status == 'closed' || result.status == 'failure' || result.status == 'error') {
+        //连接关闭
+    }
+});
+```
 
 ## 发送消息数据
 

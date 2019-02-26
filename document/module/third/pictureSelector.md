@@ -136,7 +136,7 @@ weiui_picture.compressImage({params}, callback(result))
 
 ```js
 {
-    status: 'success',   //状态，详见：注①
+    status: 'success',   //状态，详见：注②
     
     lists: [{
         path:'...',         //为原图path
@@ -153,7 +153,7 @@ weiui_picture.compressImage({params}, callback(result))
 }
 ```
 
-> 注①：
+> 注②：
 
 - `success`压缩成功返回
 - `error`压缩失败返回
