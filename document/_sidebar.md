@@ -45,6 +45,9 @@
         - [<span>citypicker</span>城市选择器](module/third/citypicker)
         - [<span>pictureSelector</span>图片选择器](module/third/pictureSelector)
 
+    - <b>[ 模块化 ]</b>
+        - [<span>websocket</span>即时通讯](module/plugin/websocket)
+
     - <b>[ 第三方 ]</b>
         - [<span>rongcloud</span>融云通信模块](module/third/rongcloud)
         - [<span>umeng</span>友盟推送模块](module/third/umeng)
