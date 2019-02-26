@@ -7,7 +7,7 @@
     
 - [ 开发手册 ]
     - [<span>lifecycle</span>生命周期](start/lifecycle)
-    - [<span>references</span>官方组件](http://weex-project.io/cn/references/)
+    - [<span>references</span>官方组件](http://weex-project.io/zh/docs/components/a.html#%E7%AE%80%E4%BB%8B)
     - <b>[ 组件 ]</b>
         - [<span>&lt;weiui_banner&gt;</span>轮播控件](component/weiui_banner)
         - [<span>&lt;weiui_button&gt;</span>常用按钮](component/weiui_button)
