@@ -47,6 +47,7 @@
 
     - <b>[ 模块化 ]</b>
         - [<span>websocket</span>即时通讯](module/plugin/websocket)
+        - [<span>screenshots</span>组件截图](module/plugin/screenshots)
 
     - <b>[ 第三方 ]</b>
         - [<span>rongcloud</span>融云通信模块](module/third/rongcloud)
