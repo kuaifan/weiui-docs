@@ -1,21 +1,27 @@
 # 图片选择器
 
+> 首次使用请执行
+
+```bash
+weiui plugin add picture
+```
+
 > 需要加载的模块
 
 ```js
-const weiui_picture = weex.requireModule('weiui_picture');
+const picture = weex.requireModule('picture');
 ```
 
 ## 启动相册拍照
 
-> `weiui_picture.create` 启动相册或启动拍照
+> `picture.create` 启动相册或启动拍照
 
 ```js
 /**
  * @param params    详细参数
  * @param callback  回调事件
  */
-weiui_picture.create({params}, callback(result))
+picture.create({params}, callback(result))
 ```
 
 ##### params 参数说明
@@ -97,14 +103,14 @@ weiui_picture.create({params}, callback(result))
 
 ```js
 //示例①：启动相册并拍照  
-weiui_picture.create({
+picture.create({
     gallery: 1
 }, function(result) {
     //......
 });
 
 //示例②：单独启动拍照或视频 根据mimeType自动识别
-weiui_picture.create({
+picture.create({
     gallery: 1,
     type: 'camera'
 }, function(result) {
@@ -115,14 +121,14 @@ weiui_picture.create({
 
 ## 压缩图片 
 
-> `weiui_picture.compressImage` 压缩图片列表
+> `picture.compressImage` 压缩图片列表
 
 ```js
 /**
  * @param params    详细参数
  * @param callback  回调事件
  */
-weiui_picture.compressImage({params}, callback(result))
+picture.compressImage({params}, callback(result))
 ```
 
 ##### params 参数说明
@@ -160,7 +166,7 @@ weiui_picture.compressImage({params}, callback(result))
 
 ## 预览图片 
 
-> `weiui_picture.picturePreview` 预览图片
+> `picture.picturePreview` 预览图片
 
 ```js
 /**
@@ -168,7 +174,7 @@ weiui_picture.compressImage({params}, callback(result))
  * @param path      图片path组
  * @param callback  预览右上角删除选择事件，留空则关闭删除功能
  */
-weiui_picture.picturePreview(position, [path], callback(result))
+picture.picturePreview(position, [path], callback(result))
 ```
 
 > callback 回调`result`说明
@@ -181,21 +187,21 @@ weiui_picture.picturePreview(position, [path], callback(result))
 
 ## 预览视频
 
-> `weiui_picture.videoPreview`预览视频
+> `picture.videoPreview`预览视频
 
 ```js
 /**
  * @param path      视频地址
  */
-weiui_picture.videoPreview(path)
+picture.videoPreview(path)
 ```
 
 ## 缓存清除
 
-> `weiui_picture.deleteCache` 缓存清除，包括裁剪和压缩后的缓存，要在上传成功后调用，注意：需要系统sd卡权限。
+> `picture.deleteCache` 缓存清除，包括裁剪和压缩后的缓存，要在上传成功后调用，注意：需要系统sd卡权限。
 
 ```js
-weiui_picture.deleteCache()
+picture.deleteCache()
 ```
 
 ## 预览效果

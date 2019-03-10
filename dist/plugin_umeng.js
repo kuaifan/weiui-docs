@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 142);
+/******/ 	return __webpack_require__(__webpack_require__.s = 167);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -605,7 +605,7 @@ var weiui = weex.requireModule('weiui');
 
 var app = {
 
-    jshome: '',
+    jshome: 'http://weiui.cc/dist/',
 
     openViewCode: function openViewCode(str) {
         app.openViewUrl("http://weiui.cc/#/" + str);
@@ -633,38 +633,38 @@ module.exports = app;
 
 /***/ }),
 
-/***/ 142:
+/***/ 167:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _third_citypicker = __webpack_require__(143);
+var _plugin_umeng = __webpack_require__(168);
 
-var _third_citypicker2 = _interopRequireDefault(_third_citypicker);
+var _plugin_umeng2 = _interopRequireDefault(_plugin_umeng);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_third_citypicker2.default.el = '#root';
-new Vue(_third_citypicker2.default);
+_plugin_umeng2.default.el = '#root';
+new Vue(_plugin_umeng2.default);
 
 /***/ }),
 
-/***/ 143:
+/***/ 168:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(144)
+__vue_styles__.push(__webpack_require__(169)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(145)
+__vue_exports__ = __webpack_require__(170)
 
 /* template */
-var __vue_template__ = __webpack_require__(146)
+var __vue_template__ = __webpack_require__(171)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -676,10 +676,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/third_citypicker.vue"
+__vue_options__.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/plugin_umeng.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-9392d22c"
+__vue_options__._scopeId = "data-v-3d68b693"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -695,7 +695,7 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 144:
+/***/ 169:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -721,11 +721,9 @@ module.exports = {
     "justifyContent": "center",
     "alignItems": "center"
   },
-  "address": {
-    "height": "56",
-    "lineHeight": "56",
-    "textAlign": "center",
-    "fontSize": "26"
+  "info": {
+    "fontSize": "22",
+    "marginBottom": "20"
   },
   "button": {
     "fontSize": "24",
@@ -733,8 +731,7 @@ module.exports = {
     "marginTop": "20",
     "paddingTop": "20",
     "paddingBottom": "20",
-    "paddingLeft": "30",
-    "paddingRight": "30",
+    "width": "220",
     "color": "#ffffff",
     "backgroundColor": "#00B4FF"
   }
@@ -742,7 +739,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 145:
+/***/ 170:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -754,13 +751,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _app = __webpack_require__(1);
 
-var weiui_citypicker = weex.requireModule('weiui_citypicker'); //
-//
-//
-//
-//
-//
-//
+var weiui = weex.requireModule('weiui'); //
 //
 //
 //
@@ -829,12 +820,12 @@ var weiui_citypicker = weex.requireModule('weiui_citypicker'); //
 //
 //
 
+var umeng = weex.requireModule('umeng');
+
 exports.default = {
     data: function data() {
         return {
-            province: '浙江省',
-            city: '杭州',
-            area: '市辖区'
+            info: ''
         };
     },
 
@@ -842,25 +833,22 @@ exports.default = {
         viewCode: function viewCode(str) {
             (0, _app.openViewCode)(str);
         },
-        citypicker: function citypicker() {
-            var _this = this;
-
-            weiui_citypicker.select({
-                province: this.province,
-                city: this.city,
-                area: this.area
-            }, function (result) {
-                _this.province = result.province;
-                _this.city = result.city;
-                _this.area = result.area;
-            });
+        getToken: function getToken() {
+            if (typeof umeng === 'undefined') {
+                weiui.alert({
+                    title: '温馨提示',
+                    message: "检测到未安装umeng插件，安装详细请登录http://weiui.cc/"
+                });
+                return;
+            }
+            this.info = umeng.getToken();
         }
     }
 };
 
 /***/ }),
 
-/***/ 146:
+/***/ 171:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -878,13 +866,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('text', {
     staticClass: ["title"]
-  }, [_vm._v("城市选择器")])]), _c('weiui_navbar_item', {
+  }, [_vm._v("友盟推送模块")])]), _c('weiui_navbar_item', {
     attrs: {
       "type": "right"
     },
     on: {
       "click": function($event) {
-        _vm.viewCode('module/third/citypicker')
+        _vm.viewCode('module/plugin/umeng')
       }
     }
   }, [_c('weiui_icon', {
@@ -895,17 +883,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })], 1)], 1), _c('div', {
     staticClass: ["content"]
   }, [_c('text', {
-    staticClass: ["address"]
-  }, [_vm._v("省份：" + _vm._s(_vm.province))]), _c('text', {
-    staticClass: ["address"]
-  }, [_vm._v("城市：" + _vm._s(_vm.city))]), _c('text', {
-    staticClass: ["address"]
-  }, [_vm._v("区域：" + _vm._s(_vm.area))]), _c('text', {
+    staticClass: ["info"]
+  }, [_vm._v(_vm._s(_vm.info))]), _c('text', {
     staticClass: ["button"],
     on: {
-      "click": _vm.citypicker
+      "click": _vm.getToken
     }
-  }, [_vm._v("选择地址")])])], 1)
+  }, [_vm._v("获取token")])])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

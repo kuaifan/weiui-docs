@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 126);
+/******/ 	return __webpack_require__(__webpack_require__.s = 192);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -852,7 +852,7 @@ module.exports = app;
 
 /***/ }),
 
-/***/ 126:
+/***/ 192:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -870,24 +870,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _weexVueRender2.default.init(_vue2.default);
 
-var App = __webpack_require__(127);
+var App = __webpack_require__(193);
 new _vue2.default(_vue2.default.util.extend({ el: '#root' }, App));
 
 /***/ }),
 
-/***/ 127:
+/***/ 193:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(128)
+  __webpack_require__(194)
 }
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(130),
+  __webpack_require__(196),
   /* template */
-  __webpack_require__(131),
+  __webpack_require__(197),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -895,9 +895,9 @@ var Component = __webpack_require__(4)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/module_caches.vue"
+Component.options.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/plugin_picture.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] module_caches.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] plugin_picture.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -906,9 +906,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3213b710", Component.options)
+    hotAPI.createRecord("data-v-cc4e2814", Component.options)
   } else {
-    hotAPI.reload("data-v-3213b710", Component.options)
+    hotAPI.reload("data-v-cc4e2814", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -920,23 +920,23 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 128:
+/***/ 194:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(129);
+var content = __webpack_require__(195);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("3b75831d", content, false, {});
+var update = __webpack_require__(3)("5f4f0ba4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3213b710\",\"scoped\":false,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./module_caches.vue", function() {
-     var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3213b710\",\"scoped\":false,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./module_caches.vue");
+   module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-cc4e2814\",\"scoped\":false,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./plugin_picture.vue", function() {
+     var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-cc4e2814\",\"scoped\":false,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./plugin_picture.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -947,7 +947,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 129:
+/***/ 195:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -955,14 +955,14 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.app {\n    width: 10rem;\n    flex: 1;\n}\n.navbar {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.title {\n    font-size: 0.37333rem;\n    color: #ffffff\n}\n.iconr {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.content {\n    flex: 1;\n    align-items: center;\n}\n.subtitle {\n    padding-top: 0.74667rem;\n    padding-right: 0.32rem;\n    padding-bottom: 0.32rem;\n    padding-left: 0.32rem;\n    font-size: 0.37333rem;\n    color: #757575;\n}\n.button {\n    width: 5.06667rem;\n    font-size: 0.32rem;\n    text-align: center;\n    margin-top: 0.26667rem;\n    margin-bottom: 0.26667rem;\n    padding-top: 0.34667rem;\n    padding-bottom: 0.34667rem;\n    padding-left: 0.4rem;\n    padding-right: 0.4rem;\n    color: #ffffff;\n    background-color: #00B4FF;\n}\n", ""]);
+exports.push([module.i, "\n.app {\n    width: 10rem;\n    flex: 1;\n}\n.navbar {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.title {\n    font-size: 0.37333rem;\n    color: #ffffff\n}\n.iconr {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.content {\n    flex: 1;\n    justify-content: center;\n    align-items: center;\n}\n.list {\n    width: 10rem;\n    flex-direction: row;\n    justify-content: center;\n}\n.imgbox {\n    width: 2rem;\n    height: 2rem;\n}\n.image {\n    width: 1.73333rem;\n    height: 1.73333rem;\n    margin-top: 0.13333rem;\n    margin-bottom: 0.13333rem;\n    margin-right: 0.13333rem;\n    margin-left: 0.13333rem;\n}\n.button {\n    font-size: 0.32rem;\n    text-align: center;\n    margin-top: 0.26667rem;\n    padding-top: 0.26667rem;\n    padding-bottom: 0.26667rem;\n    width: 2.93333rem;\n    color: #ffffff;\n    background-color: #00B4FF;\n}\n.button2 {\n    margin-top: 0.32rem;\n    color: #00B4FF;\n    font-size: 0.32rem;\n    border-bottom-width: 1px;\n    border-bottom-style: solid;\n    border-bottom-color: #00B4FF;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 130:
+/***/ 196:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -974,7 +974,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _app = __webpack_require__(11);
 
-var weiui = weex.requireModule('weiui'); //
+var _global = __webpack_require__(10);
+
 //
 //
 //
@@ -1060,56 +1061,92 @@ var weiui = weex.requireModule('weiui'); //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var weiui = weex.requireModule('weiui');
+var picture = weex.requireModule('picture');
 
 exports.default = {
     data: function data() {
         return {
-            caches: '',
-            variate: ''
+            lists: []
         };
     },
-    mounted: function mounted() {
-        this.caches = weiui.getCachesString('tempName', '');
-        this.variate = weiui.getVariate('tempName', '');
-    },
-
 
     methods: {
         viewCode: function viewCode(str) {
             (0, _app.openViewCode)(str);
         },
-        randomString: function randomString(len) {
-            len = len || 32;
-            var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678oOLl9gqVvUuI1';
-            var maxPos = $chars.length;
-            var pwd = '';
-            for (var i = 0; i < len; i++) {
-                pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+        sliceLists: function sliceLists(data, slice) {
+            var lists = [];
+            var j = 0;
+
+            var _loop = function _loop(i, len) {
+                var temp = [];
+                (0, _global.each)(data.slice(i, i + slice), function (index, item) {
+                    item.position = j;
+                    temp.push(item);
+                    j++;
+                });
+                lists.push(temp);
+            };
+
+            for (var i = 0, len = data.length; i < len; i += slice) {
+                _loop(i, len);
             }
-            return pwd;
+            return lists;
         },
-        setCaches: function setCaches() {
-            this.caches = this.randomString(16);
-            weiui.setCachesString('tempName', this.caches, 0);
+        openPicture: function openPicture() {
+            var _this = this;
+
+            if (typeof picture === 'undefined') {
+                weiui.alert({
+                    title: '温馨提示',
+                    message: "检测到未安装picture插件，安装详细请登录http://weiui.cc/"
+                });
+                return;
+            }
+            picture.create({
+                gallery: 1,
+                selected: this.lists
+            }, function (result) {
+                if (result.status === "success") {
+                    _this.lists = result.lists;
+                }
+            });
         },
-        getCaches: function getCaches() {
-            this.caches = weiui.getCachesString('tempName', '');
-            weiui.toast("读取成功，缓存：" + this.caches);
-        },
-        setVariate: function setVariate() {
-            this.variate = this.randomString(16);
-            weiui.setVariate('tempName', this.variate);
-        },
-        getVariate: function getVariate() {
-            this.variate = weiui.getVariate('tempName', '');
-            weiui.toast("读取成功，变量：" + this.variate);
+        pictureView: function pictureView(position) {
+            if (typeof picture === 'undefined') {
+                weiui.alert({
+                    title: '温馨提示',
+                    message: "检测到未安装picture插件，安装详细请登录http://weiui.cc/"
+                });
+                return;
+            }
+            picture.picturePreview(position, this.lists);
         }
     }
 };
 
 /***/ }),
 
-/***/ 131:
+/***/ 197:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1134,7 +1171,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("数据缓存")])]), _vm._v(" "), _c('weiui_navbar_item', {
+  }, [_vm._v("图片选择器")])]), _vm._v(" "), _c('weiui_navbar_item', {
     attrs: {
       "type": "right",
       "data-evt-click": ""
@@ -1143,7 +1180,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.$stopOuterA,
       "weex$tap": function($event) {
         $event.stopPropagation();
-        _vm.viewCode('module/caches')
+        _vm.viewCode('module/plugin/picture')
       }
     }
   }, [_c('weiui_icon', {
@@ -1156,20 +1193,53 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "div"
     }
-  }, [_c('p', {
-    staticClass: "subtitle weex-el weex-text",
+  }, [(_vm.lists.length > 0) ? _c('weiui_list', {
+    style: ({
+      width: _vm._px2rem('750px', 75),
+      height: _vm._px2rem(Math.ceil(_vm.lists.length / 5) * 150 + 'px', 75)
+    }),
     attrs: {
-      "weex-type": "text"
+      "weiui": {
+        pullTips: false
+      }
     }
-  }, [_vm._v("数据缓存：重启APP不被删除")]), _vm._v(" "), _c('p', {
-    staticClass: " weex-el weex-text",
-    staticStyle: {
-      "font-size": "0.32rem"
-    },
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v(_vm._s(_vm.caches))]), _vm._v(" "), _c('p', {
+  }, _vm._l((_vm.sliceLists(_vm.lists, 5)), function(list) {
+    return _c('div', {
+      staticClass: "list weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, _vm._l((list), function(item) {
+      return _c('div', {
+        staticClass: "imgbox weex-ct weex-div",
+        attrs: {
+          "weex-type": "div",
+          "data-evt-click": ""
+        },
+        on: {
+          "click": _vm.$stopOuterA,
+          "weex$tap": function($event) {
+            $event.stopPropagation();
+            _vm.pictureView(item.position)
+          }
+        }
+      }, [_c('figure', {
+        directives: [{
+          name: "weex-resize",
+          rawName: "v-weex-resize",
+          value: ("cover"),
+          expression: "\"cover\""
+        }],
+        staticClass: "image weex-el weex-image",
+        attrs: {
+          "src": 'file://' + item.path,
+          "resize": "cover",
+          "data-img-src": 'file://' + item.path,
+          "weex-type": "image"
+        }
+      })])
+    }))
+  })) : _vm._e(), _vm._v(" "), _c('p', {
     staticClass: "button weex-el weex-text",
     attrs: {
       "weex-type": "text",
@@ -1179,11 +1249,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.$stopOuterA,
       "weex$tap": function($event) {
         $event.stopPropagation();
-        _vm.setCaches()
+        return _vm.openPicture($event)
       }
     }
-  }, [_vm._v("设置缓存")]), _vm._v(" "), _c('p', {
-    staticClass: "button weex-el weex-text",
+  }, [_vm._v("选择照片")]), _vm._v(" "), (_vm.lists.length > 0) ? _c('p', {
+    staticClass: "button2 weex-el weex-text",
     attrs: {
       "weex-type": "text",
       "data-evt-click": ""
@@ -1192,55 +1262,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.$stopOuterA,
       "weex$tap": function($event) {
         $event.stopPropagation();
-        _vm.getCaches()
+        _vm.lists = []
       }
     }
-  }, [_vm._v("读取缓存")]), _vm._v(" "), _c('p', {
-    staticClass: "subtitle weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("全局变量：重启APP后数据不存在")]), _vm._v(" "), _c('p', {
-    staticClass: " weex-el weex-text",
-    staticStyle: {
-      "font-size": "0.32rem"
-    },
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v(_vm._s(_vm.variate))]), _vm._v(" "), _c('p', {
-    staticClass: "button weex-el weex-text",
-    attrs: {
-      "weex-type": "text",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        _vm.setVariate()
-      }
-    }
-  }, [_vm._v("设置变量")]), _vm._v(" "), _c('p', {
-    staticClass: "button weex-el weex-text",
-    attrs: {
-      "weex-type": "text",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        _vm.getVariate()
-      }
-    }
-  }, [_vm._v("读取变量")])])], 1)
+  }, [_vm._v("清空选择")]) : _vm._e()], 1)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3213b710", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-cc4e2814", module.exports)
   }
 }
 

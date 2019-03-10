@@ -1,9 +1,15 @@
 # 融云模块
 
+> 首次使用请执行
+
+```bash
+weiui plugin add rongim
+```
+
 > 需要加载的模块
 
 ```js
-const weiui_rongim = weex.requireModule('weiui_rongim');
+const rongim = weex.requireModule('rongim');
 ```
 
 ## 参数配置
@@ -12,14 +18,14 @@ const weiui_rongim = weex.requireModule('weiui_rongim');
 
 ## 连接登录
 
-> `weiui_rongim.login` 连接登录
+> `rongim.login` 连接登录
 
 ```js
 /**
  * @param params    详细参数
  * @param callback  回调事件
  */
-weiui_rongim.login({params}, callback(result))
+rongim.login({params}, callback(result))
 ``` 
 
 ##### params 参数说明
@@ -46,17 +52,17 @@ weiui_rongim.login({params}, callback(result))
 
 ## 退出登录
 
-> `weiui_rongim.logout` 退出登录，断开与融云服务器的连接，并且不再接收 Push 消息。
+> `rongim.logout` 退出登录，断开与融云服务器的连接，并且不再接收 Push 消息。
 
 ```js
-weiui_rongim.logout()
+rongim.logout()
 ```
 
 ## 聊天室业务
 
 > 融云聊天室相关业务
 
-#### weiui_rongim.joinChatRoom
+#### rongim.joinChatRoom
 
 * 加入聊天室。如果聊天室不存在则自动创建
 
@@ -66,7 +72,7 @@ weiui_rongim.logout()
  * @param defMessageCount   默认开始时拉取的历史记录条数
  * @param callback          回调事件
  */
-weiui_rongim.joinChatRoom(roomId, defMessageCount, callback(result))
+rongim.joinChatRoom(roomId, defMessageCount, callback(result))
 ``` 
 
 > callback 回调`result`说明
@@ -80,7 +86,7 @@ weiui_rongim.joinChatRoom(roomId, defMessageCount, callback(result))
 }
 ```
 
-#### weiui_rongim.quitChatRoom
+#### rongim.quitChatRoom
 
 * 退出当前聊天室，不在接收其消息
 
@@ -88,7 +94,7 @@ weiui_rongim.joinChatRoom(roomId, defMessageCount, callback(result))
 /**
  * @param callback          回调事件
  */
-weiui_rongim.quitChatRoom(callback(result))
+rongim.quitChatRoom(callback(result))
 ``` 
 
 > callback 回调`result`说明
@@ -102,7 +108,7 @@ weiui_rongim.quitChatRoom(callback(result))
 }
 ```
 
-#### weiui_rongim.addEventHandler
+#### rongim.addEventHandler
 
 * 添加接收者（监听聊天室消息）
 
@@ -110,7 +116,7 @@ weiui_rongim.quitChatRoom(callback(result))
 /**
  * @param callback          回调事件
  */
-weiui_rongim.addEventHandler(callback(result))
+rongim.addEventHandler(callback(result))
 ``` 
 
 > callback 回调`result`说明
@@ -134,15 +140,15 @@ weiui_rongim.addEventHandler(callback(result))
 * send_error：发送消息失败
 
 
-#### weiui_rongim.removeEventHandler
+#### rongim.removeEventHandler
 
 * 移除接收者（取消监听聊天室消息）
 
 ```js
-weiui_rongim.removeEventHandler()
+rongim.removeEventHandler()
 ``` 
 
-#### weiui_rongim.sendTextMessage
+#### rongim.sendTextMessage
 
 * 当前聊天室发送文本消息
 
@@ -151,7 +157,7 @@ weiui_rongim.removeEventHandler()
  * @param text      发送的文本内容
  * @param callback  回调事件
  */
-weiui_rongim.sendTextMessage(rtext, callback(result))
+rongim.sendTextMessage(rtext, callback(result))
 ``` 
 
 > callback 回调`result`说明

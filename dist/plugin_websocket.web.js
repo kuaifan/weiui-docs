@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 126);
+/******/ 	return __webpack_require__(__webpack_require__.s = 216);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -852,7 +852,90 @@ module.exports = app;
 
 /***/ }),
 
-/***/ 126:
+/***/ 2:
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+
+/***/ 216:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -870,24 +953,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _weexVueRender2.default.init(_vue2.default);
 
-var App = __webpack_require__(127);
+var App = __webpack_require__(217);
 new _vue2.default(_vue2.default.util.extend({ el: '#root' }, App));
 
 /***/ }),
 
-/***/ 127:
+/***/ 217:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(128)
+  __webpack_require__(218)
 }
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(130),
+  __webpack_require__(220),
   /* template */
-  __webpack_require__(131),
+  __webpack_require__(221),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -895,9 +978,9 @@ var Component = __webpack_require__(4)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/module_caches.vue"
+Component.options.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/plugin_websocket.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] module_caches.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] plugin_websocket.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -906,9 +989,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3213b710", Component.options)
+    hotAPI.createRecord("data-v-7025c63f", Component.options)
   } else {
-    hotAPI.reload("data-v-3213b710", Component.options)
+    hotAPI.reload("data-v-7025c63f", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -920,23 +1003,23 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 128:
+/***/ 218:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(129);
+var content = __webpack_require__(219);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("3b75831d", content, false, {});
+var update = __webpack_require__(3)("c3271ca8", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3213b710\",\"scoped\":false,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./module_caches.vue", function() {
-     var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3213b710\",\"scoped\":false,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./module_caches.vue");
+   module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7025c63f\",\"scoped\":false,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./plugin_websocket.vue", function() {
+     var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7025c63f\",\"scoped\":false,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./plugin_websocket.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -947,7 +1030,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 129:
+/***/ 219:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -955,14 +1038,14 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.app {\n    width: 10rem;\n    flex: 1;\n}\n.navbar {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.title {\n    font-size: 0.37333rem;\n    color: #ffffff\n}\n.iconr {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.content {\n    flex: 1;\n    align-items: center;\n}\n.subtitle {\n    padding-top: 0.74667rem;\n    padding-right: 0.32rem;\n    padding-bottom: 0.32rem;\n    padding-left: 0.32rem;\n    font-size: 0.37333rem;\n    color: #757575;\n}\n.button {\n    width: 5.06667rem;\n    font-size: 0.32rem;\n    text-align: center;\n    margin-top: 0.26667rem;\n    margin-bottom: 0.26667rem;\n    padding-top: 0.34667rem;\n    padding-bottom: 0.34667rem;\n    padding-left: 0.4rem;\n    padding-right: 0.4rem;\n    color: #ffffff;\n    background-color: #00B4FF;\n}\n", ""]);
+exports.push([module.i, "\n.app {\n    width: 10rem;\n    flex: 1;\n}\n.navbar {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.title {\n    font-size: 0.37333rem;\n    color: #ffffff\n}\n.iconr {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.lists {\n    flex: 1;\n    padding-bottom: 0.33333rem;\n    background-color: #e8e8e8;\n}\n.left {\n    width: 9.33333rem;\n    flex-direction: row;\n    margin-top: 0.33333rem;\n    margin-left: 0.33333rem;\n    margin-right: 0.33333rem;\n}\n.right {\n    width: 9.33333rem;\n    flex-direction: row;\n    justify-content: flex-end;\n    margin-top: 0.33333rem;\n    margin-left: 0.33333rem;\n    margin-right: 0.33333rem;\n}\n.photo {\n    width: 1.2rem;\n    height: 1.2rem;\n    background-color: #ffffff;\n    border-radius: 0.6rem;\n}\n.detail {\n    margin-left: 0.32rem;\n    margin-right: 0.32rem;\n    justify-content: center;\n    padding: 0.32rem;\n    border-radius: 0.05333rem;\n    background-color: #ffffff;\n}\n.detail-right {\n    background-color: #7CBF57;\n}\n.text {\n    max-width: 6.93333rem;\n    font-size: 0.37333rem;\n}\n.bottom {\n    width: 10rem;\n    height: 1.30667rem;\n    flex-direction: row;\n    align-items: center;\n}\n.bottom-input {\n    width: 7.6rem;\n    height: 1.06667rem;\n    line-height: 1.06667rem;\n    margin-left: 0.26667rem;\n    font-size: 0.37333rem;\n    padding-left: 0.08rem;\n    padding-right: 0.08rem;\n}\n.bottom-line {\n    position: absolute;\n    top: 1.18667rem;\n    left: 0.26667rem;\n    width: 7.6rem;\n    height: 1px;\n    background-color: #dddddd;\n}\n.bottom-button,\n.bottom-button-null {\n    width: 1.73333rem;\n    height: 0.93333rem;\n    margin-left: 0.13333rem;\n    margin-right: 0.26667rem;\n    line-height: 0.93333rem;\n    font-size: 0.32rem;\n    text-align: center;\n    color: #ffffff;\n    background-color: #00B4FF;\n    border-radius: 0.08rem;\n}\n.bottom-button-null {\n    background-color: #e4e4e4;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 130:
+/***/ 220:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1060,17 +1143,91 @@ var weiui = weex.requireModule('weiui'); //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var websocket = weex.requireModule('websocket');
 
 exports.default = {
     data: function data() {
         return {
-            caches: '',
-            variate: ''
+            url: 'ws://echo.websocket.org',
+
+            msgLists: [],
+            sendText: ''
         };
     },
     mounted: function mounted() {
-        this.caches = weiui.getCachesString('tempName', '');
-        this.variate = weiui.getVariate('tempName', '');
+        if (typeof websocket === 'undefined') {
+            weiui.alert({
+                title: '温馨提示',
+                message: "检测到未安装websocket插件，安装详细请登录http://weiui.cc/"
+            }, function () {
+                weiui.closePage();
+            });
+            return;
+        }
+        this.connect();
     },
 
 
@@ -1078,38 +1235,105 @@ exports.default = {
         viewCode: function viewCode(str) {
             (0, _app.openViewCode)(str);
         },
-        randomString: function randomString(len) {
-            len = len || 32;
-            var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678oOLl9gqVvUuI1';
-            var maxPos = $chars.length;
-            var pwd = '';
-            for (var i = 0; i < len; i++) {
-                pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+        connect: function connect() {
+            var _this = this;
+
+            var loaddingName = weiui.loading({
+                title: '正在连接，请稍后...'
+            });
+            websocket.connect(this.url, function (result) {
+                switch (result.status) {
+                    case 'open':
+                        //连接已经准备好接受和发送数据
+                        weiui.loadingClose(loaddingName);
+                        _this.addMsg({
+                            type: 'left',
+                            msg: '请问您有什么问题？'
+                        });
+                        break;
+
+                    case 'message':
+                        //接收到新消息：result.msg
+                        _this.addMsg({
+                            type: 'left',
+                            msg: result.msg
+                        });
+                        break;
+
+                    case 'closed':
+                    case 'failure':
+                    case 'error':
+                        //连接关闭
+                        weiui.loadingClose(loaddingName);
+                        weiui.confirm({
+                            title: "温馨提示",
+                            message: "连接关闭，点击确定重新连接？",
+                            buttons: ["取消", "确定"]
+                        }, function (result) {
+                            if (result.status === "click") {
+                                if (result.title === "确定") {
+                                    _this.connect();
+                                } else {
+                                    weiui.closePage();
+                                }
+                            }
+                        });
+                        break;
+                }
+            });
+        },
+        addMsg: function addMsg(data) {
+            var _this2 = this;
+
+            this.msgLists.push(data);
+            setTimeout(function () {
+                _this2.$refs.myLists.smoothScrollToPosition(-1);
+            }, 300);
+        },
+        send: function send() {
+            var msg = this.sendText.trim();
+            if (msg === "") {
+                weiui.toast("请输入要发送的内容！");
+                return;
             }
-            return pwd;
+            this.sendText = "";
+            this.addMsg({
+                type: 'right',
+                msg: msg
+            });
+            websocket.send(msg);
+            weiui.keyboardHide();
         },
-        setCaches: function setCaches() {
-            this.caches = this.randomString(16);
-            weiui.setCachesString('tempName', this.caches, 0);
+        returnSend: function returnSend(data) {
+            if (data.returnKeyType === 'send') {
+                this.send(data.value);
+            }
         },
-        getCaches: function getCaches() {
-            this.caches = weiui.getCachesString('tempName', '');
-            weiui.toast("读取成功，缓存：" + this.caches);
-        },
-        setVariate: function setVariate() {
-            this.variate = this.randomString(16);
-            weiui.setVariate('tempName', this.variate);
-        },
-        getVariate: function getVariate() {
-            this.variate = weiui.getVariate('tempName', '');
-            weiui.toast("读取成功，变量：" + this.variate);
+        startAjax: function startAjax() {
+            var _this3 = this;
+
+            this.status = "";
+            this.content = "";
+            weiui.ajax({
+                url: this.url,
+                dataType: 'text'
+            }, function (res) {
+                if (_this3.status === "") {
+                    _this3.status += res.status;
+                } else {
+                    _this3.status += " > " + res.status;
+                }
+                if (res.status === "success") {
+                    _this3.content = res.result;
+                }
+            });
         }
     }
 };
 
 /***/ }),
 
-/***/ 131:
+/***/ 221:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1134,7 +1358,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("数据缓存")])]), _vm._v(" "), _c('weiui_navbar_item', {
+  }, [_vm._v("即时通讯")])]), _vm._v(" "), _c('weiui_navbar_item', {
     attrs: {
       "type": "right",
       "data-evt-click": ""
@@ -1143,7 +1367,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.$stopOuterA,
       "weex$tap": function($event) {
         $event.stopPropagation();
-        _vm.viewCode('module/caches')
+        _vm.viewCode('plugin/websocket')
       }
     }
   }, [_c('weiui_icon', {
@@ -1151,26 +1375,114 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "content": "md-code-working"
     }
-  })], 1)], 1), _vm._v(" "), _c('div', {
-    staticClass: "content weex-ct weex-div",
+  })], 1)], 1), _vm._v(" "), _c('weiui_list', {
+    ref: "myLists",
+    staticClass: "lists",
+    attrs: {}
+  }, _vm._l((_vm.msgLists), function(detail, index) {
+    return _c('div', {
+      key: index,
+      staticClass: " weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [(detail.type === 'left') ? _c('div', {
+      staticClass: "left weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('figure', {
+      directives: [{
+        name: "weex-resize",
+        rawName: "v-weex-resize",
+        value: ("cover"),
+        expression: "\"cover\""
+      }],
+      staticClass: "photo weex-el weex-image",
+      attrs: {
+        "resize": "cover",
+        "src": "http://weiui.cc/assets/grid/grid_7.jpg",
+        "data-img-src": "http://weiui.cc/assets/grid/grid_7.jpg",
+        "weex-type": "image"
+      }
+    }), _vm._v(" "), _c('div', {
+      staticClass: "detail weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('p', {
+      staticClass: "text weex-el weex-text",
+      attrs: {
+        "weex-type": "text"
+      }
+    }, [_vm._v(_vm._s(detail.msg))])])]) : _c('div', {
+      staticClass: "right weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('div', {
+      staticClass: "detail detail-right weex-ct weex-div",
+      attrs: {
+        "weex-type": "div"
+      }
+    }, [_c('p', {
+      staticClass: "text weex-el weex-text",
+      attrs: {
+        "weex-type": "text"
+      }
+    }, [_vm._v(_vm._s(detail.msg))])]), _vm._v(" "), _c('figure', {
+      directives: [{
+        name: "weex-resize",
+        rawName: "v-weex-resize",
+        value: ("cover"),
+        expression: "\"cover\""
+      }],
+      staticClass: "photo weex-el weex-image",
+      attrs: {
+        "resize": "cover",
+        "src": "http://weiui.cc/assets/grid/grid_10.jpg",
+        "data-img-src": "http://weiui.cc/assets/grid/grid_10.jpg",
+        "weex-type": "image"
+      }
+    })])])
+  })), _vm._v(" "), _c('div', {
+    staticClass: "bottom weex-ct weex-div",
     attrs: {
       "weex-type": "div"
     }
-  }, [_c('p', {
-    staticClass: "subtitle weex-el weex-text",
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.sendText),
+      expression: "sendText"
+    }],
+    staticClass: "bottom-input",
     attrs: {
-      "weex-type": "text"
+      "hideDoneButton": true,
+      "upriseOffset": 9,
+      "placeholder": "输入要发送的内容",
+      "return-key-type": "send",
+      "data-evt-return": ""
+    },
+    domProps: {
+      "value": (_vm.sendText)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.sendText = $event.target.value
+      }
+    },
+    nativeOn: {
+      "return": function($event) {
+        $event.stopPropagation();
+        return _vm.returnSend($event)
+      }
     }
-  }, [_vm._v("数据缓存：重启APP不被删除")]), _vm._v(" "), _c('p', {
+  }), _vm._v(" "), _c('p', {
     staticClass: " weex-el weex-text",
-    staticStyle: {
-      "font-size": "0.32rem"
-    },
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v(_vm._s(_vm.caches))]), _vm._v(" "), _c('p', {
-    staticClass: "button weex-el weex-text",
+    class: [_vm.sendText.trim() === '' ? 'bottom-button-null' : 'bottom-button'],
     attrs: {
       "weex-type": "text",
       "data-evt-click": ""
@@ -1179,153 +1491,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.$stopOuterA,
       "weex$tap": function($event) {
         $event.stopPropagation();
-        _vm.setCaches()
+        return _vm.send($event)
       }
     }
-  }, [_vm._v("设置缓存")]), _vm._v(" "), _c('p', {
-    staticClass: "button weex-el weex-text",
+  }, [_vm._v("发送")]), _vm._v(" "), _c('div', {
+    staticClass: "bottom-line weex-ct weex-div",
     attrs: {
-      "weex-type": "text",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        _vm.getCaches()
-      }
+      "weex-type": "div"
     }
-  }, [_vm._v("读取缓存")]), _vm._v(" "), _c('p', {
-    staticClass: "subtitle weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("全局变量：重启APP后数据不存在")]), _vm._v(" "), _c('p', {
-    staticClass: " weex-el weex-text",
-    staticStyle: {
-      "font-size": "0.32rem"
-    },
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v(_vm._s(_vm.variate))]), _vm._v(" "), _c('p', {
-    staticClass: "button weex-el weex-text",
-    attrs: {
-      "weex-type": "text",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        _vm.setVariate()
-      }
-    }
-  }, [_vm._v("设置变量")]), _vm._v(" "), _c('p', {
-    staticClass: "button weex-el weex-text",
-    attrs: {
-      "weex-type": "text",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        _vm.getVariate()
-      }
-    }
-  }, [_vm._v("读取变量")])])], 1)
+  })])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3213b710", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-7025c63f", module.exports)
   }
 }
-
-/***/ }),
-
-/***/ 2:
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
 
 /***/ }),
 

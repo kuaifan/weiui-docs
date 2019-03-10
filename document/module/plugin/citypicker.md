@@ -1,9 +1,15 @@
 # 城市选择器
 
+> 首次使用请执行
+
+```bash
+weiui plugin add citypicker
+```
+
 > 需要加载的模块
 
 ```js
-const weiui_citypicker = weex.requireModule('weiui_citypicker');
+const citypicker = weex.requireModule('citypicker');
 ```
 
 ## 示例代码
@@ -29,15 +35,14 @@ const weiui_citypicker = weex.requireModule('weiui_citypicker');
         margin-top: 20px;
         padding-top: 20px;
         padding-bottom: 20px;
-        padding-left: 30px;
-        padding-right: 30px;
+        width: 220px;
         color: #ffffff;
         background-color: #00B4FF;
     }
 </style>
 
 <script>
-    const weiui_citypicker = weex.requireModule('weiui_citypicker');
+    const citypicker = weex.requireModule('citypicker');
 
     export default {
         data() {
@@ -50,7 +55,7 @@ const weiui_citypicker = weex.requireModule('weiui_citypicker');
         },
         methods: {
             citypicker() {
-                weiui_citypicker.select({
+                citypicker.select({
                     province: this.province,
                     city: this.city,
                     area: this.area

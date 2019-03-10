@@ -605,7 +605,7 @@ var weiui = weex.requireModule('weiui');
 
 var app = {
 
-    jshome: '',
+    jshome: 'http://weiui.cc/dist/',
 
     openViewCode: function openViewCode(str) {
         app.openViewUrl("http://weiui.cc/#/" + str);
@@ -772,7 +772,7 @@ module.exports = {
   "list-left-title-history": {
     "color": "#242424",
     "paddingLeft": "12",
-    "width": "600",
+    "width": "660",
     "fontSize": "26",
     "textOverflow": "ellipsis",
     "lines": 1
@@ -813,9 +813,6 @@ var _global = __webpack_require__(0);
 
 var _app = __webpack_require__(1);
 
-//
-//
-//
 //
 //
 //
@@ -1079,7 +1076,7 @@ exports.default = {
                 title: '标签页面',
                 title_en: 'weiui_tabbar',
                 icon: 'md-filing',
-                url: _app.jshome + 'component_tabbar.js'
+                url: _app.jshome + 'component_tabbar3.js'
             }],
 
             module: [{
@@ -1141,39 +1138,48 @@ exports.default = {
                 title: '广告弹窗',
                 title_en: 'adDialog',
                 icon: 'logo-buffer',
-                url: _app.jshome + 'module_ad_dialog.js'
-            }, {
+                url: _app.jshome + 'module_ad_dialog.js' /*, {
+                                                            title: '更多拓展模块',
+                                                            title_en: 'expandModule',
+                                                            icon: 'md-more',
+                                                            url: jshome + 'index_expand.js',
+                                                         }*/ }],
+
+            plugin: [{
                 title: '城市选择器',
                 title_en: 'citypicker',
                 icon: 'md-pin',
-                url: _app.jshome + 'third_citypicker.js'
+                url: _app.jshome + 'plugin_citypicker.js'
             }, {
                 title: '图片选择器',
-                title_en: 'pictureSelector',
+                title_en: 'picture',
                 icon: 'md-camera',
-                url: _app.jshome + 'third_picture.js'
+                url: _app.jshome + 'plugin_picture.js'
             }, {
-                title: '更多拓展模块',
-                title_en: 'expandModule',
-                icon: 'md-more',
-                url: _app.jshome + 'index_expand.js'
-            }],
-
-            third_module: [{
+                title: '组件截图',
+                title_en: 'screenshots',
+                icon: 'md-crop',
+                url: _app.jshome + 'plugin_screenshots.js'
+            }, {
                 title: '融云通信模块',
-                title_en: 'rongcloud',
+                title_en: 'rongim',
                 icon: 'tb-community',
-                url: 'rongcloud'
+                url: _app.jshome + 'plugin_rongim.js'
             }, {
                 title: '友盟推送模块',
                 title_en: 'umeng',
                 icon: 'md-send',
-                url: 'umeng'
+                url: _app.jshome + 'plugin_umeng.js'
             }, {
-                title: '第三方支付',
+                title: '第三方支付(微信/支付宝)',
                 title_en: 'pay',
                 icon: 'tb-sponsor',
-                url: 'pay'
+                url: _app.jshome + 'plugin_pay.js'
+            }, {
+                title: '即时通讯',
+                title_en: 'websocket',
+                icon: 'md-repeat',
+                url: _app.jshome + 'plugin_websocket.js'
             }],
 
             about_lists: [{
@@ -1312,11 +1318,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         content: 'md-refresh'
       }
     }
-  })], 1)], 1), _c('scroller', {
+  })], 1)], 1), _c('weiui_list', {
     staticClass: ["list"]
   }, [_c('text', {
     staticClass: ["list-title"]
-  }, [_vm._v("Components")]), _vm._l((_vm.components), function(item, index) {
+  }, [_vm._v("组件 Components")]), _vm._l((_vm.components), function(item, index) {
     return _c('div', {
       key: index,
       staticClass: ["list-item"],
@@ -1350,7 +1356,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })], 1)])
   }), _c('text', {
     staticClass: ["list-title"]
-  }, [_vm._v("Module")]), _vm._l((_vm.module), function(item, index) {
+  }, [_vm._v("模块 Module")]), _vm._l((_vm.module), function(item, index) {
     return _c('div', {
       key: index,
       staticClass: ["list-item"],
@@ -1384,13 +1390,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })], 1)])
   }), _c('text', {
     staticClass: ["list-title"]
-  }, [_vm._v("Third Module")]), _vm._l((_vm.third_module), function(item, index) {
+  }, [_vm._v("插件化 Plugins")]), _vm._l((_vm.plugin), function(item, index) {
     return _c('div', {
       key: index,
       staticClass: ["list-item"],
       on: {
         "click": function($event) {
-          _vm.openThird(item.url)
+          _vm.openUrl(item.url)
         }
       }
     }, [_c('div', {
@@ -1418,7 +1424,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     })], 1)])
   }), _c('text', {
     staticClass: ["list-title"]
-  }, [_vm._v("About Weiui")]), _vm._l((_vm.about_lists), function(item, index) {
+  }, [_vm._v("关于 About Weiui")]), _vm._l((_vm.about_lists), function(item, index) {
     return _c('div', {
       key: index,
       staticClass: ["list-item"],
@@ -1472,16 +1478,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('div', {
       staticClass: ["list-item-left"]
-    }, [_c('weiui_icon', {
-      staticClass: ["list-left-icon"],
-      attrs: {
-        "weiui": {
-          content: 'ionic'
-        }
-      }
-    }), _c('text', {
+    }, [_c('text', {
       staticClass: ["list-left-title-history"]
-    }, [_vm._v(_vm._s(text))])], 1), _c('div', {
+    }, [_vm._v(_vm._s(text))])]), _c('div', {
       staticClass: ["list-item-right"]
     }, [_c('weiui_icon', {
       staticClass: ["list-right-icon"],

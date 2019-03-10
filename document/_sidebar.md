@@ -7,7 +7,7 @@
     
 - [ 开发手册 ]
     - [<span>lifecycle</span>生命周期](start/lifecycle)
-    - [<span>references</span>官方组件](http://weex-project.io/zh/docs/components/a.html#%E7%AE%80%E4%BB%8B)
+    - [<span>references</span>官方组件](http://weex.apache.org/zh/docs/components/a.html)
     - <b>[ 组件 ]</b>
         - [<span>&lt;weiui_banner&gt;</span>轮播控件](component/weiui_banner)
         - [<span>&lt;weiui_button&gt;</span>常用按钮](component/weiui_button)
@@ -42,19 +42,18 @@
         - [<span>system</span>系统信息](module/system)
         - [<span>toast</span>吐司提示](module/toast)
         - [<span>weex px</span>单位转换](module/weexpx)
-        - [<span>citypicker</span>城市选择器](module/third/citypicker)
-        - [<span>pictureSelector</span>图片选择器](module/third/pictureSelector)
+        - [<span>keyboard</span>键盘状态](module/keyboard)
 
-    - <b>[ 模块化 ]</b>
-        - [<span>websocket</span>即时通讯](module/plugin/websocket)
+    - <b>[ 插件化 ]</b>
+        - [<span>citypicker</span>城市选择器](module/plugin/citypicker)
+        - [<span>picture</span>图片选择器](module/plugin/picture)
         - [<span>screenshots</span>组件截图](module/plugin/screenshots)
-
-    - <b>[ 第三方 ]</b>
-        - [<span>rongcloud</span>融云通信模块](module/third/rongcloud)
-        - [<span>umeng</span>友盟推送模块](module/third/umeng)
-        - [<span>pay</span>支付模块](module/third/pay)
+        - [<span>rongim</span>融云通信](module/plugin/rongim)
+        - [<span>umeng</span>友盟推送](module/plugin/umeng)
+        - [<span>pay</span>支付模块](module/plugin/pay)
+        - [<span>websocket</span>即时通讯](module/plugin/websocket)
     
-    - <b>[ 拓展模块 ]</b><span>暂不支持iOS</span>
+    <!-- - <b>[ 拓展模块 ]</b><span>暂不支持iOS</span>
         - [<span>appUtils</span>APP相关](module/expand/appUtils)
         - [<span>deviceUtils</span>设备相关](module/expand/deviceUtils)
         - [<span>keyboardUtils</span>键盘相关](module/expand/keyboardUtils)
@@ -66,7 +65,7 @@
         - [<span>timeUtils</span>时间相关](module/expand/timeUtils)
         - [<span>cameraTool</span>摄像相关](module/expand/cameraTool)
         - [<span>locationTool</span>定位相关](module/expand/locationTool)
-        - [<span>vibrateTool</span>震动相关](module/expand/vibrateTool)
+        - [<span>vibrateTool</span>震动相关](module/expand/vibrateTool) -->
     
 - [ 社区及推荐博文 ]	
 	- [云中心](https://app.weiui.cc/) 

@@ -2,10 +2,22 @@
 
 - 包含支持：微信支付、支付宝支付。
 
+> 首次使用请执行
+
+```bash
+weiui plugin add pay
+```
+
+如果出现出现UTDID冲突请使用pay_noutdid版本
+
+```bash
+weiui plugin add pay_noutdid
+```
+
 > 需要加载的模块
 
 ```js
-const weiui_pay = weex.requireModule('weiui_pay');
+const pay = weex.requireModule('pay');
 ```
 
 ## 参数配置
@@ -31,14 +43,14 @@ const weiui_pay = weex.requireModule('weiui_pay');
 
 #### 调起支付
 
-> `weiui_pay.weixin` 微信支付
+> `pay.weixin` 微信支付
 
 ```js
 /**
  * @param params    详细参数
  * @param callback  回调事件
  */
-weiui_pay.weixin({params}, callback(result))
+pay.weixin({params}, callback(result))
 ``` 
 
 ##### params 参数说明
@@ -75,14 +87,14 @@ weiui_pay.weixin({params}, callback(result))
 
 ## 支付宝支付
 
-> `weiui_pay.alipay` 支付宝支付
+> `pay.alipay` 支付宝支付
 
 ```js
 /**
  * @param payData   请求参数   
  * @param callback  回调事件
  */
-weiui_pay.alipay(payData, callback(result))
+pay.alipay(payData, callback(result))
 ``` 
 
 ##### `payData`请求参数示例

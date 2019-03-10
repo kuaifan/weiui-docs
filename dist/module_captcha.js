@@ -605,7 +605,7 @@ var weiui = weex.requireModule('weiui');
 
 var app = {
 
-    jshome: '',
+    jshome: 'http://weiui.cc/dist/',
 
     openViewCode: function openViewCode(str) {
         app.openViewUrl("http://weiui.cc/#/" + str);
@@ -727,8 +727,7 @@ module.exports = {
     "marginTop": "20",
     "paddingTop": "20",
     "paddingBottom": "20",
-    "paddingLeft": "30",
-    "paddingRight": "30",
+    "width": "220",
     "color": "#ffffff",
     "backgroundColor": "#00B4FF"
   }
@@ -749,7 +748,6 @@ Object.defineProperty(exports, "__esModule", {
 var _app = __webpack_require__(1);
 
 var weiui = weex.requireModule('weiui'); //
-//
 //
 //
 //

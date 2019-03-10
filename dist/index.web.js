@@ -915,7 +915,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.app[data-v-dad4f304] {\n    flex: 1;\n}\n.navbar[data-v-dad4f304] {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.navbar-title[data-v-dad4f304] {\n    font-size: 0.42667rem;\n    color: #ffffff;\n}\n.navbar-icon[data-v-dad4f304] {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.list[data-v-dad4f304] {\n    width: 10rem;\n    flex: 1;\n}\n.list-title-box[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n}\n.list-title[data-v-dad4f304] {\n    padding-top: 0.48rem;\n    padding-right: 0.32rem;\n    padding-bottom: 0.32rem;\n    padding-left: 0.32rem;\n    font-size: 0.37333rem;\n    color: #757575;\n}\n.list-subtitle[data-v-dad4f304] {\n    position: absolute;\n    right: 0.32rem;\n    bottom: 0.32rem;\n    font-size: 0.32rem;\n}\n.list-item[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    height: 1.33333rem;\n    width: 10rem;\n    padding-left: 0.26667rem;\n    padding-right: 0.26667rem;\n    border-top-width: 1px;\n    border-top-color: #e8e8e8;\n    border-top-style: solid;\n}\n.list-item-left[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n    justify-content: flex-start;\n    height: 1.33333rem;\n    flex: 1;\n}\n.list-left-icon[data-v-dad4f304] {\n    width: 0.8rem;\n    height: 0.8rem;\n    color: #3EB4FF;\n}\n.list-left-title[data-v-dad4f304] {\n    color: #242424;\n    padding-left: 0.16rem;\n    width: 5.06667rem;\n    font-size: 0.34667rem;\n    text-overflow: ellipsis;\n    lines: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    -webkit-line-clamp: 1;\n}\n.list-left-title-history[data-v-dad4f304] {\n    color: #242424;\n    padding-left: 0.16rem;\n    width: 8rem;\n    font-size: 0.34667rem;\n    text-overflow: ellipsis;\n    lines: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    -webkit-line-clamp: 1;\n}\n.list-right-title[data-v-dad4f304] {\n    color: #a2a2a2;\n    padding-right: 0.04rem;\n    font-size: 0.29333rem;\n    text-overflow: ellipsis;\n    lines: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    -webkit-line-clamp: 1;\n}\n.list-right-icon[data-v-dad4f304] {\n    width: 0.53333rem;\n    height: 0.53333rem;\n    color: #C9C9CE;\n}\n.list-item-right[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n    justify-content: flex-end;\n    height: 1.33333rem;\n}\n", ""]);
+exports.push([module.i, "\n.app[data-v-dad4f304] {\n    flex: 1;\n}\n.navbar[data-v-dad4f304] {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.navbar-title[data-v-dad4f304] {\n    font-size: 0.42667rem;\n    color: #ffffff;\n}\n.navbar-icon[data-v-dad4f304] {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.list[data-v-dad4f304] {\n    width: 10rem;\n    flex: 1;\n}\n.list-title-box[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n}\n.list-title[data-v-dad4f304] {\n    padding-top: 0.48rem;\n    padding-right: 0.32rem;\n    padding-bottom: 0.32rem;\n    padding-left: 0.32rem;\n    font-size: 0.37333rem;\n    color: #757575;\n}\n.list-subtitle[data-v-dad4f304] {\n    position: absolute;\n    right: 0.32rem;\n    bottom: 0.32rem;\n    font-size: 0.32rem;\n}\n.list-item[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    height: 1.33333rem;\n    width: 10rem;\n    padding-left: 0.26667rem;\n    padding-right: 0.26667rem;\n    border-top-width: 1px;\n    border-top-color: #e8e8e8;\n    border-top-style: solid;\n}\n.list-item-left[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n    justify-content: flex-start;\n    height: 1.33333rem;\n    flex: 1;\n}\n.list-left-icon[data-v-dad4f304] {\n    width: 0.8rem;\n    height: 0.8rem;\n    color: #3EB4FF;\n}\n.list-left-title[data-v-dad4f304] {\n    color: #242424;\n    padding-left: 0.16rem;\n    width: 5.06667rem;\n    font-size: 0.34667rem;\n    text-overflow: ellipsis;\n    lines: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    -webkit-line-clamp: 1;\n}\n.list-left-title-history[data-v-dad4f304] {\n    color: #242424;\n    padding-left: 0.16rem;\n    width: 8.8rem;\n    font-size: 0.34667rem;\n    text-overflow: ellipsis;\n    lines: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    -webkit-line-clamp: 1;\n}\n.list-right-title[data-v-dad4f304] {\n    color: #a2a2a2;\n    padding-right: 0.04rem;\n    font-size: 0.29333rem;\n    text-overflow: ellipsis;\n    lines: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    -webkit-line-clamp: 1;\n}\n.list-right-icon[data-v-dad4f304] {\n    width: 0.53333rem;\n    height: 0.53333rem;\n    color: #C9C9CE;\n}\n.list-item-right[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n    justify-content: flex-end;\n    height: 1.33333rem;\n}\n", ""]);
 
 // exports
 
@@ -936,9 +936,6 @@ var _global = __webpack_require__(10);
 
 var _app = __webpack_require__(11);
 
-//
-//
-//
 //
 //
 //
@@ -1202,7 +1199,7 @@ exports.default = {
                 title: '标签页面',
                 title_en: 'weiui_tabbar',
                 icon: 'md-filing',
-                url: _app.jshome + 'component_tabbar.js'
+                url: _app.jshome + 'component_tabbar3.js'
             }],
 
             module: [{
@@ -1264,39 +1261,48 @@ exports.default = {
                 title: '广告弹窗',
                 title_en: 'adDialog',
                 icon: 'logo-buffer',
-                url: _app.jshome + 'module_ad_dialog.js'
-            }, {
+                url: _app.jshome + 'module_ad_dialog.js' /*, {
+                                                            title: '更多拓展模块',
+                                                            title_en: 'expandModule',
+                                                            icon: 'md-more',
+                                                            url: jshome + 'index_expand.js',
+                                                         }*/ }],
+
+            plugin: [{
                 title: '城市选择器',
                 title_en: 'citypicker',
                 icon: 'md-pin',
-                url: _app.jshome + 'third_citypicker.js'
+                url: _app.jshome + 'plugin_citypicker.js'
             }, {
                 title: '图片选择器',
-                title_en: 'pictureSelector',
+                title_en: 'picture',
                 icon: 'md-camera',
-                url: _app.jshome + 'third_picture.js'
+                url: _app.jshome + 'plugin_picture.js'
             }, {
-                title: '更多拓展模块',
-                title_en: 'expandModule',
-                icon: 'md-more',
-                url: _app.jshome + 'index_expand.js'
-            }],
-
-            third_module: [{
+                title: '组件截图',
+                title_en: 'screenshots',
+                icon: 'md-crop',
+                url: _app.jshome + 'plugin_screenshots.js'
+            }, {
                 title: '融云通信模块',
-                title_en: 'rongcloud',
+                title_en: 'rongim',
                 icon: 'tb-community',
-                url: 'rongcloud'
+                url: _app.jshome + 'plugin_rongim.js'
             }, {
                 title: '友盟推送模块',
                 title_en: 'umeng',
                 icon: 'md-send',
-                url: 'umeng'
+                url: _app.jshome + 'plugin_umeng.js'
             }, {
-                title: '第三方支付',
+                title: '第三方支付(微信/支付宝)',
                 title_en: 'pay',
                 icon: 'tb-sponsor',
-                url: 'pay'
+                url: _app.jshome + 'plugin_pay.js'
+            }, {
+                title: '即时通讯',
+                title_en: 'websocket',
+                icon: 'md-repeat',
+                url: _app.jshome + 'plugin_websocket.js'
             }],
 
             about_lists: [{
@@ -1452,7 +1458,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         content: 'md-refresh'
       }
     }
-  })], 1)], 1), _vm._v(" "), _c('scroller', {
+  })], 1)], 1), _vm._v(" "), _c('weiui_list', {
     staticClass: "list",
     attrs: {}
   }, [_c('p', {
@@ -1460,7 +1466,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("Components")]), _vm._v(" "), _vm._l((_vm.components), function(item, index) {
+  }, [_vm._v("组件 Components")]), _vm._v(" "), _vm._l((_vm.components), function(item, index) {
     return _c('div', {
       key: index,
       staticClass: "list-item weex-ct weex-div",
@@ -1515,7 +1521,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("Module")]), _vm._v(" "), _vm._l((_vm.module), function(item, index) {
+  }, [_vm._v("模块 Module")]), _vm._v(" "), _vm._l((_vm.module), function(item, index) {
     return _c('div', {
       key: index,
       staticClass: "list-item weex-ct weex-div",
@@ -1570,7 +1576,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("Third Module")]), _vm._v(" "), _vm._l((_vm.third_module), function(item, index) {
+  }, [_vm._v("插件化 Plugins")]), _vm._v(" "), _vm._l((_vm.plugin), function(item, index) {
     return _c('div', {
       key: index,
       staticClass: "list-item weex-ct weex-div",
@@ -1582,7 +1588,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "click": _vm.$stopOuterA,
         "weex$tap": function($event) {
           $event.stopPropagation();
-          _vm.openThird(item.url)
+          _vm.openUrl(item.url)
         }
       }
     }, [_c('div', {
@@ -1625,7 +1631,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("About Weiui")]), _vm._v(" "), _vm._l((_vm.about_lists), function(item, index) {
+  }, [_vm._v("关于 About Weiui")]), _vm._v(" "), _vm._l((_vm.about_lists), function(item, index) {
     return _c('div', {
       key: index,
       staticClass: "list-item weex-ct weex-div",
@@ -1723,19 +1729,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "weex-type": "div"
       }
-    }, [_c('weiui_icon', {
-      staticClass: "list-left-icon",
-      attrs: {
-        "weiui": {
-          content: 'ionic'
-        }
-      }
-    }), _vm._v(" "), _c('p', {
+    }, [_c('p', {
       staticClass: "list-left-title-history weex-el weex-text",
       attrs: {
         "weex-type": "text"
       }
-    }, [_vm._v(_vm._s(text))])], 1), _vm._v(" "), _c('div', {
+    }, [_vm._v(_vm._s(text))])]), _vm._v(" "), _c('div', {
       staticClass: "list-item-right weex-ct weex-div",
       attrs: {
         "weex-type": "div"
@@ -1772,7 +1771,7 @@ var weiui = weex.requireModule('weiui');
 
 var app = {
 
-    jshome: '',
+    jshome: 'http://weiui.cc/dist/',
 
     openViewCode: function openViewCode(str) {
         app.openViewUrl("http://weiui.cc/#/" + str);

@@ -824,7 +824,7 @@ var weiui = weex.requireModule('weiui');
 
 var app = {
 
-    jshome: '',
+    jshome: 'http://weiui.cc/dist/',
 
     openViewCode: function openViewCode(str) {
         app.openViewUrl("http://weiui.cc/#/" + str);
@@ -955,7 +955,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.app {\n    width: 10rem;\n    flex: 1;\n}\n.navbar {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.title {\n    font-size: 0.37333rem;\n    color: #ffffff\n}\n.iconr {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.content {\n    flex: 1;\n    justify-content: center;\n    align-items: center;\n}\n.button {\n    font-size: 0.32rem;\n    text-align: center;\n    margin-top: 0.26667rem;\n    padding-top: 0.26667rem;\n    padding-bottom: 0.26667rem;\n    padding-left: 0.4rem;\n    padding-right: 0.4rem;\n    color: #ffffff;\n    background-color: #00B4FF;\n}\n", ""]);
+exports.push([module.i, "\n.app {\n    width: 10rem;\n    flex: 1;\n}\n.navbar {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.title {\n    font-size: 0.37333rem;\n    color: #ffffff\n}\n.iconr {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.content {\n    flex: 1;\n    justify-content: center;\n    align-items: center;\n}\n.button {\n    font-size: 0.32rem;\n    text-align: center;\n    margin-top: 0.26667rem;\n    padding-top: 0.26667rem;\n    padding-bottom: 0.26667rem;\n    width: 2.93333rem;\n    color: #ffffff;\n    background-color: #00B4FF;\n}\n", ""]);
 
 // exports
 
@@ -975,7 +975,6 @@ Object.defineProperty(exports, "__esModule", {
 var _app = __webpack_require__(11);
 
 var weiui = weex.requireModule('weiui'); //
-//
 //
 //
 //

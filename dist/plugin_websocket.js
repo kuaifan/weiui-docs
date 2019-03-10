@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 92);
+/******/ 	return __webpack_require__(__webpack_require__.s = 172);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -633,38 +633,38 @@ module.exports = app;
 
 /***/ }),
 
-/***/ 92:
+/***/ 172:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _module_alert = __webpack_require__(93);
+var _plugin_websocket = __webpack_require__(173);
 
-var _module_alert2 = _interopRequireDefault(_module_alert);
+var _plugin_websocket2 = _interopRequireDefault(_plugin_websocket);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_module_alert2.default.el = '#root';
-new Vue(_module_alert2.default);
+_plugin_websocket2.default.el = '#root';
+new Vue(_plugin_websocket2.default);
 
 /***/ }),
 
-/***/ 93:
+/***/ 173:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(94)
+__vue_styles__.push(__webpack_require__(174)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(95)
+__vue_exports__ = __webpack_require__(175)
 
 /* template */
-var __vue_template__ = __webpack_require__(96)
+var __vue_template__ = __webpack_require__(176)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -676,10 +676,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/module_alert.vue"
+__vue_options__.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/plugin_websocket.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-d1de94bc"
+__vue_options__._scopeId = "data-v-802e17d8"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -695,7 +695,7 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 94:
+/***/ 174:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -716,29 +716,102 @@ module.exports = {
     "height": "100",
     "color": "#ffffff"
   },
-  "content": {
+  "lists": {
     "flex": 1,
+    "paddingBottom": "25",
+    "backgroundColor": "#e8e8e8"
+  },
+  "left": {
+    "width": "700",
+    "flexDirection": "row",
+    "marginTop": "25",
+    "marginLeft": "25",
+    "marginRight": "25"
+  },
+  "right": {
+    "width": "700",
+    "flexDirection": "row",
+    "justifyContent": "flex-end",
+    "marginTop": "25",
+    "marginLeft": "25",
+    "marginRight": "25"
+  },
+  "photo": {
+    "width": "90",
+    "height": "90",
+    "backgroundColor": "#ffffff",
+    "borderRadius": "45"
+  },
+  "detail": {
+    "marginLeft": "24",
+    "marginRight": "24",
     "justifyContent": "center",
+    "paddingTop": "24",
+    "paddingRight": "24",
+    "paddingBottom": "24",
+    "paddingLeft": "24",
+    "borderRadius": "4",
+    "backgroundColor": "#ffffff"
+  },
+  "detail-right": {
+    "backgroundColor": "#7CBF57"
+  },
+  "text": {
+    "maxWidth": "520",
+    "fontSize": "28"
+  },
+  "bottom": {
+    "width": "750",
+    "height": "98",
+    "flexDirection": "row",
     "alignItems": "center"
   },
-  "button": {
-    "width": "380",
+  "bottom-input": {
+    "width": "570",
+    "height": "80",
+    "lineHeight": "80",
+    "marginLeft": "20",
+    "fontSize": "28",
+    "paddingLeft": "6",
+    "paddingRight": "6"
+  },
+  "bottom-line": {
+    "position": "absolute",
+    "top": "89",
+    "left": "20",
+    "width": "570",
+    "height": "1",
+    "backgroundColor": "#dddddd"
+  },
+  "bottom-button": {
+    "width": "130",
+    "height": "70",
+    "marginLeft": "10",
+    "marginRight": "20",
+    "lineHeight": "70",
     "fontSize": "24",
     "textAlign": "center",
-    "marginTop": "16",
-    "marginBottom": "16",
-    "paddingTop": "26",
-    "paddingBottom": "26",
-    "paddingLeft": "30",
-    "paddingRight": "30",
     "color": "#ffffff",
-    "backgroundColor": "#00B4FF"
+    "backgroundColor": "#00B4FF",
+    "borderRadius": "6"
+  },
+  "bottom-button-null": {
+    "width": "130",
+    "height": "70",
+    "marginLeft": "10",
+    "marginRight": "20",
+    "lineHeight": "70",
+    "fontSize": "24",
+    "textAlign": "center",
+    "color": "#ffffff",
+    "backgroundColor": "#e4e4e4",
+    "borderRadius": "6"
   }
 }
 
 /***/ }),
 
-/***/ 95:
+/***/ 175:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -818,70 +891,206 @@ var weiui = weex.requireModule('weiui'); //
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var websocket = weex.requireModule('websocket');
 
 exports.default = {
+    data: function data() {
+        return {
+            url: 'ws://echo.websocket.org',
+
+            msgLists: [],
+            sendText: ''
+        };
+    },
+    mounted: function mounted() {
+        if (typeof websocket === 'undefined') {
+            weiui.alert({
+                title: '温馨提示',
+                message: "检测到未安装websocket插件，安装详细请登录http://weiui.cc/"
+            }, function () {
+                weiui.closePage();
+            });
+            return;
+        }
+        this.connect();
+    },
+
+
     methods: {
         viewCode: function viewCode(str) {
             (0, _app.openViewCode)(str);
         },
-        toAlert: function toAlert() {
-            weiui.alert('你使用weiui了吗？', function () {
-                weiui.toast("点击了确定！");
+        connect: function connect() {
+            var _this = this;
+
+            var loaddingName = weiui.loading({
+                title: '正在连接，请稍后...'
             });
-        },
-        toAlert2: function toAlert2() {
-            weiui.alert({
-                title: '温馨提示',
-                message: '使用weiui真的很不错哦！'
-            }, function () {
-                weiui.toast("点击了确定！");
-            });
-        },
-        toConfirm: function toConfirm() {
-            weiui.confirm("你确定使用weiui了吗？", function (result) {
-                if (result.status == "click") {
-                    weiui.toast("点击了：" + result.title);
+            websocket.connect(this.url, function (result) {
+                switch (result.status) {
+                    case 'open':
+                        //连接已经准备好接受和发送数据
+                        weiui.loadingClose(loaddingName);
+                        _this.addMsg({
+                            type: 'left',
+                            msg: '请问您有什么问题？'
+                        });
+                        break;
+
+                    case 'message':
+                        //接收到新消息：result.msg
+                        _this.addMsg({
+                            type: 'left',
+                            msg: result.msg
+                        });
+                        break;
+
+                    case 'closed':
+                    case 'failure':
+                    case 'error':
+                        //连接关闭
+                        weiui.loadingClose(loaddingName);
+                        weiui.confirm({
+                            title: "温馨提示",
+                            message: "连接关闭，点击确定重新连接？",
+                            buttons: ["取消", "确定"]
+                        }, function (result) {
+                            if (result.status === "click") {
+                                if (result.title === "确定") {
+                                    _this.connect();
+                                } else {
+                                    weiui.closePage();
+                                }
+                            }
+                        });
+                        break;
                 }
             });
         },
-        toConfirm2: function toConfirm2() {
-            weiui.confirm({
-                title: "温馨提示",
-                message: "你确定使用weiui了吗？",
-                buttons: ["取消", "确定", "第三个按钮"]
-            }, function (result) {
-                if (result.status == "click") {
-                    weiui.toast("点击了：" + result.title);
-                }
-            });
+        addMsg: function addMsg(data) {
+            var _this2 = this;
+
+            this.msgLists.push(data);
+            setTimeout(function () {
+                _this2.$refs.myLists.smoothScrollToPosition(-1);
+            }, 300);
         },
-        toInput: function toInput() {
-            weiui.input({
-                title: "输入昵称",
-                buttons: ["取消", "确定"],
-                inputs: [{
-                    type: 'text'
-                }]
-            }, function (result) {
-                if (result.status == "click" && result.title == "确定") {
-                    weiui.toast("昵称：" + result.data[0]);
-                }
+        send: function send() {
+            var msg = this.sendText.trim();
+            if (msg === "") {
+                weiui.toast("请输入要发送的内容！");
+                return;
+            }
+            this.sendText = "";
+            this.addMsg({
+                type: 'right',
+                msg: msg
             });
+            websocket.send(msg);
+            weiui.keyboardHide();
         },
-        toInput2: function toInput2() {
-            weiui.input({
-                title: "输入昵称和真实姓名",
-                buttons: ["取消", "确定"],
-                inputs: [{
-                    type: 'text',
-                    placeholder: '请输入昵称'
-                }, {
-                    type: 'text',
-                    placeholder: '请输入真实姓名'
-                }]
-            }, function (result) {
-                if (result.status == "click" && result.title == "确定") {
-                    weiui.toast("昵称：" + result.data[0] + "，真实姓名：" + result.data[1]);
+        returnSend: function returnSend(data) {
+            if (data.returnKeyType === 'send') {
+                this.send(data.value);
+            }
+        },
+        startAjax: function startAjax() {
+            var _this3 = this;
+
+            this.status = "";
+            this.content = "";
+            weiui.ajax({
+                url: this.url,
+                dataType: 'text'
+            }, function (res) {
+                if (_this3.status === "") {
+                    _this3.status += res.status;
+                } else {
+                    _this3.status += " > " + res.status;
+                }
+                if (res.status === "success") {
+                    _this3.content = res.result;
                 }
             });
         }
@@ -890,7 +1099,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 96:
+/***/ 176:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -908,13 +1117,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('text', {
     staticClass: ["title"]
-  }, [_vm._v("确认对话框")])]), _c('weiui_navbar_item', {
+  }, [_vm._v("即时通讯")])]), _c('weiui_navbar_item', {
     attrs: {
       "type": "right"
     },
     on: {
       "click": function($event) {
-        _vm.viewCode('module/alert')
+        _vm.viewCode('plugin/websocket')
       }
     }
   }, [_c('weiui_icon', {
@@ -922,39 +1131,62 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "content": "md-code-working"
     }
-  })], 1)], 1), _c('div', {
-    staticClass: ["content"]
-  }, [_c('text', {
-    staticClass: ["button"],
+  })], 1)], 1), _c('weiui_list', {
+    ref: "myLists",
+    staticClass: ["lists"]
+  }, _vm._l((_vm.msgLists), function(detail, index) {
+    return _c('div', {
+      key: index
+    }, [(detail.type === 'left') ? _c('div', {
+      staticClass: ["left"]
+    }, [_c('image', {
+      staticClass: ["photo"],
+      attrs: {
+        "resize": "cover",
+        "src": "http://weiui.cc/assets/grid/grid_7.jpg"
+      }
+    }), _c('div', {
+      staticClass: ["detail"]
+    }, [_c('text', {
+      staticClass: ["text"]
+    }, [_vm._v(_vm._s(detail.msg))])])]) : _c('div', {
+      staticClass: ["right"]
+    }, [_c('div', {
+      staticClass: ["detail", "detail-right"]
+    }, [_c('text', {
+      staticClass: ["text"]
+    }, [_vm._v(_vm._s(detail.msg))])]), _c('image', {
+      staticClass: ["photo"],
+      attrs: {
+        "resize": "cover",
+        "src": "http://weiui.cc/assets/grid/grid_10.jpg"
+      }
+    })])])
+  })), _c('div', {
+    staticClass: ["bottom"]
+  }, [_c('input', {
+    staticClass: ["bottom-input"],
+    attrs: {
+      "hideDoneButton": true,
+      "upriseOffset": 9,
+      "placeholder": "输入要发送的内容",
+      "returnKeyType": "send",
+      "value": (_vm.sendText)
+    },
     on: {
-      "click": _vm.toAlert
+      "return": _vm.returnSend,
+      "input": function($event) {
+        _vm.sendText = $event.target.attr.value
+      }
     }
-  }, [_vm._v("alert")]), _c('text', {
-    staticClass: ["button"],
+  }), _c('text', {
+    class: [_vm.sendText.trim() === '' ? 'bottom-button-null' : 'bottom-button'],
     on: {
-      "click": _vm.toAlert2
+      "click": _vm.send
     }
-  }, [_vm._v("alert 带标题")]), _c('text', {
-    staticClass: ["button"],
-    on: {
-      "click": _vm.toConfirm
-    }
-  }, [_vm._v("confirm")]), _c('text', {
-    staticClass: ["button"],
-    on: {
-      "click": _vm.toConfirm2
-    }
-  }, [_vm._v("confirm 3个按钮")]), _c('text', {
-    staticClass: ["button"],
-    on: {
-      "click": _vm.toInput
-    }
-  }, [_vm._v("input")]), _c('text', {
-    staticClass: ["button"],
-    on: {
-      "click": _vm.toInput2
-    }
-  }, [_vm._v("input 2个输入框")])])], 1)
+  }, [_vm._v("发送")]), _c('div', {
+    staticClass: ["bottom-line"]
+  })])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

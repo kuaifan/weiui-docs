@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 126);
+/******/ 	return __webpack_require__(__webpack_require__.s = 186);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -852,7 +852,7 @@ module.exports = app;
 
 /***/ }),
 
-/***/ 126:
+/***/ 186:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -870,24 +870,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _weexVueRender2.default.init(_vue2.default);
 
-var App = __webpack_require__(127);
+var App = __webpack_require__(187);
 new _vue2.default(_vue2.default.util.extend({ el: '#root' }, App));
 
 /***/ }),
 
-/***/ 127:
+/***/ 187:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(128)
+  __webpack_require__(188)
 }
 var Component = __webpack_require__(4)(
   /* script */
-  __webpack_require__(130),
+  __webpack_require__(190),
   /* template */
-  __webpack_require__(131),
+  __webpack_require__(191),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -895,9 +895,9 @@ var Component = __webpack_require__(4)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/module_caches.vue"
+Component.options.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/plugin_pay.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] module_caches.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] plugin_pay.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -906,9 +906,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3213b710", Component.options)
+    hotAPI.createRecord("data-v-baddeac0", Component.options)
   } else {
-    hotAPI.reload("data-v-3213b710", Component.options)
+    hotAPI.reload("data-v-baddeac0", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -920,23 +920,23 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 128:
+/***/ 188:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(129);
+var content = __webpack_require__(189);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(3)("3b75831d", content, false, {});
+var update = __webpack_require__(3)("ae053a9c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3213b710\",\"scoped\":false,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./module_caches.vue", function() {
-     var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3213b710\",\"scoped\":false,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./module_caches.vue");
+   module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-baddeac0\",\"scoped\":false,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./plugin_pay.vue", function() {
+     var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-baddeac0\",\"scoped\":false,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./plugin_pay.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -947,7 +947,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 129:
+/***/ 189:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(false);
@@ -955,14 +955,14 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.app {\n    width: 10rem;\n    flex: 1;\n}\n.navbar {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.title {\n    font-size: 0.37333rem;\n    color: #ffffff\n}\n.iconr {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.content {\n    flex: 1;\n    align-items: center;\n}\n.subtitle {\n    padding-top: 0.74667rem;\n    padding-right: 0.32rem;\n    padding-bottom: 0.32rem;\n    padding-left: 0.32rem;\n    font-size: 0.37333rem;\n    color: #757575;\n}\n.button {\n    width: 5.06667rem;\n    font-size: 0.32rem;\n    text-align: center;\n    margin-top: 0.26667rem;\n    margin-bottom: 0.26667rem;\n    padding-top: 0.34667rem;\n    padding-bottom: 0.34667rem;\n    padding-left: 0.4rem;\n    padding-right: 0.4rem;\n    color: #ffffff;\n    background-color: #00B4FF;\n}\n", ""]);
+exports.push([module.i, "\n.app {\n    width: 10rem;\n    flex: 1;\n}\n.navbar {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.title {\n    font-size: 0.37333rem;\n    color: #ffffff\n}\n.iconr {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.content {\n    flex: 1;\n    justify-content: center;\n    align-items: center;\n}\n.info {\n    font-size: 0.29333rem;\n    margin-bottom: 0.26667rem\n}\n.button {\n    font-size: 0.32rem;\n    text-align: center;\n    margin-top: 0.42667rem;\n    padding-top: 0.26667rem;\n    padding-bottom: 0.26667rem;\n    width: 3.73333rem;\n    color: #ffffff;\n    background-color: #00B4FF;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 130:
+/***/ 190:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1043,73 +1043,86 @@ var weiui = weex.requireModule('weiui'); //
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var pay = weex.requireModule('pay');
 
 exports.default = {
     data: function data() {
         return {
-            caches: '',
-            variate: ''
+            info: ''
         };
     },
-    mounted: function mounted() {
-        this.caches = weiui.getCachesString('tempName', '');
-        this.variate = weiui.getVariate('tempName', '');
-    },
-
 
     methods: {
         viewCode: function viewCode(str) {
             (0, _app.openViewCode)(str);
         },
-        randomString: function randomString(len) {
-            len = len || 32;
-            var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678oOLl9gqVvUuI1';
-            var maxPos = $chars.length;
-            var pwd = '';
-            for (var i = 0; i < len; i++) {
-                pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+        weixinPay: function weixinPay() {
+            var _this = this;
+
+            if (typeof pay === 'undefined') {
+                weiui.alert({
+                    title: '温馨提示',
+                    message: "检测到未安装pay插件，安装详细请登录http://weiui.cc/"
+                });
+                return;
             }
-            return pwd;
+            weiui.loading();
+            weiui.ajax({
+                url: 'https://app.weiui.cc/api/wxpay'
+            }, function (result) {
+                if (result.status === 'complete') {
+                    weiui.loadingClose();
+                }
+                if (result.status === 'success') {
+                    var data = result.result;
+                    if (data.ret === 1) {
+                        _this.info = "";
+                        pay.weixin(data.data, function (res) {
+                            _this.info = res;
+                        });
+                    } else {
+                        weiui.alert(data.msg);
+                    }
+                }
+            });
         },
-        setCaches: function setCaches() {
-            this.caches = this.randomString(16);
-            weiui.setCachesString('tempName', this.caches, 0);
-        },
-        getCaches: function getCaches() {
-            this.caches = weiui.getCachesString('tempName', '');
-            weiui.toast("读取成功，缓存：" + this.caches);
-        },
-        setVariate: function setVariate() {
-            this.variate = this.randomString(16);
-            weiui.setVariate('tempName', this.variate);
-        },
-        getVariate: function getVariate() {
-            this.variate = weiui.getVariate('tempName', '');
-            weiui.toast("读取成功，变量：" + this.variate);
+        alipayPay: function alipayPay() {
+            var _this2 = this;
+
+            if (typeof pay === 'undefined') {
+                weiui.alert({
+                    title: '温馨提示',
+                    message: "检测到未安装pay插件，安装详细请登录http://weiui.cc/"
+                });
+                return;
+            }
+            weiui.loading();
+            weiui.ajax({
+                url: 'https://app.weiui.cc/api/alipay'
+            }, function (result) {
+                if (result.status === 'complete') {
+                    weiui.loadingClose();
+                }
+                if (result.status === 'success') {
+                    var data = result.result;
+                    if (data.ret === 1) {
+                        _this2.info = "";
+                        pay.alipay(data.data.response, function (res) {
+                            _this2.info = res;
+                        });
+                    } else {
+                        weiui.alert(data.msg);
+                    }
+                }
+            });
         }
     }
 };
 
 /***/ }),
 
-/***/ 131:
+/***/ 191:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -1134,7 +1147,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("数据缓存")])]), _vm._v(" "), _c('weiui_navbar_item', {
+  }, [_vm._v("微信/支付宝支付")])]), _vm._v(" "), _c('weiui_navbar_item', {
     attrs: {
       "type": "right",
       "data-evt-click": ""
@@ -1143,7 +1156,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.$stopOuterA,
       "weex$tap": function($event) {
         $event.stopPropagation();
-        _vm.viewCode('module/caches')
+        _vm.viewCode('module/plugin/pay')
       }
     }
   }, [_c('weiui_icon', {
@@ -1157,19 +1170,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "weex-type": "div"
     }
   }, [_c('p', {
-    staticClass: "subtitle weex-el weex-text",
+    staticClass: "info weex-el weex-text",
     attrs: {
       "weex-type": "text"
     }
-  }, [_vm._v("数据缓存：重启APP不被删除")]), _vm._v(" "), _c('p', {
-    staticClass: " weex-el weex-text",
-    staticStyle: {
-      "font-size": "0.32rem"
-    },
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v(_vm._s(_vm.caches))]), _vm._v(" "), _c('p', {
+  }, [_vm._v(_vm._s(_vm.info))]), _vm._v(" "), _c('p', {
     staticClass: "button weex-el weex-text",
     attrs: {
       "weex-type": "text",
@@ -1179,10 +1184,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.$stopOuterA,
       "weex$tap": function($event) {
         $event.stopPropagation();
-        _vm.setCaches()
+        return _vm.weixinPay($event)
       }
     }
-  }, [_vm._v("设置缓存")]), _vm._v(" "), _c('p', {
+  }, [_vm._v("微信支付")]), _vm._v(" "), _c('p', {
     staticClass: "button weex-el weex-text",
     attrs: {
       "weex-type": "text",
@@ -1192,55 +1197,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "click": _vm.$stopOuterA,
       "weex$tap": function($event) {
         $event.stopPropagation();
-        _vm.getCaches()
+        return _vm.alipayPay($event)
       }
     }
-  }, [_vm._v("读取缓存")]), _vm._v(" "), _c('p', {
-    staticClass: "subtitle weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("全局变量：重启APP后数据不存在")]), _vm._v(" "), _c('p', {
-    staticClass: " weex-el weex-text",
-    staticStyle: {
-      "font-size": "0.32rem"
-    },
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v(_vm._s(_vm.variate))]), _vm._v(" "), _c('p', {
-    staticClass: "button weex-el weex-text",
-    attrs: {
-      "weex-type": "text",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        _vm.setVariate()
-      }
-    }
-  }, [_vm._v("设置变量")]), _vm._v(" "), _c('p', {
-    staticClass: "button weex-el weex-text",
-    attrs: {
-      "weex-type": "text",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        _vm.getVariate()
-      }
-    }
-  }, [_vm._v("读取变量")])])], 1)
+  }, [_vm._v("支付宝支付")])])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-3213b710", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-baddeac0", module.exports)
   }
 }
 

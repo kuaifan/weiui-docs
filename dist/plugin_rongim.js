@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 147);
+/******/ 	return __webpack_require__(__webpack_require__.s = 157);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -605,7 +605,7 @@ var weiui = weex.requireModule('weiui');
 
 var app = {
 
-    jshome: '',
+    jshome: 'http://weiui.cc/dist/',
 
     openViewCode: function openViewCode(str) {
         app.openViewUrl("http://weiui.cc/#/" + str);
@@ -633,38 +633,38 @@ module.exports = app;
 
 /***/ }),
 
-/***/ 147:
+/***/ 157:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _third_picture = __webpack_require__(148);
+var _plugin_rongim = __webpack_require__(158);
 
-var _third_picture2 = _interopRequireDefault(_third_picture);
+var _plugin_rongim2 = _interopRequireDefault(_plugin_rongim);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_third_picture2.default.el = '#root';
-new Vue(_third_picture2.default);
+_plugin_rongim2.default.el = '#root';
+new Vue(_plugin_rongim2.default);
 
 /***/ }),
 
-/***/ 148:
+/***/ 158:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(149)
+__vue_styles__.push(__webpack_require__(159)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(150)
+__vue_exports__ = __webpack_require__(160)
 
 /* template */
-var __vue_template__ = __webpack_require__(151)
+var __vue_template__ = __webpack_require__(161)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -676,10 +676,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/third_picture.vue"
+__vue_options__.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/plugin_rongim.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-5cdfc7c6"
+__vue_options__._scopeId = "data-v-128b3e46"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -695,7 +695,7 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 149:
+/***/ 159:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -721,22 +721,9 @@ module.exports = {
     "justifyContent": "center",
     "alignItems": "center"
   },
-  "list": {
-    "width": "750",
-    "flexDirection": "row",
-    "justifyContent": "center"
-  },
-  "imgbox": {
-    "width": "150",
-    "height": "150"
-  },
-  "image": {
-    "width": "130",
-    "height": "130",
-    "marginTop": "10",
-    "marginBottom": "10",
-    "marginRight": "10",
-    "marginLeft": "10"
+  "info": {
+    "fontSize": "22",
+    "marginBottom": "20"
   },
   "button": {
     "fontSize": "24",
@@ -744,24 +731,15 @@ module.exports = {
     "marginTop": "20",
     "paddingTop": "20",
     "paddingBottom": "20",
-    "paddingLeft": "48",
-    "paddingRight": "48",
+    "width": "220",
     "color": "#ffffff",
     "backgroundColor": "#00B4FF"
-  },
-  "button2": {
-    "marginTop": "24",
-    "color": "#00B4FF",
-    "fontSize": "24",
-    "borderBottomWidth": "1",
-    "borderBottomStyle": "solid",
-    "borderBottomColor": "#00B4FF"
   }
 }
 
 /***/ }),
 
-/***/ 150:
+/***/ 160:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -773,44 +751,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _app = __webpack_require__(1);
 
-var _global = __webpack_require__(0);
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+var weiui = weex.requireModule('weiui'); //
 //
 //
 //
@@ -879,12 +820,12 @@ var _global = __webpack_require__(0);
 //
 //
 
-var weiui_picture = weex.requireModule('weiui_picture');
+var rongim = weex.requireModule('rongim');
 
 exports.default = {
     data: function data() {
         return {
-            lists: []
+            info: ''
         };
     },
 
@@ -892,46 +833,32 @@ exports.default = {
         viewCode: function viewCode(str) {
             (0, _app.openViewCode)(str);
         },
-        sliceLists: function sliceLists(data, slice) {
-            var lists = [];
-            var j = 0;
-
-            var _loop = function _loop(i, len) {
-                var temp = [];
-                (0, _global.each)(data.slice(i, i + slice), function (index, item) {
-                    item.position = j;
-                    temp.push(item);
-                    j++;
-                });
-                lists.push(temp);
-            };
-
-            for (var i = 0, len = data.length; i < len; i += slice) {
-                _loop(i, len);
-            }
-            return lists;
-        },
-        openPicture: function openPicture() {
+        login: function login() {
             var _this = this;
 
-            weiui_picture.create({
-                gallery: 1,
-                selected: this.lists
+            if (typeof rongim === 'undefined') {
+                weiui.alert({
+                    title: '温馨提示',
+                    message: "检测到未安装rongim插件，安装详细请登录http://weiui.cc/"
+                });
+                return;
+            }
+            weiui.loading();
+            rongim.login({
+                userid: 'weiui_' + WXEnvironment.platform,
+                username: '测试会员',
+                userimg: 'https://www.baidu.com/img/baidu_resultlogo@2.png'
             }, function (result) {
-                if (result.status === "success") {
-                    _this.lists = result.lists;
-                }
+                weiui.loadingClose();
+                _this.info = result;
             });
-        },
-        pictureView: function pictureView(position) {
-            weiui_picture.picturePreview(position, this.lists);
         }
     }
 };
 
 /***/ }),
 
-/***/ 151:
+/***/ 161:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -949,13 +876,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('text', {
     staticClass: ["title"]
-  }, [_vm._v("图片选择器")])]), _c('weiui_navbar_item', {
+  }, [_vm._v("融云通信")])]), _c('weiui_navbar_item', {
     attrs: {
       "type": "right"
     },
     on: {
       "click": function($event) {
-        _vm.viewCode('module/third/pictureSelector')
+        _vm.viewCode('module/plugin/rongim')
       }
     }
   }, [_c('weiui_icon', {
@@ -965,48 +892,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1)], 1), _c('div', {
     staticClass: ["content"]
-  }, [(_vm.lists.length > 0) ? _c('weiui_list', {
-    style: {
-      width: '750px',
-      height: (Math.ceil(_vm.lists.length / 5) * 150) + 'px'
-    },
-    attrs: {
-      "weiui": {
-        pullTips: false
-      }
-    }
-  }, _vm._l((_vm.sliceLists(_vm.lists, 5)), function(list) {
-    return _c('div', {
-      staticClass: ["list"]
-    }, _vm._l((list), function(item) {
-      return _c('div', {
-        staticClass: ["imgbox"],
-        on: {
-          "click": function($event) {
-            _vm.pictureView(item.position)
-          }
-        }
-      }, [_c('image', {
-        staticClass: ["image"],
-        attrs: {
-          "src": 'file://' + item.path,
-          "resize": "cover"
-        }
-      })])
-    }))
-  })) : _vm._e(), _c('text', {
+  }, [_c('text', {
+    staticClass: ["info"]
+  }, [_vm._v(_vm._s(_vm.info))]), _c('text', {
     staticClass: ["button"],
     on: {
-      "click": _vm.openPicture
+      "click": _vm.login
     }
-  }, [_vm._v("选择照片")]), (_vm.lists.length > 0) ? _c('text', {
-    staticClass: ["button2"],
-    on: {
-      "click": function($event) {
-        _vm.lists = []
-      }
-    }
-  }, [_vm._v("清空选择")]) : _vm._e()], 1)], 1)
+  }, [_vm._v("连接登录")])])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

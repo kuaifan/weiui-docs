@@ -64,11 +64,38 @@
 > 注①：
 
 JS支持调用的原生模块如下：
+
+```js
+//综合模块
+let weiui = requireModuleJs("weiui");
+
+//城市选择器
+let citypicker = requireModuleJs("citypicker");
+
+//图片选择模块
+let picture = requireModuleJs("picture");
+
+//支付模块
+let pay = requireModuleJs("pay");
+
+//浏览器调用方法
+let webview = requireModuleJs("webview");
+```
+
+例如：
+
+```js
+let weiui = requireModuleJs("weiui");
+weiui.adDialog("http://..../xxx.png", function(res) {
+    weiui.toast("状态：" + res.status);
+});
+```
+
 - `weiui`：综合模块，如：[weiui.adDialog](/module/adDialog)
-- `weiui_citypicker`：[城市选择器](/module/third/citypicker)
-- `weiui_picture`：[图片选择模块](/module/third/pictureSelector)
-- `weiui_pay`：[支付模块](/module/third/pay)
-- `weiui_webview`：[浏览器调用方法](/component/weiui_webview?id=调用方法-methods)
+- `citypicker`：[城市选择器](/module/plugin/citypicker)
+- `picture`：[图片选择模块](/module/plugin/picture)
+- `pay`：[支付模块](/module/plugin/pay)
+- `webview`：[浏览器调用方法](/component/weiui_webview?id=浏览器调用方法)
 
 #### JS调用原生API示例
 ```html
@@ -205,4 +232,61 @@ this.$refs.reflectName.setScrollEnabled(true);
 
 ```
 
+## 浏览器调用方法
 
+```js
+let webview = requireModuleJs("webview");
+
+/**
+ * 设置浏览器内容
+ * 参数一：详细内容
+ */
+webview.setContent(string);
+
+/**
+ * 设置浏览器地址
+ * 参数一：地址，如果：http://weiui.cc
+ */
+webview.setUrl(url);
+
+/**
+* 是否可以后退
+* 
+* 回调 result: true|false
+ */
+webview.canGoBack(callback(result));
+
+/**
+* 后退并返回是否后退成功
+* 
+* 回调 result: true|false
+ */
+webview.goBack(callback(result));
+
+/**
+* 是否可以前进
+* 
+* 回调 result: true|false
+ */
+webview.canGoForward(callback(result));
+
+/**
+* 前进并返回是否前进成功
+* 
+* 回调 result: true|false
+ */
+webview.goForward(callback(result));
+
+/**
+ * 设置是否显示进度条
+ * 参数一：true|false
+ */
+webview.setProgressbarVisibility(true);
+
+/**
+ * 设置是否可以滚动
+ * 参数一：true|false
+ */
+webview.setScrollEnabled(true);
+
+```
