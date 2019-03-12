@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 106);
+/******/ 	return __webpack_require__(__webpack_require__.s = 93);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -286,578 +286,25 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-/***/ 10:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
-
-var global = {
-    isNullOrUndefined: function isNullOrUndefined(obj) {
-        return typeof obj === "undefined" || obj === null;
-    },
-    isFunction: function isFunction(obj) {
-        return global.isNullOrUndefined(obj) ? false : typeof obj === "function";
-    },
-    isObject: function isObject(obj) {
-        return global.isNullOrUndefined(obj) ? false : (typeof obj === "undefined" ? "undefined" : _typeof(obj)) === "object";
-    },
-    likeArray: function likeArray(obj) {
-        return global.isNullOrUndefined(obj) ? false : typeof obj.length === 'number';
-    },
-    isJson: function isJson(obj) {
-        return global.isObject(obj) && !global.likeArray(obj);
-    },
-    getObject: function getObject(obj, keys) {
-        var object = obj;
-        if (global.count(obj) > 0 && global.count(keys) > 0) {
-            var arr = keys.replace(/,/g, "|").replace(/\./g, "|").split("|");
-            global.each(arr, function (index, key) {
-                if (typeof object[key] !== "undefined") {
-                    object = object[key];
-                }
-            });
-        }
-        return object;
-    },
-
-
-    /**
-     * 遍历数组、对象
-     * @param elements
-     * @param callback
-     * @returns {*}
-     */
-    each: function each(elements, callback) {
-        var i = void 0,
-            key = void 0;
-        if (global.likeArray(elements)) {
-            if (typeof elements.length === "number") {
-                for (i = 0; i < elements.length; i++) {
-                    if (callback.call(elements[i], i, elements[i]) === false) return elements;
-                }
-            }
-        } else {
-            for (key in elements) {
-                if (!elements.hasOwnProperty(key)) continue;
-                if (callback.call(elements[key], key, elements[key]) === false) return elements;
-            }
-        }
-
-        return elements;
-    },
-
-
-    /**
-     * 获取数组最后一个值
-     * @param array
-     * @returns {*}
-     */
-    last: function last(array) {
-        var str = false;
-        if ((typeof array === "undefined" ? "undefined" : _typeof(array)) === 'object' && array.length > 0) {
-            str = array[array.length - 1];
-        }
-        return str;
-    },
-
-
-    /**
-     * 删除数组最后一个值
-     * @param array
-     * @returns {Array}
-     */
-    delLast: function delLast(array) {
-        var newArray = [];
-        if ((typeof array === "undefined" ? "undefined" : _typeof(array)) === 'object' && array.length > 0) {
-            global.each(array, function (index, item) {
-                if (index < array.length - 1) {
-                    newArray.push(item);
-                }
-            });
-        }
-        return newArray;
-    },
-
-
-    /**
-     * 字符串是否包含
-     * @param string
-     * @param find
-     * @returns {boolean}
-     */
-    strExists: function strExists(string, find) {
-        string += "";
-        find += "";
-        return string.indexOf(find) !== -1;
-    },
-
-
-    /**
-     * 字符串是否左边包含
-     * @param string
-     * @param find
-     * @returns {boolean}
-     */
-    leftExists: function leftExists(string, find) {
-        string += "";
-        find += "";
-        return string.substring(0, find.length) === find;
-    },
-
-
-    /**
-     * 字符串是否右边包含
-     * @param string
-     * @param find
-     * @returns {boolean}
-     */
-    rightExists: function rightExists(string, find) {
-        string += "";
-        find += "";
-        return string.substring(string.length - find.length) === find;
-    },
-
-
-    /**
-     * 取字符串中间
-     * @param string
-     * @param start
-     * @param end
-     * @returns {*}
-     */
-    getMiddle: function getMiddle(string, start, end) {
-        string += "";
-        if (global.ishave(start) && global.strExists(string, start)) {
-            string = string.substring(string.indexOf(start) + start.length);
-        }
-        if (global.ishave(end) && global.strExists(string, end)) {
-            string = string.substring(0, string.indexOf(end));
-        }
-        return string;
-    },
-
-
-    /**
-     * 截取字符串
-     * @param string
-     * @param start
-     * @param end
-     * @returns {string}
-     */
-    subString: function subString(string, start, end) {
-        string += "";
-        if (!global.ishave(end)) {
-            end = string.length;
-        }
-        return string.substring(start, end);
-    },
-
-
-    /**
-     * 随机字符
-     * @param len
-     * @returns {string}
-     */
-    randomString: function randomString(len) {
-        len = len || 32;
-        var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678oOLl9gqVvUuI1';
-        var maxPos = $chars.length;
-        var pwd = '';
-        for (var i = 0; i < len; i++) {
-            pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
-        }
-        return pwd;
-    },
-
-
-    /**
-     * 判断是否有
-     * @param set
-     * @returns {boolean}
-     */
-    ishave: function ishave(set) {
-        return !!(set !== null && set !== "null" && set !== undefined && set !== "undefined" && set);
-    },
-
-
-    /**
-     * 补零
-     * @param str
-     * @param length
-     * @param after
-     * @returns {*}
-     */
-    zeroFill: function zeroFill(str, length, after) {
-        str += "";
-        if (str.length >= length) {
-            return str;
-        }
-        var _str = '',
-            _ret = '';
-        for (var i = 0; i < length; i++) {
-            _str += '0';
-        }
-        if (after || typeof after === 'undefined') {
-            _ret = (_str + "" + str).substr(length * -1);
-        } else {
-            _ret = (str + "" + _str).substr(0, length);
-        }
-        return _ret;
-    },
-
-
-    /**
-     * 时间戳转时间格式
-     * @param format
-     * @param v
-     * @returns {string}
-     */
-    formatDate: function formatDate(format, v) {
-        if (format === '') {
-            format = 'Y-m-d H:i:s';
-        }
-        if (typeof v === 'undefined') {
-            v = new Date().getTime();
-        } else if (/^(-)?\d{1,10}$/.test(v)) {
-            v = v * 1000;
-        } else if (/^(-)?\d{1,13}$/.test(v)) {
-            v = v * 1000;
-        } else if (/^(-)?\d{1,14}$/.test(v)) {
-            v = v * 100;
-        } else if (/^(-)?\d{1,15}$/.test(v)) {
-            v = v * 10;
-        } else if (/^(-)?\d{1,16}$/.test(v)) {
-            v = v * 1;
-        } else {
-            return v;
-        }
-        var dateObj = new Date(v);
-        if (parseInt(dateObj.getFullYear()) + "" === "NaN") {
-            return v;
-        }
-        //
-        format = format.replace(/Y/g, dateObj.getFullYear());
-        format = format.replace(/m/g, global.zeroFill(dateObj.getMonth() + 1, 2));
-        format = format.replace(/d/g, global.zeroFill(dateObj.getDate(), 2));
-        format = format.replace(/H/g, global.zeroFill(dateObj.getHours(), 2));
-        format = format.replace(/i/g, global.zeroFill(dateObj.getMinutes(), 2));
-        format = format.replace(/s/g, global.zeroFill(dateObj.getSeconds(), 2));
-        return format;
-    },
-
-
-    /**
-     * 是否日期格式
-     * @returns {boolean}
-     */
-    isDate: function isDate(string) {
-        var reg = /^(\d{4})-(\d{2})-(\d{2})$/;
-        var str = string + "";
-        if (str == "") return false;
-        return !(!reg.test(str) && RegExp.$2 <= 12 && RegExp.$3 <= 31);
-    },
-
-
-    /**
-     * 检测手机号码格式
-     * @param str
-     * @returns {boolean}
-     */
-    isMobile: function isMobile(str) {
-        return (/^1(3|4|5|7|8)\d{9}$/.test(str)
-        );
-    },
-
-
-    /**
-     * 手机号码中间换成****
-     * @param phone
-     * @returns {string}
-     */
-    formatMobile: function formatMobile(phone) {
-        if (global.count(phone) === 0) {
-            return "";
-        }
-        return phone.substring(0, 3) + "****" + phone.substring(phone.length - 4);
-    },
-
-
-    /**
-     * 克隆对象
-     * @param myObj
-     * @returns {*}
-     */
-    clone: function clone(myObj) {
-        if ((typeof myObj === "undefined" ? "undefined" : _typeof(myObj)) !== 'object') return myObj;
-        if (myObj === null) return myObj;
-        //
-        if (global.likeArray(myObj)) {
-            var _myObj = _toArray(myObj),
-                myNewObj = _myObj.slice(0);
-
-            return myNewObj;
-        } else {
-            var _myNewObj = _objectWithoutProperties(myObj, []);
-
-            return _myNewObj;
-        }
-    },
-
-
-    /**
-     * 统计数组或对象长度
-     * @param obj
-     * @returns {number}
-     */
-    count: function count(obj) {
-        try {
-            if (typeof obj === "undefined") {
-                return 0;
-            }
-            if (typeof obj === "number") {
-                obj += "";
-            }
-            if (typeof obj.length === 'number') {
-                return obj.length;
-            } else {
-                var i = 0,
-                    key = void 0;
-                for (key in obj) {
-                    i++;
-                }
-                return i;
-            }
-        } catch (e) {
-            return 0;
-        }
-    },
-
-
-    /**
-     * 相当于 intval
-     * @param str
-     * @param fixed
-     * @returns {number}
-     */
-    runNum: function runNum(str, fixed) {
-        var _s = Number(str);
-        if (_s + "" === "NaN") {
-            _s = 0;
-        }
-        if (/^[0-9]*[1-9][0-9]*$/.test(fixed)) {
-            _s = _s.toFixed(fixed);
-            var rs = _s.indexOf('.');
-            if (rs < 0) {
-                _s += ".";
-                for (var i = 0; i < fixed; i++) {
-                    _s += "0";
-                }
-            }
-        }
-        return _s;
-    },
-
-
-    /**
-     * 秒转化为天小时分秒字符串
-     * @param value
-     * @returns {string}
-     */
-    formatSeconds: function formatSeconds(value) {
-        var theTime = parseInt(value); // 秒
-        var theTime1 = 0; // 分
-        var theTime2 = 0; // 小时
-        if (theTime > 60) {
-            theTime1 = parseInt(theTime / 60);
-            theTime = parseInt(theTime % 60);
-            if (theTime1 > 60) {
-                theTime2 = parseInt(theTime1 / 60);
-                theTime1 = parseInt(theTime1 % 60);
-            }
-        }
-        var result = parseInt(theTime) + "秒";
-        if (theTime1 > 0) {
-            result = parseInt(theTime1) + "分" + result;
-        }
-        if (theTime2 > 0) {
-            result = parseInt(theTime2) + "小时" + result;
-        }
-        return result;
-    },
-
-
-    /**
-     * 将一个 JSON 字符串转换为对象（已try）
-     * @param str
-     * @param defaultVal
-     * @returns {*}
-     */
-    jsonParse: function jsonParse(str, defaultVal) {
-        try {
-            return JSON.parse(str);
-        } catch (e) {
-            return defaultVal ? defaultVal : {};
-        }
-    },
-
-
-    /**
-     * 将 JavaScript 值转换为 JSON 字符串（已try）
-     * @param json
-     * @param defaultVal
-     * @returns {string}
-     */
-    jsonStringify: function jsonStringify(json, defaultVal) {
-        try {
-            return JSON.stringify(json);
-        } catch (e) {
-            return defaultVal ? defaultVal : "";
-        }
-    },
-
-
-    /**
-     * 去除数组中的非数字项
-     * @param value
-     * @returns {Array}
-     */
-    removerNumberNaN: function removerNumberNaN() {
-        var array = [];
-
-        for (var _len = arguments.length, value = Array(_len), _key = 0; _key < _len; _key++) {
-            value[_key] = arguments[_key];
-        }
-
-        value.forEach(function (ele) {
-            if (!isNaN(Number(ele))) {
-                array.push(ele);
-            }
-        });
-        return array;
-    },
-
-
-    /**
-     * Math.max 过滤NaN
-     * @param value
-     * @returns {number}
-     */
-    runMax: function runMax() {
-        return Math.max.apply(Math, _toConsumableArray(global.removerNumberNaN.apply(global, arguments)));
-    },
-
-
-    /**
-     * Math.min 过滤NaN
-     * @param value
-     * @returns {number}
-     */
-    runMin: function runMin() {
-        return Math.min.apply(Math, _toConsumableArray(global.removerNumberNaN.apply(global, arguments)));
-    },
-
-
-    /**
-     * 链接字符串
-     * @param value 第一个参数为连接符
-     * @returns {string}
-     */
-    stringConnect: function stringConnect() {
-        var s = null;
-        var text = "";
-
-        for (var _len2 = arguments.length, value = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-            value[_key2] = arguments[_key2];
-        }
-
-        value.forEach(function (val) {
-            if (s === null) {
-                s = val;
-            } else if (val) {
-                if (val && text) text += s;
-                text += val;
-            }
-        });
-        return text;
-    },
-
-
-    /**
-     * 字节转换
-     * @param bytes
-     * @returns {string}
-     */
-    bytesToSize: function bytesToSize(bytes) {
-        if (bytes === 0) return '0 B';
-        var k = 1024;
-        var sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-        var i = Math.floor(Math.log(bytes) / Math.log(k));
-        if (typeof sizes[i] === "undefined") {
-            return '0 B';
-        }
-        return global.runNum(bytes / Math.pow(k, i), 2) + ' ' + sizes[i];
-    }
-};
-
-module.exports = global;
-
-/***/ }),
-
-/***/ 106:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _vue = __webpack_require__(3);
-
-var _vue2 = _interopRequireDefault(_vue);
-
-var _weexVueRender = __webpack_require__(6);
-
-var _weexVueRender2 = _interopRequireDefault(_weexVueRender);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_weexVueRender2.default.init(_vue2.default);
-
-var App = __webpack_require__(107);
-new _vue2.default(_vue2.default.util.extend({ el: '#root' }, App));
-
-/***/ }),
-
-/***/ 107:
+/***/ 17:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(108)
-}
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(110),
+  __webpack_require__(18),
   /* template */
-  __webpack_require__(111),
+  __webpack_require__(19),
   /* styles */
-  injectStyle,
+  null,
   /* scopeId */
-  "data-v-dad4f304",
+  null,
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/index.vue"
+Component.options.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/components/WSwitch.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] WSwitch.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -866,9 +313,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-dad4f304", Component.options)
+    hotAPI.createRecord("data-v-7ac7d314", Component.options)
   } else {
-    hotAPI.reload("data-v-dad4f304", Component.options)
+    hotAPI.reload("data-v-7ac7d314", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -880,89 +327,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 108:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(109);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(8)("30b5e236", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dad4f304\",\"scoped\":true,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
-     var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dad4f304\",\"scoped\":true,\"hasInlineConfig\":true}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 109:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.app[data-v-dad4f304] {\n    flex: 1;\n}\n.navbar[data-v-dad4f304] {\n    width: 10rem;\n    height: 1.33333rem;\n}\n.navbar-title[data-v-dad4f304] {\n    font-size: 0.42667rem;\n    color: #ffffff;\n}\n.navbar-icon[data-v-dad4f304] {\n    width: 1.33333rem;\n    height: 1.33333rem;\n    color: #ffffff;\n}\n.list[data-v-dad4f304] {\n    width: 10rem;\n    flex: 1;\n}\n.list-title-box[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n}\n.list-title[data-v-dad4f304] {\n    padding-top: 0.48rem;\n    padding-right: 0.32rem;\n    padding-bottom: 0.32rem;\n    padding-left: 0.32rem;\n    font-size: 0.37333rem;\n    color: #757575;\n}\n.list-subtitle[data-v-dad4f304] {\n    position: absolute;\n    right: 0.32rem;\n    bottom: 0.32rem;\n    font-size: 0.32rem;\n}\n.list-item[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    height: 1.33333rem;\n    width: 10rem;\n    padding-left: 0.26667rem;\n    padding-right: 0.26667rem;\n    border-top-width: 1px;\n    border-top-color: #e8e8e8;\n    border-top-style: solid;\n}\n.list-item-left[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n    justify-content: flex-start;\n    height: 1.33333rem;\n    flex: 1;\n}\n.list-left-icon[data-v-dad4f304] {\n    width: 0.8rem;\n    height: 0.8rem;\n    color: #3EB4FF;\n}\n.list-left-title[data-v-dad4f304] {\n    color: #242424;\n    padding-left: 0.16rem;\n    width: 5.06667rem;\n    font-size: 0.34667rem;\n    text-overflow: ellipsis;\n    lines: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    -webkit-line-clamp: 1;\n}\n.list-left-title-history[data-v-dad4f304] {\n    color: #242424;\n    padding-left: 0.16rem;\n    width: 8.8rem;\n    font-size: 0.34667rem;\n    text-overflow: ellipsis;\n    lines: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    -webkit-line-clamp: 1;\n}\n.list-right-title[data-v-dad4f304] {\n    color: #a2a2a2;\n    padding-right: 0.04rem;\n    font-size: 0.29333rem;\n    text-overflow: ellipsis;\n    lines: 1;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    -webkit-line-clamp: 1;\n}\n.list-right-icon[data-v-dad4f304] {\n    width: 0.53333rem;\n    height: 0.53333rem;\n    color: #C9C9CE;\n}\n.list-item-right[data-v-dad4f304] {\n    flex-direction: row;\n    align-items: center;\n    justify-content: flex-end;\n    height: 1.33333rem;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 11:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _global = __webpack_require__(10);
-
-var weiui = weex.requireModule('weiui');
-
-var app = {
-
-    jshome: 'http://weiui.cc/dist/',
-
-    openViewCode: function openViewCode(str) {
-        app.openViewUrl("http://weiui.cc/#/" + str);
-    },
-    openViewUrl: function openViewUrl(url) {
-        weiui.openPage({
-            url: app.jshome + 'index_browser.js',
-            pageType: 'weex',
-            statusBarColor: "#3EB4FF",
-            params: {
-                title: "WEIUI",
-                url: url
-            }
-        });
-    },
-    checkVersion: function checkVersion(compareVersion) {
-        if (typeof weiui.getVersion !== "function") {
-            return false;
-        }
-        return (0, _global.runNum)(weiui.getVersion()) >= (0, _global.runNum)(compareVersion);
-    }
-};
-
-module.exports = app;
-
-/***/ }),
-
-/***/ 110:
+/***/ 18:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -971,213 +336,6 @@ module.exports = app;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-
-var _global = __webpack_require__(10);
-
-var _app = __webpack_require__(11);
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -1185,615 +343,189 @@ var _app = __webpack_require__(11);
 //
 //
 
-var weiui = weex.requireModule('weiui');
+var animation = weex.requireModule('animation');
 
 exports.default = {
+    name: 'WSwitch',
+    props: {
+        value: {
+            type: Boolean,
+            default: false
+        },
+        solid: Boolean,
+        disabled: {
+            type: Boolean,
+            default: false
+        },
+        blurColor: String,
+        focusColor: String,
+        borderColor: {
+            type: String,
+            default: '#D9D9D9'
+        },
+        backgroundColor: {
+            type: String,
+            default: '#E31D1A'
+        }
+    },
+
     data: function data() {
         return {
-            components: [{
-                title: '轮播控件',
-                title_en: 'weiui_banner',
-                icon: 'md-easel',
-                url: _app.jshome + 'component_banner.js'
-            }, {
-                title: '常用按钮',
-                title_en: 'weiui_button',
-                icon: 'logo-youtube',
-                url: _app.jshome + 'component_button.js'
-            }, {
-                title: '网格容器',
-                title_en: 'weiui_grid',
-                icon: 'md-grid',
-                url: _app.jshome + 'component_grid.js'
-            }, {
-                title: '字体图标',
-                title_en: 'weiui_icon',
-                icon: 'logo-ionic',
-                url: _app.jshome + 'component_icon.js'
-            }, {
-                title: '跑马文字',
-                title_en: 'weiui_marquee',
-                icon: 'md-code-working',
-                url: _app.jshome + 'component_marquee.js'
-            }, {
-                title: '导航栏',
-                title_en: 'weiui_navbar',
-                icon: 'md-menu',
-                url: _app.jshome + 'component_navbar.js'
-            }, {
-                title: '列表容器',
-                title_en: 'weiui_list',
-                icon: 'md-list',
-                url: _app.jshome + 'component_list.js'
-            }, {
-                title: '滚动文字',
-                title_en: 'weiui_scroll_text',
-                icon: 'ios-more',
-                url: _app.jshome + 'component_scroll_text.js'
-            }, {
-                title: '侧边栏',
-                title_en: 'weiui_side_panel',
-                icon: 'md-albums',
-                url: _app.jshome + 'component_side_panel.js'
-            }, {
-                title: '标签页面',
-                title_en: 'weiui_tabbar',
-                icon: 'md-filing',
-                url: _app.jshome + 'component_tabbar3.js'
-            }],
-
-            module: [{
-                title: '页面功能',
-                title_en: 'newPage',
-                icon: 'md-book',
-                url: _app.jshome + 'module_page.js'
-            }, {
-                title: '系统信息',
-                title_en: 'system',
-                icon: 'ios-cog',
-                url: _app.jshome + 'module_system.js'
-            }, {
-                title: '数据缓存',
-                title_en: 'caches',
-                icon: 'md-beaker',
-                url: _app.jshome + 'module_caches.js'
-            }, {
-                title: '单位转换',
-                title_en: 'weex px',
-                icon: 'md-calculator',
-                url: _app.jshome + 'module_weexpx.js'
-            }, {
-                title: '确认对话框',
-                title_en: 'alert',
-                icon: 'md-alert',
-                url: _app.jshome + 'module_alert.js'
-            }, {
-                title: '等待弹窗',
-                title_en: 'loading',
-                icon: 'tb-loading',
-                url: _app.jshome + 'module_loading.js'
-            }, {
-                title: '验证弹窗',
-                title_en: 'captcha',
-                icon: 'md-checkmark-circle',
-                url: _app.jshome + 'module_captcha.js'
-            }, {
-                title: '二维码扫描',
-                title_en: 'scaner',
-                icon: 'tb-scan',
-                url: _app.jshome + 'module_scaner.js'
-            }, {
-                title: '跨域异步请求',
-                title_en: 'ajax',
-                icon: 'md-git-pull-request',
-                url: _app.jshome + 'module_ajax.js'
-            }, {
-                title: '剪切板',
-                title_en: 'clipboard',
-                icon: 'md-copy',
-                url: _app.jshome + 'module_plate.js'
-            }, {
-                title: '提示消息',
-                title_en: 'toast',
-                icon: 'md-notifications',
-                url: _app.jshome + 'module_toast.js'
-            }, {
-                title: '广告弹窗',
-                title_en: 'adDialog',
-                icon: 'logo-buffer',
-                url: _app.jshome + 'module_ad_dialog.js' /*, {
-                                                            title: '更多拓展模块',
-                                                            title_en: 'expandModule',
-                                                            icon: 'md-more',
-                                                            url: jshome + 'index_expand.js',
-                                                         }*/ }],
-
-            plugin: [{
-                title: '城市选择器',
-                title_en: 'citypicker',
-                icon: 'md-pin',
-                url: _app.jshome + 'plugin_citypicker.js'
-            }, {
-                title: '图片选择器',
-                title_en: 'picture',
-                icon: 'md-camera',
-                url: _app.jshome + 'plugin_picture.js'
-            }, {
-                title: '组件截图',
-                title_en: 'screenshots',
-                icon: 'md-crop',
-                url: _app.jshome + 'plugin_screenshots.js'
-            }, {
-                title: '融云通信模块',
-                title_en: 'rongim',
-                icon: 'tb-community',
-                url: _app.jshome + 'plugin_rongim.js'
-            }, {
-                title: '友盟推送模块',
-                title_en: 'umeng',
-                icon: 'md-send',
-                url: _app.jshome + 'plugin_umeng.js'
-            }, {
-                title: '第三方支付(微信/支付宝)',
-                title_en: 'pay',
-                icon: 'tb-sponsor',
-                url: _app.jshome + 'plugin_pay.js'
-            }, {
-                title: '即时通讯',
-                title_en: 'websocket',
-                icon: 'md-repeat',
-                url: _app.jshome + 'plugin_websocket.js'
-            }],
-
-            about_lists: [{
-                title: '开发文档',
-                title_en: 'document',
-                icon: 'md-code-working',
-                url: 'http://weiui.cc'
-            }, {
-                title: '托管平台',
-                title_en: 'github',
-                icon: 'logo-github',
-                url: 'https://github.com/kuaifan/weiui'
-            }, {
-                title: '个人博客',
-                title_en: 'http://kuaifan.vip',
-                icon: 'logo-rss',
-                url: 'http://kuaifan.vip'
-            }, {
-                title: 'WEIUI版本',
-                title_en: weiui.getVersionName(),
-                icon: 'md-information-circle',
-                url: 'http://weiui.cc'
-            }],
-
-            history: []
+            wRatio: 1,
+            hRatio: 1,
+            loadIng: false,
+            isAnimate: false,
+            _checked: false,
+            _ballStyle: {}
         };
     },
     mounted: function mounted() {
-        this.history = (0, _global.jsonParse)(weiui.getCachesString("scaner", []), []);
-        //
-        weiui.setPageBackPressed(null, function () {
-            weiui.confirm({
-                title: "温馨提示",
-                message: "你确定要退出WEIUI吗？",
-                buttons: ["取消", "确定"]
-            }, function (result) {
-                if (result.status === "click" && result.title === "确定") {
-                    weiui.closePage(null);
-                }
-            });
-        });
+        this.wRatio = this.$refs.wSwitch.style.width / 144;
+        this.hRatio = this.$refs.wSwitch.style.height / 72;
     },
 
 
+    computed: {
+        getBgStyle: function getBgStyle() {
+            var solid = this.solid,
+                borderColor = this.borderColor,
+                backgroundColor = this.backgroundColor,
+                disabled = this.disabled,
+                wRatio = this.wRatio,
+                hRatio = this.hRatio;
+
+            var style = !solid ? {
+                borderColor: borderColor,
+                backgroundColor: 'transparent'
+            } : {
+                borderColor: backgroundColor,
+                backgroundColor: backgroundColor
+            };
+            if (disabled) {
+                style.opacity = 0.3;
+            } else {
+                style.opacity = 1;
+            }
+            style.flexDirection = 'row';
+            style.alignItems = 'center';
+            style.width = 144 * wRatio;
+            style.height = 72 * hRatio;
+            style.borderRadius = 72 * hRatio;
+            style.borderWidth = 5 * hRatio;
+            return style;
+        },
+        ballStyle: function ballStyle() {
+            var _ballStyle = this._ballStyle,
+                _checked = this._checked,
+                hRatio = this.hRatio,
+                focusColor = this.focusColor,
+                solid = this.solid,
+                backgroundColor = this.backgroundColor,
+                blurColor = this.blurColor,
+                borderColor = this.borderColor;
+
+            var style = _ballStyle;
+            style.width = 72 * hRatio - 5 * hRatio * 2;
+            style.height = 72 * hRatio - 5 * hRatio * 2;
+            style.borderRadius = style.width / 2;
+            style.backgroundColor = _checked ? focusColor || (solid ? '#FFFFFF' : backgroundColor) : blurColor || (solid ? '#FFFFFF' : borderColor);
+            return style;
+        }
+    },
+
+    watch: {
+        value: function value(bool) {
+            this._checked = bool;
+            this.toggleState(bool);
+        }
+    },
+
     methods: {
-        scaner: function scaner() {
+        changeState: function changeState() {
             var _this = this;
 
-            weiui.openScaner(null, function (res) {
-                if (res.status === "success") {
-                    _this.history.unshift(res.text);
-                    weiui.setCachesString("scaner", (0, _global.jsonStringify)(_this.history), 0);
-                    _this.openAuto(res.text);
-                }
-            });
+            if (this.loadIng) return;
+            if (this.disabled) return;
+            this._checked = !this._checked;
+            this.toggleState(this._checked);
+            this.loadIng = true;
+            setTimeout(function () {
+                _this.$emit('input', _this._checked);
+                _this.loadIng = false;
+            }, 260);
         },
-        refresh: function refresh() {
-            weiui.reloadPage();
-        },
-        clearHistory: function clearHistory() {
-            var _this2 = this;
+        toggleState: function toggleState(bool) {
+            var animated = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
 
-            weiui.confirm({
-                title: "删除提示",
-                message: "你确定要删除扫码记录吗？",
-                buttons: ["取消", "确定"]
-            }, function (result) {
-                if (result.status === "click" && result.title === "确定") {
-                    _this2.history = [];
-                    weiui.setCachesString("scaner", (0, _global.jsonStringify)(_this2.history), 0);
-                }
-            });
-        },
-        openUrl: function openUrl(url) {
-            weiui.openPage({
-                url: url,
-                pageType: 'weex'
-            });
-        },
-        openWeb: function openWeb(url) {
-            (0, _app.openViewUrl)(url);
-        },
-        openThird: function openThird(url) {
-            (0, _app.openViewCode)("module/third/" + url);
-        },
-        openAuto: function openAuto(url) {
-            weiui.openPage({
-                url: url,
-                pageType: 'auto'
+            var style = bool ? {
+                backgroundColor: this.focusColor || (this.solid ? '#FFFFFF' : this.backgroundColor),
+                transform: 'scale(0.8) translate(' + (144 * this.wRatio - (72 * this.hRatio - 5 * this.hRatio * 2) - 5 * this.hRatio * 2) + 'px, 0)',
+                transformOrigin: 'center center'
+            } : {
+                backgroundColor: this.blurColor || (this.solid ? '#FFFFFF' : this.borderColor),
+                transform: 'scale(0.6)',
+                transformOrigin: 'center center'
+            };
+            var wBall = this.$refs.wBall;
+            if (!wBall) {
+                return;
+            }
+            animation.transition(wBall, {
+                styles: style,
+                timingFunction: 'ease',
+                duration: animated ? 260 : 0.00001
             });
         }
+    },
+
+    created: function created() {
+        this.value ? this._ballStyle = {
+            backgroundColor: this.focusColor || (this.solid ? '#FFFFFF' : this.backgroundColor),
+            transform: 'scale(0.8) translate(' + (144 * this.wRatio - (72 * this.hRatio - 5 * this.hRatio * 2) - 5 * this.hRatio * 2) + 'px, 0)'
+        } : this._ballStyle = {
+            backgroundColor: this.blurColor || (this.solid ? '#FFFFFF' : this.borderColor),
+            transform: 'scale(0.6)'
+        };
+        this._checked = this.value;
+        this.toggleState(this._checked, false);
     }
 };
 
 /***/ }),
 
-/***/ 111:
+/***/ 19:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "app weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('weiui_navbar', {
-    staticClass: "navbar",
-    attrs: {}
-  }, [_c('weiui_navbar_item', {
-    attrs: {
-      "type": "left",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        return _vm.scaner($event)
-      }
-    }
-  }, [_c('weiui_icon', {
-    staticClass: "navbar-icon",
-    attrs: {
-      "weiui": {
-        content: 'tb-scan'
-      }
-    }
-  })], 1), _vm._v(" "), _c('weiui_navbar_item', {
-    attrs: {
-      "type": "title"
-    }
-  }, [_c('p', {
-    staticClass: "navbar-title weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("WEIUI")])]), _vm._v(" "), _c('weiui_navbar_item', {
-    attrs: {
-      "type": "right",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        return _vm.refresh($event)
-      }
-    }
-  }, [_c('weiui_icon', {
-    staticClass: "navbar-icon",
-    attrs: {
-      "weiui": {
-        content: 'md-refresh'
-      }
-    }
-  })], 1)], 1), _vm._v(" "), _c('weiui_list', {
-    staticClass: "list",
-    attrs: {}
-  }, [_c('p', {
-    staticClass: "list-title weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("组件 Components")]), _vm._v(" "), _vm._l((_vm.components), function(item, index) {
-    return _c('div', {
-      key: index,
-      staticClass: "list-item weex-ct weex-div",
-      attrs: {
-        "weex-type": "div",
-        "data-evt-click": ""
-      },
-      on: {
-        "click": _vm.$stopOuterA,
-        "weex$tap": function($event) {
-          $event.stopPropagation();
-          _vm.openUrl(item.url)
-        }
-      }
-    }, [_c('div', {
-      staticClass: "list-item-left weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('weiui_icon', {
-      staticClass: "list-left-icon",
-      attrs: {
-        "weiui": {
-          content: item.icon
-        }
-      }
-    }), _vm._v(" "), _c('p', {
-      staticClass: "list-left-title weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(item.title))])], 1), _vm._v(" "), _c('div', {
-      staticClass: "list-item-right weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('p', {
-      staticClass: "list-right-title weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v("<" + _vm._s(item.title_en) + ">")]), _vm._v(" "), _c('weiui_icon', {
-      staticClass: "list-right-icon",
-      attrs: {
-        "weiui": {
-          content: 'tb-right 70%'
-        }
-      }
-    })], 1)])
-  }), _vm._v(" "), _c('p', {
-    staticClass: "list-title weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("模块 Module")]), _vm._v(" "), _vm._l((_vm.module), function(item, index) {
-    return _c('div', {
-      key: index,
-      staticClass: "list-item weex-ct weex-div",
-      attrs: {
-        "weex-type": "div",
-        "data-evt-click": ""
-      },
-      on: {
-        "click": _vm.$stopOuterA,
-        "weex$tap": function($event) {
-          $event.stopPropagation();
-          _vm.openUrl(item.url)
-        }
-      }
-    }, [_c('div', {
-      staticClass: "list-item-left weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('weiui_icon', {
-      staticClass: "list-left-icon",
-      attrs: {
-        "weiui": {
-          content: item.icon
-        }
-      }
-    }), _vm._v(" "), _c('p', {
-      staticClass: "list-left-title weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(item.title))])], 1), _vm._v(" "), _c('div', {
-      staticClass: "list-item-right weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('p', {
-      staticClass: "list-right-title weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(item.title_en))]), _vm._v(" "), _c('weiui_icon', {
-      staticClass: "list-right-icon",
-      attrs: {
-        "weiui": {
-          content: 'tb-right 70%'
-        }
-      }
-    })], 1)])
-  }), _vm._v(" "), _c('p', {
-    staticClass: "list-title weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("插件化 Plugins")]), _vm._v(" "), _vm._l((_vm.plugin), function(item, index) {
-    return _c('div', {
-      key: index,
-      staticClass: "list-item weex-ct weex-div",
-      attrs: {
-        "weex-type": "div",
-        "data-evt-click": ""
-      },
-      on: {
-        "click": _vm.$stopOuterA,
-        "weex$tap": function($event) {
-          $event.stopPropagation();
-          _vm.openUrl(item.url)
-        }
-      }
-    }, [_c('div', {
-      staticClass: "list-item-left weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('weiui_icon', {
-      staticClass: "list-left-icon",
-      attrs: {
-        "weiui": {
-          content: item.icon
-        }
-      }
-    }), _vm._v(" "), _c('p', {
-      staticClass: "list-left-title weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(item.title))])], 1), _vm._v(" "), _c('div', {
-      staticClass: "list-item-right weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('p', {
-      staticClass: "list-right-title weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(item.title_en))]), _vm._v(" "), _c('weiui_icon', {
-      staticClass: "list-right-icon",
-      attrs: {
-        "weiui": {
-          content: 'tb-right 70%'
-        }
-      }
-    })], 1)])
-  }), _vm._v(" "), _c('p', {
-    staticClass: "list-title weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("关于 About Weiui")]), _vm._v(" "), _vm._l((_vm.about_lists), function(item, index) {
-    return _c('div', {
-      key: index,
-      staticClass: "list-item weex-ct weex-div",
-      attrs: {
-        "weex-type": "div",
-        "data-evt-click": ""
-      },
-      on: {
-        "click": _vm.$stopOuterA,
-        "weex$tap": function($event) {
-          $event.stopPropagation();
-          _vm.openWeb(item.url)
-        }
-      }
-    }, [_c('div', {
-      staticClass: "list-item-left weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('weiui_icon', {
-      staticClass: "list-left-icon",
-      attrs: {
-        "weiui": {
-          content: item.icon
-        }
-      }
-    }), _vm._v(" "), _c('p', {
-      staticClass: "list-left-title weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(item.title))])], 1), _vm._v(" "), _c('div', {
-      staticClass: "list-item-right weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('p', {
-      staticClass: "list-right-title weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(item.title_en))]), _vm._v(" "), _c('weiui_icon', {
-      staticClass: "list-right-icon",
-      attrs: {
-        "weiui": {
-          content: 'tb-right 70%'
-        }
-      }
-    })], 1)])
-  }), _vm._v(" "), (_vm.history.length > 0) ? _c('div', {
-    staticClass: "list-title-box weex-ct weex-div",
-    attrs: {
-      "weex-type": "div"
-    }
-  }, [_c('p', {
-    staticClass: "list-title weex-el weex-text",
-    attrs: {
-      "weex-type": "text"
-    }
-  }, [_vm._v("扫码历史")]), _vm._v(" "), _c('p', {
-    staticClass: "list-subtitle weex-el weex-text",
-    attrs: {
-      "weex-type": "text",
-      "data-evt-click": ""
-    },
-    on: {
-      "click": _vm.$stopOuterA,
-      "weex$tap": function($event) {
-        $event.stopPropagation();
-        _vm.clearHistory()
-      }
-    }
-  }, [_vm._v("清空历史")])]) : _vm._e(), _vm._v(" "), (_vm.history.length > 0) ? _c('div', {
+    ref: "wSwitch",
     staticClass: " weex-ct weex-div",
+    style: (_vm._px2rem(_vm.getBgStyle, 75)),
+    attrs: {
+      "weex-type": "div",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.changeState($event)
+      }
+    }
+  }, [_c('div', {
+    ref: "wBall",
+    staticClass: " weex-ct weex-div",
+    style: (_vm._px2rem(_vm.ballStyle, 75)),
     attrs: {
       "weex-type": "div"
     }
-  }, _vm._l((_vm.history), function(text, index) {
-    return _c('div', {
-      key: index,
-      staticClass: "list-item weex-ct weex-div",
-      attrs: {
-        "weex-type": "div",
-        "data-evt-click": ""
-      },
-      on: {
-        "click": _vm.$stopOuterA,
-        "weex$tap": function($event) {
-          $event.stopPropagation();
-          _vm.openAuto(text)
-        }
-      }
-    }, [_c('div', {
-      staticClass: "list-item-left weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('p', {
-      staticClass: "list-left-title-history weex-el weex-text",
-      attrs: {
-        "weex-type": "text"
-      }
-    }, [_vm._v(_vm._s(text))])]), _vm._v(" "), _c('div', {
-      staticClass: "list-item-right weex-ct weex-div",
-      attrs: {
-        "weex-type": "div"
-      }
-    }, [_c('weiui_icon', {
-      staticClass: "list-right-icon",
-      attrs: {
-        "weiui": {
-          content: 'tb-right 70%'
-        }
-      }
-    })], 1)])
-  })) : _vm._e()], 2)], 1)
+  })])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-dad4f304", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-7ac7d314", module.exports)
   }
 }
 
@@ -20823,349 +19555,26 @@ console.log('START WEEX VUE RENDER: 1.0.31, Build 2018-09-17 14:43.');
 
 /***/ }),
 
-/***/ 7:
-/***/ (function(module, exports) {
-
-/*
-	MIT License http://www.opensource.org/licenses/mit-license.php
-	Author Tobias Koppers @sokra
-*/
-// css base code, injected by the css-loader
-module.exports = function(useSourceMap) {
-	var list = [];
-
-	// return the list of modules as css string
-	list.toString = function toString() {
-		return this.map(function (item) {
-			var content = cssWithMappingToString(item, useSourceMap);
-			if(item[2]) {
-				return "@media " + item[2] + "{" + content + "}";
-			} else {
-				return content;
-			}
-		}).join("");
-	};
-
-	// import a list of modules into the list
-	list.i = function(modules, mediaQuery) {
-		if(typeof modules === "string")
-			modules = [[null, modules, ""]];
-		var alreadyImportedModules = {};
-		for(var i = 0; i < this.length; i++) {
-			var id = this[i][0];
-			if(typeof id === "number")
-				alreadyImportedModules[id] = true;
-		}
-		for(i = 0; i < modules.length; i++) {
-			var item = modules[i];
-			// skip already imported module
-			// this implementation is not 100% perfect for weird media query combinations
-			//  when a module is imported multiple times with different media queries.
-			//  I hope this will never occur (Hey this way we have smaller bundles)
-			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-				if(mediaQuery && !item[2]) {
-					item[2] = mediaQuery;
-				} else if(mediaQuery) {
-					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-				}
-				list.push(item);
-			}
-		}
-	};
-	return list;
-};
-
-function cssWithMappingToString(item, useSourceMap) {
-	var content = item[1] || '';
-	var cssMapping = item[3];
-	if (!cssMapping) {
-		return content;
-	}
-
-	if (useSourceMap && typeof btoa === 'function') {
-		var sourceMapping = toComment(cssMapping);
-		var sourceURLs = cssMapping.sources.map(function (source) {
-			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
-		});
-
-		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
-	}
-
-	return [content].join('\n');
-}
-
-// Adapted from convert-source-map (MIT)
-function toComment(sourceMap) {
-	// eslint-disable-next-line no-undef
-	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
-	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
-
-	return '/*# ' + data + ' */';
-}
-
-
-/***/ }),
-
-/***/ 8:
+/***/ 93:
 /***/ (function(module, exports, __webpack_require__) {
 
-/*
-  MIT License http://www.opensource.org/licenses/mit-license.php
-  Author Tobias Koppers @sokra
-  Modified by Evan You @yyx990803
-*/
-
-var hasDocument = typeof document !== 'undefined'
-
-if (typeof DEBUG !== 'undefined' && DEBUG) {
-  if (!hasDocument) {
-    throw new Error(
-    'vue-style-loader cannot be used in a non-browser environment. ' +
-    "Use { target: 'node' } in your Webpack config to indicate a server-rendering environment."
-  ) }
-}
-
-var listToStyles = __webpack_require__(9)
-
-/*
-type StyleObject = {
-  id: number;
-  parts: Array<StyleObjectPart>
-}
-
-type StyleObjectPart = {
-  css: string;
-  media: string;
-  sourceMap: ?string
-}
-*/
-
-var stylesInDom = {/*
-  [id: number]: {
-    id: number,
-    refs: number,
-    parts: Array<(obj?: StyleObjectPart) => void>
-  }
-*/}
-
-var head = hasDocument && (document.head || document.getElementsByTagName('head')[0])
-var singletonElement = null
-var singletonCounter = 0
-var isProduction = false
-var noop = function () {}
-var options = null
-var ssrIdKey = 'data-vue-ssr-id'
-
-// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-// tags it will allow on a page
-var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
-
-module.exports = function (parentId, list, _isProduction, _options) {
-  isProduction = _isProduction
-
-  options = _options || {}
-
-  var styles = listToStyles(parentId, list)
-  addStylesToDom(styles)
-
-  return function update (newList) {
-    var mayRemove = []
-    for (var i = 0; i < styles.length; i++) {
-      var item = styles[i]
-      var domStyle = stylesInDom[item.id]
-      domStyle.refs--
-      mayRemove.push(domStyle)
-    }
-    if (newList) {
-      styles = listToStyles(parentId, newList)
-      addStylesToDom(styles)
-    } else {
-      styles = []
-    }
-    for (var i = 0; i < mayRemove.length; i++) {
-      var domStyle = mayRemove[i]
-      if (domStyle.refs === 0) {
-        for (var j = 0; j < domStyle.parts.length; j++) {
-          domStyle.parts[j]()
-        }
-        delete stylesInDom[domStyle.id]
-      }
-    }
-  }
-}
-
-function addStylesToDom (styles /* Array<StyleObject> */) {
-  for (var i = 0; i < styles.length; i++) {
-    var item = styles[i]
-    var domStyle = stylesInDom[item.id]
-    if (domStyle) {
-      domStyle.refs++
-      for (var j = 0; j < domStyle.parts.length; j++) {
-        domStyle.parts[j](item.parts[j])
-      }
-      for (; j < item.parts.length; j++) {
-        domStyle.parts.push(addStyle(item.parts[j]))
-      }
-      if (domStyle.parts.length > item.parts.length) {
-        domStyle.parts.length = item.parts.length
-      }
-    } else {
-      var parts = []
-      for (var j = 0; j < item.parts.length; j++) {
-        parts.push(addStyle(item.parts[j]))
-      }
-      stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts }
-    }
-  }
-}
-
-function createStyleElement () {
-  var styleElement = document.createElement('style')
-  styleElement.type = 'text/css'
-  head.appendChild(styleElement)
-  return styleElement
-}
-
-function addStyle (obj /* StyleObjectPart */) {
-  var update, remove
-  var styleElement = document.querySelector('style[' + ssrIdKey + '~="' + obj.id + '"]')
-
-  if (styleElement) {
-    if (isProduction) {
-      // has SSR styles and in production mode.
-      // simply do nothing.
-      return noop
-    } else {
-      // has SSR styles but in dev mode.
-      // for some reason Chrome can't handle source map in server-rendered
-      // style tags - source maps in <style> only works if the style tag is
-      // created and inserted dynamically. So we remove the server rendered
-      // styles and inject new ones.
-      styleElement.parentNode.removeChild(styleElement)
-    }
-  }
-
-  if (isOldIE) {
-    // use singleton mode for IE9.
-    var styleIndex = singletonCounter++
-    styleElement = singletonElement || (singletonElement = createStyleElement())
-    update = applyToSingletonTag.bind(null, styleElement, styleIndex, false)
-    remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true)
-  } else {
-    // use multi-style-tag mode in all other cases
-    styleElement = createStyleElement()
-    update = applyToTag.bind(null, styleElement)
-    remove = function () {
-      styleElement.parentNode.removeChild(styleElement)
-    }
-  }
-
-  update(obj)
-
-  return function updateStyle (newObj /* StyleObjectPart */) {
-    if (newObj) {
-      if (newObj.css === obj.css &&
-          newObj.media === obj.media &&
-          newObj.sourceMap === obj.sourceMap) {
-        return
-      }
-      update(obj = newObj)
-    } else {
-      remove()
-    }
-  }
-}
-
-var replaceText = (function () {
-  var textStore = []
-
-  return function (index, replacement) {
-    textStore[index] = replacement
-    return textStore.filter(Boolean).join('\n')
-  }
-})()
-
-function applyToSingletonTag (styleElement, index, remove, obj) {
-  var css = remove ? '' : obj.css
-
-  if (styleElement.styleSheet) {
-    styleElement.styleSheet.cssText = replaceText(index, css)
-  } else {
-    var cssNode = document.createTextNode(css)
-    var childNodes = styleElement.childNodes
-    if (childNodes[index]) styleElement.removeChild(childNodes[index])
-    if (childNodes.length) {
-      styleElement.insertBefore(cssNode, childNodes[index])
-    } else {
-      styleElement.appendChild(cssNode)
-    }
-  }
-}
-
-function applyToTag (styleElement, obj) {
-  var css = obj.css
-  var media = obj.media
-  var sourceMap = obj.sourceMap
-
-  if (media) {
-    styleElement.setAttribute('media', media)
-  }
-  if (options.ssrId) {
-    styleElement.setAttribute(ssrIdKey, obj.id)
-  }
-
-  if (sourceMap) {
-    // https://developer.chrome.com/devtools/docs/javascript-debugging
-    // this makes source maps inside style tags work properly in Chrome
-    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
-    // http://stackoverflow.com/a/26603875
-    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
-  }
-
-  if (styleElement.styleSheet) {
-    styleElement.styleSheet.cssText = css
-  } else {
-    while (styleElement.firstChild) {
-      styleElement.removeChild(styleElement.firstChild)
-    }
-    styleElement.appendChild(document.createTextNode(css))
-  }
-}
+"use strict";
 
 
-/***/ }),
+var _vue = __webpack_require__(3);
 
-/***/ 9:
-/***/ (function(module, exports) {
+var _vue2 = _interopRequireDefault(_vue);
 
-/**
- * Translates the list format produced by css-loader into something
- * easier to manipulate.
- */
-module.exports = function listToStyles (parentId, list) {
-  var styles = []
-  var newStyles = {}
-  for (var i = 0; i < list.length; i++) {
-    var item = list[i]
-    var id = item[0]
-    var css = item[1]
-    var media = item[2]
-    var sourceMap = item[3]
-    var part = {
-      id: parentId + ':' + i,
-      css: css,
-      media: media,
-      sourceMap: sourceMap
-    }
-    if (!newStyles[id]) {
-      styles.push(newStyles[id] = { id: id, parts: [part] })
-    } else {
-      newStyles[id].parts.push(part)
-    }
-  }
-  return styles
-}
+var _weexVueRender = __webpack_require__(6);
 
+var _weexVueRender2 = _interopRequireDefault(_weexVueRender);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_weexVueRender2.default.init(_vue2.default);
+
+var App = __webpack_require__(17);
+new _vue2.default(_vue2.default.util.extend({ el: '#root' }, App));
 
 /***/ })
 

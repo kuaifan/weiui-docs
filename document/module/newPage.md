@@ -32,6 +32,7 @@ weiui.openPage({params}, callback(result))
 | statusBarType | `String` | - | 状态栏样式：<br/>`normal` 正常<br/>`fullscreen` 全屏<br/>`immersion` 沉浸式<br/>_非默认下`statusBarType`、`statusBarAlpha`无效_ | normal |
 | statusBarColor | `String` | - | 状态栏颜色值 | #3EB4FF |
 | statusBarAlpha | `Number` | - | 状态栏透明度， 0-255 | 0 |
+| statusBarStyle | `Boolean` | - | 状态栏字体颜色：<br/>`true` 状态栏的字体为白色<br/>`false` 状态栏的字体为黑色 | iOS:黑<br/>Android:白 |
 | softInputMode | `String` | - | 键盘弹出方式：<br/>`auto` 默认值，由系统决定如何处理<br/>`pan` 若键盘盖住输入框，页面不会自动上移<br/>`resize` 若键盘盖住输入框，页面会自动上移 | auto |
 | translucent | `Boolean` | - | 透明底色窗口：`true`、`false`<br/>_启用滑动返回时建议true_ | false |
 | backgroundColor | `String` | - | 页面背景颜色 | #f4f8f9 |
@@ -294,6 +295,22 @@ weiui.setRefreshing({params}, refreshing)
 | 属性名 | 类型 | 必须 | 描述 | 默认值 |
 | --- | --- | :-: | --- | --- |
 | pageName | `String` | - | 页面名称，留空表示当前页面（不建议） | - |
+
+
+## weiui.statusBarStyle
+
+* 修改当前页面状态栏样式（字体颜色）
+
+```js
+/**
+ * @param isLight       详见 isLight 参数说明
+ */
+weiui.statusBarStyle(isLight)
+```
+> isLight 参数说明
+
+* `true`状态栏的字体为白色
+* `false`状态栏的字体为黑色
 
 
 ## weiui.setPageStatusListener

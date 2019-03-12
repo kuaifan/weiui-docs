@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 92);
+/******/ 	return __webpack_require__(__webpack_require__.s = 96);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -633,13 +633,83 @@ module.exports = app;
 
 /***/ }),
 
-/***/ 92:
+/***/ 100:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["app"]
+  }, [_c('weiui_navbar', {
+    staticClass: ["navbar"]
+  }, [_c('weiui_navbar_item', {
+    attrs: {
+      "type": "back"
+    }
+  }), _c('weiui_navbar_item', {
+    attrs: {
+      "type": "title"
+    }
+  }, [_c('text', {
+    staticClass: ["title"]
+  }, [_vm._v("确认对话框")])]), _c('weiui_navbar_item', {
+    attrs: {
+      "type": "right"
+    },
+    on: {
+      "click": function($event) {
+        _vm.viewCode('module/alert')
+      }
+    }
+  }, [_c('weiui_icon', {
+    staticClass: ["iconr"],
+    attrs: {
+      "content": "md-code-working"
+    }
+  })], 1)], 1), _c('div', {
+    staticClass: ["content"]
+  }, [_c('text', {
+    staticClass: ["button"],
+    on: {
+      "click": _vm.toAlert
+    }
+  }, [_vm._v("alert")]), _c('text', {
+    staticClass: ["button"],
+    on: {
+      "click": _vm.toAlert2
+    }
+  }, [_vm._v("alert 带标题")]), _c('text', {
+    staticClass: ["button"],
+    on: {
+      "click": _vm.toConfirm
+    }
+  }, [_vm._v("confirm")]), _c('text', {
+    staticClass: ["button"],
+    on: {
+      "click": _vm.toConfirm2
+    }
+  }, [_vm._v("confirm 3个按钮")]), _c('text', {
+    staticClass: ["button"],
+    on: {
+      "click": _vm.toInput
+    }
+  }, [_vm._v("input")]), _c('text', {
+    staticClass: ["button"],
+    on: {
+      "click": _vm.toInput2
+    }
+  }, [_vm._v("input 2个输入框")])])], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+
+/***/ 96:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _module_alert = __webpack_require__(93);
+var _module_alert = __webpack_require__(97);
 
 var _module_alert2 = _interopRequireDefault(_module_alert);
 
@@ -650,21 +720,21 @@ new Vue(_module_alert2.default);
 
 /***/ }),
 
-/***/ 93:
+/***/ 97:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(94)
+__vue_styles__.push(__webpack_require__(98)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(95)
+__vue_exports__ = __webpack_require__(99)
 
 /* template */
-var __vue_template__ = __webpack_require__(96)
+var __vue_template__ = __webpack_require__(100)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -695,7 +765,7 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 94:
+/***/ 98:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -738,7 +808,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 95:
+/***/ 99:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -887,76 +957,6 @@ exports.default = {
         }
     }
 };
-
-/***/ }),
-
-/***/ 96:
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["app"]
-  }, [_c('weiui_navbar', {
-    staticClass: ["navbar"]
-  }, [_c('weiui_navbar_item', {
-    attrs: {
-      "type": "back"
-    }
-  }), _c('weiui_navbar_item', {
-    attrs: {
-      "type": "title"
-    }
-  }, [_c('text', {
-    staticClass: ["title"]
-  }, [_vm._v("确认对话框")])]), _c('weiui_navbar_item', {
-    attrs: {
-      "type": "right"
-    },
-    on: {
-      "click": function($event) {
-        _vm.viewCode('module/alert')
-      }
-    }
-  }, [_c('weiui_icon', {
-    staticClass: ["iconr"],
-    attrs: {
-      "content": "md-code-working"
-    }
-  })], 1)], 1), _c('div', {
-    staticClass: ["content"]
-  }, [_c('text', {
-    staticClass: ["button"],
-    on: {
-      "click": _vm.toAlert
-    }
-  }, [_vm._v("alert")]), _c('text', {
-    staticClass: ["button"],
-    on: {
-      "click": _vm.toAlert2
-    }
-  }, [_vm._v("alert 带标题")]), _c('text', {
-    staticClass: ["button"],
-    on: {
-      "click": _vm.toConfirm
-    }
-  }, [_vm._v("confirm")]), _c('text', {
-    staticClass: ["button"],
-    on: {
-      "click": _vm.toConfirm2
-    }
-  }, [_vm._v("confirm 3个按钮")]), _c('text', {
-    staticClass: ["button"],
-    on: {
-      "click": _vm.toInput
-    }
-  }, [_vm._v("input")]), _c('text', {
-    staticClass: ["button"],
-    on: {
-      "click": _vm.toInput2
-    }
-  }, [_vm._v("input 2个输入框")])])], 1)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
 
 /***/ })
 

@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 112);
+/******/ 	return __webpack_require__(__webpack_require__.s = 116);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -633,13 +633,13 @@ module.exports = app;
 
 /***/ }),
 
-/***/ 112:
+/***/ 116:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _module_page = __webpack_require__(113);
+var _module_page = __webpack_require__(117);
 
 var _module_page2 = _interopRequireDefault(_module_page);
 
@@ -650,21 +650,21 @@ new Vue(_module_page2.default);
 
 /***/ }),
 
-/***/ 113:
+/***/ 117:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(114)
+__vue_styles__.push(__webpack_require__(118)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(115)
+__vue_exports__ = __webpack_require__(119)
 
 /* template */
-var __vue_template__ = __webpack_require__(116)
+var __vue_template__ = __webpack_require__(120)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -695,7 +695,7 @@ module.exports = __vue_exports__
 
 /***/ }),
 
-/***/ 114:
+/***/ 118:
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -733,12 +733,39 @@ module.exports = {
     "paddingRight": "30",
     "color": "#ffffff",
     "backgroundColor": "#00B4FF"
+  },
+  "item": {
+    "width": "380",
+    "height": "100",
+    "flexDirection": "row",
+    "alignItems": "center",
+    "backgroundColor": "#ffffff",
+    "marginTop": "20",
+    "marginBottom": "20"
+  },
+  "item-title": {
+    "fontSize": "28",
+    "marginLeft": "24",
+    "marginRight": "34",
+    "color": "#242424"
+  },
+  "item-input": {
+    "flex": 1,
+    "fontSize": "28",
+    "height": "80",
+    "paddingRight": "24",
+    "textAlign": "right"
+  },
+  "switch": {
+    "width": "86",
+    "height": "50",
+    "marginRight": "24"
   }
 }
 
 /***/ }),
 
-/***/ 115:
+/***/ 119:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -750,7 +777,48 @@ Object.defineProperty(exports, "__esModule", {
 
 var _app = __webpack_require__(1);
 
-var weiui = weex.requireModule('weiui'); //
+var _WSwitch = __webpack_require__(6);
+
+var _WSwitch2 = _interopRequireDefault(_WSwitch);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -817,7 +885,24 @@ var weiui = weex.requireModule('weiui'); //
 //
 //
 
+var weiui = weex.requireModule('weiui');
+
 exports.default = {
+    components: { WSwitch: _WSwitch2.default },
+    data: function data() {
+        return {
+            isLight: false
+        };
+    },
+    mounted: function mounted() {
+        weiui.statusBarStyle(isLight);
+    },
+
+    watch: {
+        isLight: function isLight(val) {
+            weiui.statusBarStyle(val);
+        }
+    },
     methods: {
         viewCode: function viewCode(str) {
             (0, _app.openViewCode)(str);
@@ -850,7 +935,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 116:
+/***/ 120:
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -904,7 +989,252 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.openPage4
     }
-  }, [_vm._v("打开一个WEB页面")])])], 1)
+  }, [_vm._v("打开一个WEB页面")]), _c('div', {
+    staticClass: ["item"],
+    on: {
+      "click": function($event) {
+        _vm.isLight = !_vm.isLight
+      }
+    }
+  }, [_c('text', {
+    staticClass: ["item-title"]
+  }, [_vm._v("状态栏字体颜色")]), _c('div', {
+    staticClass: ["item-input"]
+  }), _c('w-switch', {
+    staticClass: ["switch"],
+    model: {
+      value: (_vm.isLight),
+      callback: function($$v) {
+        _vm.isLight = $$v
+      },
+      expression: "isLight"
+    }
+  })], 1)])], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+
+/***/ 6:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
+/* script */
+__vue_exports__ = __webpack_require__(7)
+
+/* template */
+var __vue_template__ = __webpack_require__(8)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "/Users/GAOYI/wwwroot/weiui/weiui-template/src/components/WSwitch.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+
+/***/ 7:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+//
+//
+//
+//
+//
+//
+
+var animation = weex.requireModule('animation');
+
+exports.default = {
+    name: 'WSwitch',
+    props: {
+        value: {
+            type: Boolean,
+            default: false
+        },
+        solid: Boolean,
+        disabled: {
+            type: Boolean,
+            default: false
+        },
+        blurColor: String,
+        focusColor: String,
+        borderColor: {
+            type: String,
+            default: '#D9D9D9'
+        },
+        backgroundColor: {
+            type: String,
+            default: '#E31D1A'
+        }
+    },
+
+    data: function data() {
+        return {
+            wRatio: 1,
+            hRatio: 1,
+            loadIng: false,
+            isAnimate: false,
+            _checked: false,
+            _ballStyle: {}
+        };
+    },
+    mounted: function mounted() {
+        this.wRatio = this.$refs.wSwitch.style.width / 144;
+        this.hRatio = this.$refs.wSwitch.style.height / 72;
+    },
+
+
+    computed: {
+        getBgStyle: function getBgStyle() {
+            var solid = this.solid,
+                borderColor = this.borderColor,
+                backgroundColor = this.backgroundColor,
+                disabled = this.disabled,
+                wRatio = this.wRatio,
+                hRatio = this.hRatio;
+
+            var style = !solid ? {
+                borderColor: borderColor,
+                backgroundColor: 'transparent'
+            } : {
+                borderColor: backgroundColor,
+                backgroundColor: backgroundColor
+            };
+            if (disabled) {
+                style.opacity = 0.3;
+            } else {
+                style.opacity = 1;
+            }
+            style.flexDirection = 'row';
+            style.alignItems = 'center';
+            style.width = 144 * wRatio;
+            style.height = 72 * hRatio;
+            style.borderRadius = 72 * hRatio;
+            style.borderWidth = 5 * hRatio;
+            return style;
+        },
+        ballStyle: function ballStyle() {
+            var _ballStyle = this._ballStyle,
+                _checked = this._checked,
+                hRatio = this.hRatio,
+                focusColor = this.focusColor,
+                solid = this.solid,
+                backgroundColor = this.backgroundColor,
+                blurColor = this.blurColor,
+                borderColor = this.borderColor;
+
+            var style = _ballStyle;
+            style.width = 72 * hRatio - 5 * hRatio * 2;
+            style.height = 72 * hRatio - 5 * hRatio * 2;
+            style.borderRadius = style.width / 2;
+            style.backgroundColor = _checked ? focusColor || (solid ? '#FFFFFF' : backgroundColor) : blurColor || (solid ? '#FFFFFF' : borderColor);
+            return style;
+        }
+    },
+
+    watch: {
+        value: function value(bool) {
+            this._checked = bool;
+            this.toggleState(bool);
+        }
+    },
+
+    methods: {
+        changeState: function changeState() {
+            var _this = this;
+
+            if (this.loadIng) return;
+            if (this.disabled) return;
+            this._checked = !this._checked;
+            this.toggleState(this._checked);
+            this.loadIng = true;
+            setTimeout(function () {
+                _this.$emit('input', _this._checked);
+                _this.loadIng = false;
+            }, 260);
+        },
+        toggleState: function toggleState(bool) {
+            var animated = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
+            var style = bool ? {
+                backgroundColor: this.focusColor || (this.solid ? '#FFFFFF' : this.backgroundColor),
+                transform: 'scale(0.8) translate(' + (144 * this.wRatio - (72 * this.hRatio - 5 * this.hRatio * 2) - 5 * this.hRatio * 2) + 'px, 0)',
+                transformOrigin: 'center center'
+            } : {
+                backgroundColor: this.blurColor || (this.solid ? '#FFFFFF' : this.borderColor),
+                transform: 'scale(0.6)',
+                transformOrigin: 'center center'
+            };
+            var wBall = this.$refs.wBall;
+            if (!wBall) {
+                return;
+            }
+            animation.transition(wBall, {
+                styles: style,
+                timingFunction: 'ease',
+                duration: animated ? 260 : 0.00001
+            });
+        }
+    },
+
+    created: function created() {
+        this.value ? this._ballStyle = {
+            backgroundColor: this.focusColor || (this.solid ? '#FFFFFF' : this.backgroundColor),
+            transform: 'scale(0.8) translate(' + (144 * this.wRatio - (72 * this.hRatio - 5 * this.hRatio * 2) - 5 * this.hRatio * 2) + 'px, 0)'
+        } : this._ballStyle = {
+            backgroundColor: this.blurColor || (this.solid ? '#FFFFFF' : this.borderColor),
+            transform: 'scale(0.6)'
+        };
+        this._checked = this.value;
+        this.toggleState(this._checked, false);
+    }
+};
+
+/***/ }),
+
+/***/ 8:
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    ref: "wSwitch",
+    style: _vm.getBgStyle,
+    on: {
+      "click": _vm.changeState
+    }
+  }, [_c('div', {
+    ref: "wBall",
+    style: _vm.ballStyle
+  })])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
