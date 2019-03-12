@@ -8,12 +8,6 @@
 weiui plugin add pay
 ```
 
-如果出现出现UTDID冲突请使用pay_noutdid版本
-
-```bash
-weiui plugin add pay_noutdid
-```
-
 > 需要加载的模块
 
 ```js
