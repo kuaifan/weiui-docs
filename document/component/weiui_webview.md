@@ -123,6 +123,7 @@ weiui.adDialog("http://..../xxx.png", function(res) {
     </style>
     <script type="text/javascript">
         function openScan() {
+            let weiui = requireModuleJs("weiui");
             weiui.openScaner(null, function(res) {
                 switch (res.status) {
                     case "success":
