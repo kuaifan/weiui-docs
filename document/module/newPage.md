@@ -24,19 +24,21 @@ weiui.openPage({params}, callback(result))
 | --- | --- | :-: | --- | --- |
 | url | `String` | √ | `Weex Js`或`Web Url`地址 | - |
 | pageName | `String` | - | 页面名称 | - |
-| pageType | `String` | - | 页面类型：`weex`、`web`<br/>_可填写`auto`系统自动识别 (不建议)_ | weex |
+| pageTitle <em class="new-label" date="20190318">[新]</em> | `String` | - | 页面标题，设置显示标题栏 | - |
+| pageType | `String` | - | 页面类型：`weex`、`web`<br/>_可填写 auto 系统自动识别 (不建议)_ | weex |
 | params |`Object`  | - | 页面传递参数，通过`weex.config.params`获取         | -       |
 | cache | `Number` | - | 页面缓存时间，仅`weex`类型有效，<br/>设置`0`不缓存（单位：毫秒） | 0 |
 | loading | `Boolean` | - | 是否显示等待效果：`true`、`false` | true |
-| swipeBack | `Boolean` | - | 是否支持滑动返回：`true`、`false` | Android:false<br/>iOS:true |
-| statusBarType | `String` | - | 状态栏样式：<br/>`normal` 正常<br/>`fullscreen` 全屏<br/>`immersion` 沉浸式<br/>_非默认下`statusBarType`、`statusBarAlpha`无效_ | normal |
+| animated <em class="new-label" date="20190318">[新]</em> | `Boolean` | - | 是否进入页面需要动画效果：`true`、`false` | true |
+| swipeBack | `Boolean` | - | 是否支持滑动返回：`true`、`false` | true |
+| statusBarType | `String` | - | 状态栏样式：<br/>`normal` 正常<br/>`fullscreen` 全屏<br/>`immersion` 沉浸式<br/>_非默认下 pageTitle、statusBarType、statusBarAlpha 无效_ | normal |
 | statusBarColor | `String` | - | 状态栏颜色值 | #3EB4FF |
 | statusBarAlpha | `Number` | - | 状态栏透明度， 0-255 | 0 |
-| statusBarStyle | `Boolean` | - | 状态栏字体颜色：<br/>`true` 状态栏的字体为白色<br/>`false` 状态栏的字体为黑色 | iOS:黑<br/>Android:白 |
+| statusBarStyle <em class="new-label" date="20190318">[新]</em> | `Boolean` | - | 状态栏字体颜色：<br/>`true` 状态栏的字体为白色<br/>`false` 状态栏的字体为黑色 | iOS:黑<br/>Android:白 |
 | softInputMode | `String` | - | 键盘弹出方式：<br/>`auto` 默认值，由系统决定如何处理<br/>`pan` 若键盘盖住输入框，页面不会自动上移<br/>`resize` 若键盘盖住输入框，页面会自动上移 | auto |
-| translucent | `Boolean` | - | 透明底色窗口：`true`、`false`<br/>_启用滑动返回时建议true_ | false |
-| backgroundColor | `String` | - | 页面背景颜色 | #f4f8f9 |
-| backPressedClose | `Boolean` | - | 允许按返回键关闭页面 | true |
+| backgroundColor | `String` | - | 页面背景颜色 | #ffffff |
+| backPressedClose | `Boolean` | - | 允许按返回键关闭页面 <span class="badge" type="warn" vertical="middle">Android</span> | true |
+| safeAreaBottom <em class="new-label" date="20190318">[新]</em> | `Number` | - | iPhone X+底部安全距离 <span class="badge" type="warn" vertical="middle">iOS</span> | - |
 
 > callback 回调`result`说明
 
@@ -118,7 +120,7 @@ weiui.getPageInfo({params})
 
 | 属性名 | 类型 | 必须 | 描述 | 默认值 |
 | --- | --- | :-: | --- | --- |
-| pageName | `String` | - | 页面名称，留空获取当前页面（不建议） | - |
+| pageName | `String` | - | 页面名称，留空获取当前页面（不建议留空） | - |
 
 > 简单示例
 
@@ -165,7 +167,7 @@ weiui.reloadPage({params})
 
 | 属性名 | 类型 | 必须 | 描述 | 默认值 |
 | --- | --- | :-: | --- | --- |
-| pageName | `String` | - | 页面名称，留空重载当前页面（不建议） | - |
+| pageName | `String` | - | 页面名称，留空重载当前页面（不建议留空） | - |
 
 > 简单示例
 
@@ -197,7 +199,7 @@ weiui.setSoftInputMode({params}, mode)
 
 | 属性名 | 类型 | 必须 | 描述 | 默认值 |
 | --- | --- | :-: | --- | --- |
-| pageName | `String` | - | 页面名称，留空表示当前页面（不建议） | - |
+| pageName | `String` | - | 页面名称，留空表示当前页面（不建议留空） | - |
 
 > 简单示例
 
@@ -226,7 +228,7 @@ weiui.setPageBackPressed({params}, callback())
 
 | 属性名 | 类型 | 必须 | 描述 | 默认值 |
 | --- | --- | :-: | --- | --- |
-| pageName | `String` | - | 页面名称，留空拦截当前页面（不建议） | - |
+| pageName | `String` | - | 页面名称，留空拦截当前页面（不建议留空） | - |
 
 > 简单示例
 
@@ -259,7 +261,7 @@ weiui.setOnRefreshListener({params}, callback(pageName))
 
 | 属性名 | 类型 | 必须 | 描述 | 默认值 |
 | --- | --- | :-: | --- | --- |
-| pageName | `String` | - | 页面名称，留空表示当前页面（不建议） | - |
+| pageName | `String` | - | 页面名称，留空表示当前页面（不建议留空） | - |
 
 > 简单示例
 
@@ -294,10 +296,10 @@ weiui.setRefreshing({params}, refreshing)
 
 | 属性名 | 类型 | 必须 | 描述 | 默认值 |
 | --- | --- | :-: | --- | --- |
-| pageName | `String` | - | 页面名称，留空表示当前页面（不建议） | - |
+| pageName | `String` | - | 页面名称，留空表示当前页面（不建议留空） | - |
 
 
-## weiui.statusBarStyle
+## weiui.setStatusBarStyle
 
 * 修改当前页面状态栏样式（字体颜色）
 
@@ -305,7 +307,7 @@ weiui.setRefreshing({params}, refreshing)
 /**
  * @param isLight       详见 isLight 参数说明
  */
-weiui.statusBarStyle(isLight)
+weiui.setStatusBarStyle(isLight)
 ```
 > isLight 参数说明
 
@@ -447,7 +449,8 @@ weiui.closePage({params})
 
 | 属性名 | 类型 | 必须 | 描述 | 默认值 |
 | --- | --- | :-: | --- | --- |
-| pageName | `String` | - | 页面名称，留空关闭当前页面（不建议） | - |
+| pageName | `String` | - | 页面名称，留空关闭当前页面（不建议留空） | - |
+| animated <em class="new-label" date="20190318">[新]</em> | `Boolean` | - | 是否弹出页面需要动画效果：`true`、`false` | true |
 
 > 简单示例
 
@@ -477,7 +480,7 @@ weiui.closePageTo({params})
 
 | 属性名 | 类型 | 必须 | 描述 | 默认值 |
 | --- | --- | :-: | --- | --- |
-| pageName | `String` | - | 页面名称，留空关闭当前页面（不建议） | - |
+| pageName | `String` | - | 页面名称，留空关闭当前页面（不建议留空） | - |
 
 > 简单示例
 

@@ -69,6 +69,12 @@ JS支持调用的原生模块如下：
 //综合模块
 let weiui = requireModuleJs("weiui");
 
+//路由模块
+let navigator = requireModuleJs("navigator");
+
+//导航标题栏模块
+let navigationBar = requireModuleJs("navigationBar");
+
 //城市选择器
 let citypicker = requireModuleJs("citypicker");
 
@@ -92,6 +98,8 @@ weiui.adDialog("http://..../xxx.png", function(res) {
 ```
 
 - `weiui`：综合模块，如：[weiui.adDialog](/module/adDialog)
+- `navigator`：[路由模块](/module/navigator)
+- `navigationBar`：[导航标题栏模块](/module/navigationBar)
 - `citypicker`：[城市选择器](/module/plugin/citypicker)
 - `picture`：[图片选择模块](/module/plugin/picture)
 - `pay`：[支付模块](/module/plugin/pay)
@@ -232,7 +240,7 @@ this.$refs.reflectName.setScrollEnabled(true);
 
 ```
 
-## 浏览器调用方法
+## 浏览器内js调用原生api方法
 
 ```js
 let webview = requireModuleJs("webview");

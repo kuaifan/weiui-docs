@@ -1092,12 +1092,12 @@ exports.default = {
         };
     },
     mounted: function mounted() {
-        weiui.statusBarStyle(isLight);
+        weiui.setStatusBarStyle(isLight);
     },
 
     watch: {
         isLight: function isLight(val) {
-            weiui.statusBarStyle(val);
+            weiui.setStatusBarStyle(val);
         }
     },
     methods: {

@@ -1,6 +1,6 @@
 # 搭建环境
 
-> 我们要求全部都安装，**不然无法完整开发与调试**。
+> 我们要求全部都安装，**否则可能无法完整开发与调试**。
 
 ## 基础环境
 
@@ -73,7 +73,7 @@ JDK 是 JAVA 开发包，AndroidStudio 是 Android开发IDE，这两项不再做
 ## 模拟器或真机安装
 
 * ios 开发中 xcode 已经自带了模拟器
-* android 开发者可以使用 android studio 再带模拟器，为了更好的效果，推荐下载 `Genymotion`模拟器
+* android 开发者也可以使用 android studio 自带模拟器
 
 至此，所有的相关的工具和软件都已下载完毕，下面我们开始创建一个 `weiui-demo` 工程。
 
