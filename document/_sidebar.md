@@ -32,7 +32,7 @@
         - [<span>caches</span>缓存管理](module/caches)
         - [<span>captcha</span>验证弹窗](module/captcha)
         - [<span>loading</span>等待弹窗](module/loading)
-        - [<span>newPage</span>页面功能](module/newPage)
+        - [<span>newPage</span>页面功能 <New date="20190318"></New>](module/newPage)
         - [<span>openOtherApp</span>打开其他APP](module/openOtherApp)
         - [<span>plate</span>复制粘贴](module/plate)
         - [<span>saveImage</span>保存图片至本地](module/saveImage)
@@ -43,8 +43,8 @@
         - [<span>toast</span>吐司提示](module/toast)
         - [<span>weex px</span>单位转换](module/weexpx)
         - [<span>keyboard</span>键盘状态](module/keyboard)
-        - [<span>navigator</span>路由 <em class="new-label" date="20190318">[新]</em>](module/navigator)
-        - [<span>navigationBar</span>导航标题栏 <em class="new-label" date="20190318">[新]</em>](module/navigationBar)
+        - [<span>navigator</span>路由 <New date="20190318"></New>](module/navigator)
+        - [<span>navigationBar</span>导航标题栏 <New date="20190318" />](module/navigationBar)
 
     - <b>[ 插件化 ]</b>
         - [<span>citypicker</span>城市选择器](module/plugin/citypicker)

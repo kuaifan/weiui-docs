@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="icon" href="./assets/images/favicon.png" type="image/png">
-    <link rel="stylesheet" href="./assets/css/weiui.min.css?v=10010">
-    <link rel="stylesheet" href="./assets/css/index.css?v=10010">
+    <link rel="stylesheet" href="./assets/css/weiui.min.css?v=10011">
+    <link rel="stylesheet" href="./assets/css/index.css?v=10011">
 </head>
 <body>
 <div id="app">Loading ...</div>
@@ -41,14 +41,13 @@
                 hook.beforeEach(function (html) {
                     let url = 'https://github.com/kuaifan/weiui-docs/tree/master/document' + vm.route.file;
                     let github = "<div  data-tooltip-title=\"Star it if you like\" data-tooltip-position=\"top\" class=\"tool-tip\"><iframe src=\"https://ghbtns.com/github-btn.html?user=kuaifan&amp;repo=weiui&amp;type=watch&amp;count=true\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"0\" width=\"110\" height=\"20\" style='margin:0 10px -6px'></iframe></div>";
-
                     let editHtml = '<a href='+ url +' data-tooltip-title=\"Correct this doc\" data-tooltip-position=\"top\" class=\"tool-tip\" target=\"_blank\"><img class=\"emoji\" src=\"https://img.alicdn.com/tfs/TB1ica2lcLJ8KJjy0FnXXcFDpXa-128-128.png\" alt=\"Edit\"></a>';
                     return "<div class=\"tool-docs-header\">"
                         + editHtml
                         + github
                         + "</div>"
                         + '\n\n'
-                        + html
+                        + MDHtmlTemplate(html)
                         + '\n----\n'
                         + '**Please feel free to use and contribute to the development.**'
                 })
@@ -56,19 +55,14 @@
             function (hook, vm) {
                 hook.ready(function() {
                     let sidebar = document.querySelector("aside.sidebar");
+                    if (sidebar.getAttribute("MDHtmlTemplate") !== "true") {
+                        sidebar.setAttribute("MDHtmlTemplate", "true");
+                        sidebar.innerHTML = MDHtmlTemplate(sidebar.innerHTML);
+                    }
                     let active = sidebar.querySelector("li.active");
                     if (active != null) {
                         sidebar.scrollTop = active.offsetTop - document.body.clientHeight / 2;
                     }
-                    //
-                    let nowDate = Math.round(new Date().getTime()/1000);
-                    let nowDate_30 = nowDate - 86400 * 30;
-                    let selectorName = "";
-                    for(let tmpDate = nowDate; tmpDate >= nowDate_30; tmpDate-=86400) {
-                        if (selectorName) selectorName+= ",";
-                        selectorName += ".new-label[date='" + formatDate("Ymd", tmpDate * 1000) + "']";
-                    }
-                    addCssRule(selectorName, 'display: inline-block;');
                 })
             },
             function (hook, vm) {
@@ -119,9 +113,9 @@
         ]
     };
 </script>
-<script src="./assets/js/docsify.min.js?v=10010"></script>
-<script src="./assets/js/search.min.js?v=10010"></script>
-<script src="./assets/js/bideo.js?v=10010"></script>
-<script src="./assets/js/index.js?v=10010"></script>
+<script src="./assets/js/docsify.min.js?v=10011"></script>
+<script src="./assets/js/search.min.js?v=10011"></script>
+<script src="./assets/js/bideo.js?v=10011"></script>
+<script src="./assets/js/index.js?v=10011"></script>
 </body>
 </html>

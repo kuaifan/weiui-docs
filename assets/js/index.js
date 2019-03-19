@@ -31,40 +31,16 @@ let reinitIframe = function(iframe){
     }
 };
 
-let formatDate = function(format, v) {
-    let dateObj;
-    if (v instanceof Date) {
-        dateObj = v;
-    }else {
-        dateObj = new Date(v);
-    }
-    let _zeroFill = function(num) {
-        return parseInt(num) < 10 ? "0" + num : num;
-    };
-    format = format.replace(/Y/g, dateObj.getFullYear());
-    format = format.replace(/m/g, _zeroFill(dateObj.getMonth() + 1));
-    format = format.replace(/d/g, _zeroFill(dateObj.getDate()));
-    format = format.replace(/H/g, _zeroFill(dateObj.getHours()));
-    format = format.replace(/i/g, _zeroFill(dateObj.getMinutes()));
-    format = format.replace(/s/g, _zeroFill(dateObj.getSeconds()));
-    return format;
-};
-
-let addCssRule = function() {
-    function createStyleSheet() {
-        let head = document.head || document.getElementsByTagName('head')[0];
-        let style = document.createElement('style');
-        style.type = 'text/css';
-        head.appendChild(style);
-        return style.sheet ||style.styleSheet;
-    }
-    let sheet = createStyleSheet();
-    return function(selector, rules, index) {
-        index = index || 0;
-        if (sheet.insertRule) {
-            sheet.insertRule(selector + "{" + rules + "}", index);
-        } else if (sheet.addRule) {
-            sheet.addRule(selector, rules, index);
+let MDHtmlTemplate = function (html) {
+    //平台标签
+    html = html.replace(/<(Android|iOS)\s*(\/\s*|><\/\1)>/gmi, '<div class="md-badge md-badge-warn md-badge-middle">仅 $1</div>');
+    //新标签
+    html = html.replace(/<New date="(\d{4})+(\d{2})+(\d{2})"\s*(\/\s*|><\/New)>/gmi, function(str, y, m, d) {
+        if (new Date(y + "-" + m + "-" + d).getTime() > new Date().getTime() - 86400000 * 30) {
+            return '<div class="md-badge md-badge-new md-badge-middle">新</div>'
+        }else{
+            return '';
         }
-    }
-}();
+    });
+    return html;
+};

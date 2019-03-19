@@ -141,43 +141,40 @@ pre[v-pre]:hover .docsify-copy-code-button {
     padding-top: 12px;
 }
 /*角标*/
-.badge {
+.md-badge {
     display:inline-block;
     font-size:12px;
     height:16px;
     line-height:16px;
     border-radius:3px;
-    padding:0 6px;
-    color:#fff;
-    margin-right:5px;
+    padding:0 4px;
+    color:#ffffff;
+    margin:0 5px 0 0;
     background-color:#42b983;
     font-style: normal;
+    transform: scale(0.92, 0.92);
 }
-.badge[vertical='middle'] {
+.md-badge-middle {
     vertical-align:middle
 }
-.badge[vertical='top'] {
+.md-badge-top {
     vertical-align:top
 }
-.badge[type='green'],
-.badge[type='tip'] {
+.md-badge-green,
+.md-badge-tip {
     background-color:#42b983
 }
-.badge[type='error'] {
+.md-badge-error {
     background-color:#da5961
 }
-.badge[type='red'] {
+.md-badge-red {
     background-color:#ff0000
 }
-.badge[type='warn'],
-.badge[type='warning'],
-.badge[type='yellow'] {
-    background-color:#e7c000
+.md-badge-new {
+    background-color:#73C33B;
 }
-/*新*/
-.new-label {
-    display: none;
-    color: #ff0000 !important;
-    font-style: normal !important;
-    font-weight: normal !important;
+.md-badge-warn,
+.md-badge-warning,
+.md-badge-yellow {
+    background-color:#e7c000
 }
