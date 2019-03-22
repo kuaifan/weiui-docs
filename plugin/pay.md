@@ -16,7 +16,7 @@ const pay = weex.requireModule('pay');
 
 ## 参数配置
 
-请查阅[配置相关](../guide/config)
+请查阅[配置相关](../guide/config.html)
 
 
 ## 微信支付
@@ -31,7 +31,7 @@ const pay = weex.requireModule('pay');
 
 > `iOS`配置
 
-如果已经按上面[参数配置](../guide/config)配置好的话，在编译`npm run [serve|dev|build]`项目的时候**`系统已经自动生成`**理论上无需手动设置，但是真正打包项目的时候需要确认设置`Info`>`URL Types`，否则用户付款完成后无法重新唤起APP。
+如果已经按上面[参数配置](../guide/config.html)配置好的话，在编译`npm run [serve|dev|build]`项目的时候**`系统已经自动生成`**理论上无需手动设置，但是真正打包项目的时候需要确认设置`Info`>`URL Types`，否则用户付款完成后无法重新唤起APP。
 
 ![](./media/wxpay_ios.png)
 

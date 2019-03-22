@@ -16,7 +16,7 @@ const umeng = weex.requireModule('umeng');
 
 ## 参数配置
 
-请查阅[配置相关](../guide/config)
+请查阅[配置相关](../guide/config.html)
 
 ## 获取token 
 

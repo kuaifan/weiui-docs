@@ -14,7 +14,7 @@ const rongim = weex.requireModule('rongim');
 
 ## 参数配置
 
-请查阅[配置相关](../guide/config)
+请查阅[配置相关](../guide/config.html)
 
 ## 连接登录
 

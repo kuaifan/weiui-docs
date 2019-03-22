@@ -1,6 +1,6 @@
 # side-panel-menu
 
-> 为组件`<side-panel>`的子组件，详细请看 [这里](side-panel)
+> 为组件`<side-panel>`的子组件，详细请看 [这里](./side-panel.html)
 
 ## 子组件
 

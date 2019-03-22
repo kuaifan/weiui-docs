@@ -1,6 +1,6 @@
 # navbar
 
-注：此组件与模块[navigationBar](../module/navigationBar)无关联。
+注：此组件与模块[navigationBar](../module/navigationBar.html)无关联。
 
 > 导航栏有4个主要部分：返回按钮、左侧、标题和右侧。每个部分可能包含任何内容，但建议按以下方式使用它们：
 
@@ -11,7 +11,7 @@
 
 ## 子组件
 
-仅支持子组件`<navbar-item>`详细请看 [这里](navbar-item)
+仅支持子组件`<navbar-item>`详细请看 [这里](./navbar-item.html)
 
 ## 预览效果
 

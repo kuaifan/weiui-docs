@@ -1,6 +1,6 @@
 # tabbar-page
 
-> 为组件`<tabbar>`的子组件，详细请看 [这里](tabbar)
+> 为组件`<tabbar>`的子组件，详细请看 [这里](./tabbar.html)
 
 ## 子组件
 
@@ -53,7 +53,7 @@
 
 ## 调用方法 `methods`
 
-请参考父级组件 [tabbar](tabbar.html#调用方法-methods)
+请参考父级组件 [tabbar](./tabbar.html#调用方法-methods)
 
 
 

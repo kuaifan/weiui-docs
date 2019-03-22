@@ -13,4 +13,4 @@ App可以用接口方法，详细可以查看文件内演示的方法。
 
 ## pluginNameBridge.m
 
-`web-view`组件可以可通过`requireModuleJs`调用里面的静态方法，调用详见：[web-view](../../component/web-view)
+`web-view`组件可以可通过`requireModuleJs`调用里面的静态方法，调用详见：[web-view](../../component/web-view.html)

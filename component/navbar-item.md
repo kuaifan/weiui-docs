@@ -1,6 +1,6 @@
 # navbar-item
 
-> 为组件`<navbar>`的子组件，详细请看 [这里](navbar)
+> 为组件`<navbar>`的子组件，详细请看 [这里](./navbar.html)
 
 ## 子组件
 

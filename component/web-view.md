@@ -97,12 +97,12 @@ weiui.adDialog("http://..../xxx.png", function(res) {
 });
 ```
 
-- `weiui`：综合模块，如：[weiui.adDialog](../module/adDialog)
-- `navigator`：[路由模块](../module/navigator)
-- `navigationBar`：[导航标题栏模块](../module/navigationBar)
-- `citypicker`：[城市选择器](../module/plugin/citypicker)
-- `picture`：[图片选择模块](../module/plugin/picture)
-- `pay`：[支付模块](../module/plugin/pay)
+- `weiui`：综合模块，如：[weiui.adDialog](../module/adDialog.html)
+- `navigator`：[路由模块](../module/navigator.html)
+- `navigationBar`：[导航标题栏模块](../navigationBar.html)
+- `citypicker`：[城市选择器](../plugin/citypicker.html)
+- `picture`：[图片选择模块](../plugin/picture.html)
+- `pay`：[支付模块](../plugin/pay.html)
 - `webview`：[浏览器调用方法](../component/web-view.html#浏览器调用方法)
 
 #### JS调用原生API示例

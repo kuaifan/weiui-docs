@@ -9,7 +9,7 @@
 
 ## 子组件
 
-仅支持`<tabbar-page>`组件作为标签页内容，详细请看 [这里](tabbar-page)。
+仅支持`<tabbar-page>`组件作为标签页内容，详细请看 [这里](./tabbar-page.html)。
 
 ## 预览效果
 
