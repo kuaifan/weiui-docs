@@ -11,7 +11,7 @@
 
 ## 子组件
 
-仅支持子组件`<navbar-item>`详细请看 [这里](component/navbar-item)
+仅支持子组件`<navbar-item>`详细请看 [这里](navbar-item)
 
 ## 预览效果
 

@@ -22,7 +22,7 @@ navigator.push({params}, callback(result))
 
 > params 参数说明、callback 回调说明
 
-详细使用说明见[weiui.openPage](../module/newPage?id=weiuiopenpage)。
+详细使用说明见[weiui.openPage](../module/newPage.html#weiuiopenpage)。
 
 
 
@@ -42,7 +42,7 @@ navigator.pop({params}, callback(result))
 
 > params 参数说明
 
-详细使用说明见[weiui.closePage](../module/newPage?id=weiuiclosepage)
+详细使用说明见[weiui.closePage](../module/newPage.html#weiuiclosepage)
 
 > callback 回调说明
 

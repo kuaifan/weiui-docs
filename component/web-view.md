@@ -103,7 +103,7 @@ weiui.adDialog("http://..../xxx.png", function(res) {
 - `citypicker`：[城市选择器](../module/plugin/citypicker)
 - `picture`：[图片选择模块](../module/plugin/picture)
 - `pay`：[支付模块](../module/plugin/pay)
-- `webview`：[浏览器调用方法](../component/web-view?id=浏览器调用方法)
+- `webview`：[浏览器调用方法](../component/web-view.html#浏览器调用方法)
 
 #### JS调用原生API示例
 ```html

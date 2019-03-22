@@ -56,7 +56,7 @@
 
 ###### **` homePageParams`**: 主页的其他参数
 - 比如导航栏颜色等。
-- 详细设置请查阅 [weiui.openPage](http://weiui.cc/#/module/newPage?id=weiuiopenpage) params参数说明。
+- 详细设置请查阅 [weiui.openPage](http://weiui.cc/#/module/newPage.html#weiuiopenpage) params参数说明。
 
 ###### **`appKey`**: 用于云平台管理
 - 建议填写16-32位随机字符串。

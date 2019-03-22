@@ -4,7 +4,7 @@
 
 ## 子组件
 
-支持任何组件作为自己的子组件，其中仅有`<side-panel-menu>`组件作为侧边菜单详细请看 [这里](component/side-panel-menu)，其他组件均为正文内容。
+支持任何组件作为自己的子组件，其中仅有`<side-panel-menu>`组件作为侧边菜单详细请看 [这里](side-panel-menu)，其他组件均为正文内容。
 
 ## 预览效果
 
