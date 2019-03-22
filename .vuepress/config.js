@@ -10,7 +10,7 @@ module.exports = {
 
         logo: '/logo.png',
         nav: [
-            {text: '首页', link: '/?_=' + (Math.random() + "").substr(2)},
+            {text: '首页', link: '/'},
             {text: '起步', link: '/guide/'},
             {text: '组件', link: '/component/'},
             {text: '模块', link: '/module/'},
