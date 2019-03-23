@@ -1,4 +1,4 @@
-# banner
+# &lt;banner&gt;
 
 > `<banner>` 是一个轮播控件，支持无限循环，支持任意组件。
 

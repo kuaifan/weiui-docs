@@ -1,4 +1,4 @@
-# scroll-text
+# &lt;scroll-text&gt;
 
 > `<scroll-text>` 是一个横向滚动文字的容器，主要用于单行公告。
 

@@ -1,3 +1,150 @@
+let sidebar = {
+    guide() {
+        return [{
+            title: '起步',
+            collapsable: false,
+            children: [
+                '/guide/introduce',
+                '/guide/env',
+                '/guide/create',
+                '/guide/config',
+                '/guide/debug',
+                '/guide/lifecycle',
+            ]
+        }, {
+            title: '样式',
+            collapsable: false,
+            children: [
+                ['/weex/styles/common-styles', '通用样式'],
+                ['/weex/styles/text-styles', '文本样式'],
+                ['/weex/styles/css-units', 'CSS 单位'],
+                ['/weex/styles/color-name', '颜色值']
+            ]
+        }, {
+            title: '事件',
+            collapsable: false,
+            children: [
+                ['/weex/events/common-events', '通用事件'],
+                ['/weex/events/event-bubbling', '事件冒泡'],
+                ['/weex/events/gesture', '手势']
+            ]
+        }];
+    },
+    component() {
+        return [{
+            title: '组件',
+            collapsable: false,
+            children: [
+                ['/component/banner', '<banner>'],
+                ['/component/button', '<button>'],
+                ['/component/grid', '<grid>'],
+                ['/component/icon', '<icon>'],
+                ['/component/marquee', '<marquee>'],
+                ['/component/navbar', '<navbar>'],
+                ['/component/navbar-item', '<navbar-item>'],
+                ['/component/ripple', '<ripple>'],
+                ['/component/scroll-text', '<scroll-text>'],
+                ['/component/scroll-view', '<scroll-view>'],
+                ['/component/side-panel', '<side-panel>'],
+                ['/component/side-panel-menu', '<side-panel-menu>'],
+                ['/component/tabbar', '<tabbar>'],
+                ['/component/tabbar-page', '<tabbar-page>'],
+                ['/component/web-view', '<web-view>'],
+            ]
+        }, {
+            title: 'WEEX组件',
+            collapsable: false,
+            children: [
+                ['/weex/components/a', '<a>'],
+                ['/weex/components/div', '<div>'],
+                ['/weex/components/text', '<text>'],
+                ['/weex/components/image', '<image>'],
+                ['/weex/components/list', '<list>'],
+                ['/weex/components/cell', '<cell>'],
+                ['/weex/components/loading', '<loading>'],
+                ['/weex/components/refresh', '<refresh>'],
+                ['/weex/components/recycle-list', '<recycle-list>'],
+                ['/weex/components/scroller', '<scroller>'],
+                ['/weex/components/slider', '<slider>'],
+                ['/weex/components/indicator', '<indicator>'],
+                ['/weex/components/textarea', '<textarea>'],
+                ['/weex/components/input', '<input>'],
+                ['/weex/components/waterfall', '<waterfall>'],
+                ['/weex/components/video', '<video>'],
+                ['/weex/components/web', '<web>'],
+                ['/weex/components/richtext', '<richtext>']
+            ]
+        }];
+    },
+    modules() {
+        return [{
+            title: '模块',
+            collapsable: false,
+            children: [
+                ['/module/adDialog', 'adDialog'],
+                ['/module/ajax', 'ajax'],
+                ['/module/alert', 'alert'],
+                ['/module/caches', 'caches'],
+                ['/module/captcha', 'captcha'],
+                ['/module/loading', 'loading'],
+                ['/module/navigationBar', 'navigationBar'],
+                ['/module/navigator', 'navigator'],
+                ['/module/newPage', 'newPage'],
+                ['/module/openOtherApp', 'openOtherApp'],
+                ['/module/plate', 'plate'],
+                ['/module/saveImage', 'saveImage'],
+                ['/module/scaner', 'scaner'],
+                ['/module/share', 'share'],
+                ['/module/storage', 'storage'],
+                ['/module/system', 'system'],
+                ['/module/toast', 'toast'],
+                ['/module/keyboard', 'keyboard'],
+            ]
+        }, {
+            title: 'WEEX模块',
+            collapsable: false,
+            children: [
+                ['/weex/modules/animation', 'animation'],
+                ['/weex/modules/clipboard', 'clipboard'],
+                ['/weex/modules/dom', 'dom'],
+                ['/weex/modules/globalEvent', 'globalEvent'],
+                ['/weex/modules/meta', 'meta'],
+                ['/weex/modules/modal', 'modal'],
+                // ['/weex/modules/navigator', 'navigator'],
+                ['/weex/modules/picker', 'picker'],
+                ['/weex/modules/storage', 'storage'],
+                ['/weex/modules/stream', 'stream'],
+                ['/weex/modules/webview', 'webview'],
+                // ['/weex/modules/websockets', 'webSockets']
+            ]
+        }]
+    },
+    plugin() {
+        return [{
+            title: '插件化',
+            collapsable: false,
+            children: [
+                '/plugin/citypicker',
+                '/plugin/picture',
+                '/plugin/screenshots',
+                '/plugin/rongim',
+                '/plugin/umeng',
+                '/plugin/pay',
+                '/plugin/websocket',
+            ]
+        }, {
+            title: '开发插件',
+            collapsable: false,
+            children: [
+                '/plugin/dev/create',
+                '/plugin/dev/android',
+                '/plugin/dev/ios',
+                '/plugin/dev/publish',
+            ]
+        }];
+    }
+};
+
 module.exports = {
     title: 'WEIUI',
     description: '一个基于 Vue.js 的高质量跨平台开发框架。',
@@ -7,11 +154,11 @@ module.exports = {
         editLinkText: '在 GitHub 上编辑此页',
         docsRepo: 'kuaifan/weiui-docs',
         lastUpdated: 'Last Updated',
-
         logo: '/logo.png',
+
         nav: [
             {text: '首页', link: '/'},
-            {text: '起步', link: '/guide/'},
+            {text: '指南', link: '/guide/'},
             {text: '组件', link: '/component/'},
             {text: '模块', link: '/module/'},
             {text: '插件化', link: '/plugin/'},
@@ -20,85 +167,17 @@ module.exports = {
         ],
 
         sidebar: {
-            '/guide/': [{
-                title: '起步',
-                collapsable: false,
-                children: [
-                    'introduce',
-                    'env',
-                    'create',
-                    'config',
-                    'debug',
-                    'lifecycle',
-                ]
-            }],
-            '/component/': [{
-                title: '组件',
-                collapsable: false,
-                children: [
-                    'banner',         //weiui_banner
-                    'button',         //weiui_button
-                    'grid',           //weiui_grid
-                    'icon',           //weiui_icon
-                    'marquee',        //weiui_marquee
-                    'navbar',         //weiui_navbar
-                    'navbar-item',    //weiui_navbar_item
-                    'ripple',         //weiui_ripple
-                    'scroll-text',    //weiui_scroll_text
-                    'scroll-view',    //weiui_list
-                    'side-panel',     //weiui_side_panel
-                    'side-panel-menu',//weiui_side_panel_item
-                    'tabbar',         //weiui_tabbar
-                    'tabbar-page',    //weiui_tabbar_page
-                    'web-view',       //weiui_webview
-                ]
-            }],
-            '/module/': [{
-                title: '模块',
-                collapsable: false,
-                children: [
-                    'adDialog',
-                    'ajax',
-                    'alert',
-                    'caches',
-                    'captcha',
-                    'loading',
-                    'navigationBar',
-                    'navigator',
-                    'newPage',
-                    'openOtherApp',
-                    'plate',
-                    'saveImage',
-                    'scaner',
-                    'share',
-                    'storage',
-                    'system',
-                    'toast',
-                    'keyboard',
-                ]
-            }],
-            '/plugin/': [{
-                title: '插件化',
-                collapsable: false,
-                children: [
-                    'citypicker',
-                    'picture',
-                    'screenshots',
-                    'rongim',
-                    'umeng',
-                    'pay',
-                    'websocket',
-                ]
-            }, {
-                title: '开发插件',
-                collapsable: false,
-                children: [
-                    'dev/create',
-                    'dev/android',
-                    'dev/ios',
-                    'dev/publish',
-                ]
-            }]
+            '/guide/': sidebar.guide(),
+            '/weex/styles/': sidebar.guide(),
+            '/weex/events/': sidebar.guide(),
+
+            '/component/': sidebar.component(),
+            '/weex/components/': sidebar.component(),
+
+            '/module/': sidebar.modules(),
+            '/weex/modules/': sidebar.modules(),
+
+            '/plugin/': sidebar.plugin(),
         },
         sidebarDepth: 1,
     }

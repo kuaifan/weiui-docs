@@ -1,4 +1,4 @@
-# navbar
+# &lt;navbar&gt;
 
 注：此组件与模块[navigationBar](../module/navigationBar.html)无关联。
 

@@ -1,4 +1,4 @@
-# icon
+# &lt;icon&gt;
 
 > 使用开源字体库 Ionicons、Iconfont 进行封装
 

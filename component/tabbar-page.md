@@ -1,4 +1,4 @@
-# tabbar-page
+# &lt;tabbar-page&gt;
 
 > 为组件`<tabbar>`的子组件，详细请看 [这里](./tabbar.html)
 

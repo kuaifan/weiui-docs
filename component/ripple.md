@@ -1,4 +1,4 @@
-# ripple
+# &lt;ripple&gt;
 
 > `<ripple>` 是一个点击元素时，会产生向外扩散的水波纹效果容器。
 

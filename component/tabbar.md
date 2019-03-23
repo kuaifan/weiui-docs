@@ -1,4 +1,4 @@
-# tabbar
+# &lt;tabbar&gt;
 
 > `<tabbar>`为页面滑动切换组件（别名：标签页）
 

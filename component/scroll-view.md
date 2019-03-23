@@ -1,4 +1,4 @@
-# scroll-view
+# &lt;scroll-view&gt;
 
 > `<scroll-view>` 是一个列表容器。（android端使用recyler具有回收和复用的能力，可以大幅优化内存占用和渲染性能）
 

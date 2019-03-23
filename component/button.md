@@ -1,4 +1,4 @@
-# button
+# &lt;button&gt;
 
 > `<button>` 是一个预设常用按钮。
 

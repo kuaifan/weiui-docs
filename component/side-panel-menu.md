@@ -1,4 +1,4 @@
-# side-panel-menu
+# &lt;side-panel-menu&gt;
 
 > 为组件`<side-panel>`的子组件，详细请看 [这里](./side-panel.html)
 

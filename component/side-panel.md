@@ -1,4 +1,4 @@
-# side-panel
+# &lt;side-panel&gt;
 
 > `<side-panel>` 是一个抽屉侧边栏。
 

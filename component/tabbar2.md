@@ -1,4 +1,4 @@
-# tabbar
+# &lt;tabbar&gt;
 
 > `<tabbar>`标签页`tabPages`模式预览效果+示例代码
 
