@@ -153,7 +153,7 @@ module.exports = {
         editLinks: true,
         editLinkText: '在 GitHub 上编辑此页',
         docsRepo: 'kuaifan/weiui-docs',
-        lastUpdated: 'Last Updated',
+        lastUpdated: '最后一次更新',
         logo: '/logo.png',
 
         nav: [
