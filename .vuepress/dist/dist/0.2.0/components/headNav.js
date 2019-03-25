@@ -1,4 +1,4 @@
-// { "framework": "Vue"} 
+// { "framework": "Vue", "author": "https://weiui.cc", "create": 1553521267979 } 
 
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
