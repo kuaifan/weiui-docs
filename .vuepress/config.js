@@ -52,7 +52,7 @@ let sidebar = {
                 ['/component/web-view', '<web-view>'],
             ]
         }, {
-            title: 'WEEX组件',
+            title: 'weex组件',
             collapsable: false,
             children: [
                 ['/weex/components/a', '<a>'],
@@ -101,7 +101,7 @@ let sidebar = {
                 ['/module/keyboard', 'keyboard'],
             ]
         }, {
-            title: 'WEEX模块',
+            title: 'weex模块',
             collapsable: false,
             children: [
                 ['/weex/modules/animation', 'animation'],
