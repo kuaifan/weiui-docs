@@ -17,7 +17,7 @@ weiui create <AppName>
 ```bash
 cd <AppName>
 npm i
-npm run serve
+npm run dev
 ```
 
 ## iOS 运行项目

@@ -6,7 +6,7 @@
 
 > `weiui.config.js` 为客户端配置文件
 
-- 注意:  **`weiui.config.js` 每次变动，都需要重新执行命令 `npm run serve` 并在IDE重新编译运行你的 app。**
+- 注意:  **`weiui.config.js` 每次变动，都需要重新执行命令 `npm run dev` 并在IDE重新编译运行你的 app。**
 
 ```javascript
 {

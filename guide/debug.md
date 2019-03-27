@@ -8,6 +8,10 @@ weiui 支持实时同步预览，即修改完代码可以立即查看效果
 只需要在项目根目录中起开发服务：
 
 ```bash
+npm run dev
+```
+或
+```bash
 npm run serve
 ```
 
@@ -18,9 +22,9 @@ npm run serve
 ## 热刷新
 weiui 现已支持热刷新，即修改完代码保存（command + s 或 ctrl + s）的时候，页面会自动刷新
 
-- 点击app屏幕上的`DEV`--> `WiFi真机同步`按要求输入服务生成的`IP地址`、`端口号`即可完成同步刷新。
-- 或点击app屏幕上的`DEV`--> `扫一扫`扫描`npm run serve`打开的页面上的`WiFi QRCode`即可完成同步刷新。
+- 方式①：点击app屏幕上的`DEV`--> `WiFi真机同步`按要求输入服务生成的`IP地址`、`端口号`即可完成同步刷新。
+- 方式②：点击app屏幕上的`DEV`--> `扫一扫`扫描`npm run serve`打开的页面上的`WiFi QRCode`即可完成同步刷新。
 
-**注**：热刷新只有在`npm run [serve|dev]`起服务下才会生效 
+**注**：热刷新只有在`npm run [dev|serve]`起服务下才会生效 
 
 
