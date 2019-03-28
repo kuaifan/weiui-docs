@@ -158,9 +158,9 @@ module.exports = {
 
         nav: [
             {text: '首页', link: '/'},
-            {text: '指南', link: '/guide/'},
-            {text: '组件', link: '/component/'},
-            {text: '模块', link: '/module/'},
+            {text: '指南', link: '/guide/', actives: ['/weex/styles/', '/weex/events/']},
+            {text: '组件', link: '/component/', actives: ['/weex/components/']},
+            {text: '模块', link: '/module/', actives: ['/weex/modules/']},
             {text: '插件化', link: '/plugin/'},
             {text: 'APP管理', link: 'https://app.weiui.cc/'},
             {text: 'GitHub', link: 'https://github.com/kuaifan/weiui'},
