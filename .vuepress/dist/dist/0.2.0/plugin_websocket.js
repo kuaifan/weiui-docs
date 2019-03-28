@@ -1,4 +1,4 @@
-// { "framework": "Vue", "author": "https://weiui.cc", "create": 1553528092873 } 
+// { "framework": "Vue" } 
 
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -613,10 +613,10 @@ var weiui = weex.requireModule('weiui');
 
 var app = {
 
-    jshome: 'http://weiui.cc/dist/0.2.0/',
+    jshome: 'https://weiui.app/dist/0.2.0/',
 
     openViewCode: function openViewCode(str) {
-        app.openViewUrl("http://weiui.cc/" + str + ".html");
+        app.openViewUrl("https://weiui.app/" + str + ".html");
     },
     openViewUrl: function openViewUrl(url) {
         weiui.openPage({
@@ -995,7 +995,7 @@ exports.default = {
         if (typeof websocket === 'undefined') {
             weiui.alert({
                 title: '温馨提示',
-                message: "检测到未安装websocket插件，安装详细请登录http://weiui.cc/"
+                message: "检测到未安装websocket插件，安装详细请登录https://weiui.app/"
             }, function () {
                 weiui.closePage();
             });
@@ -1151,7 +1151,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: ["photo"],
       attrs: {
         "resize": "cover",
-        "src": "http://weiui.cc/assets/grid/grid_7.jpg"
+        "src": "https://weiui.app/assets/grid/grid_7.jpg"
       }
     }), _c('div', {
       staticClass: ["detail"]
@@ -1167,7 +1167,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: ["photo"],
       attrs: {
         "resize": "cover",
-        "src": "http://weiui.cc/assets/grid/grid_10.jpg"
+        "src": "https://weiui.app/assets/grid/grid_10.jpg"
       }
     })])])
   })), _c('div', {

@@ -56,11 +56,11 @@
 
 ###### **` homePageParams`**: 主页的其他参数
 - 比如导航栏颜色等。
-- 详细设置请查阅 [weiui.openPage](http://weiui.app/module/newPage.html#weiui-openpage) params参数说明。
+- 详细设置请查阅 [weiui.openPage](https://weiui.app/module/newPage.html#weiui-openpage) params参数说明。
 
 ###### **`appKey`**: 用于云平台管理
 - 建议填写16-32位随机字符串。
-- 主要用于 [WEIUI云平台](http://console.weiui.app) 热更新、动态设置启动图等。
+- 主要用于 [WEIUI云平台](https://console.weiui.app) 热更新、动态设置启动图等。
 
 ###### **`wxpay`**: 微信支付相关配置
 - appid: 微信支付商户appid。

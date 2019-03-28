@@ -53,6 +53,6 @@ weiui.shareImage(imgUrl)
 
 ```js
 //示例
-weiui.shareImage("http://weiui.app/app/demo.png");
+weiui.shareImage("https://weiui.app/app/demo.png");
 ```
 

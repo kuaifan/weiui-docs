@@ -1,4 +1,4 @@
-// { "framework": "Vue", "author": "https://weiui.cc", "create": 1553528092873 } 
+// { "framework": "Vue" } 
 
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -20727,10 +20727,10 @@ var weiui = weex.requireModule('weiui');
 
 var app = {
 
-    jshome: 'http://weiui.cc/dist/0.2.0/',
+    jshome: 'https://weiui.app/dist/0.2.0/',
 
     openViewCode: function openViewCode(str) {
-        app.openViewUrl("http://weiui.cc/" + str + ".html");
+        app.openViewUrl("https://weiui.app/" + str + ".html");
     },
     openViewUrl: function openViewUrl(url) {
         weiui.openPage({
@@ -21048,8 +21048,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       staticClass: "item-image weex-el weex-image",
       attrs: {
         "resize": "cover",
-        "src": 'http://weiui.cc/assets/grid/' + item + '.jpg',
-        "data-img-src": 'http://weiui.cc/assets/grid/' + item + '.jpg',
+        "src": 'https://weiui.app/assets/grid/' + item + '.jpg',
+        "data-img-src": 'https://weiui.app/assets/grid/' + item + '.jpg',
         "weex-type": "image"
       }
     }), _vm._v(" "), _c('p', {

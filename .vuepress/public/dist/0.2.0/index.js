@@ -1,4 +1,4 @@
-// { "framework": "Vue", "author": "https://weiui.cc", "create": 1553528092873 } 
+// { "framework": "Vue" } 
 
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -613,10 +613,10 @@ var weiui = weex.requireModule('weiui');
 
 var app = {
 
-    jshome: 'http://weiui.cc/dist/0.2.0/',
+    jshome: 'https://weiui.app/dist/0.2.0/',
 
     openViewCode: function openViewCode(str) {
-        app.openViewUrl("http://weiui.cc/" + str + ".html");
+        app.openViewUrl("https://weiui.app/" + str + ".html");
     },
     openViewUrl: function openViewUrl(url) {
         weiui.openPage({
@@ -1194,7 +1194,7 @@ exports.default = {
                 title: '开发文档',
                 title_en: 'document',
                 icon: 'md-code-working',
-                url: 'http://weiui.cc'
+                url: 'https://weiui.app'
             }, {
                 title: '托管平台',
                 title_en: 'github',
@@ -1209,7 +1209,7 @@ exports.default = {
                 title: 'WEIUI版本',
                 title_en: weiui.getVersionName(),
                 icon: 'md-information-circle',
-                url: 'http://weiui.cc'
+                url: 'https://weiui.app'
             }],
 
             history: []
