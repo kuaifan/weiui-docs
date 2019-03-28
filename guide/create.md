@@ -4,25 +4,25 @@
 
 ## 生成开发模板 
 
-使用 weiui-cli 的 create 命令来创建模版工程：
+使用 weiui-cli 的 create 命令来创建模版工程：（`projectName`为你要创建的项目名称）
 
 ```bash
-weiui create <AppName>
+weiui create projectName
 ```
 
 脚手架会自动从 github 上拉取最新的 [weiui-template 开发模板](https://github.com/kuaifan/weiui-template)
 
-然后进入开发目录，执行 `npm i` 加载`node_modules`
+然后进入开发目录，执行 `npm install` 加载`node_modules`
 
 ```bash
-cd <AppName>
-npm i
+cd projectName
+npm install
 npm run dev
 ```
 
 ## iOS 运行项目
 
-确保您已经安装完成 [iOS 所需环境](/start/env)。
+确保您已经安装完成 [iOS 所需环境](./env.html)。
 
 `cd`到iOS工程目录`platforms/ios/WeexWeiui` 执行`pod install`命令来拉取iOS工程的依赖
 
@@ -32,12 +32,12 @@ pod install
 
 首次执行时间会稍长，命令执行完毕后找到当前目录下 `WeexWeiui.xcworkspace` 文件，双击即可唤起XCode打开 iOS 工程；
 
-然后在XCode选择相应的模拟器（比如iPhone 8），点击`▶`按钮来运行项目。
+然后在XCode选择相应的模拟器（比如iPhone xs），点击`▶`按钮来运行项目。
 
 
 ## Android 运行项目
 
-确保您已经安装完成 [Android 所需环境](/start/env)。
+确保您已经安装完成 [Android 所需环境](./env.html)。
 
 1.打开`AndroidStudio`软件然后`Open`Android工程目录`platforms/android/WeexWeiui`。
 2.待项目构建完成，点击 AndroidStudio 上方工具栏的 `Run`，即可运行项目。
@@ -53,12 +53,13 @@ pod install
 
 ```bash
 ├── config                  // webpack相关配置
+├── demo                    // 演示文件
 ├── dist                    // 静态资源生成目录
 ├── node_modules            // 依赖
-├── plugins                 // 平台插件程序
 ├── platforms               // 平台基础代码
 │   ├── android
 │   └── ios
+├── plugins                 // 平台插件程序
 ├── src                     // 开发路径
 ├── statics                 // 静态资源
 ├── web                     // vue访问目录

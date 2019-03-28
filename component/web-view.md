@@ -31,7 +31,7 @@
 <script>
     export default {
         mounted() {
-            this.$refs.reflectName.setUrl('http://weiui.cc');
+            this.$refs.reflectName.setUrl('http://weiui.app');
         }
     };
 </script>
@@ -57,7 +57,7 @@
 <grid
     ref="reflectName"
     :weiui="{
-        url: 'http://weiui.cc'
+        url: 'http://weiui.app'
     }"></grid>
 ```
 
@@ -195,7 +195,7 @@ this.$refs.reflectName.setContent(string);
 
 /**
  * 设置浏览器地址
- * 参数一：地址，如果：http://weiui.cc
+ * 参数一：地址，如果：http://weiui.app
  */
 this.$refs.reflectName.setUrl(url);
 
@@ -254,7 +254,7 @@ webview.setContent(string);
 
 /**
  * 设置浏览器地址
- * 参数一：地址，如果：http://weiui.cc
+ * 参数一：地址，如果：http://weiui.app
  */
 webview.setUrl(url);
 

@@ -99,7 +99,7 @@ weiui.openPage({
 //示例③
 weiui.openPage({
     pageType: 'web',
-    url: 'http://weiui.cc'
+    url: 'http://weiui.app'
 }, function(result) {
     //......
 });
@@ -514,7 +514,7 @@ weiui.openWeb(url)
 > 简单示例
 
 ```js
-weiui.openWeb('http://weiui.cc');
+weiui.openWeb('http://weiui.app');
 ```
 
 ## weiui.goDesktop

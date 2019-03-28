@@ -162,7 +162,7 @@ module.exports = {
             {text: '组件', link: '/component/', actives: ['/weex/components/']},
             {text: '模块', link: '/module/', actives: ['/weex/modules/']},
             {text: '插件化', link: '/plugin/'},
-            {text: 'APP管理', link: 'https://app.weiui.cc/'},
+            {text: 'APP管理', link: 'http://console.weiui.app/'},
             {text: 'GitHub', link: 'https://github.com/kuaifan/weiui'},
         ],
 

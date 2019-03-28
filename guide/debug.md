@@ -10,10 +10,8 @@ weiui 支持实时同步预览，即修改完代码可以立即查看效果
 ```bash
 npm run dev
 ```
-或
-```bash
-npm run serve
-```
+
+除了`npm run dev`以外还可以使用`npm run serve`开发服务。
 
 脚手架会在项目根目录下生成 dist 文件，存放 JS Bundle。
 

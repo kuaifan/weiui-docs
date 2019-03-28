@@ -15,14 +15,12 @@ Windows:
 #### 安装工具
 
 ```bash
-npm i weiui-cli -g
+npm install weiui-cli -g
 ```
 
-如果你在中国地区，我们还是推荐您使用 [cnpm](https://npm.taobao.org/) 安装或者直接修改为`淘宝源`。
+如果提示需要权限安装，请使用sudo安装：`sudo npm install weiui-cli -g`。
 
-```bash
-cnpm i weiui-cli -g 
-```
+如果你在中国地区，我们还是推荐您使用 [cnpm](https://npm.taobao.org/) 安装：`cnpm install weiui-cli -g`。
 
 #### 更新工具
 
@@ -45,7 +43,7 @@ npm update weiui-cli -g
 #### 安装
 
 * Xcode (appStore 下载)
-* CocoaPods(建议使用pod 1.5.3版本)
+* CocoaPods(建议使用pod 1.5.3或之后版本)
     * 升级 rubygem 环境：`$ sudo gem update --system`
     * 移除现有 rubygem 镜像：`$ gem sources --remove https://rubygems.org/`
     * 添加gem.ruby-china镜像：`$ gem source -a https://gems.ruby-china.org/`
