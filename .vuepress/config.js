@@ -124,22 +124,23 @@ let sidebar = {
             title: '插件化',
             collapsable: false,
             children: [
-                '/plugin/citypicker',
-                '/plugin/picture',
-                '/plugin/screenshots',
-                '/plugin/rongim',
-                '/plugin/umeng',
-                '/plugin/pay',
-                '/plugin/websocket',
+                ['/plugin/citypicker', '城市选择'],
+                ['/plugin/picture', '图片选择'],
+                ['/plugin/screenshots', '组件截图'],
+                ['/plugin/rongim', '融云模块'],
+                ['/plugin/umeng', '友盟模块'],
+                ['/plugin/pay', '支付模块'],
+                ['/plugin/websocket', 'websocket'],
+                ['/plugin/audio', '音频播放'],
             ]
         }, {
             title: '开发插件',
             collapsable: false,
             children: [
-                '/plugin/dev/create',
-                '/plugin/dev/android',
-                '/plugin/dev/ios',
-                '/plugin/dev/publish',
+                ['/plugin/dev/create', '创建插件'],
+                ['/plugin/dev/android', 'Android插件'],
+                ['/plugin/dev/ios', 'iOS插件'],
+                ['/plugin/dev/publish', '发布插件'],
             ]
         }];
     }
