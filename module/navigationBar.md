@@ -58,7 +58,7 @@ navigationBar.setLeftItem({params}, callback(result))
 
 > 注①：
 
-- 支持字体图标，如：`md-add`、`ios-cube`，更多图标代码详见<a href="./assets/icon/index.html" target="_blank">weiui所有图标</a>。
+- 支持字体图标，如：`md-add`、`ios-cube`，更多图标代码详见<a href="../assets/icon/index.html" target="_blank">weiui所有图标</a>。
 - 支持远程图片地址，如：`https://weiui.app/app/demo.png`，此时不支持`iconColor`参数。
 
 > 简单示例
