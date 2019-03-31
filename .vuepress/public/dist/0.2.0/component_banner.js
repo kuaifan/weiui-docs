@@ -76,6 +76,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _toArray(arr) { return Array.isArray(arr) ? arr : Array.from(arr); }
+
 var global = {
     isNullOrUndefined: function isNullOrUndefined(obj) {
         return typeof obj === "undefined" || obj === null;
@@ -368,36 +372,23 @@ var global = {
 
     /**
      * 克隆对象
-     * @param obj
+     * @param myObj
      * @returns {*}
      */
-    clone: function clone(obj) {
-        var o = void 0,
-            i = void 0,
-            j = void 0;
-        if ((typeof obj === "undefined" ? "undefined" : _typeof(obj)) !== "object" || obj === null) return obj;
-        if (obj instanceof Array) {
-            o = [];
-            i = 0;
-            j = obj.length;
-            for (; i < j; i++) {
-                if (_typeof(obj[i]) === "object" && obj[i] != null) {
-                    o[i] = global.clone(obj[i]);
-                } else {
-                    o[i] = obj[i];
-                }
-            }
+    clone: function clone(myObj) {
+        if ((typeof myObj === "undefined" ? "undefined" : _typeof(myObj)) !== 'object') return myObj;
+        if (myObj === null) return myObj;
+        //
+        if (global.likeArray(myObj)) {
+            var _myObj = _toArray(myObj),
+                myNewObj = _myObj.slice(0);
+
+            return myNewObj;
         } else {
-            o = {};
-            for (i in obj) {
-                if (_typeof(obj[i]) === "object" && obj[i] !== null) {
-                    o[i] = global.clone(obj[i]);
-                } else {
-                    o[i] = obj[i];
-                }
-            }
+            var _myNewObj = _objectWithoutProperties(myObj, []);
+
+            return _myNewObj;
         }
-        return o;
     },
 
 

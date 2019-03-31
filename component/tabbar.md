@@ -120,22 +120,15 @@
 
 | 属性名           | 类型     | 描述                          | 默认值     |
 | ------------- | ------ | -------------------------- | ------- |
-| tabType |`String`  | 设置tab位置，<br/>顶部:`top`<br/>顶部:`slidingTop`<br/>底部:`bottom`          | bottom       |
+| tabType |`String`  | 设置tab位置，<br/>顶部:`top`<br/>顶部滑动:`slidingTop`<br/>底部:`bottom`          | bottom       |
 | tabHeight |`Number`  | 设置tab高度           | 100       |
-| tabPadding |`Number`  |   设置tab的左右内边距         |  -     |
-| tabBackgroundColor |`String`  |   设置tab的背景颜色         |  -     |
-| tabSpaceEqual |`Boolean`  |  设置tab大小等分<br/>_tabType:slidingTop时无效_          |  true     |
+| tabBackgroundColor |`String`  |   设置tab的背景颜色         |  #3EB4FF，底部位置：#ffffff     |
 | tabWidth |`Number`  |   设置tab固定大小         |  -     |
 | tabPageAnimated |`Boolean`  |   开关页面切换动画         |  true     |
-| indicatorStyle |`Number`  | 设置tab显示器样式，<br/>常规:`0`<br/>三角形:`1`<br/>背景色块:`2`           | 0      |
-| indicatorGravity |`Number`  |  设置tab显示器位置，<br/>上方:`1`<br/>下方:`0`          | 0      |
-| indicatorColor |`String`  |   设置tab显示器颜色         |  #ffffff，背景色块:#4B6A87    |
-| indicatorHeight |`Number`  |  设置tab显示器高度          |  -     |
-| indicatorWidth |`Number`  |   设置tab显示器固定宽度         |  -     |
-| indicatorCornerRadius |`Number`  |   设置tab显示器圆角弧度         |  -     |
-| indicatorAnimDuration |`Number`  | 设置tab显示器动画时间           | -      |
-| indicatorAnimEnable |`Boolean`  |  设置tab显示器支持动画          | true      |
-| indicatorBounceEnable |`Boolean`  |  设置tab显示器支持动画回弹效果          | true     |
+| indicatorColor |`String`  |   设置tab显示器颜色         |  #ffffff    |
+| indicatorHeight |`Number`  |  设置tab显示器高度          |  4     |
+| indicatorWidth |`Number`  |   设置tab显示器固定宽度         |  20     |
+| indicatorCornerRadius |`Number`  |   设置tab显示器圆角弧度         |  2     |
 | underlineGravity |`Number`  |  设置tab下划线位置，<br/>上方:`1`<br/>下方:`0`          |  0     |
 | underlineColor |`String`  |  设置tab下划线颜色          | #ffffff      |
 | underlineHeight |`Number`  | 设置tab下划线高度           |  0     |
@@ -143,15 +136,14 @@
 | dividerWidth |`Number`  |  设置tab分割线宽度          |  0     |
 | dividerPadding |`Number`  |  设置tab分割线的上下内边距          |  12     |
 | textBold |`Number`  | 设置tab字体加粗，<br/>不加粗:`0`<br/>选择加粗:`1`<br/>全部加粗:`2`           |  0     |
-| textSize |`Number`  |  设置tab字体大小          |  24     |
-| fontSize |`Number`  |  同`textSize`          |  -     |
-| textSelectColor |`String`  |  设置tab字体选中颜色          |  #ffffff     |
-| textUnselectColor |`String`  |   设置tab字体未选中颜色         |  #AAffffff     |
-| iconGravity |`Number`  |  设置tab图标显示位置，<br/>上方:`1`<br/>下方:`0`          |  1     |
-| iconVisible |`Boolean`  | 设置tab图标是否可见           |  true，顶部:false     |
-| iconWidth |`Number`  |  设置tab图标宽度          |  -     |
-| iconHeight |`Number`  |   设置tab图标高度         |  -     |
-| iconMargin |`Number`  |  设置tab图标与文字间距          |  2.5     |
+| textSize |`Number`  |  设置tab字体大小          |  26     |
+| textSelectColor |`String`  |  设置tab字体选中颜色          |  #ffffff，底部位置：#2C97DE     |
+| textUnselectColor |`String`  |   设置tab字体未选中颜色         |  #eeeeee，底部位置：#333333     |
+| iconVisible <Badge text="slidingTop 无效" type="warning"/> |`Boolean`  | 设置tab图标是否可见           |  false，底部位置：true     |
+| iconGravity <Badge text="slidingTop 无效" type="warning"/> |`Number`  |  设置tab图标显示位置，<br/>上方:`1`<br/>下方:`0`          |  1     |
+| iconWidth <Badge text="slidingTop 无效" type="warning"/> |`Number`  |  设置tab图标宽度          |  40     |
+| iconHeight <Badge text="slidingTop 无效" type="warning"/> |`Number`  |   设置tab图标高度         |  40     |
+| iconMargin <Badge text="slidingTop 无效" type="warning"/> |`Number`  |  设置tab图标与文字间距          |  10     |
 
 > 例如：
 
