@@ -1,6 +1,6 @@
 <template>
     <div class="theme-container">
-        <div class="content">
+        <div v-if="show" class="content">
             <h1>404</h1>
             <blockquote>{{ getMsg() }}</blockquote>
             <router-link to="/">Take me home.</router-link>
@@ -19,12 +19,21 @@
     ];
 
     export default {
+        data() {
+            return {
+                show: false,
+            }
+        },
+
         created() {
             let newUrl = redirect[this.$route.path];
             if (typeof newUrl === "string" && newUrl) {
-                this.$router.push(newUrl);
+                this.$router.replace(newUrl);
+                return;
             }
+            this.show = true;
         },
+
         methods: {
             getMsg() {
                 return msgs[Math.floor(Math.random() * msgs.length)]
