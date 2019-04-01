@@ -1,13 +1,14 @@
 {
-  "name": "weiui_docs",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "scripts": {
-    "dev": "vuepress dev",
-    "build": "vuepress build"
-  },
-  "devDependencies": {
-    "vuepress": "^1.0.0-alpha.44"
-  }
+    "name": "weiui_docs",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "dev": "vuepress dev",
+        "build": "vuepress build",
+        "git-push": "git add -A && git commit -m 'no msg' && git push --progress 'origin' master:master"
+    },
+    "devDependencies": {
+        "vuepress": "^1.0.0-alpha.44"
+    }
 }

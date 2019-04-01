@@ -14,7 +14,7 @@
         tabName: 'name_3', 
         title:'圈子', 
         message:99, 
-        selectedIcon:'aperture 26sp' 
+        selectedIcon:'md-aperture' 
     }">
     <div>
         <text>支持任何子组件</text>
@@ -42,7 +42,7 @@
         tabName: 'name_3', 
         title:'圈子', 
         message:99, 
-        selectedIcon:'aperture 26sp' 
+        selectedIcon:'md-aperture' 
     }">
     .....
 </tabbar-page>
