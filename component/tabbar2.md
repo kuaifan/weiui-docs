@@ -15,7 +15,7 @@
         <tabbar
                 ref="reflectName"
                 class="tabbar"
-                :weiui="{ tabType: 'top' }"
+                :weiui="{ tabType: 'top', textBold:2 }"
                 :tabPages="tabPages"></tabbar>
 
     </div>
@@ -25,6 +25,7 @@
     .app {
         flex: 1
     }
+
     .tabbar {
         flex: 1;
         width: 750px;
