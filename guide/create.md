@@ -51,20 +51,22 @@ pod install
 
 ## 模板目录结构
 
-```bash
-├── config                  // webpack相关配置
-├── demo                    // 演示文件
-├── dist                    // 静态资源生成目录
-├── node_modules            // 依赖
-├── platforms               // 平台基础代码
-│   ├── android
-│   └── ios
+```text
+├── common                  // 公共文件
+│   ├── backup              // ├── 备份目录
+│   ├── demo                // ├── 演示文件
+│   ├── dist                // ├── 静态资源生成目录
+│   └── js                  // └── 封装的方法
+├── node_modules            // node依赖
+├── platforms               // 平台源码
+│   ├── android             // ├── 安卓平台源码
+│   └── ios                 // └── iOS平台源码
 ├── plugins                 // 平台插件程序
 ├── src                     // 开发路径
-├── statics                 // 静态资源
-├── web                     // vue访问目录
+│   ├── components          // ├── 封装的组件
+│   └── pages               // └── 开发页面  
 ├── weiui.config.js         // 客户端相关配置
-└── package.json            // npm 项目及依赖说明
+└── package.json            // npm项目及依赖说明
 ```
 
 首次打开我们已经为您内置了由一些 `demo`，您可以看到相关的页面，下面在开发之前还需要进行一些相关的配置和调试的学习。
