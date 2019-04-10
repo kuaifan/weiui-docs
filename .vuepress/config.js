@@ -35,7 +35,8 @@ let sidebar = {
             title: '组件',
             collapsable: false,
             children: [
-                ['/component/banner', ['<banner>', '轮播图']],
+                ['/component/a', ['<a>', '跳转链接', 20190410]],
+                ['/component/banner', ['<banner>', '轮播组件']],
                 ['/component/button', ['<button>', '预设按钮']],
                 ['/component/grid', ['<grid>', '网格容器']],
                 ['/component/icon', ['<icon>', '字体图标']],
@@ -55,7 +56,7 @@ let sidebar = {
             title: 'weex组件',
             collapsable: false,
             children: [
-                ['/weex/components/a', '<a>'],
+                // ['/weex/components/a', '<a>'],
                 ['/weex/components/div', '<div>'],
                 ['/weex/components/text', '<text>'],
                 ['/weex/components/image', '<image>'],
