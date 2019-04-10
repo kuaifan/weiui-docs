@@ -38,7 +38,7 @@
             class="prev"
             :to="prev.path"
           >
-            {{ prev.title || prev.path }}
+            {{ getTitle(prev.title) || prev.path }}
           </router-link>
         </span>
 
@@ -50,7 +50,7 @@
             v-if="next"
             :to="next.path"
           >
-            {{ next.title || next.path }}
+            {{ getTitle(next.title) || next.path }}
           </router-link>
           →
         </span>
@@ -137,6 +137,14 @@ export default {
   },
 
   methods: {
+    isArray(obj) {
+      return typeof obj === "object" && obj !== null && typeof obj.length === 'number';
+    },
+
+    getTitle(title) {
+      return this.isArray(title) ? title[0] : title;
+    },
+
     createEditLink (repo, docsRepo, docsDir, docsBranch, path) {
       const bitbucket = /bitbucket.org/
       if (bitbucket.test(repo)) {

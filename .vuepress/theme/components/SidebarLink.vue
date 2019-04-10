@@ -51,7 +51,36 @@ export default {
   }
 }
 
+function isArray(obj) {
+  return typeof obj === "object" && obj !== null && typeof obj.length === 'number';
+}
+
 function renderLink (h, to, text, active) {
+  if (!isArray(text)) {
+    text = [text];
+  }
+  let title = text[0];
+  let subtitle = text[1] || "";
+  let date = text[2] || "";
+  if (/^(\d{4})(\d{2})(\d{2})*/.exec(subtitle)) {
+    subtitle = [date, date = subtitle][0];
+  }
+  let titles = [];
+  titles.push(h('span', title));
+  if (subtitle) {
+    titles.push(h('span', {
+      class: {
+        'sidebar-subtitle': true
+      }
+    }, subtitle));
+  }
+  if (date) {
+    titles.push(h('New', {
+      props: {
+        date: date,
+      },
+    }));
+  }
   return h('router-link', {
     props: {
       to,
@@ -62,7 +91,7 @@ function renderLink (h, to, text, active) {
       active,
       'sidebar-link': true
     }
-  }, text)
+  }, titles)
 }
 
 function renderChildren (h, children, path, route, maxDepth, depth = 1) {
@@ -81,7 +110,6 @@ function renderChildren (h, children, path, route, maxDepth, depth = 1) {
 .sidebar .sidebar-sub-headers
   padding-left 1rem
   font-size 0.95em
-
 a.sidebar-link
   font-size 1em
   font-weight 400
@@ -92,8 +120,19 @@ a.sidebar-link
   line-height 1.4
   width: 100%
   box-sizing: border-box
+  .md-badge-new
+    margin-left 0.2rem
+  .sidebar-subtitle
+    display block
+    float right
+    color #bbb
+    font-size 12px
+    font-weight normal
   &:hover
     color $accentColor
+    .sidebar-subtitle
+      display block
+      color $accentColor
   &.active
     font-weight 600
     color $accentColor

@@ -6,7 +6,10 @@
 const weiui = weex.requireModule('weiui');
 ```
 
-## alert 警告框
+## weiui.alert
+
+> 警告框
+
 ```js
 /**
  * @param params    警告框内容 或 详细参数
@@ -41,7 +44,10 @@ weiui.alert({
 });
 ```
 
-## confirm 确认对话框
+## weiui.confirm 
+
+> 确认对话框
+
 ```js
 /**
  * @param params    警告框内容 或 详细参数
@@ -120,7 +126,10 @@ weiui.confirm({
 });
 ```
 
-## input 输入对话框
+## weiui.input 
+
+> 输入对话框
+
 ```js
 /**
  * @param params    详细参数

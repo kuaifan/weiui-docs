@@ -6,13 +6,18 @@
 const weiui = weex.requireModule('weiui');
 ```
 
-## 动态隐藏软键盘
+## weiui.keyboardHide
+
+> 动态隐藏软键盘
 
 ```js
 weiui.keyboardHide()
 ```
 
-## 判断软键盘是否可见
+## weiui.keyboardStatus
+
+> 判断软键盘是否可见
+
 ```js
 /**
 * @参数一      固定值

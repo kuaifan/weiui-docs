@@ -20,11 +20,7 @@
 </style>
 <script>
     export default {
-        props: {
-            date: {
-                type: String,
-            },
-        },
+        props: ['date'],
         data() {
             return {
                 show: false,
