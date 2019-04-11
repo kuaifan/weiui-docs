@@ -42,22 +42,19 @@ umeng.setNotificationClickHandler(callback(result))
 
 #### callback 回调`result`说明
 
-```js
+```json
 {
-　　"status":"click",         //为 “click” 时就是点击通知的动作了
-　　 
-　　"display_type":"notification",
-　　"msg_id":"uurztln152223767161010",
-　　"body":{
-　　　　"after_open":"go_app",
-　　　　"play_lights":"false",
-　　　　"ticker":"测试标题1",
-　　　　"play_vibrate":"false",
-　　　　"text":"测试描述22222",
-　　　　"title":"测试标题1",
-　　　　"play_sound":"true"
-　　},
-　　"random_min":0,
+    "status":"click",                   //为 “click” 时就是点击通知的动作了
+    "msgid":"uuze1vb155496745348510",   //消息ID
+    "title":"测试标题",                  //消息标题
+    "subtitle":"12345678",              //消息副标题
+    "text":"测试内容",                   //消息内容
+    "extra":{                           //额外参数
+        
+    },
+    "rawData":{                         //消息原始数据
+        
+    }
 }
 ```
 

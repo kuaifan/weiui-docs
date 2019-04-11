@@ -36,13 +36,12 @@
         android: {
             enabled: false,
             appKey: "",
-            appSecret: "",
             channel: "",
         },
         ios: {
             enabled: false,
             appKey: "",
-            appSecret: "",
+            messageSecret: "",
             channel: "",
         }
     },
@@ -71,6 +70,6 @@
 
 ###### **`umeng`**: 友盟相关配置（推送、统计模块）
 - enabled: 是否启用友盟服务。
-- appKey、appSecret: 在友盟平台申请。
+- appKey、messageSecret: 在友盟平台申请。
 - channel: 友盟统计渠道。
 
