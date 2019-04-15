@@ -37,18 +37,18 @@ let loaddingName = weiui.loading({params}, callback())
 
 Style | Preview
 ------------     |   -------------
-RotatingPlane    | <img src='document/module/media/RotatingPlane.gif' alt='RotatingPlane' width="60px" height="60px"/>
-DoubleBounce     | <img src='document/module/media/DoubleBounce.gif' alt='DoubleBounce' width="60px" height="60px"/>
-Wave             | <img src='document/module/media/Wave.gif' alt='Wave' width="60px" height="60px"/>
-WanderingCubes   | <img src='document/module/media/WanderingCubes.gif' alt='WanderingCubes' width="60px" height="60px"/>
-Pulse            | <img src='document/module/media/Pulse.gif' alt='Pulse' width="60px" height="60px"/>
-ChasingDots      | <img src='document/module/media/ChasingDots.gif' alt='ChasingDots' width="60px" height="60px"/>
-ThreeBounce      | <img src='document/module/media/ThreeBounce.gif' alt='ThreeBounce' width="60px" height="60px"/>
-Circle           | <img src='document/module/media/Circle.gif' alt='Circle' width="60px" height="60px"/>
-CubeGrid         | <img src='document/module/media/CubeGrid.gif' alt='CubeGrid' width="60px" height="60px"/>
-FadingCircle     | <img src='document/module/media/FadingCircle.gif' alt='FadingCircle' width="60px" height="60px"/>
-FoldingCube      | <img src='document/module/media/FoldingCube.gif' alt='FoldingCube' width="60px" height="60px"/>
-RotatingCircle   | <img src='document/module/media/RotatingCircle.gif' alt='RotatingCircle' width="60px" height="60px"/>
+RotatingPlane    | <img src='./media/RotatingPlane.gif' alt='RotatingPlane' width="60px" height="60px"/>
+DoubleBounce     | <img src='./media/DoubleBounce.gif' alt='DoubleBounce' width="60px" height="60px"/>
+Wave             | <img src='./media/Wave.gif' alt='Wave' width="60px" height="60px"/>
+WanderingCubes   | <img src='./media/WanderingCubes.gif' alt='WanderingCubes' width="60px" height="60px"/>
+Pulse            | <img src='./media/Pulse.gif' alt='Pulse' width="60px" height="60px"/>
+ChasingDots      | <img src='./media/ChasingDots.gif' alt='ChasingDots' width="60px" height="60px"/>
+ThreeBounce      | <img src='./media/ThreeBounce.gif' alt='ThreeBounce' width="60px" height="60px"/>
+Circle           | <img src='./media/Circle.gif' alt='Circle' width="60px" height="60px"/>
+CubeGrid         | <img src='./media/CubeGrid.gif' alt='CubeGrid' width="60px" height="60px"/>
+FadingCircle     | <img src='./media/FadingCircle.gif' alt='FadingCircle' width="60px" height="60px"/>
+FoldingCube      | <img src='./media/FoldingCube.gif' alt='FoldingCube' width="60px" height="60px"/>
+RotatingCircle   | <img src='./media/RotatingCircle.gif' alt='RotatingCircle' width="60px" height="60px"/>
 
 ### callback 回调说明
 

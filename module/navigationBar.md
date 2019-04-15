@@ -49,12 +49,14 @@ navigationBar.setLeftItem({params}, callback(result))
 
 | 属性名 | 类型 | 必须 | 描述 | 默认值 |
 | --- | --- | :-: | --- | --- |
-| title | `String` | - | 按钮名称 | - |
-| titleColor | `String` | - | 按钮字体颜色 | #232323 |
-| titleSize | `Float` | - | 按钮字体大小 | 28.0 |
-| icon | `String` | - | 图标，注① | - |
-| iconColor | `String` | - | 图标字体颜色 | #232323 |
-| iconSize | `Float` | - | 图标字体大小（图标大小） | 28.0 |
+| title | `String` | - | 按钮标题（与图标必须一） | - |
+| titleColor | `String` | - | 按钮标题字体颜色 | #232323 |
+| titleSize | `Float` | - | 按钮标题字体大小 | 28.0 |
+| icon | `String` | - | 按钮图标，注① | - |
+| iconColor | `String` | - | 按钮图标字体颜色 | #232323 |
+| iconSize | `Float` | - | 按钮图标字体大小（图标大小） | 28.0 |
+| width | `Number` | - | 按钮宽度，留空自适应 | - |
+| spacing | `Number` | - | 按钮标题与按钮图标间距 | 10 |
 
 > 注①：
 
@@ -64,31 +66,63 @@ navigationBar.setLeftItem({params}, callback(result))
 > 简单示例
 
 ```js
-const navigationBar = weex.requireModule('navigationBar');
-//示例①: 纯文字
+//示例: 纯文字
 navigationBar.setLeftItem({
     title: '按钮1',
 }, function(result) {
-    //......
+    //....
 });
+```
 
-//示例②: 图标+文字
-navigationBar.setLeftItem({
-    icon: 'tb-back',
-    title: '返回',
-}, function(result) {
-    //......
-});
+> 综合示例
 
-//示例③: 多个按钮模式
-weiui.openPage([{
-    icon: 'tb-back',
-    title: '返回',
-}, {
-   title: '按钮2',
-}], function(result) {
-    //......
-});
+```vue
+<template>
+    <div class="app">
+        <text class="text">WEIUI 菜单栏演示</text>
+    </div>
+</template>
+
+<script>
+    const weiui = weex.requireModule('weiui');
+    const navigationBar = weex.requireModule('navigationBar');
+
+    export default {
+        mounted() {
+            //示例: 图标+文字
+            navigationBar.setLeftItem({
+                icon: 'tb-back',
+                title: '返回',
+                width: 120,
+            }, function(result) {
+                weiui.closePage();
+            });
+
+            //示例: 多个按钮模式
+            navigationBar.setRightItem([{
+                icon: 'md-help-circle-outline',
+                iconSize: 32,
+                title: '按钮1',
+            }, {
+                title: '按钮2',
+                width: 120,
+            }], function(result) {
+                weiui.alert("点击按钮：" + result.title);
+            });
+        },
+    }
+</script>
+
+<style scoped>
+    .app {
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+    }
+    .text {
+        font-size: 24px;
+    }
+</style>
 ```
 
 ## navigationBar.setRightItem
