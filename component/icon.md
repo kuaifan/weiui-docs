@@ -88,7 +88,7 @@
 <icon 
         ref="reflectName"
         style="width:50px; height:50px;" 
-        :weiui="{content: 'home 24sp', fontSize:'60px', color:'#ff0000'}" >
+        :weiui="{content: 'home spin', fontSize:'60px', color:'#ff0000'}" >
 </icon>
 ```
 
