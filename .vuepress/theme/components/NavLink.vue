@@ -1,7 +1,7 @@
 <template>
     <router-link
         :class="['nav-link', isActive ? 'router-link-active' : '']"
-        :to="link"
+        :to="link + (item.path || '')"
         v-if="!isExternal(link)"
         :exact="exact"
     >{{ item.text }}

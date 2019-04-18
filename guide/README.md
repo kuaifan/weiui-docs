@@ -1,1 +1,1 @@
-<script> module.exports = { created(){ this.$router.replace('introduce') } } </script>
+<script> module.exports = { created(){ this.$router.push('introduce') } } </script>

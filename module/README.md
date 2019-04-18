@@ -1,1 +1,1 @@
-<script> module.exports = { created(){ this.$router.replace('adDialog') } } </script>
+<script> module.exports = { created(){ this.$router.push('adDialog') } } </script>

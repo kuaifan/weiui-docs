@@ -160,10 +160,10 @@ module.exports = {
 
         nav: [
             {text: '首页', link: '/'},
-            {text: '指南', link: '/guide/', actives: ['/weex/styles/', '/weex/events/']},
-            {text: '组件', link: '/component/', actives: ['/weex/components/']},
-            {text: '模块', link: '/module/', actives: ['/weex/modules/']},
-            {text: '插件化', link: '/plugin/'},
+            {text: '指南', link: '/guide/', path: 'introduce.html', actives: ['/weex/styles/', '/weex/events/']},
+            {text: '组件', link: '/component/', path: 'a.html', actives: ['/weex/components/']},
+            {text: '模块', link: '/module/', path: 'adDialog.html', actives: ['/weex/modules/']},
+            {text: '插件化', link: '/plugin/', path: 'citypicker.html'},
             {text: 'APP管理', link: 'https://console.weiui.app/'},
             {text: 'GitHub', link: 'https://github.com/kuaifan/weiui'},
         ],
