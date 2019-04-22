@@ -1,29 +1,29 @@
 # 通用样式
 
-所有 Weex 自带组件都支持以下通用样式规则。
+所有 weiui 自带组件都支持以下通用样式规则。
 
 ::: danger
-Weex所支持的通用样式已在本文档中全部列出，一些组件可能有自定义样式，请参考组件文档。除此之外的属性，均不被支持。
+weiui所支持的通用样式已在本文档中全部列出，一些组件可能有自定义样式，请参考组件文档。除此之外的属性，均不被支持。
 :::
 
 ::: warning
-Weex 对于长度值目前只支持像素值，不支持相对单位（`em`、`rem`）。
+weiui 对于长度值目前只支持像素值，不支持相对单位（`em`、`rem`）。
 :::
 
 ## 盒模型
 
-Weex 盒模型基于 [CSS 盒模型](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)，每个 Weex 元素都可视作一个盒子。我们一般在讨论设计或布局时，会提到「盒模型」这个概念。
+weiui 盒模型基于 [CSS 盒模型](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)，每个 weiui 元素都可视作一个盒子。我们一般在讨论设计或布局时，会提到「盒模型」这个概念。
 
 ![](https://img.alicdn.com/tfs/TB13u.4n5rpK1RjSZFhXXXSdXXa-377-340.png)
 
 盒模型描述了一个元素所占用的空间。每一个盒子有四条边界：外边距边界 margin edge, 边框边界 border edge, 内边距边界 padding edge 与内容边界 content edge。这四层边界，形成一层层的盒子包裹起来，这就是盒模型大体上的含义。
 
 ::: warning
-Weex 盒模型的 box-sizing 默认为 border-box，即盒子的宽高包含内容、内边距和边框的宽度，不包含外边距的宽度。
+weiui 盒模型的 box-sizing 默认为 border-box，即盒子的宽高包含内容、内边距和边框的宽度，不包含外边距的宽度。
 :::
 
 ::: warning
-Weex 只支持 `overflow:hidden`.
+weiui 只支持 `overflow:hidden`.
 :::
 
 下面的例子显示了盒模型的基本用法
@@ -91,7 +91,7 @@ Weex 只支持 `overflow:hidden`.
   * `border-top-right-radius {length}`：非负值, 默认值 0
 
 ::: danger
-`border-radius`和`border-width`定义了圆心角为90度的椭圆弧的长轴和半长轴的大小。如果邻接两边`border-radius`(或`border-width`不一致，weex绘制的边框曲线可能不够平滑。
+`border-radius`和`border-width`定义了圆心角为90度的椭圆弧的长轴和半长轴的大小。如果邻接两边`border-radius`(或`border-width`不一致，Weiui绘制的边框曲线可能不够平滑。
 :::
 
 ::: danger Android 兼容性
@@ -111,14 +111,14 @@ Weex 只支持 `overflow:hidden`.
   * `margin-bottom {length}`：下外边距，默认值 0
 
 ## Flexbox
-Weex 布局模型基于 CSS [`Flexbox`](http://www.w3.org/TR/css3-flexbox/)，以便所有页面元素的排版能够一致可预测，同时页面布局能适应各种设备或者屏幕尺寸。Flexbox 包含 flex 容器和 flex 成员项。如果一个 Weex 元素可以容纳其他元素，那么它就成为 flex 容器。
+weiui 布局模型基于 CSS [`Flexbox`](http://www.w3.org/TR/css3-flexbox/)，以便所有页面元素的排版能够一致可预测，同时页面布局能适应各种设备或者屏幕尺寸。Flexbox 包含 flex 容器和 flex 成员项。如果一个 weiui 元素可以容纳其他元素，那么它就成为 flex 容器。
 
 ::: warning
 文档中未说明的 flexbox 属性均不支持：如 `order`、`flex-flow` 等。
 :::
 
 ### Flex 容器
-在 Weex 中，Flexbox 是默认且唯一的布局模型，所以你不需要手动为元素添加 `display: flex;` 属性。
+在 weiui 中，Flexbox 是默认且唯一的布局模型，所以你不需要手动为元素添加 `display: flex;` 属性。
 
 #### direction
 `direction`决定了文字方向和**Flex容器**的基线方向。默认值为`ltr`。
@@ -179,7 +179,7 @@ flex 属性定义了 flex 成员项可以占用容器中剩余空间的大小。
 
 ## 定位
 
-Weex 支持 `position` 定位，用法与 CSS position 类似。为元素设置 `position` 后，可通过 `top`、`right`、`bottom`、`left` 四个属性设置元素坐标。
+weiui 支持 `position` 定位，用法与 CSS position 类似。为元素设置 `position` 后，可通过 `top`、`right`、`bottom`、`left` 四个属性设置元素坐标。
 
 - `position {string}`：
 
@@ -197,7 +197,7 @@ Weex 支持 `position` 定位，用法与 CSS position 类似。为元素设置 
 
 **注意：**
 
-1. Weex 目前不支持 `z-index` 设置元素层级关系，但靠后的元素层级更高，因此，对于层级高的元素，可将其排列在后面。
+1. weiui 目前不支持 `z-index` 设置元素层级关系，但靠后的元素层级更高，因此，对于层级高的元素，可将其排列在后面。
 2. 如果定位元素超过容器边界，在 Android 下，超出部分将**不可见**，原因在于 Android 端元素 `overflow` 默认值为 `hidden`，但目前 Android 暂不支持设置 `overflow: visible`。
 
 [示例](http://dotwe.org/vue/cb3436ea65283d2ab456641ba30133a4)
@@ -307,7 +307,7 @@ Weex 支持 `position` 定位，用法与 CSS position 类似。为元素设置 
 
 ## 伪类 <Badge text="0.9.5" type="warn" vertical="middle"/>
 
-Weex 支持四种伪类：`active`, `focus`, `disabled`, `enabled`
+weiui 支持四种伪类：`active`, `focus`, `disabled`, `enabled`
 
 所有组件都支持 `active`, 但只有 `input` 组件和 `textarea` 组件支持 `focus`, `enabled`, `disabled`。
 
@@ -325,7 +325,7 @@ Weex 支持四种伪类：`active`, `focus`, `disabled`, `enabled`
 
 ## 线性渐变 <Badge text="0.10+" type="warn" vertical="middle"/>
 
-Weex 支持线性渐变背景，具体介绍可参考 [CSS 渐变介绍](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Using_CSS_gradients)。
+weiui 支持线性渐变背景，具体介绍可参考 [CSS 渐变介绍](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Using_CSS_gradients)。
 
 所有组件均支持线性渐变。
 
@@ -339,7 +339,7 @@ background-image: linear-gradient(to top, #a80077, #66ff00);
 
 目前暂不支持 `radial-gradient`（径向渐变）。
 
-Weex 目前只支持两种颜色的渐变，渐变方向如下：
+weiui 目前只支持两种颜色的渐变，渐变方向如下：
 
 - `to right`：从左向右渐变
 - `to left`：从右向左渐变
@@ -357,7 +357,7 @@ Weex 目前只支持两种颜色的渐变，渐变方向如下：
 
 ## 阴影(box-shadow) <Badge text="0.11+" type="warn" vertical="middle"/>
 
-Weex 支持 `box-shadow` 属性用于设置元素阴影。
+weiui 支持 `box-shadow` 属性用于设置元素阴影。
 
 ### 注意
 
@@ -401,7 +401,7 @@ Weex 支持 `box-shadow` 属性用于设置元素阴影。
 
 如果对于样式写法需要更多上手参考，可参考每个组件的文档中，都有常见的例子可供参考。
 
-你可以按照以下步骤来规划 Weex 页面的样式。
+你可以按照以下步骤来规划 weiui 页面的样式。
 
 1. 全局样式规划：将整个页面分割成合适的模块。
 2. flex 布局：排列和对齐页面模块。
