@@ -1,6 +1,6 @@
 # 通用事件
 
-Weex 提供了通过事件触发动作的能力，例如在用户点击组件时执行 JavaScript。下面列出了可被添加到 Weex 组件上以定义事件动作的属性：
+weiui 提供了通过事件触发动作的能力，例如在用户点击组件时执行 JavaScript。下面列出了可被添加到 weiui 组件上以定义事件动作的属性：
 
 ## click
 
@@ -81,7 +81,7 @@ shouldStopPropagationInterval  默认数字类型，控制touch频率，减少JS
 支持 iOS 和 Android，H5 暂不支持。
 :::
 
-Weex 通过 `viewappear` 和 `viewdisappear` 事件提供了简单的页面状态管理能力。
+weiui 通过 `viewappear` 和 `viewdisappear` 事件提供了简单的页面状态管理能力。
 
 `viewappear` 事件会在页面就要显示或配置的任何页面动画被执行前触发，例如，当调用 `navigator` 模块的 `push` 方法时，该事件将会在打开新页面时被触发。`viewdisappear` 事件会在页面就要关闭时被触发。
 

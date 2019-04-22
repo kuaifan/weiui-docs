@@ -1,6 +1,6 @@
 # 手势 <Badge type="warning" text="该功能属于实验性功能" />
 
-Weex 封装了原生的触摸事件以提供手势系统。使用手势类似于在 Weex 中使用事件，只需在节点上监听手势即可。
+weiui 封装了原生的触摸事件以提供手势系统。使用手势类似于在 weiui 中使用事件，只需在节点上监听手势即可。
 
 ## 手势类型
 
@@ -70,7 +70,7 @@ force 属性目前在支持 forceTouch iOS 设备才支持, iPhone 6s 及更新�
 
 ## 约束
 
-目前，由于会触发大量事件冲突，Weex Android 还不支持在滚动类型的元素上监听手势，例如 `scroller`, `list` 和 `webview` 这三个组件。
+目前，由于会触发大量事件冲突，weiui Android 还不支持在滚动类型的元素上监听手势，例如 `scroller`, `list` 和 `webview` 这三个组件。
 
 ## Demo
 
