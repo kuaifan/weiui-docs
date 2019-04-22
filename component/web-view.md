@@ -153,7 +153,7 @@ weiui.adDialog("http://..../xxx.png", function(res) {
 @ready = function() { ... }
 
 /**
- * 状态发生改变
+ * 监听状态发生改变
  * 返回参数：data = {
                     status:'success',       //状态，注②
                     
@@ -168,12 +168,20 @@ weiui.adDialog("http://..../xxx.png", function(res) {
 @stateChanged = function(data) { ... }
 
 /**
- * 网页高度发生改变
+ * 监听网页高度发生改变
  * 返回参数：data = {
                     height:100,             //变化的高度
                 }
  */
 @heightChanged = function(data) { ... }
+
+/**
+ * 监听网页向组件发送消息
+ * 返回参数：data = {
+                    message:123456,             //详细消息
+                }
+ */
+@receiveMessage = function(data) { ... }
 ```
 
 > 注②：
@@ -195,35 +203,41 @@ this.$refs.reflectName.setContent(string);
 
 /**
  * 设置浏览器地址
- * 参数一：地址，如果：https://weiui.app
+ * 参数一：地址，如：https://weiui.app
  */
 this.$refs.reflectName.setUrl(url);
 
 /**
-* 是否可以后退
-* 
-* 回调 result: true|false
+ * 向浏览器内发送js代码
+ * 参数一：js代码，如：alert('demo');
+ */
+this.$refs.reflectName.setJavaScript(javascript);
+
+/**
+ * 是否可以后退
+ * 
+ * 回调 result: true|false
  */
 this.$refs.reflectName.canGoBack(callback(result));
 
 /**
-* 后退并返回是否后退成功
-* 
-* 回调 result: true|false
+ * 后退并返回是否后退成功
+ * 
+ * 回调 result: true|false
  */
 this.$refs.reflectName.goBack(callback(result));
 
 /**
-* 是否可以前进
-* 
-* 回调 result: true|false
+ * 是否可以前进
+ * 
+ * 回调 result: true|false
  */
 this.$refs.reflectName.canGoForward(callback(result));
 
 /**
-* 前进并返回是否前进成功
-* 
-* 回调 result: true|false
+ * 前进并返回是否前进成功
+ * 
+ * 回调 result: true|false
  */
 this.$refs.reflectName.goForward(callback(result));
 
@@ -254,35 +268,41 @@ webview.setContent(string);
 
 /**
  * 设置浏览器地址
- * 参数一：地址，如果：https://weiui.app
+ * 参数一：地址，如：https://weiui.app
  */
 webview.setUrl(url);
 
 /**
-* 是否可以后退
-* 
-* 回调 result: true|false
+ * 向组件发送信息，组件通过receiveMessage事件获取信息
+ * 参数一：要发送的数据，如：123456
+ */
+webview.sendMessage(url);
+
+/**
+ * 是否可以后退
+ * 
+ * 回调 result: true|false
  */
 webview.canGoBack(callback(result));
 
 /**
-* 后退并返回是否后退成功
-* 
-* 回调 result: true|false
+ * 后退并返回是否后退成功
+ * 
+ * 回调 result: true|false
  */
 webview.goBack(callback(result));
 
 /**
-* 是否可以前进
-* 
-* 回调 result: true|false
+ * 是否可以前进
+ * 
+ * 回调 result: true|false
  */
 webview.canGoForward(callback(result));
 
 /**
-* 前进并返回是否前进成功
-* 
-* 回调 result: true|false
+ * 前进并返回是否前进成功
+ * 
+ * 回调 result: true|false
  */
 webview.goForward(callback(result));
 

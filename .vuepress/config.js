@@ -9,7 +9,15 @@ let sidebar = {
                 '/guide/create',
                 '/guide/config',
                 '/guide/debug',
-                '/guide/lifecycle',
+            ]
+        }, {
+            title: '上手',
+            collapsable: false,
+            children: [
+                ['/guide/usevue', '使用 Vue.js'],
+                ['/guide/difference', '平台差异'],
+                ['/guide/variable', '环境变量'],
+                ['/guide/lifecycle', '生命周期'],
             ]
         }, {
             title: '样式',
@@ -95,6 +103,7 @@ let sidebar = {
                 ['/module/openOtherApp', ['openOtherApp', '打开其他APP']],
                 ['/module/plate', ['plate', '复制粘贴']],
                 ['/module/saveImage', ['saveImage', '保存图片']],
+                ['/module/getImageSize', ['getImageSize', '图片尺寸']],
                 ['/module/scaner', ['scaner', '二维码扫描']],
                 ['/module/share', ['share', '文字图片分享']],
                 ['/module/storage', ['storage', '数据储存']],
@@ -160,10 +169,10 @@ module.exports = {
 
         nav: [
             {text: '首页', link: '/'},
-            {text: '指南', link: '/guide/', path: 'introduce.html', actives: ['/weex/styles/', '/weex/events/']},
-            {text: '组件', link: '/component/', path: 'a.html', actives: ['/weex/components/']},
-            {text: '模块', link: '/module/', path: 'adDialog.html', actives: ['/weex/modules/']},
-            {text: '插件化', link: '/plugin/', path: 'citypicker.html'},
+            {text: '指南', link: '/guide/introduce.html', actives: ['/guide/', '/weex/styles/', '/weex/events/']},
+            {text: '组件', link: '/component/a.html', actives: ['/component/', '/weex/components/']},
+            {text: '模块', link: '/module/adDialog.html', actives: ['/module/', '/weex/modules/']},
+            {text: '插件化', link: '/plugin/citypicker.html', actives: ['/plugin/']},
             {text: 'APP管理', link: 'https://console.weiui.app/'},
             {text: 'GitHub', link: 'https://github.com/kuaifan/weiui'},
         ],

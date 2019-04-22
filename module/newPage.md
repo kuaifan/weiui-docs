@@ -27,7 +27,7 @@ weiui.openPage({params}, callback(result))
 | pageTitle <New date="20190318"/> | `String` | - | 页面标题，设置显示标题栏 | - |
 | pageType | `String` | - | 页面类型：`weex`、`web`<br/>_可填写 auto 系统自动识别 (不建议)_ | weex |
 | params |`Object`  | - | 页面传递参数，通过`weex.config.params`获取         | -       |
-| cache | `Number` | - | 页面缓存时间，仅`weex`类型有效，<br/>设置`0`不缓存（单位：毫秒） | 0 |
+| cache | `Number` | - | 页面缓存时间，仅`weex`类型且`非本地页面`有效，<br/>设置`0`不缓存（单位：毫秒） | 0 |
 | loading | `Boolean` | - | 是否显示等待效果：`true`、`false` | true |
 | animated <New date="20190318"/> | `Boolean` | - | 是否进入页面需要动画效果：`true`、`false` | true |
 | swipeBack | `Boolean` | - | 是否支持滑动返回：`true`、`false` | true |
