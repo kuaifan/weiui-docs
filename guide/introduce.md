@@ -10,7 +10,7 @@
 
 <a href="javascript:alert('没钱申请开发者账号上架！');"><img src="https://weiui.app/app/ios.png" width="220px"></a>
 
-<img src="https://weiui.app/app/demo.png?v=2" width="640px">
+<img src="https://weiui.app/app/demo.png" width="640px">
 
 ## 支持
 
