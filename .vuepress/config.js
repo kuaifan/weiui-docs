@@ -153,7 +153,7 @@ let sidebar = {
                 ['/plugin/dev/publish', '发布插件'],
             ]
         }];
-    }
+    },
 };
 
 module.exports = {
@@ -173,6 +173,7 @@ module.exports = {
             {text: '组件', link: '/component/a.html', actives: ['/component/', '/weex/components/']},
             {text: '模块', link: '/module/adDialog.html', actives: ['/module/', '/weex/modules/']},
             {text: '插件化', link: '/plugin/citypicker.html', actives: ['/plugin/']},
+            {text: '热更新', link: '/update/'},
             {text: 'APP管理', link: 'https://console.weiui.app/'},
             {text: 'GitHub', link: 'https://github.com/kuaifan/weiui'},
         ],
