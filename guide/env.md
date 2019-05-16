@@ -57,7 +57,7 @@ npm update weiui-cli -g
 
 #### 版本要求
 
-- AndroidStudio: 推荐`3.x`
+- AndroidStudio: `3.4+`
 
 #### 安装
 
