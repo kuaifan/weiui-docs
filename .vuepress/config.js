@@ -18,8 +18,8 @@ let sidebar = {
                 ['/guide/difference', '平台差异'],
                 ['/guide/variable', '环境变量'],
                 ['/guide/lifecycle', '生命周期'],
-                ['/guide/icons', '应用图标'],
-                ['/guide/update', '升级程序'],
+                ['/guide/icons', ['应用图标', 20190517]],
+                ['/guide/update', ['升级程序', 20190517]],
             ]
         }, {
             title: '样式',
