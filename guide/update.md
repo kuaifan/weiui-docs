@@ -1,4 +1,4 @@
-# 升级程序
+# 升级程序 <a href="https://www.npmjs.com/package/weiui-cli" target="_blank"><Badge text="weiui-cli v1.1.8+" type="warning"/></a>
 
 在项目根目录下执行以下命令即可按提示完成主程序升级：
 
