@@ -528,4 +528,16 @@ weiui.openWeb('https://weiui.app');
 weiui.goDesktop()
 ```
 
+## weiui.getConfigString
+
+* 获取weiui.config.js配置文件指定参数
+
+```js
+/**
+ * @param key 参数名称
+ * @return String
+ */
+let appKey = weiui.getConfigString("appKey");
+```
+
 
