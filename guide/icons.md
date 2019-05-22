@@ -10,7 +10,7 @@
 
 ## 修改iOS图标
 
-> iOS覆盖路径为：platforms/ios/WeexWeiui/WeexWeiui/Assets.xcassets/
+> iOS覆盖路径为：platforms/ios/WeexWeiui/WeexWeiui/Assets.xcassets/AppIcon.appiconset/
 
 <img style="border:18px solid #ddd;border-radius:15px;margin:10px auto;" src="./media/icons-ios.png"/>
 
@@ -18,7 +18,7 @@
 
 ## 修改Android图标
 
-> Android覆盖路径为：platforms/android/WeexWeiui/app/src/main/res/
+> Android覆盖路径为：platforms/android/WeexWeiui/app/src/main/res/mipmap-xxxx/
 
 <img style="border:18px solid #ddd;border-radius:15px;margin:10px auto;" src="./media/icons-android.png"/>
 

@@ -19,6 +19,7 @@ let sidebar = {
                 ['/guide/variable', '环境变量'],
                 ['/guide/lifecycle', '生命周期'],
                 ['/guide/icons', ['应用图标', 20190517]],
+                ['/guide/launch', ['启动图片', 20190517]],
                 ['/guide/update', ['升级程序', 20190517]],
             ]
         }, {
