@@ -6,6 +6,9 @@
 weiui update
 ```
 
+::: warning 注意
+升级主程序之后需要重新安装插件。
+:::
+
 如图效果：
 <img style="border:18px solid #ddd;border-radius:15px;margin:10px auto;" src="./media/update.png"/>
-
