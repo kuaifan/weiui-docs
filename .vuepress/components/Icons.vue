@@ -1,5 +1,6 @@
 <template>
     <div ref="lists" class="weiui-icon-demo-lists">
+        <div class="sreach-filter-start"></div>
         <div ref="sreach" class="sreach">
             <input type="text" placeholder="输入英文关键词搜索，比如 home" v-model="search">
         </div>
@@ -40,11 +41,16 @@
                 <div class="code">{{item.code}}</div>
             </li>
         </ul>
+        <div class="sreach-filter-end"></div>
     </div>
 
 </template>
 
 <style lang="stylus">
+    .sreach-filter-start,
+    .sreach-filter-end {
+        display none
+    }
     .weiui-icon-demo-lists {
         position: relative;
 

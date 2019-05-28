@@ -166,6 +166,7 @@ module.exports = {
     themeConfig: {
         editLinks: true,
         editLinkText: '在 GitHub 上编辑此页',
+        repo: 'kuaifan/weiui',
         docsRepo: 'kuaifan/weiui-docs',
         lastUpdated: '最后一次更新',
         logo: '/logo.png',
@@ -178,7 +179,6 @@ module.exports = {
             {text: '插件化', link: '/plugin/citypicker.html', actives: ['/plugin/']},
             {text: '热更新', link: '/update/'},
             {text: 'APP管理', link: 'https://console.weiui.app/'},
-            {text: 'GitHub', link: 'https://github.com/kuaifan/weiui'},
         ],
 
         sidebar: {

@@ -5,7 +5,8 @@
     "license": "MIT",
     "scripts": {
         "dev": "vuepress dev",
-        "build": "vuepress build",
+        "build": "vuepress build && npm run indexes && vuepress build",
+        "indexes": "php ./.vuepress/sreach.php",
         "git-push": "git add -A && git commit -m 'no msg' && git push --progress 'origin' master:master"
     },
     "devDependencies": {
