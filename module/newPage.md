@@ -22,7 +22,7 @@ weiui.openPage({params}, callback(result))
 
 | 属性名 | 类型 | 必须 | 描述 | 默认值 |
 | --- | --- | :-: | --- | --- |
-| url | `String` | √ | `Weex Js`或`Web Url`地址 | - |
+| url | `String` | √ | `Weex Js`或`Web Url`地址<br/>①支持本地地址，如：`xxx.js`<br/>②支持远程地址，如：`http://abc.com/xxx.js` | - |
 | pageName | `String` | - | 页面名称 | - |
 | pageTitle <New date="20190318"/> | `String` | - | 页面标题，设置显示标题栏 | - |
 | pageType | `String` | - | 页面类型：`weex`、`web`<br/>_可填写 auto 系统自动识别 (不建议)_ | weex |
@@ -91,7 +91,7 @@ weiui.openPage({
 weiui.openPage({
     pageName: 'pageName_1',
     pageType: 'weex',
-    url: 'http://dotwe.org/raw/dist/ad0045a7cff0b3a680d9de6dd4806e81.bundle.wx'
+    url: 'xxxx.js'
 }, function(result) {
     //......
 });

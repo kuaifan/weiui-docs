@@ -128,7 +128,6 @@
         border-radius 6px
         padding 0.4rem
         list-style-type none
-        height 38rem
         box-sizing border-box
         overflow auto
         .custom-search-accent {

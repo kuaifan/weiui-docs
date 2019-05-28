@@ -205,7 +205,7 @@
 | ------------- | ------ | -------------------------- | ------- |
 | tabName |`String`  | tab页签名称         | -       |
 | title |`String`  | tab名称         | New Page       |
-| url |`String`  | Weex Js文件`url`地址         | -       |
+| url |`String`  | Weex Js文件`url`地址<br/>①支持本地地址，如：`xxx.js`<br/>②支持远程地址，如：`http://abc.com/xxx.js`         | -       |
 | unSelectedIcon |`String`  | tab未选图标         | home       |
 | selectedIcon |`String`  | tab已选图标         | home       |
 | params |`Object`  | tab页面传递参数，通过`weex.config.params`获取         | -       |
@@ -224,7 +224,7 @@
                     url: 'http://dotwe.org/raw/dist/b5fd96d8d790f0100bdfc20b93eedf09.bundle.wx',
                 }, {
                     title: '好友',
-                    url: 'http://dotwe.org/raw/dist/ba938c9aaebe41e5f60b98f90bd0bf61.bundle.wx',
+                    url: 'xxxx.js',
                     message: 9
                 } ]"></tabbar>
 ```
