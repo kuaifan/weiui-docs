@@ -9,7 +9,7 @@ weiui plugin add rongim
 > 需要加载的模块
 
 ```js
-const rongim = weex.requireModule('rongim');
+const rongim = app.requireModule('rongim');
 ```
 
 ## 参数配置

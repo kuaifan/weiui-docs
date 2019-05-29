@@ -7,7 +7,7 @@
 WeexSDK 对获取应用前后台事件做了支持，开发者可以在页面内监听对应的事件，获得应用被前后后这后台，以方便暂停音乐，视频等，只需要指定需要监听的事件名称和回调函数就可以，例如：
 
 ```javascript
-var globalEvent = weex.requireModule('globalEvent');
+var globalEvent = app.requireModule('globalEvent');
 globalEvent.addEventListener('WXApplicationDidBecomeActiveEvent', function(e) {
   console.log('WXApplicationDidBecomeActiveEvent');
 });
@@ -48,7 +48,7 @@ iOS
 * **@callback**，function，回调方法。
 
 ```javascript
-var globalEvent = weex.requireModule('globalEvent');
+var globalEvent = app.requireModule('globalEvent');
 globalEvent.addEventListener("geolocation", function (e) {
   console.log("get geolocation")
 });
@@ -63,6 +63,6 @@ globalEvent.addEventListener("geolocation", function (e) {
 * **@eventName**，string，事件名称。
 
 ```javascript
-var globalEvent = weex.requireModule('globalEvent');
+var globalEvent = app.requireModule('globalEvent');
 globalEvent.removeEventListener("geolocation");
 ```

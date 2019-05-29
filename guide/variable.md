@@ -53,10 +53,10 @@
 
 ## `requireModule`
 
-对于那些不依赖 UI 交互的原生功能，weiui 将其封装成**模块**，这是一种通过 javascript 调用原生能力的方法。除了[内置模块](../modules/adDialog.html)以外，将已有的原生模块移植到 weiui 平台也很方便。你可以使用 `weex.requireModule` 接口引用自定义的或者内置的模块。
+对于那些不依赖 UI 交互的原生功能，weiui 将其封装成**模块**，这是一种通过 javascript 调用原生能力的方法。除了[内置模块](../modules/adDialog.html)以外，将已有的原生模块移植到 weiui 平台也很方便。你可以使用 `app.requireModule` 接口引用自定义的或者内置的模块。
 
 ```typescript
-weex.requireModule(name: string): Object | void;
+app.requireModule(name: string): Object | void;
 ```
 
 **参数：**
@@ -77,7 +77,7 @@ weex.requireModule(name: string): Object | void;
   <div><text>Toast</text></div>
 </template>
 <script>
-  const weiui = weex.requireModule('weiui');
+  const weiui = app.requireModule('weiui');
   weiui.toast({
       message: 'I am a toast.',
       gravity: 'middle'

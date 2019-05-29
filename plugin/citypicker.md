@@ -9,7 +9,7 @@ weiui plugin add citypicker
 > 需要加载的模块
 
 ```js
-const citypicker = weex.requireModule('citypicker');
+const citypicker = app.requireModule('citypicker');
 ```
 
 ## 示例代码
@@ -42,7 +42,7 @@ const citypicker = weex.requireModule('citypicker');
 </style>
 
 <script>
-    const citypicker = weex.requireModule('citypicker');
+    const citypicker = app.requireModule('citypicker');
 
     export default {
         data() {

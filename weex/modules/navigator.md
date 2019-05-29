@@ -16,7 +16,7 @@
 * **@callback**, 执行完该操作后的回调函数。
 
 ```javascript
-var navigator = weex.requireModule('navigator')
+var navigator = app.requireModule('navigator')
 navigator.push({
   url: 'http://dotwe.org/raw/dist/519962541fcf6acd911986357ad9c2ed.js',
   animated: "true"
@@ -36,7 +36,7 @@ navigator.push({
 * **@callback**, 执行完该操作后的回调函数。
 
 ```javascript
-var navigator = weex.requireModule('navigator')
+var navigator = app.requireModule('navigator')
 navigator.pop({
   animated: "true"
 }, event => {

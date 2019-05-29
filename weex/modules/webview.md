@@ -4,7 +4,7 @@
 
 ```javascript
 var webElement = this.$el('webview');
-var webview = weex.requireModule('webview');
+var webview = app.requireModule('webview');
 webview.goBack(webElement.ref);
 webview.goForward(webElement.ref);
 webview.reload(webElement.ref);

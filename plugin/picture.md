@@ -9,7 +9,7 @@ weiui plugin add picture
 > 需要加载的模块
 
 ```js
-const picture = weex.requireModule('picture');
+const picture = app.requireModule('picture');
 ```
 
 ## 启动相册拍照

@@ -5,7 +5,7 @@
 > 需要加载的模块
 
 ```js
-const navigationBar = weex.requireModule('navigationBar');
+const navigationBar = app.requireModule('navigationBar');
 ```
 
 ## navigationBar.setTitle
@@ -84,8 +84,8 @@ navigationBar.setLeftItem({
 </template>
 
 <script>
-    const weiui = weex.requireModule('weiui');
-    const navigationBar = weex.requireModule('navigationBar');
+    const weiui = app.requireModule('weiui');
+    const navigationBar = app.requireModule('navigationBar');
 
     export default {
         mounted() {

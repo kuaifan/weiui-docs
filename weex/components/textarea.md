@@ -60,7 +60,7 @@
 </template>
 
 <script>
-  const modal = weex.requireModule('modal')
+  const modal = app.requireModule('modal')
 
   export default {
     methods: {

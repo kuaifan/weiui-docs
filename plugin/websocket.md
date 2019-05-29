@@ -9,7 +9,7 @@ weiui plugin add websocket
 > 模块引用方式
 
 ```js
-const websocket = weex.requireModule('websocket');
+const websocket = app.requireModule('websocket');
 ```
 
 ## 连接服务器 
@@ -51,7 +51,7 @@ websocket.connect(url, callback(result))
 
 ```js
 //启动相册并拍照  
-let websocket = weex.requireModule('websocket');
+let websocket = app.requireModule('websocket');
 websocket.connect("ws://echo.websocket.org", function(result) {
     if (result.status == 'open') {
         //连接已经准备好接受和发送数据

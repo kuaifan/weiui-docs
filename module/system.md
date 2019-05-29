@@ -3,7 +3,7 @@
 > 需要加载的模块
 
 ```js
-const weiui = weex.requireModule('weiui');
+const weiui = app.requireModule('weiui');
 ```
 
 ## weiui.getStatusBarHeight
@@ -19,7 +19,7 @@ let variable = weiui.getStatusBarHeight()
 
 ## weiui.getStatusBarHeightPx
 
-> 获取状态栏高度（weex px单位）
+> 获取状态栏高度（px单位）
 
 ```js
 /**
@@ -41,7 +41,7 @@ let variable = weiui.getNavigationBarHeight()
 
 ## weiui.getNavigationBarHeightPx
 
-> 获取虚拟键盘高度（weex px单位）
+> 获取虚拟键盘高度（px单位）
 
 ```js
 /**

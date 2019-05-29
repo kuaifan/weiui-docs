@@ -93,7 +93,7 @@ Weex 提供 **DOM.addRule** 以加载自定义字体。开发者可以通过指�
 
 开发者可以使用下面的代码加载自定义字体：
 ```javascript
-const domModule = weex.requireModule('dom')
+const domModule = app.requireModule('dom')
 domModule.addRule('fontFace', {
     'fontFamily': "iconfont2",
     'src': "url('http://at.alicdn.com/t/font_1469606063_76593.ttf')"

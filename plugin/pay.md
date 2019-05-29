@@ -11,7 +11,7 @@ weiui plugin add pay
 > 需要加载的模块
 
 ```js
-const pay = weex.requireModule('pay');
+const pay = app.requireModule('pay');
 ```
 
 ## 参数配置

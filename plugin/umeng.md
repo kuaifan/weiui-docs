@@ -11,7 +11,7 @@ weiui plugin add umeng
 > 需要加载的模块
 
 ```js
-const umeng = weex.requireModule('umeng');
+const umeng = app.requireModule('umeng');
 ```
 
 ## 参数配置

@@ -57,7 +57,7 @@ service.register(SERVICE_NAME /* same string with native */, {
     return {
       instance: {
         InstanceService: function(weex) {
-          var modal = weex.requireModule('modal')
+          var modal = app.requireModule('modal')
           return {
             toast: function(title) {
               modal.toast({ message: title })
@@ -66,7 +66,7 @@ service.register(SERVICE_NAME /* same string with native */, {
         }
       },
       NormalService: function(weex) {
-        var modal = weex.requireModule('modal')
+        var modal = app.requireModule('modal')
         return {
           toast: function(title) {
             modal.toast({ message: title })

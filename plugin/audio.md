@@ -9,7 +9,7 @@ weiui plugin add audio
 > 需要加载的模块
 
 ```js
-const audio = weex.requireModule('audio');
+const audio = app.requireModule('audio');
 ```
 
 ## 播放音频
@@ -108,8 +108,8 @@ audio.getDuration(url, callback(result))
     </div>
 </template>
 <script>
-    const navigationBar = weex.requireModule('navigationBar');
-    const audio = weex.requireModule('audio');
+    const navigationBar = app.requireModule('navigationBar');
+    const audio = app.requireModule('audio');
     
     export default{
         data(){

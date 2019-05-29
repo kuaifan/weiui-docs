@@ -127,7 +127,7 @@
 
 <script>
 
-    const weiui = weex.requireModule('weiui');
+    const weiui = app.requireModule('weiui');
 
     export default {
         methods: {
@@ -205,10 +205,10 @@
 | ------------- | ------ | -------------------------- | ------- |
 | tabName |`String`  | tab页签名称         | -       |
 | title |`String`  | tab名称         | New Page       |
-| url |`String`  | Weex Js文件`url`地址<br/>①支持本地地址，如：`xxx.js`<br/>②支持远程地址，如：`http://abc.com/xxx.js`         | -       |
+| url |`String`  | App Js文件`url`地址<br/>①支持本地地址，如：`xxx.js`<br/>②支持远程地址，如：`http://abc.com/xxx.js`         | -       |
 | unSelectedIcon |`String`  | tab未选图标         | home       |
 | selectedIcon |`String`  | tab已选图标         | home       |
-| params |`Object`  | tab页面传递参数，通过`weex.config.params`获取         | -       |
+| params |`Object`  | tab页面传递参数，通过`app.config.params`获取         | -       |
 | cache | `Number` | tab页面缓存时间，设置`0`不缓存（单位：毫秒） | 0 |
 | message |`Number`  | tab未读信息数         | 0       |
 | dot |`Boolean`  | 是否显示tab未读红点         | false       |
@@ -351,7 +351,7 @@ this.$refs.reflectName.setRefreshing(tabName, false);
 /**
  * tab页跳转url（仅：tabPages模式支持）
  * 参数一：页签名称
- * 参数二：跳转的Weex Js文件地址
+ * 参数二：跳转的App Js文件地址
  */
 this.$refs.reflectName.goUrl(tabName, 'http://....');
 

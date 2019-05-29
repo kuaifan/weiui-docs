@@ -21,7 +21,7 @@ h5 提供 WebSockets 的 protocol 默认实现，iOS 和 Android 需要自定义
 * **@protocol**, string, WebSockets 协议名字字符串
 
 ```javascript
-const ws = weex.requireModule('webSocket');
+const ws = app.requireModule('webSocket');
 ws.WebSocket('ws://echo.websocket.org','');
 ```
 
@@ -34,7 +34,7 @@ ws.WebSocket('ws://echo.websocket.org','');
 * **@data**, string, 要发送到服务器的数据
 
 ```javascript
-const ws = weex.requireModule('webSocket');
+const ws = app.requireModule('webSocket');
 ws.WebSocket('ws://echo.websocket.org','');
 ws.send('some message.');
 ```
@@ -49,7 +49,7 @@ ws.send('some message.');
 * **@reason**, string, 关闭的原因
 
 ```javascript
-const ws = weex.requireModule('webSocket');
+const ws = app.requireModule('webSocket');
 ws.WebSocket('ws://echo.websocket.org','');
 ws.close();
 ```
@@ -63,7 +63,7 @@ ws.close();
 标准 event 对象，无特殊属性。
 
 ```javascript
-const ws = weex.requireModule('webSocket')
+const ws = app.requireModule('webSocket')
 ws.WebSocket('ws://echo.websocket.org','');
 ws.onopen = function(event) {
   console.log('onopen', event);
@@ -80,7 +80,7 @@ ws.onopen = function(event) {
   * **`data`**, string, 监听器接收的到的消息
 
 ```javascript
-const ws = weex.requireModule('webSocket')
+const ws = app.requireModule('webSocket')
 ws.WebSocket('ws://echo.websocket.org','');
 ws.onmessage = function(event) {
   console.log('onmessage', event);
@@ -99,7 +99,7 @@ ws.onmessage = function(event) {
   * **`wasClean`**, boolen, 是否完全关闭
 
 ```javascript
-const ws = weex.requireModule('webSocket')
+const ws = app.requireModule('webSocket')
 ws.WebSocket('ws://echo.websocket.org','');
 ws.onclose = function(event) {
   console.log('onclose', event);
@@ -116,7 +116,7 @@ ws.onclose = function(event) {
   * **`data`**, string, 监听器接收的到的消息
 
 ```javascript
-const ws = weex.requireModule('webSocket')
+const ws = app.requireModule('webSocket')
 ws.WebSocket('ws://echo.websocket.org','');
 ws.onerror = function(event) {
   console.log('onerror', event);

@@ -9,7 +9,7 @@ weiui plugin add screenshots
 > 模块引用方式
 
 ```js
-const screenshots = weex.requireModule('screenshots');
+const screenshots = app.requireModule('screenshots');
 ```
 
 ## 截图功能 
@@ -69,7 +69,7 @@ screenshots.shots(ref, callback(result))
         },
         methods: {
             shots() {
-                let screenshots = weex.requireModule('screenshots');
+                let screenshots = app.requireModule('screenshots');
                 screenshots.shots(this.$refs.main, (p) => {
                     if (p.status == 'success') {
                         this.src = p.path;

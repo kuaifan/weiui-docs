@@ -50,7 +50,7 @@
 </style>
 
 <script>
-    const weiui = weex.requireModule('weiui');
+    const weiui = app.requireModule('weiui');
 
     export default {
         data() {

@@ -3,12 +3,12 @@
 > 需要加载的模块
 
 ```js
-const weiui = weex.requireModule('weiui');
+const weiui = app.requireModule('weiui');
 ```
 
 ## weiui.openPage
 
-* 打开新`Weex Js页面` 或 打开新`Web页面`
+* 打开新`App Js页面` 或 打开新`Web页面`
 
 ```js
 /**
@@ -22,12 +22,12 @@ weiui.openPage({params}, callback(result))
 
 | 属性名 | 类型 | 必须 | 描述 | 默认值 |
 | --- | --- | :-: | --- | --- |
-| url | `String` | √ | `Weex Js`或`Web Url`地址<br/>①支持本地地址，如：`xxx.js`<br/>②支持远程地址，如：`http://abc.com/xxx.js` | - |
+| url | `String` | √ | `App Js`或`Web Url`地址<br/>①支持本地地址，如：`xxx.js`<br/>②支持远程地址，如：`http://abc.com/xxx.js` | - |
 | pageName | `String` | - | 页面名称 | - |
 | pageTitle <New date="20190318"/> | `String` | - | 页面标题，设置显示标题栏 | - |
-| pageType | `String` | - | 页面类型：`weex`、`web`<br/>_可填写 auto 系统自动识别 (不建议)_ | weex |
-| params |`Object`  | - | 页面传递参数，通过`weex.config.params`获取         | -       |
-| cache | `Number` | - | 页面缓存时间，仅`weex`类型且`非本地页面`有效，<br/>设置`0`不缓存（单位：毫秒） | 0 |
+| pageType | `String` | - | 页面类型：`app`、`web`<br/>_可填写 auto 系统自动识别 (不建议)_ | app |
+| params |`Object`  | - | 页面传递参数，通过`app.config.params`获取         | -       |
+| cache | `Number` | - | 页面缓存时间，仅`app`类型且`非本地页面`有效，<br/>设置`0`不缓存（单位：毫秒） | 0 |
 | loading | `Boolean` | - | 是否显示等待效果：`true`、`false` | true |
 | animated <New date="20190318"/> | `Boolean` | - | 是否进入页面需要动画效果：`true`、`false` | true |
 | swipeBack | `Boolean` | - | 是否支持滑动返回：`true`、`false` | true |
@@ -69,9 +69,9 @@ weiui.openPage({params}, callback(result))
 - `stop`页面即将停止或者完全被覆盖
 - `restart`页面正在重新启动
 - `destroy`页面已销毁
-- `viewCreated`WeexJS第一个视图的呈现完成
-- `renderSuccess`WeexJS呈现视图阶段结束
-- `error`WeexJS运行时报告异常
+- `viewCreated`AppJS第一个视图的呈现完成
+- `renderSuccess`AppJS呈现视图阶段结束
+- `error`AppJS运行时报告异常
 - `statusChanged`Web状态发生改变
 - `errorChanged`Web运行时报告异常
 - `titleChanged`Web标题发生改变
@@ -79,7 +79,7 @@ weiui.openPage({params}, callback(result))
 > 简单示例
 
 ```js
-const weiui = weex.requireModule('weiui');
+const weiui = app.requireModule('weiui');
 //示例①
 weiui.openPage({
     url: 'http://dotwe.org/raw/dist/ad0045a7cff0b3a680d9de6dd4806e81.bundle.wx',
@@ -90,7 +90,7 @@ weiui.openPage({
 //示例②
 weiui.openPage({
     pageName: 'pageName_1',
-    pageType: 'weex',
+    pageType: 'app',
     url: 'xxxx.js'
 }, function(result) {
     //......
@@ -137,7 +137,7 @@ let variable = weiui.getPageInfo('pageName_1');
 {
 　　"url": "http://....../dist/index.js",
 　　"pageName": "open_qGRQ9fHP",
-　　"pageType": "weex",
+　　"pageType": "app",
 　　"params": { },
 　　"cache": 0,
 　　"loading": true,
@@ -154,7 +154,7 @@ let variable = weiui.getPageInfo('pageName_1');
 
 ## weiui.reloadPage
 
-* 重新加载`Weex Js页面` 或 `Web页面`
+* 重新加载`App Js页面` 或 `Web页面`
 
 ```js
 /**
@@ -248,7 +248,7 @@ weiui.setPageBackPressed('pageName_1', function(){
 
 ## weiui.setOnRefreshListener
 
-* 仅对`Weex Js页面`有效，监听下拉刷新事件，下拉刷新事件结束后请使用`weiui.setRefreshing(pageName, false)`设置下拉刷新结束状态
+* 仅对`App Js页面`有效，监听下拉刷新事件，下拉刷新事件结束后请使用`weiui.setRefreshing(pageName, false)`设置下拉刷新结束状态
 
 ```js
 /**
@@ -283,7 +283,7 @@ weiui.setOnRefreshListener('pageName_1', function(pageName){
 
 ## weiui.setRefreshing
 
-* 仅对`Weex Js页面`有效，设置下拉刷新状态，主要用于`weiui.setOnRefreshListener`回调处理完成后设置结束状态
+* 仅对`App Js页面`有效，设置下拉刷新状态，主要用于`weiui.setOnRefreshListener`回调处理完成后设置结束状态
 
 ```js
 /**
@@ -417,7 +417,7 @@ weiui.onPageStatusListener({
 
 ## weiui.getCacheSizePage
 
-* 获取`Weex Js页面`缓存大小
+* 获取`App Js页面`缓存大小
 
 ```js
 /**
@@ -428,7 +428,7 @@ weiui.getCacheSizePage(callback(result))
 
 ## weiui.clearCachePage
 
-* 手动清除缓存`Weex Js页面`
+* 手动清除缓存`App Js页面`
 
 ```js
 weiui.clearCachePage()
@@ -436,7 +436,7 @@ weiui.clearCachePage()
 
 ## weiui.closePage
 
-* 关闭`Weex Js页面` 或 `Web页面`
+* 关闭`App Js页面` 或 `Web页面`
 
 ```js
 /**
@@ -466,7 +466,7 @@ weiui.closePage('pageName_1');
 
 ## weiui.closePageTo
 
-* 关闭至某个`Weex Js页面` 或 `Web页面`
+* 关闭至某个`App Js页面` 或 `Web页面`
 * 场景示例：目前顺序打开a、b、c、d、e五个页面，e为当前页面，想要直接回到a页面时可以使用此方法。
 
 ```js

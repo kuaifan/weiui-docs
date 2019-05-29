@@ -20,7 +20,7 @@
 :::
 
 ```javascript
-var modal = weex.requireModule('modal')
+var modal = app.requireModule('modal')
 modal.toast({
     message: 'This is a toast',
     duration: 0.3
@@ -39,7 +39,7 @@ modal.toast({
 * **@callback**, function，用户操作完成后的回调
 
 ```javascript
-var modal = weex.requireModule('modal')
+var modal = app.requireModule('modal')
 modal.alert({
   message: 'This is a alert',
   okTitle: '确认'
@@ -62,7 +62,7 @@ modal.alert({
   * **`result`**, string, 用户按下的按钮文字信息
 
 ```javascript
-var modal = weex.requireModule('modal')
+var modal = app.requireModule('modal')
 modal.confirm({
     message: 'Do you confirm ?',
     duration: 0.3
@@ -84,7 +84,7 @@ modal.confirm({
 * **@callback**, function，用户操作完成后的回调<ul><li>`res.result`：用户按下的按钮上的文字信息</li><li>`res.data`：用户输入的文字信息</li></ul>
 
 ```javascript
-var modal = weex.requireModule('modal')
+var modal = app.requireModule('modal')
 modal.prompt({
     message: 'This is a prompt',
     duration: 0.3

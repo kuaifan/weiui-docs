@@ -28,7 +28,7 @@ Weex 容器默认的宽度 (viewport) 是 750px，通过 setViewport 方法可�
 // entry.js
 
 import App from './app.vue';
-const meta = weex.requireModule('meta');
+const meta = app.requireModule('meta');
 
 // 配置 viewport 的宽度为 640px
 meta.setViewport({

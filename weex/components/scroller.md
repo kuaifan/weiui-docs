@@ -19,7 +19,7 @@
 </template>
 
 <script>
-  const dom = weex.requireModule('dom')
+  const dom = app.requireModule('dom')
 
   export default {
     data () {

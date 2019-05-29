@@ -3,14 +3,14 @@
 > 需要加载的模块
 
 ```js
-const navigator = weex.requireModule('navigator');
+const navigator = app.requireModule('navigator');
 ```
 
 ## navigator.push
 
-* 载入（打开）新`Weex Js页面` 或 载入（打开）新`Web页面`
+* 载入（打开）新`App Js页面` 或 载入（打开）新`Web页面`
 
-* 此模块与`weiui.openPage`一致，只是调用名称不同，方便与weex官网一致。
+* 此模块与`weiui.openPage`一致，只是调用名称不同。
 
 ```js
 /**

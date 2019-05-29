@@ -3,7 +3,7 @@
 > 需要加载的模块
 
 ```js
-const weiui = weex.requireModule('weiui');
+const weiui = app.requireModule('weiui');
 ```
 
 ## weiui.keyboardHide
