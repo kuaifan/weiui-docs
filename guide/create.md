@@ -24,13 +24,13 @@ npm run dev
 
 确保您已经安装完成 [iOS 所需环境](./env.html)。
 
-`cd`到iOS工程目录`platforms/ios/WeexWeiui` 执行`pod install`命令来拉取iOS工程的依赖
+`cd`到iOS工程目录`platforms/ios/WeiuiApp` 执行`pod install`命令来拉取iOS工程的依赖
 
 ```bash
 pod install
 ```
 
-首次执行时间会稍长，命令执行完毕后找到当前目录下 `WeexWeiui.xcworkspace` 文件，双击即可唤起XCode打开 iOS 工程；
+首次执行时间会稍长，命令执行完毕后找到当前目录下 `WeiuiApp.xcworkspace` 文件，双击即可唤起XCode打开 iOS 工程；
 
 然后在XCode选择相应的模拟器（比如iPhone xs），点击`▶`按钮来运行项目。
 
@@ -39,7 +39,7 @@ pod install
 
 确保您已经安装完成 [Android 所需环境](./env.html)。
 
-1.打开`AndroidStudio`软件然后`Open`Android工程目录`platforms/android/WeexWeiui`。
+1.打开`AndroidStudio`软件然后`Open`Android工程目录`platforms/android/WeiuiApp`。
 2.待项目构建完成，点击 AndroidStudio 上方工具栏的 `Run`，即可运行项目。
 
 > 第一次打开 AndroidStuido 时，由于本地环境未配置好，AndroidStuido 会提示错误，按照 IDE 提示，点击 `sync` 同步一下，大部分环境问题都可以解决。

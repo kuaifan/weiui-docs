@@ -8,7 +8,7 @@
 
 ## 修改iOS启动图
 
-> iOS覆盖路径为：platforms/ios/WeexWeiui/WeexWeiui/Assets.xcassets/LaunchImage.launchimage/
+> iOS覆盖路径为：platforms/ios/WeiuiApp/WeiuiApp/Assets.xcassets/LaunchImage.launchimage/
 
 <img style="border:18px solid #ddd;border-radius:15px;margin:10px auto;" src="./media/launchimage-ios.png"/>
 
@@ -16,7 +16,7 @@
 
 ## 修改Android启动图
 
-> Android覆盖路径为：platforms/android/WeexWeiui/app/src/main/res/drawable-xxxx-xxxxx/
+> Android覆盖路径为：platforms/android/WeiuiApp/app/src/main/res/drawable-xxxx-xxxxx/
 
 <img style="border:18px solid #ddd;border-radius:15px;margin:10px auto;" src="./media/launchimage-android.png"/>
 
