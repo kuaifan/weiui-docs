@@ -10,6 +10,8 @@
         "git-push": "git add -A && git commit -m 'no msg' && git push --progress 'origin' master:master"
     },
     "devDependencies": {
-        "vuepress": "^1.0.0-alpha.44"
+        "core-js": "^2.6.9",
+        "vuepress": "^1.0.0-alpha.48",
+        "vuepress-plugin-container": "^2.0.1"
     }
 }

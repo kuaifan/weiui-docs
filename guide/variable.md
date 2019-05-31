@@ -45,7 +45,7 @@
 
 ## `document`
 
-`weex.document` 是当前页面的文档模型对象，可以用来创建和操作 DOM 树中元素。它是 weiui DOM API 规范的一部分，但是它和 [W3C 的 DOM 规范](https://www.w3.org/DOM/)中的 `document` 对象是不同的。
+`app.document` 是当前页面的文档模型对象，可以用来创建和操作 DOM 树中元素。它是 weiui DOM API 规范的一部分，但是它和 [W3C 的 DOM 规范](https://www.w3.org/DOM/)中的 `document` 对象是不同的。
 
 而且，在使用了现代化的前端框架（如 Vue 和 Rax）的情况下，直接操作 DOM 并不是最佳实践。更何况**在 weiui 平台里并不一定有真实的 DOM**，在 Android 和 iOS 端上都是模拟出来的。
 
@@ -87,10 +87,10 @@ app.requireModule(name: string): Object | void;
 
 ## `supports`
 
-你应该了解 weiui 的组件和模块都是可以注册和配置的，这样导致了在不同环境中组件和模块的支持情况不一样。你可以使用 `weex.supports` 接口在运行期检测某个功能在当前环境中是否可用。
+你应该了解 weiui 的组件和模块都是可以注册和配置的，这样导致了在不同环境中组件和模块的支持情况不一样。你可以使用 `app.supports` 接口在运行期检测某个功能在当前环境中是否可用。
 
 ```typescript
-weex.supports(condition: string): boolean | void;
+app.supports(condition: string): boolean | void;
 ```
 
 **参数：**
@@ -110,31 +110,31 @@ weex.supports(condition: string): boolean | void;
 检测某个组件是否可用：
 
 ```js
-weex.supports('@component/slider') // true
-weex.supports('@component/my-tab') // false
+app.supports('@component/slider') // true
+app.supports('@component/my-tab') // false
 ```
 
 检测某个模块是否可用：
 
 ```js
-weex.supports('@module/stream')  // true
-weex.supports('@module/abcdef')  // false
+app.supports('@module/stream')  // true
+app.supports('@module/abcdef')  // false
 ```
 
 检测某个模块是否包含某个方法：
 
 ```js
-weex.supports('@module/dom.getComponentRect') // true
-weex.supports('@module/navigator.jumpToPage') // false
+app.supports('@module/dom.getComponentRect') // true
+app.supports('@module/navigator.jumpToPage') // false
 ```
 
 无效的输入：
 
 ```js
-weex.supports('div') // null
-weex.supports('module/*') // null
-weex.supports('@stream/fetch') // null
-weex.supports('getComponentRect') // null
+app.supports('div') // null
+app.supports('module/*') // null
+app.supports('@stream/fetch') // null
+app.supports('getComponentRect') // null
 ```
 
 ## `isRegisteredModule`
@@ -142,16 +142,16 @@ weex.supports('getComponentRect') // null
 检测某个特定的模块或者接口是否可用。
 
 ```typescript
-weex.isRegisteredModule(moduleName: string, methodName: string): boolean
+app.isRegisteredModule(moduleName: string, methodName: string): boolean
 ```
 
 这个接口只能用于检测特定模块和方法的兼容性，不支持检测组件。
 
 ```js
-weex.isRegisteredModule('stream') // true
-weex.isRegisteredModule('stream', 'fetch') // true
-weex.isRegisteredModule('whatever', '- unknown -') // false
-weex.isRegisteredModule('div') // false, not support components
+app.isRegisteredModule('stream') // true
+app.isRegisteredModule('stream', 'fetch') // true
+app.isRegisteredModule('whatever', '- unknown -') // false
+app.isRegisteredModule('div') // false, not support components
 ```
 
 ## `isRegisteredComponent`
@@ -159,12 +159,12 @@ weex.isRegisteredModule('div') // false, not support components
 检测某个特定的组件是否可用。
 
 ```typescript
-weex.isRegisteredComponent(componentName: string): boolean
+app.isRegisteredComponent(componentName: string): boolean
 ```
 
 这个接口只能用于检测组件的兼容性，不支持检测模块。
 
 ```js
-weex.isRegisteredComponent('div') // true
-weex.isRegisteredComponent('- unknown -') // false
-weex.isRegisteredComponent('navigator') // false, not support modules
+app.isRegisteredComponent('div') // true
+app.isRegisteredComponent('- unknown -') // false
+app.isRegisteredComponent('navigator') // false, not support modules

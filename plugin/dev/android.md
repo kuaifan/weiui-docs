@@ -7,7 +7,7 @@ Android插件主要文件说明
   
 App初始化文件，App启动时会运行`pluginNameEntry.init(Application)`方法
 
-## WeexpluginNameModule.java
+## ApppluginNameModule.java
 
 App可以用接口方法，详细可以查看文件内演示的方法。
 
