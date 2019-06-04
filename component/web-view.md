@@ -136,6 +136,9 @@ weiui.adDialog("http://..../xxx.png", function(res) {
                 }
             });
         }
+        function $ready() {
+            //网页加载完成时组件会自动执行此方法
+        }
     </script>
 </head>
 <body>

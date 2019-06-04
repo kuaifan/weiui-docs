@@ -551,4 +551,27 @@ weiui.goDesktop()
 let appKey = weiui.getConfigString("appKey");
 ```
 
+## weiui.realUrl
+
+* 规范化url，删除多余的符号连接（比如'/./', '/../' 以及多余的'/'）
+
+```js
+/**
+ * @param url 要处理的原地址
+ * @return String
+ */
+let newUrl = weiui.realUrl("http://abc.com/aa/bb/cc/.././demo.js");
+```
+
+## weiui.rewriteUrl
+
+* 将相对地址基于当前地址补全
+
+```js
+/**
+ * @param url 要补全的相对地址
+ * @return String
+ */
+let newUrl = weiui.rewriteUrl("demo.js");
+```
 
