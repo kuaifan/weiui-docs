@@ -152,6 +152,17 @@ let variable = weiui.getPageInfo('pageName_1');
 }
 ```
 
+## weiui.getPageInfoAsync
+
+* 获取页面信息（异步）
+
+```js
+/**
+ * @param params    详细参数
+ */
+weiui.getPageInfoAsync({params}, callback(pageInfo))
+```
+
 ## weiui.reloadPage
 
 * 重新加载`App Js页面` 或 `Web页面`
