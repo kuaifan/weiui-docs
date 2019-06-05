@@ -1,4 +1,18 @@
-# 升级程序 <a href="https://www.npmjs.com/package/weiui-cli" target="_blank"><Badge text="weiui-cli v1.1.8+" type="warning"/></a>
+# 升级程序
+
+[[toc]]
+
+## 准备事项
+
+在准备升级之前请将weiui工具`weiui-cli`升级至最新版本。[查看最新版本](https://www.npmjs.com/package/weiui-cli)
+
+升级工具命令：
+```bash
+npm update weiui-cli -g
+```
+## 开始升级
+
+### 自动升级
 
 在项目根目录下执行以下命令即可按提示完成主程序升级：
 
@@ -6,9 +20,24 @@
 weiui update
 ```
 
-::: warning 注意
+如图效果：
+<img style="border:18px solid #ddd;border-radius:15px;margin:10px auto 0;" src="./media/update.png"/>
+
+
+### 手动升级
+
+可能由于网络或升级版本跨越太大等其他原因导致自动升级失败的可通过以下方法手动升级至最新生成版本。
+
+1、使用`weiui create`命令创建一个全新的项目。
+
+2、将旧项目的`src`下的所有文件移到新项目`src`目录下。
+
+3、修改新项目[weiui.config.js配置文件](./config.html)、[应用图标](./icons.html)、[应用启动图](./launch.html)、应用版本号及版本名称。
+
+> 注：如果因为自动升级过程中失败导致旧项目`src`文件夹内文件被重置可在`common/backup/*.zip`找到升级前系统自动备份包。
+
+## 注意事项
+
+::: warning
 升级主程序之后需要重新安装插件。
 :::
-
-如图效果：
-<img style="border:18px solid #ddd;border-radius:15px;margin:10px auto;" src="./media/update.png"/>

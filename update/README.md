@@ -23,11 +23,23 @@
 
 ![](./media/2.png)
 
+#### 4、zip更新包说明
+
 ::: tip
-
-zip更新包目录结构说明：将要更新的文件直接打包成zip压缩包即可。
-
+将`common/dist/`目录下文件按原结构打包成zip压缩包即可。
 :::
 
+目录结构示例：
 
-例如：你修改了一个`demo.vue`文件，你只要将`demo.vue`生成的对应文件`demo.js（common/dist/demo.js）`打包上传即可，当然你也可以把`common/dist`下面所有的文件都打包上传。
+```
+zip更新包
+├── components 
+├── ......
+└── pages                 
+    ├── ......
+    └── index.js
+```
+
+目录结构图示：
+
+![](./media/3.png)
